@@ -3,6 +3,10 @@
   "name": "Multi Theft Auto",
   "description": "Multi Theft Auto game config for TCAdmin 3",
   "version": "1.0.0",
+  "icon": "https://upload.wikimedia.org/wikipedia/en/7/78/Multi_Theft_Auto_logo.png",
+  "images": [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTev9h5ULaQN35h1PQtZjUmK7ivYjtG0ascMw&s"
+  ],
   "tags": [
     "Game",
     "Windows"

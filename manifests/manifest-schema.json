@@ -15,7 +15,16 @@
     "version": {
       "type": "string"
     },
+    "icon": {
+      "type": "string"
+    },
     "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "images": {
       "type": "array",
       "items": {
         "type": "string"
