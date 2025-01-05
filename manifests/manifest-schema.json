@@ -1,0 +1,55 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TCAdmin v3 Plugin Manifest",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "optional": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "path",
+          "type",
+          "optional"
+        ]
+      }
+    }
+  },
+  "required": [
+    "author",
+    "name",
+    "description",
+    "version",
+    "tags",
+    "files"
+  ]
+}

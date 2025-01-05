@@ -1,0 +1,17 @@
+﻿{
+  "author": "TCAdmin",
+  "name": "Multi Theft Auto",
+  "description": "Multi Theft Auto game config for TCAdmin 3",
+  "version": "1.0.0",
+  "tags": [
+    "Game",
+    "Windows"
+  ],
+  "files": [
+    {
+      "path": "MTA - Windows.json",
+      "type": "GameConfig",
+      "optional": false
+    }
+  ]
+}
