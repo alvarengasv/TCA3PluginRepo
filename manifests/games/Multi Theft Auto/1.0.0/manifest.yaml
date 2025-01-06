@@ -1,0 +1,28 @@
+﻿identifier: TCA.Games.MTA
+version: 1.0.0
+author: TCAdmin
+name: Multi Theft Auto
+shortDescription: Multi Theft Auto game config for TCAdmin 3
+longDescription: |
+  # Multi Theft Auto (MTA)
+  
+  **Multi Theft Auto (MTA)** is a free, open-source multiplayer modification for *Grand Theft Auto: San Andreas*. It allows players to connect to servers with custom game modes, such as roleplay, racing, and deathmatches.
+  
+  ## Key Features
+  - **Multiplayer Support**: Play *GTA: San Andreas* online with other players.
+  - **Customization**: Create unique game modes and experiences using the built-in scripting engine with **LUA**.
+  - **Map Editor**: Design and implement custom maps for your server.
+  - **Community-Driven**: Strong support from an active community of players and developers.
+  
+  For more information, visit the [MTA Wiki](https://wiki.multitheftauto.com/).
+
+icon: https://upload.wikimedia.org/wikipedia/en/7/78/Multi_Theft_Auto_logo.png
+images:
+  - https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTev9h5ULaQN35h1PQtZjUmK7ivYjtG0ascMw&s
+tags:
+  - Game
+  - Windows
+files:
+  - path: MTA - Windows.json
+    type: GameConfig
+    optional: false
