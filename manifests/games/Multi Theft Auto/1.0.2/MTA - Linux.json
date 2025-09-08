@@ -43,6 +43,7 @@
     "rconPortExpression": "",
     "customPorts": [
       {
+        "id": "HTTP",
         "port": 0,
         "expression": "GamePort \u002B 1",
         "description": "HTTP Port"
