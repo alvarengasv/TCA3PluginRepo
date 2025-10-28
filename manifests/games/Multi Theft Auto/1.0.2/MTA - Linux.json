@@ -1,5 +1,6 @@
 {
-  "gameId": 0,
+  "__TCA:ExportVersion": "3.0.165.27146",
+  "__TCA:ExportedAt": "2025-09-08T01:29:12.9721204Z",
   "name": "Multi Theft Auto",
   "shortName": "MTA",
   "operatingSystem": "Linux",
@@ -15,6 +16,7 @@
     ".json",
     ".xml"
   ],
+  "logExtensions": [],
   "queryRconProtocolConfig": {
     "queryProtocol": "eye",
     "rconProtocol": "",
@@ -29,7 +31,12 @@
     "inputSource": "ConsoleCommands",
     "outputFilters": "",
     "stopCommand": "shutdown",
-    "waitAfterStopCommand": 5000
+    "waitAfterStopCommand": 5000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false
   },
   "ipPortAllocationConfig": {
     "usePrimaryIpOnly": false,
@@ -43,6 +50,7 @@
     "rconPortExpression": "",
     "customPorts": [
       {
+        "id": "HTTP",
         "port": 0,
         "expression": "GamePort \u002B 1",
         "description": "HTTP Port"
@@ -84,11 +92,10 @@
   "variables": [],
   "configFiles": [
     {
-      "id": 0,
-      "gameId": 0,
+      "id": 4,
       "relativePath": "mods/deathmatch/mtaserver.conf",
       "description": "Main configuration file",
-      "template": "\u003Cconfig\u003E\r\n\r\n    \u003C!-- This parameter specifies the name the server will be visible as in the ingame server browser \r\n         and on Game-Monitor. It is a required parameter. --\u003E\r\n\t\u003Cservername\u003E${Hostname}\u003C/servername\u003E\r\n    \r\n    \u003C!-- This parameter specifies the contact email addresses for the owner(s) of this server.\r\n         The email addresses will not be publicly available, and only used by MTA administrators\r\n         to contact the server owner.\r\n         Note: Missing or incorrect owner_email_address can affect visibility in the master server list.\r\n         Values: Comma separated list of email addresses --\u003E\r\n    \u003Cowner_email_address\u003E\u003C/owner_email_address\u003E\r\n\r\n    \u003C!-- ONLY USE THIS PARAMETER IF YOU ARE SURE OF WHAT YOU ARE DOING - it is generally only\r\n         needed for professional servers and should be left at the default value otherwise.\r\n         This parameter specifies the IP to use for servers that have multiple IP addresses. If set\r\n         to auto, it will automatically detect and use the server\u0027s standard local IP address.\r\n         Values: auto or x.x.x.x ; default value: auto --\u003E\r\n    \u003C!-- SERVERIP SHOULD BE LEFT SET TO auto UNLESS YOU ARE SURE OF WHAT YOU ARE DOING --\u003E\r\n\t\u003Cserverip\u003E${IpAddress}\u003C/serverip\u003E\r\n    \u003C!-- WARNING: SETTING serverip AND THEN ASKING FOR SUPPORT CAN CAUSE DEATH OR INJURY --\u003E\r\n\r\n    \u003C!-- This parameter specifies the UDP port on which the server will be accepting incoming player\r\n         connections; default value: 22003. It is a required parameter. --\u003E\r\n\t\u003Cserverport\u003E${GamePort}\u003C/serverport\u003E \r\n    \r\n    \u003C!-- This parameter specifies the number of maximum player slots available on the server; default\r\n         value: 32. It is a required parameter. --\u003E\r\n\t\u003Cmaxplayers\u003E${Slots}\u003C/maxplayers\u003E\r\n        \r\n    \u003C!-- This parameter specifies the TCP port on which the server will be accepting incoming http\r\n         connections. It can be set to the same value as \u003Cserverport\u003E. It is a required parameter\r\n         if \u003Chttpserver\u003E is set to 1. --\u003E\r\n\t\u003Chttpport\u003E${CustomPorts[0]}\u003C/httpport\u003E\r\n    \r\n    \u003C!-- If set, this parameter specifies the external URL from which clients will be able to download\r\n         needed resources ingame. If not set (or the external URL files are incorrect), resource downloads\r\n         are switched to the internal http server. --\u003E\r\n    \u003Chttpdownloadurl\u003E\u003C/httpdownloadurl\u003E\r\n\r\n    \u003C!-- This parameter limits the number of http connections each client can make. Depending on the type\r\n         of http server that is used, a lower figure may reduce download timeouts.\r\n         Available range: 1 to 8. --\u003E\r\n    \u003Chttpmaxconnectionsperclient\u003E5\u003C/httpmaxconnectionsperclient\u003E\r\n\r\n    \u003C!-- This parameter limits the number http connections that an IP can initiate over a short period of time.\r\n         Available range: 1 to 100. default value: 20 --\u003E\r\n    \u003Chttpdosthreshold\u003E20\u003C/httpdosthreshold\u003E\r\n\r\n    \u003C!-- This parameter lists the IP addresses that are to be excluded from http dos threshold limits.\r\n         e.g. 88.11.22.33,101.2.3.4 --\u003E\r\n    \u003Chttp_dos_exclude\u003E\u003C/http_dos_exclude\u003E\r\n\r\n    \u003C!-- By default, the server will block the use of locally customized gta3.img player skins\r\n         This setting can be used to allow such mods. Not recommended for competitive servers.\r\n         Values: none, peds ; default value: none --\u003E\r\n    \u003Callow_gta3_img_mods\u003Enone\u003C/allow_gta3_img_mods\u003E\r\n\r\n    \u003C!-- By default, the server will block the use of customized GTA:SA data files. --\u003E\r\n    \u003C!-- To allow specific client files, add one or more of the following: --\u003E\r\n    \u003C!-- \u003Cclient_file name=\u0022data/carmods.dat\u0022 verify=\u00220\u0022/\u003E --\u003E\r\n\r\n    \u003C!-- Comma separated list of disabled anti-cheats.\r\n         For details see http://wiki.multitheftauto.com/wiki/Anti-cheat_guide\r\n         e.g. To disable anti-cheat #2 and #3, use: 2,3 --\u003E\r\n    \u003Cdisableac\u003E\u003C/disableac\u003E\r\n\r\n    \u003C!-- Comma separated list of enabled special detections.\r\n         A special detection is a type of anti-cheat for (usually) harmless game modifications.\r\n         Competitive servers may wish to enable certain special detections, but most servers should leave this setting on its default.\r\n         For details and SD codes, see http://wiki.multitheftauto.com/wiki/Anti-cheat_guide\r\n         Available values: special detection (SD) codes ; default value: 31,32 (e.g. enables special detections #31 and #32) --\u003E\r\n    \u003Cenablesd\u003E31,32\u003C/enablesd\u003E\r\n\r\n    \u003C!-- Minimum client version. Clients with a lower version will not be allowed to connect. After\r\n         disconnection, clients will be given an opportunity to download an update.\r\n         If left blank, this setting is disabled and there are no restrictions on who can connect.\r\n         Version numbers are described here: http://wiki.multitheftauto.com/wiki/GetPlayerVersion\r\n         and look like this: 1.1.0-9.03100.0 \r\n         Note that this setting only determines if the client should be prompted to update. The actual\r\n         build number they receive will be the highest available. See: http://nightly.mtasa.com/ver  --\u003E\r\n    \u003Cminclientversion\u003E\u003C/minclientversion\u003E\r\n\r\n    \u003C!-- This parameter specifies if/when the \u003Cminclientversion\u003E setting is automatically updated.\r\n         Keeping \u003Cminclientversion\u003E updated can help reduce cheating.\r\n         Note: The instant setting (2) is only recommended for competitive servers.\r\n         Values: 0 - disabled, 1 - enabled (delayed by a few days), 2 - enabled (instant) ; default value: 1.  --\u003E\r\n    \u003Cminclientversion_auto_update\u003E1\u003C/minclientversion_auto_update\u003E\r\n\r\n    \u003C!-- Recommended client version. When connecting, if clients have a lower version, they will be given\r\n         the option to download an update. If left blank, this setting is disabled.\r\n         Note that this setting only determines if the client should be prompted to update. The actual\r\n         build number they receive will be the highest available. See: http://nightly.mtasa.com/ver  --\u003E\r\n    \u003Crecommendedclientversion\u003E\u003C/recommendedclientversion\u003E\r\n\r\n    \u003C!-- This parameter can be used to make the server report to Game-Monitor master servers, allowing it to\r\n         be visible in the ingame server browser. An additional UDP port needs to be available for this to\r\n         work (value from \u003Cserverport\u003E \u002B 123 , so on a default \u003Cserverport\u003E value 22003 the right port\r\n         will be 22126 ). Available values: 0 - disabled , 1 - enabled. Optional parameter, defaults to 0. --\u003E\r\n    \u003Case\u003E1\u003C/ase\u003E\r\n\r\n    \u003C!-- This parameter allows you to disable LAN broadcasting. --\u003E \r\n    \u003Cdonotbroadcastlan\u003E0\u003C/donotbroadcastlan\u003E\r\n\r\n    \u003C!-- If set, players will have to provide a password specified below, before they can connect to the\r\n         server. If left blank, server doesn\u0027t require a password from them. --\u003E\r\n\t\u003Cpassword\u003E${PrivatePassword}\u003C/password\u003E \r\n\r\n    \u003C!-- This parameter reduces the server\u0027s bandwidth usage by using various optimizations.\r\n         Values: none, medium or maximum ; default value: medium --\u003E\r\n    \u003Cbandwidth_reduction\u003Emedium\u003C/bandwidth_reduction\u003E \r\n\r\n    \u003C!-- The following ???_sync_interval parameters determine the time in milliseconds between certain\r\n         network packets being sent. More information on how each settings works is available here:\r\n         http://wiki.multitheftauto.com/wiki/Server_mtaserver.conf --\u003E\r\n    \u003C!-- Player sync interval. Default: 100 --\u003E\r\n    \u003Cplayer_sync_interval\u003E100\u003C/player_sync_interval\u003E\r\n    \u003C!-- Lightweight (player) sync interval. Used when players are far apart. Default: 1500 --\u003E\r\n    \u003Clightweight_sync_interval\u003E1500\u003C/lightweight_sync_interval\u003E \r\n    \u003C!-- Camera sync interval. Default: 500 --\u003E\r\n    \u003Ccamera_sync_interval\u003E500\u003C/camera_sync_interval\u003E \r\n    \u003C!-- Ped sync interval. Default: 400 --\u003E\r\n    \u003Cped_sync_interval\u003E400\u003C/ped_sync_interval\u003E \r\n    \u003C!-- Unoccupied_vehicle sync interval. Default: 400 --\u003E\r\n    \u003Cunoccupied_vehicle_sync_interval\u003E400\u003C/unoccupied_vehicle_sync_interval\u003E \r\n    \u003C!-- Keysync mouse rotation sync interval. For limiting key sync packets due to mouse movement. Default: 100 --\u003E\r\n    \u003Ckeysync_mouse_sync_interval\u003E100\u003C/keysync_mouse_sync_interval\u003E \r\n    \u003C!-- Keysync analog movement sync interval. For limiting key sync packets due to joystick movement. Default: 100 --\u003E\r\n    \u003Ckeysync_analog_sync_interval\u003E100\u003C/keysync_analog_sync_interval\u003E \r\n\r\n    \u003C!-- This parameter can improve the reliability of shots when using certain weapons. However, it uses more bandwidth.\r\n         Values: 0 - disabled , 1 - enabled ; default value: 1. --\u003E\r\n    \u003Cbullet_sync\u003E1\u003C/bullet_sync\u003E \r\n\r\n    \u003C!-- This parameter sets the amount of extrapolation that clients will apply to remote vehicles. This can reduce\r\n         some of the latency induced location disparency by predicting where the remote vehicles will probably be.\r\n         Depending on the gamemode, an incorrect prediction may have a negative effect. Therefore this setting\r\n         should be considered experimental.\r\n         Available range: 0 to 100.  Default - 0 --\u003E\r\n    \u003Cvehext_percent\u003E0\u003C/vehext_percent\u003E\r\n\r\n    \u003C!-- This parameter places a limit on how much time (in milliseconds) the vehicle extrapolation will attempt to\r\n         compensate for.\r\n         Only relevant if \u003Cvehext_percent\u003E is greater than zero.\r\n         Available range: 50 to 500.  Default - 150 --\u003E\r\n    \u003Cvehext_ping_limit\u003E150\u003C/vehext_ping_limit\u003E\r\n\r\n    \u003C!-- This parameter can reduce the delay of player actions appearing on remote clients by 2 frames (approx 50ms).\r\n         Due to the impact this may have on shot lag compensation, it should be considered experimental.\r\n         Values: 0 - disabled , 1 - enabled ; default value: 0. --\u003E\r\n    \u003Clatency_reduction\u003E0\u003C/latency_reduction\u003E\r\n\r\n    \u003C!-- Specifies the location and file name of this servers unique private key.\r\n         This is used to prevent private files saved on the client from being read by other servers.\r\n         More infomation about client private files can be found here: http://wiki.multitheftauto.com/wiki/Filepath\r\n         Keep a backup of this file in a safe place. Default value: server-id.keys--\u003E\r\n    \u003Cidfile\u003Eserver-id.keys\u003C/idfile\u003E \r\n\r\n    \u003C!-- Specifies the location and name of the main server log file. If left blank, server won\u0027t be saving this file. --\u003E\r\n    \u003Clogfile\u003Elogs/server.log\u003C/logfile\u003E\r\n\r\n    \u003C!-- As well as the main log file, login successes and failures are logged here for easy reviewing of security issues.\r\n         If left blank, this file is not used --\u003E\r\n    \u003Cauthfile\u003Elogs/server_auth.log\u003C/authfile\u003E\r\n\r\n    \u003C!-- Specifies the location and name of the file used to log database queries.\r\n         The server command \u0027debugdb\u0027 sets the amount of logging. --\u003E\r\n    \u003Cdbfile\u003Elogs/db.log\u003C/dbfile\u003E\r\n\r\n    \u003C!-- Specifies the location and name of the file used to log loadstring function calls.\r\n         If left blank or not set, no logging is done. --\u003E\r\n    \u003C!-- \u003Cloadstringfile\u003Elogs/loadstring.log\u003C/loadstringfile\u003E --\u003E\r\n    \r\n    \u003C!-- This parameter specifies the location and name of the Access Control List settings file. If left\r\n         blank, server will use acl.xml file, located in the same folder as this configuration file. --\u003E\r\n    \u003Cacl\u003Eacl.xml\u003C/acl\u003E \r\n\r\n    \u003C!-- Specifies the location and name of the debugscript log file. If left blank, server won\u0027t be saving this file. --\u003E\r\n    \u003Cscriptdebuglogfile\u003Elogs/scripts.log\u003C/scriptdebuglogfile\u003E\r\n\r\n    \u003C!-- Specifies the level of the debugscript log file. Available values: 0, 1, 2, 3. When not set, defaults to 0. --\u003E\r\n    \u003Cscriptdebugloglevel\u003E0\u003C/scriptdebugloglevel\u003E\r\n\r\n    \u003C!-- Specifies the level of the html debug. Available values: 0, 1, 2, 3. When not set, defaults to 0. --\u003E\r\n    \u003Chtmldebuglevel\u003E0\u003C/htmldebuglevel\u003E\r\n\r\n    \u003C!-- Specifies whether or not duplicate log lines should be filtered. Available values: 0 or 1, defaults to 1. --\u003E\r\n    \u003Cfilter_duplicate_log_lines\u003E1\u003C/filter_duplicate_log_lines\u003E\r\n\r\n    \u003C!-- Specifies the frame rate limit that will be applied to connecting clients.\r\n         Available range: 25 to 100. Default: 36. --\u003E\r\n    \u003Cfpslimit\u003E36\u003C/fpslimit\u003E\r\n\r\n    \u003C!-- This parameter specifies whether or not to enable player voice chat in-game\r\n         Values: 0 - disabled , 1 - enabled --\u003E\r\n    \u003Cvoice\u003E0\u003C/voice\u003E\r\n    \r\n    \u003C!-- This parameter specifies the sample rate for voice chat.  \u0027voice\u0027 parameter must be set to 1 for this to be effective.\r\n         Higher settings use more bandwidth and increase the sampling quality of voice chat\r\n         Values: 0 - Narrowband (8kHz), 1 - Wideband (16kHz), 2 - Ultrawideband (32kHz).  Default - 1 --\u003E\r\n    \u003Cvoice_samplerate\u003E1\u003C/voice_samplerate\u003E\r\n    \r\n    \u003C!-- This parameter specifies the voice quality for voice chat.  \u0027voice\u0027 parameter must be set to 1 for this to be effective.\r\n         Higher settings use more bandwidth and increase the the overall quality of voice chat\r\n         Available range: 0 to 10.  Default - 4 --\u003E\r\n    \u003Cvoice_quality\u003E4\u003C/voice_quality\u003E\r\n\r\n    \u003C!-- Specifies the voice bitrate, in bps. This optional parameter overrides the previous two settings. \r\n         If not set, MTA handles this automatically.  Use with care. --\u003E\r\n    \u003C!-- \u003Cvoice_bitrate\u003E24600\u003C/voice_bitrate\u003E --\u003E\r\n\r\n    \u003C!-- This parameter specifies the path to use for a basic backup of some server files.\r\n         Note that basic backups are only made during server startup. Default value: backups --\u003E\r\n    \u003Cbackup_path\u003Ebackups\u003C/backup_path\u003E\r\n\r\n    \u003C!-- This parameter specifies the number of days between each basic backup.\r\n         Backups are only made during server startup, so the actual interval may be much longer.\r\n         Setting backup_interval to 0 will disable backups\r\n         Available range: 0 to 30.  Default - 3 --\u003E\r\n    \u003Cbackup_interval\u003E3\u003C/backup_interval\u003E\r\n\r\n    \u003C!-- This parameter specifies the maximum number of backup copies to keep.\r\n         Setting backup_copies to 0 will disable backups\r\n         Available range: 0 to 100.  Default - 5 --\u003E\r\n    \u003Cbackup_copies\u003E5\u003C/backup_copies\u003E\r\n\r\n    \u003C!-- This parameter specifies when the internal sqlite databases should be defragmented.\r\n         http://www.sqlite.org/lang_vacuum.html\r\n         Values: 0 - Never, 1 - On server start only after basic backup, 2 - On server start always.  Default - 1 --\u003E\r\n    \u003Ccompact_internal_databases\u003E1\u003C/compact_internal_databases\u003E\r\n\r\n    \u003C!-- This parameter specifies whether server crash dump files should be sent to MTA HQ.\r\n         Values: 0 - Off, 1 - On. Default - 1 --\u003E\r\n    \u003Ccrash_dump_upload\u003E1\u003C/crash_dump_upload\u003E\r\n\r\n    \u003C!-- This parameter lists the ACL groups that are protected by serial authorization.\r\n         Login attempts to a protected account from a second serial are blocked until the serial is manually authorized via\r\n         the authserial command.\r\n         For more info see: https://mtasa.com/authserial\r\n         Note: This is security critical feature and disabling auth_serial_groups can affect visibility in the master server list.\r\n         Values: Comma separated list of ACL groups.  Default - Admin --\u003E\r\n    \u003Cauth_serial_groups\u003EAdmin\u003C/auth_serial_groups\u003E\r\n\r\n    \u003C!-- This parameter specifies if the authorized serial login checks should also apply to the http interface.\r\n         Protected account login attempts to the http interface will only succeed if the IP address matches one\r\n         recently used by the account holder in-game\r\n         For more info see: https://mtasa.com/authserialhttp\r\n         Note: This is security critical feature and disabling auth_serial_http can affect visibility in the master server list.\r\n         Values: 0 - Off, 1 - Enabled.  Default - 1 --\u003E\r\n    \u003Cauth_serial_http\u003E1\u003C/auth_serial_http\u003E\r\n\r\n    \u003C!-- This parameter specifies which IP addresses should always pass auth_serial_http checks.\r\n         Values: Comma separated list of IP addresses --\u003E\r\n    \u003Cauth_serial_http_ip_exceptions\u003E127.0.0.1\u003C/auth_serial_http_ip_exceptions\u003E\r\n\r\n    \u003C!-- This parameter specifies if extra security measures are applied to resources which use dbConnect with mysql.\r\n         The extra measures are:\r\n           - Script files cannot be accessed with fileOpen()\r\n           - meta.xml is read only\r\n         *NOTE* This only protects resources which use dbConnect with mysql\r\n         Values: 0 - Off, 1 - Enabled.  Default - 1 --\u003E\r\n    \u003Cdatabase_credentials_protection\u003E1\u003C/database_credentials_protection\u003E\r\n\r\n    \u003C!-- Specifies the module(s) which are loaded with the server. To load several modules, add more \u003Cmodule\u003E\r\n         parameter(s). Optional parameter. --\u003E\r\n    \u003C!-- \u003Cmodule src=\u0022sample_win32.dll\u0022/\u003E --\u003E\r\n    \u003C!-- \u003Cmodule src=\u0022sample_linux.so\u0022/\u003E --\u003E\r\n    \r\n    \u003C!-- Specifies resources that are loaded when the server starts and/or which are protected from being stopped.\r\n         To specify several resources, add more \u003Cresource\u003E parameter(s). --\u003E\r\n\r\n    \u003Cresource src=\u0022admin\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022defaultstats\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022helpmanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022joinquit\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022mapcycler\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022mapmanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022parachute\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022performancebrowser\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022reload\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022resourcebrowser\u0022 startup=\u00221\u0022 protected=\u00221\u0022 default=\u0022true\u0022/\u003E\r\n    \u003Cresource src=\u0022resourcemanager\u0022 startup=\u00221\u0022 protected=\u00221\u0022/\u003E\r\n    \u003Cresource src=\u0022scoreboard\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022spawnmanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022voice\u0022 startup=\u00221\u0022 protected=\u00220\u0022 /\u003E\r\n    \u003Cresource src=\u0022votemanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022webadmin\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \r\n    \u003C!-- play is the default freeroam gamemode. Remove the following line to prevent it from starting. --\u003E       \r\n    \u003Cresource src=\u0022play\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \r\n\r\n\u003C/config\u003E",
+      "template": "\u003Cconfig\u003E\r\n\r\n    \u003C!-- This parameter specifies the name the server will be visible as in the ingame server browser \r\n         and on Game-Monitor. It is a required parameter. --\u003E\r\n\t\u003Cservername\u003E${Hostname}\u003C/servername\u003E\r\n    \r\n    \u003C!-- This parameter specifies the contact email addresses for the owner(s) of this server.\r\n         The email addresses will not be publicly available, and only used by MTA administrators\r\n         to contact the server owner.\r\n         Note: Missing or incorrect owner_email_address can affect visibility in the master server list.\r\n         Values: Comma separated list of email addresses --\u003E\r\n    \u003Cowner_email_address\u003E\u003C/owner_email_address\u003E\r\n\r\n    \u003C!-- ONLY USE THIS PARAMETER IF YOU ARE SURE OF WHAT YOU ARE DOING - it is generally only\r\n         needed for professional servers and should be left at the default value otherwise.\r\n         This parameter specifies the IP to use for servers that have multiple IP addresses. If set\r\n         to auto, it will automatically detect and use the server\u0027s standard local IP address.\r\n         Values: auto or x.x.x.x ; default value: auto --\u003E\r\n    \u003C!-- SERVERIP SHOULD BE LEFT SET TO auto UNLESS YOU ARE SURE OF WHAT YOU ARE DOING --\u003E\r\n\t\u003Cserverip\u003E${IpAddress}\u003C/serverip\u003E\r\n    \u003C!-- WARNING: SETTING serverip AND THEN ASKING FOR SUPPORT CAN CAUSE DEATH OR INJURY --\u003E\r\n\r\n    \u003C!-- This parameter specifies the UDP port on which the server will be accepting incoming player\r\n         connections; default value: 22003. It is a required parameter. --\u003E\r\n\t\u003Cserverport\u003E${GamePort}\u003C/serverport\u003E \r\n    \r\n    \u003C!-- This parameter specifies the number of maximum player slots available on the server; default\r\n         value: 32. It is a required parameter. --\u003E\r\n\t\u003Cmaxplayers\u003E${Slots}\u003C/maxplayers\u003E\r\n        \r\n    \u003C!-- This parameter specifies the TCP port on which the server will be accepting incoming http\r\n         connections. It can be set to the same value as \u003Cserverport\u003E. It is a required parameter\r\n         if \u003Chttpserver\u003E is set to 1. --\u003E\r\n\t\u003Chttpport\u003E${CustomPorts[\u0022HTTP\u0022]}\u003C/httpport\u003E\r\n    \r\n    \u003C!-- If set, this parameter specifies the external URL from which clients will be able to download\r\n         needed resources ingame. If not set (or the external URL files are incorrect), resource downloads\r\n         are switched to the internal http server. --\u003E\r\n    \u003Chttpdownloadurl\u003E\u003C/httpdownloadurl\u003E\r\n\r\n    \u003C!-- This parameter limits the number of http connections each client can make. Depending on the type\r\n         of http server that is used, a lower figure may reduce download timeouts.\r\n         Available range: 1 to 8. --\u003E\r\n    \u003Chttpmaxconnectionsperclient\u003E5\u003C/httpmaxconnectionsperclient\u003E\r\n\r\n    \u003C!-- This parameter limits the number http connections that an IP can initiate over a short period of time.\r\n         Available range: 1 to 100. default value: 20 --\u003E\r\n    \u003Chttpdosthreshold\u003E20\u003C/httpdosthreshold\u003E\r\n\r\n    \u003C!-- This parameter lists the IP addresses that are to be excluded from http dos threshold limits.\r\n         e.g. 88.11.22.33,101.2.3.4 --\u003E\r\n    \u003Chttp_dos_exclude\u003E\u003C/http_dos_exclude\u003E\r\n\r\n    \u003C!-- By default, the server will block the use of locally customized gta3.img player skins\r\n         This setting can be used to allow such mods. Not recommended for competitive servers.\r\n         Values: none, peds ; default value: none --\u003E\r\n    \u003Callow_gta3_img_mods\u003Enone\u003C/allow_gta3_img_mods\u003E\r\n\r\n    \u003C!-- By default, the server will block the use of customized GTA:SA data files. --\u003E\r\n    \u003C!-- To allow specific client files, add one or more of the following: --\u003E\r\n    \u003C!-- \u003Cclient_file name=\u0022data/carmods.dat\u0022 verify=\u00220\u0022/\u003E --\u003E\r\n\r\n    \u003C!-- Comma separated list of disabled anti-cheats.\r\n         For details see http://wiki.multitheftauto.com/wiki/Anti-cheat_guide\r\n         e.g. To disable anti-cheat #2 and #3, use: 2,3 --\u003E\r\n    \u003Cdisableac\u003E\u003C/disableac\u003E\r\n\r\n    \u003C!-- Comma separated list of enabled special detections.\r\n         A special detection is a type of anti-cheat for (usually) harmless game modifications.\r\n         Competitive servers may wish to enable certain special detections, but most servers should leave this setting on its default.\r\n         For details and SD codes, see http://wiki.multitheftauto.com/wiki/Anti-cheat_guide\r\n         Available values: special detection (SD) codes ; default value: 31,32 (e.g. enables special detections #31 and #32) --\u003E\r\n    \u003Cenablesd\u003E31,32\u003C/enablesd\u003E\r\n\r\n    \u003C!-- Minimum client version. Clients with a lower version will not be allowed to connect. After\r\n         disconnection, clients will be given an opportunity to download an update.\r\n         If left blank, this setting is disabled and there are no restrictions on who can connect.\r\n         Version numbers are described here: http://wiki.multitheftauto.com/wiki/GetPlayerVersion\r\n         and look like this: 1.1.0-9.03100.0 \r\n         Note that this setting only determines if the client should be prompted to update. The actual\r\n         build number they receive will be the highest available. See: http://nightly.mtasa.com/ver  --\u003E\r\n    \u003Cminclientversion\u003E\u003C/minclientversion\u003E\r\n\r\n    \u003C!-- This parameter specifies if/when the \u003Cminclientversion\u003E setting is automatically updated.\r\n         Keeping \u003Cminclientversion\u003E updated can help reduce cheating.\r\n         Note: The instant setting (2) is only recommended for competitive servers.\r\n         Values: 0 - disabled, 1 - enabled (delayed by a few days), 2 - enabled (instant) ; default value: 1.  --\u003E\r\n    \u003Cminclientversion_auto_update\u003E1\u003C/minclientversion_auto_update\u003E\r\n\r\n    \u003C!-- Recommended client version. When connecting, if clients have a lower version, they will be given\r\n         the option to download an update. If left blank, this setting is disabled.\r\n         Note that this setting only determines if the client should be prompted to update. The actual\r\n         build number they receive will be the highest available. See: http://nightly.mtasa.com/ver  --\u003E\r\n    \u003Crecommendedclientversion\u003E\u003C/recommendedclientversion\u003E\r\n\r\n    \u003C!-- This parameter can be used to make the server report to Game-Monitor master servers, allowing it to\r\n         be visible in the ingame server browser. An additional UDP port needs to be available for this to\r\n         work (value from \u003Cserverport\u003E \u002B 123 , so on a default \u003Cserverport\u003E value 22003 the right port\r\n         will be 22126 ). Available values: 0 - disabled , 1 - enabled. Optional parameter, defaults to 0. --\u003E\r\n    \u003Case\u003E1\u003C/ase\u003E\r\n\r\n    \u003C!-- This parameter allows you to disable LAN broadcasting. --\u003E \r\n    \u003Cdonotbroadcastlan\u003E0\u003C/donotbroadcastlan\u003E\r\n\r\n    \u003C!-- If set, players will have to provide a password specified below, before they can connect to the\r\n         server. If left blank, server doesn\u0027t require a password from them. --\u003E\r\n\t\u003Cpassword\u003E${PrivatePassword}\u003C/password\u003E \r\n\r\n    \u003C!-- This parameter reduces the server\u0027s bandwidth usage by using various optimizations.\r\n         Values: none, medium or maximum ; default value: medium --\u003E\r\n    \u003Cbandwidth_reduction\u003Emedium\u003C/bandwidth_reduction\u003E \r\n\r\n    \u003C!-- The following ???_sync_interval parameters determine the time in milliseconds between certain\r\n         network packets being sent. More information on how each settings works is available here:\r\n         http://wiki.multitheftauto.com/wiki/Server_mtaserver.conf --\u003E\r\n    \u003C!-- Player sync interval. Default: 100 --\u003E\r\n    \u003Cplayer_sync_interval\u003E100\u003C/player_sync_interval\u003E\r\n    \u003C!-- Lightweight (player) sync interval. Used when players are far apart. Default: 1500 --\u003E\r\n    \u003Clightweight_sync_interval\u003E1500\u003C/lightweight_sync_interval\u003E \r\n    \u003C!-- Camera sync interval. Default: 500 --\u003E\r\n    \u003Ccamera_sync_interval\u003E500\u003C/camera_sync_interval\u003E \r\n    \u003C!-- Ped sync interval. Default: 400 --\u003E\r\n    \u003Cped_sync_interval\u003E400\u003C/ped_sync_interval\u003E \r\n    \u003C!-- Unoccupied_vehicle sync interval. Default: 400 --\u003E\r\n    \u003Cunoccupied_vehicle_sync_interval\u003E400\u003C/unoccupied_vehicle_sync_interval\u003E \r\n    \u003C!-- Keysync mouse rotation sync interval. For limiting key sync packets due to mouse movement. Default: 100 --\u003E\r\n    \u003Ckeysync_mouse_sync_interval\u003E100\u003C/keysync_mouse_sync_interval\u003E \r\n    \u003C!-- Keysync analog movement sync interval. For limiting key sync packets due to joystick movement. Default: 100 --\u003E\r\n    \u003Ckeysync_analog_sync_interval\u003E100\u003C/keysync_analog_sync_interval\u003E \r\n\r\n    \u003C!-- This parameter can improve the reliability of shots when using certain weapons. However, it uses more bandwidth.\r\n         Values: 0 - disabled , 1 - enabled ; default value: 1. --\u003E\r\n    \u003Cbullet_sync\u003E1\u003C/bullet_sync\u003E \r\n\r\n    \u003C!-- This parameter sets the amount of extrapolation that clients will apply to remote vehicles. This can reduce\r\n         some of the latency induced location disparency by predicting where the remote vehicles will probably be.\r\n         Depending on the gamemode, an incorrect prediction may have a negative effect. Therefore this setting\r\n         should be considered experimental.\r\n         Available range: 0 to 100.  Default - 0 --\u003E\r\n    \u003Cvehext_percent\u003E0\u003C/vehext_percent\u003E\r\n\r\n    \u003C!-- This parameter places a limit on how much time (in milliseconds) the vehicle extrapolation will attempt to\r\n         compensate for.\r\n         Only relevant if \u003Cvehext_percent\u003E is greater than zero.\r\n         Available range: 50 to 500.  Default - 150 --\u003E\r\n    \u003Cvehext_ping_limit\u003E150\u003C/vehext_ping_limit\u003E\r\n\r\n    \u003C!-- This parameter can reduce the delay of player actions appearing on remote clients by 2 frames (approx 50ms).\r\n         Due to the impact this may have on shot lag compensation, it should be considered experimental.\r\n         Values: 0 - disabled , 1 - enabled ; default value: 0. --\u003E\r\n    \u003Clatency_reduction\u003E0\u003C/latency_reduction\u003E\r\n\r\n    \u003C!-- Specifies the location and file name of this servers unique private key.\r\n         This is used to prevent private files saved on the client from being read by other servers.\r\n         More infomation about client private files can be found here: http://wiki.multitheftauto.com/wiki/Filepath\r\n         Keep a backup of this file in a safe place. Default value: server-id.keys--\u003E\r\n    \u003Cidfile\u003Eserver-id.keys\u003C/idfile\u003E \r\n\r\n    \u003C!-- Specifies the location and name of the main server log file. If left blank, server won\u0027t be saving this file. --\u003E\r\n    \u003Clogfile\u003Elogs/server.log\u003C/logfile\u003E\r\n\r\n    \u003C!-- As well as the main log file, login successes and failures are logged here for easy reviewing of security issues.\r\n         If left blank, this file is not used --\u003E\r\n    \u003Cauthfile\u003Elogs/server_auth.log\u003C/authfile\u003E\r\n\r\n    \u003C!-- Specifies the location and name of the file used to log database queries.\r\n         The server command \u0027debugdb\u0027 sets the amount of logging. --\u003E\r\n    \u003Cdbfile\u003Elogs/db.log\u003C/dbfile\u003E\r\n\r\n    \u003C!-- Specifies the location and name of the file used to log loadstring function calls.\r\n         If left blank or not set, no logging is done. --\u003E\r\n    \u003C!-- \u003Cloadstringfile\u003Elogs/loadstring.log\u003C/loadstringfile\u003E --\u003E\r\n    \r\n    \u003C!-- This parameter specifies the location and name of the Access Control List settings file. If left\r\n         blank, server will use acl.xml file, located in the same folder as this configuration file. --\u003E\r\n    \u003Cacl\u003Eacl.xml\u003C/acl\u003E \r\n\r\n    \u003C!-- Specifies the location and name of the debugscript log file. If left blank, server won\u0027t be saving this file. --\u003E\r\n    \u003Cscriptdebuglogfile\u003Elogs/scripts.log\u003C/scriptdebuglogfile\u003E\r\n\r\n    \u003C!-- Specifies the level of the debugscript log file. Available values: 0, 1, 2, 3. When not set, defaults to 0. --\u003E\r\n    \u003Cscriptdebugloglevel\u003E0\u003C/scriptdebugloglevel\u003E\r\n\r\n    \u003C!-- Specifies the level of the html debug. Available values: 0, 1, 2, 3. When not set, defaults to 0. --\u003E\r\n    \u003Chtmldebuglevel\u003E0\u003C/htmldebuglevel\u003E\r\n\r\n    \u003C!-- Specifies whether or not duplicate log lines should be filtered. Available values: 0 or 1, defaults to 1. --\u003E\r\n    \u003Cfilter_duplicate_log_lines\u003E1\u003C/filter_duplicate_log_lines\u003E\r\n\r\n    \u003C!-- Specifies the frame rate limit that will be applied to connecting clients.\r\n         Available range: 25 to 100. Default: 36. --\u003E\r\n    \u003Cfpslimit\u003E36\u003C/fpslimit\u003E\r\n\r\n    \u003C!-- This parameter specifies whether or not to enable player voice chat in-game\r\n         Values: 0 - disabled , 1 - enabled --\u003E\r\n    \u003Cvoice\u003E0\u003C/voice\u003E\r\n    \r\n    \u003C!-- This parameter specifies the sample rate for voice chat.  \u0027voice\u0027 parameter must be set to 1 for this to be effective.\r\n         Higher settings use more bandwidth and increase the sampling quality of voice chat\r\n         Values: 0 - Narrowband (8kHz), 1 - Wideband (16kHz), 2 - Ultrawideband (32kHz).  Default - 1 --\u003E\r\n    \u003Cvoice_samplerate\u003E1\u003C/voice_samplerate\u003E\r\n    \r\n    \u003C!-- This parameter specifies the voice quality for voice chat.  \u0027voice\u0027 parameter must be set to 1 for this to be effective.\r\n         Higher settings use more bandwidth and increase the the overall quality of voice chat\r\n         Available range: 0 to 10.  Default - 4 --\u003E\r\n    \u003Cvoice_quality\u003E4\u003C/voice_quality\u003E\r\n\r\n    \u003C!-- Specifies the voice bitrate, in bps. This optional parameter overrides the previous two settings. \r\n         If not set, MTA handles this automatically.  Use with care. --\u003E\r\n    \u003C!-- \u003Cvoice_bitrate\u003E24600\u003C/voice_bitrate\u003E --\u003E\r\n\r\n    \u003C!-- This parameter specifies the path to use for a basic backup of some server files.\r\n         Note that basic backups are only made during server startup. Default value: backups --\u003E\r\n    \u003Cbackup_path\u003Ebackups\u003C/backup_path\u003E\r\n\r\n    \u003C!-- This parameter specifies the number of days between each basic backup.\r\n         Backups are only made during server startup, so the actual interval may be much longer.\r\n         Setting backup_interval to 0 will disable backups\r\n         Available range: 0 to 30.  Default - 3 --\u003E\r\n    \u003Cbackup_interval\u003E3\u003C/backup_interval\u003E\r\n\r\n    \u003C!-- This parameter specifies the maximum number of backup copies to keep.\r\n         Setting backup_copies to 0 will disable backups\r\n         Available range: 0 to 100.  Default - 5 --\u003E\r\n    \u003Cbackup_copies\u003E5\u003C/backup_copies\u003E\r\n\r\n    \u003C!-- This parameter specifies when the internal sqlite databases should be defragmented.\r\n         http://www.sqlite.org/lang_vacuum.html\r\n         Values: 0 - Never, 1 - On server start only after basic backup, 2 - On server start always.  Default - 1 --\u003E\r\n    \u003Ccompact_internal_databases\u003E1\u003C/compact_internal_databases\u003E\r\n\r\n    \u003C!-- This parameter specifies whether server crash dump files should be sent to MTA HQ.\r\n         Values: 0 - Off, 1 - On. Default - 1 --\u003E\r\n    \u003Ccrash_dump_upload\u003E1\u003C/crash_dump_upload\u003E\r\n\r\n    \u003C!-- This parameter lists the ACL groups that are protected by serial authorization.\r\n         Login attempts to a protected account from a second serial are blocked until the serial is manually authorized via\r\n         the authserial command.\r\n         For more info see: https://mtasa.com/authserial\r\n         Note: This is security critical feature and disabling auth_serial_groups can affect visibility in the master server list.\r\n         Values: Comma separated list of ACL groups.  Default - Admin --\u003E\r\n    \u003Cauth_serial_groups\u003EAdmin\u003C/auth_serial_groups\u003E\r\n\r\n    \u003C!-- This parameter specifies if the authorized serial login checks should also apply to the http interface.\r\n         Protected account login attempts to the http interface will only succeed if the IP address matches one\r\n         recently used by the account holder in-game\r\n         For more info see: https://mtasa.com/authserialhttp\r\n         Note: This is security critical feature and disabling auth_serial_http can affect visibility in the master server list.\r\n         Values: 0 - Off, 1 - Enabled.  Default - 1 --\u003E\r\n    \u003Cauth_serial_http\u003E1\u003C/auth_serial_http\u003E\r\n\r\n    \u003C!-- This parameter specifies which IP addresses should always pass auth_serial_http checks.\r\n         Values: Comma separated list of IP addresses --\u003E\r\n    \u003Cauth_serial_http_ip_exceptions\u003E127.0.0.1\u003C/auth_serial_http_ip_exceptions\u003E\r\n\r\n    \u003C!-- This parameter specifies if extra security measures are applied to resources which use dbConnect with mysql.\r\n         The extra measures are:\r\n           - Script files cannot be accessed with fileOpen()\r\n           - meta.xml is read only\r\n         *NOTE* This only protects resources which use dbConnect with mysql\r\n         Values: 0 - Off, 1 - Enabled.  Default - 1 --\u003E\r\n    \u003Cdatabase_credentials_protection\u003E1\u003C/database_credentials_protection\u003E\r\n\r\n    \u003C!-- Specifies the module(s) which are loaded with the server. To load several modules, add more \u003Cmodule\u003E\r\n         parameter(s). Optional parameter. --\u003E\r\n    \u003C!-- \u003Cmodule src=\u0022sample_win32.dll\u0022/\u003E --\u003E\r\n    \u003C!-- \u003Cmodule src=\u0022sample_linux.so\u0022/\u003E --\u003E\r\n    \r\n    \u003C!-- Specifies resources that are loaded when the server starts and/or which are protected from being stopped.\r\n         To specify several resources, add more \u003Cresource\u003E parameter(s). --\u003E\r\n\r\n    \u003Cresource src=\u0022admin\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022defaultstats\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022helpmanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022joinquit\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022mapcycler\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022mapmanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022parachute\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022performancebrowser\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022reload\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022resourcebrowser\u0022 startup=\u00221\u0022 protected=\u00221\u0022 default=\u0022true\u0022/\u003E\r\n    \u003Cresource src=\u0022resourcemanager\u0022 startup=\u00221\u0022 protected=\u00221\u0022/\u003E\r\n    \u003Cresource src=\u0022scoreboard\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022spawnmanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022voice\u0022 startup=\u00221\u0022 protected=\u00220\u0022 /\u003E\r\n    \u003Cresource src=\u0022votemanager\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \u003Cresource src=\u0022webadmin\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \r\n    \u003C!-- play is the default freeroam gamemode. Remove the following line to prevent it from starting. --\u003E       \r\n    \u003Cresource src=\u0022play\u0022 startup=\u00221\u0022 protected=\u00220\u0022/\u003E\r\n    \r\n\r\n\u003C/config\u003E",
       "order": 1,
       "enableEditor": true,
       "editor": [
@@ -128,10 +135,7 @@
   "fileSystemPermissions": [],
   "gameScripts": [
     {
-      "gameId": 0,
-      "scriptId": 0,
       "script": {
-        "scriptId": 0,
         "allGames": false,
         "global": false,
         "scriptEngine": "CSharp",
@@ -155,10 +159,7 @@
       }
     },
     {
-      "gameId": 0,
-      "scriptId": 0,
       "script": {
-        "scriptId": 0,
         "allGames": false,
         "global": false,
         "scriptEngine": "CSharp",
@@ -182,10 +183,7 @@
       }
     },
     {
-      "gameId": 0,
-      "scriptId": 0,
       "script": {
-        "scriptId": 0,
         "allGames": false,
         "global": false,
         "scriptEngine": "CSharp",
@@ -211,568 +209,530 @@
   ],
   "customModProviderConfigs": [],
   "createdDate": "2025-04-07T19:04:00.481555",
+  "modifiedDate": "2025-09-07T18:41:35.948187",
   "metadata": {
-    "Notes": ""
+    "Notes": "",
+    "notes": "Game imported from plugin TCA.Games.MTA version 1.0.2.",
+    "PluginVersion": "1.0.2",
+    "PluginIdentifier": "TCA.Games.MTA"
   },
   "rolePermissions": [
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "GeneralSettings",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "RconAndQuery",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Cmdlines",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "ConfigFiles",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Console",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Paths",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "IpAndPorts",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "RunAs",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Scripts",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Variables",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Steam",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "FeaturePermissions",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "FileSystem",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Control",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "ConfigFiles",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "PredefCmdlines",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "CustomCmdlines",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "FileManager",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "FTP",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "ScheduledTasks",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Console",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "SteamUpdate",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "PlayerStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "CpuStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "MemoryStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "NetworkStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "LiveStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Reinstall",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Create",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Delete",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "GeneralSettings",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "RconAndQuery",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Cmdlines",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "ConfigFiles",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Console",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Paths",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "IpAndPorts",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "RunAs",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Scripts",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Variables",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Steam",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "FeaturePermissions",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "FileSystem",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Mods",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "ServiceSettings",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Control",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "ConfigFiles",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "PredefCmdlines",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "CustomCmdlines",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "FileManager",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "FTP",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "ScheduledTasks",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Console",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "SteamUpdate",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "PlayerStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "CpuStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "MemoryStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "NetworkStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "LiveStats",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Reinstall",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": true
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Create",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Delete",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Mods",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Mods",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "Mods",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Monitoring",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Updates",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameFeature",
       "permission": "ServiceSettings",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Updates",
-      "moduleData": "0",
+      "moduleData": "",
       "granted": false
     },
     {
       "roleId": 3,
-      "id": 0,
       "module": "GameEditFeature",
       "permission": "Monitoring",
-      "moduleData": "0",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "GameFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "GameFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "GameFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "GameFeature",
+      "permission": "Logs",
+      "moduleData": "",
       "granted": false
     }
   ]
