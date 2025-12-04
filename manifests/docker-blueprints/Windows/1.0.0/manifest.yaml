@@ -1,0 +1,38 @@
+﻿identifier: TCA.Docker.Win
+version: 1.0.0
+author: TCAdmin
+name: Windows
+shortDescription: Windows docker config for TCAdmin 3
+longDescription: |
+  # Windows
+  
+  **Windows inside a Docker container.
+  
+  ## Key Features
+  - **ISO downloader**
+  - **KVM acceleration**
+  - **Web-based viewer**
+
+  ### How do I use it?
+
+  Very simple! These are the steps:
+  
+  - Start the container and connect to [port 8006](http://127.0.0.1:8006/) using your web browser.
+
+  - Sit back and relax while the magic happens, the whole installation will be performed fully automatic.
+
+  - Once you see the desktop, your Windows installation is ready for use.
+
+  ## What's new in 1.0.0
+  - Initial release
+
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/500px-Windows_logo_-_2021.svg.png
+images:
+  - https://www.mychoicesoftware.com/cdn/shop/articles/Web_Banner_Windows_Server_2025_-_Blog.jpg?v=1720523782&width=1024
+tags:
+  - Docker
+files:
+  - identifier: "docker_config"
+    path: Windows.json
+    type: DockerConfig
+    optional: false

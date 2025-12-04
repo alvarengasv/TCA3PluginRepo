@@ -1,0 +1,1091 @@
+{
+  "__TCA:ExportVersion": "3.0.401.9284",
+  "__TCA:ExportedAt": "2025-12-04T01:05:23.6455662Z",
+  "blueprintId": 139,
+  "name": "Windows",
+  "shortName": "Win",
+  "description": "Windows docker image https://github.com/dockur/windows/issues/1156",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Windows_logo_-_2021.svg/500px-Windows_logo_-_2021.svg.png",
+  "backgroundImage": "https://www.mychoicesoftware.com/cdn/shop/articles/Web_Banner_Windows_Server_2025_-_Blog.jpg?v=1720523782\u0026width=1024",
+  "defaultDiskSpace": 12884901888,
+  "editableExtensions": [
+    "*.cfg",
+    "*.json",
+    "*.xml"
+  ],
+  "logExtensions": [],
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "HTTP",
+        "port": 8006,
+        "expression": "",
+        "description": "Web VNC"
+      },
+      {
+        "id": "RDP",
+        "port": 3389,
+        "expression": "",
+        "description": "RDP connection"
+      }
+    ],
+    "portIncrement": 10
+  },
+  "configFiles": [
+    {
+      "id": 220,
+      "relativePath": "main.cfg",
+      "description": "Configure your windows server",
+      "template": "[Server]\r\nVERSION=${Version}\r\nDISK_SIZE=${DiskSize}\r\nRAM_SIZE=${RamSize}\r\nCPU_CORES=${Cores}\r\n\r\n[VNC]\r\nUSER=${VNCUser}\r\nPASS=${VNCPassword}",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "icon": "\u003Cg\u003E\u003Crect fill=\u0022none\u0022 height=\u002224\u0022 width=\u002224\u0022/\u003E\u003C/g\u003E\u003Cg\u003E\u003Cg\u003E\u003Cg\u003E\u003Cpath d=\u0022M21.67,18.17l-5.3-5.3h-0.99l-2.54,2.54v0.99l5.3,5.3c0.39,0.39,1.02,0.39,1.41,0l2.12-2.12 C22.06,19.2,22.06,18.56,21.67,18.17z\u0022/\u003E\u003C/g\u003E\u003Cg\u003E\u003Cpath d=\u0022M17.34,10.19l1.41-1.41l2.12,2.12c1.17-1.17,1.17-3.07,0-4.24l-3.54-3.54l-1.41,1.41V1.71L15.22,1l-3.54,3.54l0.71,0.71 h2.83l-1.41,1.41l1.06,1.06l-2.89,2.89L7.85,6.48V5.06L4.83,2.04L2,4.87l3.03,3.03h1.41l4.13,4.13l-0.85,0.85H7.6l-5.3,5.3 c-0.39,0.39-0.39,1.02,0,1.41l2.12,2.12c0.39,0.39,1.02,0.39,1.41,0l5.3-5.3v-2.12l5.15-5.15L17.34,10.19z\u0022/\u003E\u003C/g\u003E\u003C/g\u003E\u003C/g\u003E",
+          "id": "Header-497",
+          "label": "VPS Configuration",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": [
+            "DiskSize",
+            "RamSize",
+            "Cores",
+            "Version"
+          ]
+        },
+        {
+          "items": [
+            {
+              "text": "Windows 11 Pro",
+              "value": "11"
+            },
+            {
+              "text": "Windows 11 LTSC",
+              "value": "11l"
+            },
+            {
+              "text": "Windows 11 Enterprise",
+              "value": "11e"
+            },
+            {
+              "text": "Windows 10 Pro",
+              "value": "10"
+            },
+            {
+              "text": "Windows 10 LTSC",
+              "value": "10l"
+            },
+            {
+              "text": "Windows 10 Enterprise\t",
+              "value": "10e"
+            },
+            {
+              "text": "Windows 8.1 Enterprise\t",
+              "value": "8e"
+            },
+            {
+              "text": "Windows 7 Ultimate\t",
+              "value": "7u"
+            },
+            {
+              "text": "Windows Vista Ultimate\t",
+              "value": "vu"
+            },
+            {
+              "text": "Windows XP Professional\t",
+              "value": "xp"
+            },
+            {
+              "text": "Windows 2000 Professional\t",
+              "value": "2k"
+            },
+            {
+              "text": "Windows Server 2025\t",
+              "value": "2025"
+            },
+            {
+              "text": "Windows Server 2022\t",
+              "value": "2022"
+            },
+            {
+              "text": "Windows Server 2019\t",
+              "value": "2019"
+            },
+            {
+              "text": "Windows Server 2016\t",
+              "value": "2016"
+            },
+            {
+              "text": "Windows Server 2012\t",
+              "value": "2012"
+            },
+            {
+              "text": "Windows Server 2008\t",
+              "value": "2008"
+            },
+            {
+              "text": "Windows Server 2003\t",
+              "value": "2003"
+            }
+          ],
+          "id": "Version",
+          "defaultValue": "11",
+          "label": "Windows version",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicComboBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "id": "DiskSize",
+          "defaultValue": 12,
+          "label": "Disk size",
+          "description": "Disk size in GB",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "id": "RamSize",
+          "defaultValue": 8,
+          "label": "RAM size",
+          "description": "RAM size in GB",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "id": "Cores",
+          "defaultValue": 2,
+          "label": "Cores",
+          "description": "Number of cores",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "icon": "\u003Cpath d=\u0022M0 0h24v24H0V0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z\u0022/\u003E",
+          "id": "Header-65614",
+          "label": "VNC Credentials",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": [
+            "VNCPassword",
+            "VNCUser"
+          ]
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "VNCUser",
+          "defaultValue": "vnc",
+          "label": "VNC user",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "VNCPassword",
+          "defaultValue": "secret",
+          "label": "VNC Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "commandlineConfig": {
+    "enableSelection": false,
+    "predefinedCommandlines": []
+  },
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "ReadFile, WriteFile, DeleteFile, RenameFile, ListDirectory, CreateDirectory, DeleteDirectory, RenameDirectory",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Read",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": [
+          {
+            "pathOrFilters": "main.cfg;main.json;main.xml",
+            "permissionType": "File",
+            "permissionMode": "Advanced",
+            "permissions": "ReadFile, WriteFile"
+          },
+          {
+            "pathOrFilters": "shared",
+            "permissionType": "SubDirectoryPath",
+            "permissionMode": "Basic",
+            "permissions": "ReadFile, WriteFile, DeleteFile, RenameFile, ListDirectory, CreateDirectory, DeleteDirectory, RenameDirectory"
+          },
+          {
+            "pathOrFilters": "windows",
+            "permissionType": "SubDirectoryPath",
+            "permissionMode": "Basic",
+            "permissions": "Read"
+          }
+        ]
+      }
+    }
+  ],
+  "environmentVariables": [
+    {
+      "id": 30,
+      "blueprintId": 139,
+      "name": "VERSION",
+      "value": "${Version}",
+      "valueType": "Template"
+    },
+    {
+      "id": 31,
+      "blueprintId": 139,
+      "name": "DISK_SIZE",
+      "value": "${DiskSize}G",
+      "valueType": "Template"
+    },
+    {
+      "id": 32,
+      "blueprintId": 139,
+      "name": "RAM_SIZE",
+      "value": "${RamSize}G",
+      "valueType": "Template"
+    },
+    {
+      "id": 33,
+      "blueprintId": 139,
+      "name": "CPU_CORES",
+      "value": "${Cores}",
+      "valueType": "Template"
+    },
+    {
+      "id": 37,
+      "blueprintId": 139,
+      "name": "USER",
+      "value": "${VNCUser}",
+      "valueType": "Template"
+    },
+    {
+      "id": 38,
+      "blueprintId": 139,
+      "name": "PASS",
+      "value": "${VNCPassword}",
+      "valueType": "Template"
+    },
+    {
+      "id": 52,
+      "blueprintId": 139,
+      "name": "DISK_FMT",
+      "value": "qcow2",
+      "valueType": "Static"
+    }
+  ],
+  "images": [
+    {
+      "name": "windows",
+      "image": "dockurr/windows",
+      "tag": "latest",
+      "isDefault": true
+    }
+  ],
+  "volumeBinds": [
+    {
+      "id": 3,
+      "blueprintId": 139,
+      "hostPath": "windows",
+      "containerPath": "/storage",
+      "readOnly": false
+    },
+    {
+      "id": 6,
+      "blueprintId": 139,
+      "hostPath": "shared",
+      "containerPath": "/shared",
+      "readOnly": false
+    }
+  ],
+  "limits": {
+    "cpuSets": "",
+    "oomKillEnabled": false
+  },
+  "dockerIpPortAllocationConfig": {
+    "dockerBlueprintId": 139,
+    "dockerCustomPorts": [
+      {
+        "protocol": "tcp",
+        "containerPort": 8006,
+        "id": "HTTP",
+        "port": 8006,
+        "expression": "",
+        "description": "Web VNC"
+      },
+      {
+        "protocol": "tcp",
+        "containerPort": 3389,
+        "id": "RDP",
+        "port": 3389,
+        "expression": "",
+        "description": "RDP connection"
+      }
+    ]
+  },
+  "dockerVariables": [
+    {
+      "dockerBlueprintId": 139,
+      "name": "VNCUser",
+      "defaultValue": "ChangeMe",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${VNCUser}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "VNCUser",
+        "defaultValue": "ChangeMe",
+        "label": "VNC user",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2025-11-24T17:22:57.823",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "dockerBlueprintId": 139,
+      "name": "VNCPassword",
+      "defaultValue": "ChangeMe",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${VNCPassword}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 1,
+        "id": "VNCPassword",
+        "defaultValue": "ChangeMe",
+        "label": "VNC password",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2025-11-24T17:23:58.5",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "dockerBlueprintId": 139,
+      "name": "RamSize",
+      "defaultValue": 8,
+      "required": true,
+      "requiredMessage": "RAM size is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${RamSize}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "id": "RamSize",
+        "defaultValue": 8,
+        "label": "RAM size",
+        "description": "RAM size in GB",
+        "required": true,
+        "requiredMessage": "RAM size is required",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2025-11-25T23:52:57.772",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        }
+      ]
+    },
+    {
+      "dockerBlueprintId": 139,
+      "name": "DiskSize",
+      "defaultValue": 12,
+      "required": true,
+      "requiredMessage": "Disk size is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DiskSize}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 1024,
+        "id": "DiskSize",
+        "defaultValue": 12,
+        "label": "Disk size",
+        "description": "Disk size in GB",
+        "required": true,
+        "requiredMessage": "Disk size is required",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2025-11-25T23:55:03.275",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        }
+      ]
+    },
+    {
+      "dockerBlueprintId": 139,
+      "name": "Cores",
+      "defaultValue": 2,
+      "required": true,
+      "requiredMessage": "Cores is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Cores}",
+      "editor": {
+        "decimals": 0,
+        "spinner": false,
+        "valueType": "double",
+        "id": "Cores",
+        "defaultValue": 2,
+        "label": "Cores",
+        "description": "Number of cores",
+        "required": true,
+        "requiredMessage": "Cores is required",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2025-11-25T23:56:30.024",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        }
+      ]
+    },
+    {
+      "dockerBlueprintId": 139,
+      "name": "Version",
+      "defaultValue": "11",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Version}",
+      "editor": {
+        "items": [
+          {
+            "text": "Windows 11 Pro",
+            "value": "11"
+          },
+          {
+            "text": "Windows 11 LTSC",
+            "value": "11l"
+          },
+          {
+            "text": "Windows 11 Enterprise",
+            "value": "11e"
+          },
+          {
+            "text": "Windows 10 Pro",
+            "value": "10"
+          },
+          {
+            "text": "Windows 10 LTSC",
+            "value": "10l"
+          },
+          {
+            "text": "Windows 10 Enterprise\t",
+            "value": "10e"
+          },
+          {
+            "text": "Windows 8.1 Enterprise\t",
+            "value": "8e"
+          },
+          {
+            "text": "Windows 7 Ultimate\t",
+            "value": "7u"
+          },
+          {
+            "text": "Windows Vista Ultimate\t",
+            "value": "vu"
+          },
+          {
+            "text": "Windows XP Professional\t",
+            "value": "xp"
+          },
+          {
+            "text": "Windows 2000 Professional\t",
+            "value": "2k"
+          },
+          {
+            "text": "Windows Server 2025\t",
+            "value": "2025"
+          },
+          {
+            "text": "Windows Server 2022\t",
+            "value": "2022"
+          },
+          {
+            "text": "Windows Server 2019\t",
+            "value": "2019"
+          },
+          {
+            "text": "Windows Server 2016\t",
+            "value": "2016"
+          },
+          {
+            "text": "Windows Server 2012\t",
+            "value": "2012"
+          },
+          {
+            "text": "Windows Server 2008\t",
+            "value": "2008"
+          },
+          {
+            "text": "Windows Server 2003\t",
+            "value": "2003"
+          }
+        ],
+        "id": "Version",
+        "defaultValue": "11",
+        "label": "Windows version",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicComboBox",
+        "sm": 12,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2025-11-27T04:14:31.603",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "dockerBlueprintsScripts": [
+    {
+      "script": {
+        "allDockerBlueprints": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "ConfigureContainer"
+        ],
+        "name": "Configure container",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.Docker.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, Docker.DotNet.dll\r\nusing System;\r\nusing System.IO;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Docker.DotNet.Models;\r\n\r\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpDockerGlobals(); // DO NOT MODIFY THIS LINE\r\n\r\nvar startParams = Globals.ThisContainerStartParameters;\r\n\r\nstartParams.HostConfig.CapDrop.Clear();\r\nstartParams.HostConfig.Tmpfs.Clear();\r\n\r\n/* startParams.HostConfig.Mounts.Add(new Mount()\r\n    {\r\n        Type = \u0022bind\u0022,\r\n        Source = @\u0022C:\\TCAFiles\\DockerImages\\[Windows X-Lite] Micro 11 24H2 v3.iso\u0022,\r\n        Target = \u0022/boot.iso\u0022,\r\n        ReadOnly = true\r\n    }); */\r\n\r\nstartParams.HostConfig.Devices = new List\u003CDeviceMapping\u003E\r\n        {\r\n            new DeviceMapping\r\n            {\r\n                PathOnHost = \u0022/dev/kvm\u0022,\r\n                PathInContainer = \u0022/dev/kvm\u0022,\r\n                CgroupPermissions = \u0022rwm\u0022\r\n            },\r\n            new DeviceMapping\r\n            {\r\n                PathOnHost = \u0022/dev/net/tun\u0022,\r\n                PathInContainer = \u0022/dev/net/tun\u0022,\r\n                CgroupPermissions = \u0022rwm\u0022\r\n            },\r\n            new DeviceMapping\r\n            {\r\n                PathOnHost = \u0022/dev/vhost-net\u0022,\r\n                PathInContainer = \u0022/dev/vhost-net\u0022,\r\n                CgroupPermissions = \u0022rwm\u0022\r\n            }\r\n        };\r\n\r\nstartParams.HostConfig.DeviceCgroupRules = new List\u003Cstring\u003E\r\n        {\r\n            \u0022c *:* rwm\u0022\r\n        };\r\n\r\nstartParams.HostConfig.CapAdd = new List\u003Cstring\u003E\r\n        {\r\n            \u0022NET_ADMIN\u0022\r\n        };\r\n\r\n\r\n/* startParams.HostConfig.NetworkMode = \u0022vlan\u0022;\r\n\r\nstartParams.NetworkingConfig = new NetworkingConfig\r\n    {\r\n        EndpointsConfig = new Dictionary\u003Cstring, EndpointSettings\u003E\r\n        {\r\n            [\u0022vlan\u0022] = new EndpointSettings\r\n            {\r\n                IPAMConfig = new EndpointIPAMConfig\r\n                {\r\n                    IPv4Address = \u0022192.168.1.13\u0022\r\n                }\r\n            }\r\n        }\r\n    }; */",
+        "runImpersonated": true,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "\u003Cpath clip-rule=\u0022evenodd\u0022 d=\u0022M0 0h24v24H0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "5a13a9a7-07b9-4901-b0cf-9d37a9e35b2e"
+      }
+    }
+  ],
+  "execConsoleType": "Command",
+  "execCommand": "/bin/sh",
+  "rolePermissions": [
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LogConsole",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LogConsole",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "VolumeBinds",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "VolumeBinds",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Images",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Images",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    }
+  ]
+}
