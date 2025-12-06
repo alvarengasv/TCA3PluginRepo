@@ -2,7 +2,7 @@
 version: 1.0.0
 author: TCAdmin
 name: Windows firewall
-shortDescription: Game and docker scripts to add support for Windows firewall
+shortDescription: Scripts to add support for Windows firewall
 longDescription: |
   # Windows Firewall
   
