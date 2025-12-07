@@ -1,0 +1,25 @@
+{
+  "scriptType": "GameScript",
+  "scriptId": 0,
+  "global": true,
+  "scriptEngine": "Powershell",
+  "operatingSystem": [
+    "Windows"
+  ],
+  "scriptEvents": [
+    "AfterServiceReinstalled",
+    "AfterServiceCreated",
+    "CustomServiceAction"
+  ],
+  "name": "Windows firewall - Add rules",
+  "code": "# Initialize error flag\r\n$errorOccurred = $false\r\n\r\n# Get all existing firewall rules once for optimization\r\nWrite-Host \u0022\u231B Getting existing firewall rules\u0022\r\ntry {\r\n    $allRules = Get-NetFirewallRule -ErrorAction Stop\r\n    Write-Host \u0022\u2705 Loaded existing firewall rules\u0022\r\n} catch {\r\n    $errorOccurred = $true\r\n    Write-Host \u0022\u274C Error getting existing firewall rules: $($_.Exception.Message)\u0022\r\n    $allRules = @()  # Set to empty array to allow attempting to add rules\r\n}\r\n\r\n# Get the full path to the executable\r\n$exePath = Join-Path -Path $ThisService.RootDirectory -ChildPath $ThisService.Executable\r\n\r\n# Get the unique list of ports from the dictionary\r\n$ports = $ThisService.Ports.Values | Select-Object -Unique\r\n\r\n# Get the friendly name\r\n$friendlyName = \u0022ServiceId:$($ThisService.ServiceId)\u0022\r\n\r\n# Add firewall rule for the executable if it ends with .exe and rule doesn\u0027t exist\r\nif ($exePath -like \u0022*.exe\u0022) {\r\n    $exeRuleName = \u0022Allow $friendlyName Executable\u0022\r\n    if (-not ($allRules | Where-Object { $_.DisplayName -eq $exeRuleName })) {\r\n        try {\r\n            New-NetFirewallRule -DisplayName $exeRuleName -Direction Inbound -Program $exePath -Action Allow -Protocol Any -ErrorAction Stop\r\n            Write-Host \u0022\u2705 Created rule for executable\u0022\r\n        } catch {\r\n            $errorOccurred = $true\r\n            Write-Host \u0022\u274C Error creating rule for executable: $($_.Exception.Message)\u0022\r\n        }\r\n    } else {\r\n        Write-Host \u0022\u2705 Rule for executable already exists\u0022\r\n    }\r\n}\r\n\r\n# Add firewall rules for each unique port (TCP and UDP) if rules don\u0027t exist\r\nforeach ($port in $ports) {\r\n    $tcpRuleName = \u0022Allow $friendlyName Port $port TCP\u0022\r\n    if (-not ($allRules | Where-Object { $_.DisplayName -eq $tcpRuleName })) {\r\n        try {\r\n            New-NetFirewallRule -DisplayName $tcpRuleName -Direction Inbound -LocalPort $port -Protocol TCP -Action Allow -ErrorAction Stop\r\n            Write-Host \u0022\u2705 Created rule for port $port TCP\u0022\r\n        } catch {\r\n            $errorOccurred = $true\r\n            Write-Host \u0022\u274C Error creating rule for port $port TCP: $($_.Exception.Message)\u0022\r\n        }\r\n    } else {\r\n        Write-Host \u0022\u2705 Rule for port $port TCP already exists\u0022\r\n    }\r\n\r\n    $udpRuleName = \u0022Allow $friendlyName Port $port UDP\u0022\r\n    if (-not ($allRules | Where-Object { $_.DisplayName -eq $udpRuleName })) {\r\n        try {\r\n            New-NetFirewallRule -DisplayName $udpRuleName -Direction Inbound -LocalPort $port -Protocol UDP -Action Allow -ErrorAction Stop\r\n            Write-Host \u0022\u2705 Created rule for port $port UDP\u0022\r\n        } catch {\r\n            $errorOccurred = $true\r\n            Write-Host \u0022\u274C Error creating rule for port $port UDP: $($_.Exception.Message)\u0022\r\n        }\r\n    } else {\r\n        Write-Host \u0022\u2705 Rule for port $port UDP already exists\u0022\r\n    }\r\n}\r\n\r\n# Final message\r\nif (-not $errorOccurred) {\r\n    Write-Host \u0022\uD83D\uDC4D The firewall rules were added successfully\u0022\r\n} else {\r\n    Write-Host \u0022\u26A0\uFE0F There were errors while adding the firewall rules\u0022\r\n}",
+  "runImpersonated": false,
+  "stopService": false,
+  "ignoreErrors": false,
+  "order": 0,
+  "icon": "\u003Csvg viewBox=\u00220 0 36 36\u0022 version=\u00221.1\u0022 preserveAspectRatio=\u0022xMidYMid meet\u0022 xmlns=\u0022http://www.w3.org/2000/svg\u0022 xmlns:xlink=\u0022http://www.w3.org/1999/xlink\u0022 stroke=\u0022#ffffff\u0022\u003E   \u003Cg id=\u0022SVGRepo_bgCarrier\u0022 stroke-width=\u00220\u0022\u003E\u003C/g\u003E   \u003Cg id=\u0022SVGRepo_tracerCarrier\u0022 stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022\u003E\u003C/g\u003E   \u003Cg id=\u0022SVGRepo_iconCarrier\u0022\u003E     \u003Ctitle\u003Efirewall-outline-badged\u003C/title\u003E     \u003Cpath d=\u0022M30,13.5a7.47,7.47,0,0,1-2.45-.42H23.8V10.22a7.5,7.5,0,0,1-.63-1.14H22v4H14v-4H12v4H4V8H22.78a7.49,7.49,0,0,1-.28-2H4A2,2,0,0,0,2,8V28a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V12.34A7.45,7.45,0,0,1,30,13.5ZM4,15H32v6.08H28.92V16.27H27v4.81H18.92V16.27H17v4.81H8.9V16.27H7v4.81H4ZM23.8,28V24.27H22.2V28H14V24.27h-1.6V28H4V23H32v5Z\u0022 class=\u0022clr-i-outline--badged clr-i-outline-path-1--badged\u0022\u003E\u003C/path\u003E     \u003Ccircle cx=\u002230\u0022 cy=\u00226\u0022 r=\u00225\u0022 fill=\u0022green\u0022 stroke=\u0022green\u0022\u003E\u003C/circle\u003E   \u003C/g\u003E \u003C/svg\u003E",
+  "scriptInputVariables": [],
+  "scriptRoles": [],
+  "editor": [],
+  "identifier": "3c099551-0e54-409a-b012-9df5e3ab7da5"
+}

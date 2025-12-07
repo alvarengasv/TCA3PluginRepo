@@ -1,0 +1,24 @@
+{
+  "scriptType": "GameScript",
+  "scriptId": 0,
+  "global": true,
+  "scriptEngine": "Powershell",
+  "operatingSystem": [
+    "Windows"
+  ],
+  "scriptEvents": [
+    "BeforeServiceDeleted",
+    "CustomServiceAction"
+  ],
+  "name": "Windows firewall - Remove rules",
+  "code": "# Initialize error flag\r\n$errorOccurred = $false\r\n\r\n# Get all existing firewall rules once for optimization\r\nWrite-Host \u0022\u231B Getting existing firewall rules\u0022\r\ntry {\r\n    $allRules = Get-NetFirewallRule -ErrorAction Stop\r\n    Write-Host \u0022\u2705 Loaded existing firewall rules\u0022\r\n} catch {\r\n    $errorOccurred = $true\r\n    Write-Host \u0022\u274C Error getting existing firewall rules: $($_.Exception.Message)\u0022\r\n    $allRules = @()  # Set to empty array to avoid removal attempts if rules can\u0027t be checked\r\n}\r\n\r\n# Get the full path to the executable\r\n$exePath = Join-Path -Path $ThisService.RootDirectory -ChildPath $ThisService.Executable\r\n\r\n# Get the unique list of ports from the dictionary\r\n$ports = $ThisService.Ports.Values | Select-Object -Unique\r\n\r\n# Get the friendly name\r\n$friendlyName = \u0022ServiceId:$($ThisService.ServiceId)\u0022\r\n\r\n# Remove firewall rule for the executable if it exists\r\nif ($exePath -like \u0022*.exe\u0022) {\r\n    $exeRuleName = \u0022Allow $friendlyName Executable\u0022\r\n    if ($allRules | Where-Object { $_.DisplayName -eq $exeRuleName }) {\r\n        try {\r\n            Remove-NetFirewallRule -DisplayName $exeRuleName -ErrorAction Stop\r\n            Write-Host \u0022\u2705 Removed rule for executable\u0022\r\n        } catch {\r\n            $errorOccurred = $true\r\n            Write-Host \u0022\u274C Error removing rule for executable: $($_.Exception.Message)\u0022\r\n        }\r\n    } else {\r\n        Write-Host \u0022\u2705 Rule for executable does not exist\u0022\r\n    }\r\n}\r\n\r\n# Remove firewall rules for each unique port (TCP and UDP) if they exist\r\nforeach ($port in $ports) {\r\n    $tcpRuleName = \u0022Allow $friendlyName Port $port TCP\u0022\r\n    if ($allRules | Where-Object { $_.DisplayName -eq $tcpRuleName }) {\r\n        try {\r\n            Remove-NetFirewallRule -DisplayName $tcpRuleName -ErrorAction Stop\r\n            Write-Host \u0022\u2705 Removed rule for port $port TCP\u0022\r\n        } catch {\r\n            $errorOccurred = $true\r\n            Write-Host \u0022\u274C Error removing rule for port $port TCP: $($_.Exception.Message)\u0022\r\n        }\r\n    } else {\r\n        Write-Host \u0022\u2705 Rule for port $port TCP does not exist\u0022\r\n    }\r\n\r\n    $udpRuleName = \u0022Allow $friendlyName Port $port UDP\u0022\r\n    if ($allRules | Where-Object { $_.DisplayName -eq $udpRuleName }) {\r\n        try {\r\n            Remove-NetFirewallRule -DisplayName $udpRuleName -ErrorAction Stop\r\n            Write-Host \u0022\u2705 Removed rule for port $port UDP\u0022\r\n        } catch {\r\n            $errorOccurred = $true\r\n            Write-Host \u0022\u274C Error removing rule for port $port UDP: $($_.Exception.Message)\u0022\r\n        }\r\n    } else {\r\n        Write-Host \u0022\u2705 Rule for port $port UDP does not exist\u0022\r\n    }\r\n}\r\n\r\n# Final message\r\nif (-not $errorOccurred) {\r\n    Write-Host \u0022\uD83D\uDC4D The firewall rules were removed successfully\u0022\r\n} else {\r\n    Write-Host \u0022\u26A0\uFE0F There were errors while removing the firewall rules\u0022\r\n}",
+  "runImpersonated": false,
+  "stopService": false,
+  "ignoreErrors": false,
+  "order": 0,
+  "icon": "\u003Csvg viewBox=\u00220 0 36 36\u0022 version=\u00221.1\u0022 preserveAspectRatio=\u0022xMidYMid meet\u0022 xmlns=\u0022http://www.w3.org/2000/svg\u0022 xmlns:xlink=\u0022http://www.w3.org/1999/xlink\u0022\u003E   \u003Cg id=\u0022SVGRepo_bgCarrier\u0022 stroke-width=\u00220\u0022\u003E\u003C/g\u003E   \u003Cg id=\u0022SVGRepo_tracerCarrier\u0022 stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022\u003E\u003C/g\u003E   \u003Cg id=\u0022SVGRepo_iconCarrier\u0022\u003E     \u003Ctitle\u003Efirewall-outline-alerted\u003C/title\u003E     \u003Cpath d=\u0022M33.68,15.4H32v5.68H28.92V16.27H27v4.81H18.92V16.27H17v4.81H8.9V16.27H7v4.81H4V15H20.58a3.58,3.58,0,0,1-1.76-1.92H14v-4H12v4H4V8H20.14l1.15-2H4A2,2,0,0,0,2,8V28a2,2,0,0,0,2,2H32a2,2,0,0,0,2-2V15.38ZM23.8,28V24.27H22.2V28H14V24.27h-1.6V28H4V23H32v5Z\u0022 class=\u0022clr-i-outline--alerted clr-i-outline-path-1--alerted\u0022\u003E\u003C/path\u003E     \u003Cpath d=\u0022M26.85,1.14,21.13,11A1.28,1.28,0,0,0,22.23,13H33.68A1.28,1.28,0,0,0,34.78,11L29.06,1.14A1.28,1.28,0,0,0,26.85,1.14Z\u0022 fill=\u0022red\u0022 stroke=\u0022red\u0022\u003E\u003C/path\u003E   \u003C/g\u003E \u003C/svg\u003E",
+  "scriptInputVariables": [],
+  "scriptRoles": [],
+  "editor": [],
+  "identifier": "17981d29-cd81-4883-8701-9742833ba9fc"
+}
