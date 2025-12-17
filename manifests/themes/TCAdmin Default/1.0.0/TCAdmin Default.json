@@ -1,0 +1,604 @@
+{
+  "__TCA:ExportVersion": "3.0.546.64102",
+  "__TCA:ExportedAt": "2025-12-17T05:55:22.4571387Z",
+  "themeId": 0,
+  "name": "TCAdmin Default",
+  "titlePrefix": "TCAdmin V3 - ",
+  "titlePostfix": "",
+  "isDefault": false,
+  "isEnabled": true,
+  "lightPalette": {
+    "consoleBackgroundColor": {
+      "r": 18,
+      "g": 17,
+      "b": 19,
+      "a": 255
+    },
+    "consoleCursorColor": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "black": {
+      "r": 39,
+      "g": 44,
+      "b": 52,
+      "a": 255
+    },
+    "white": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "primary": {
+      "r": 0,
+      "g": 75,
+      "b": 130,
+      "a": 255
+    },
+    "primaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "secondary": {
+      "r": 255,
+      "g": 64,
+      "b": 129,
+      "a": 255
+    },
+    "secondaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tertiary": {
+      "r": 30,
+      "g": 200,
+      "b": 165,
+      "a": 255
+    },
+    "tertiaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "info": {
+      "r": 33,
+      "g": 150,
+      "b": 243,
+      "a": 255
+    },
+    "infoContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "success": {
+      "r": 0,
+      "g": 200,
+      "b": 83,
+      "a": 255
+    },
+    "successContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "warning": {
+      "r": 255,
+      "g": 152,
+      "b": 0,
+      "a": 255
+    },
+    "warningContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "error": {
+      "r": 244,
+      "g": 67,
+      "b": 54,
+      "a": 255
+    },
+    "errorContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "dark": {
+      "r": 66,
+      "g": 66,
+      "b": 66,
+      "a": 255
+    },
+    "darkContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "textPrimary": {
+      "r": 66,
+      "g": 66,
+      "b": 66,
+      "a": 255
+    },
+    "textSecondary": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 137
+    },
+    "textDisabled": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 96
+    },
+    "actionDefault": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 137
+    },
+    "actionDisabled": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 66
+    },
+    "actionDisabledBackground": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 30
+    },
+    "background": {
+      "r": 246,
+      "g": 246,
+      "b": 246,
+      "a": 255
+    },
+    "backgroundGray": {
+      "r": 245,
+      "g": 245,
+      "b": 245,
+      "a": 255
+    },
+    "surface": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 66,
+      "g": 66,
+      "b": 66,
+      "a": 255
+    },
+    "drawerIcon": {
+      "r": 97,
+      "g": 97,
+      "b": 97,
+      "a": 255
+    },
+    "appbarBackground": {
+      "r": 0,
+      "g": 75,
+      "b": 130,
+      "a": 255
+    },
+    "appbarText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "linesDefault": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 30
+    },
+    "linesInputs": {
+      "r": 189,
+      "g": 189,
+      "b": 189,
+      "a": 255
+    },
+    "tableLines": {
+      "r": 224,
+      "g": 224,
+      "b": 224,
+      "a": 255
+    },
+    "tableStriped": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 5
+    },
+    "tableHover": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 10
+    },
+    "divider": {
+      "r": 224,
+      "g": 224,
+      "b": 224,
+      "a": 255
+    },
+    "dividerLight": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 204
+    },
+    "skeleton": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 28
+    },
+    "primaryDarken": "rgb(0,54,92)",
+    "primaryLighten": "rgb(0,95,163)",
+    "secondaryDarken": "rgb(255,31,105)",
+    "secondaryLighten": "rgb(255,102,153)",
+    "tertiaryDarken": "rgb(25,169,140)",
+    "tertiaryLighten": "rgb(42,223,187)",
+    "infoDarken": "rgb(12,128,223)",
+    "infoLighten": "rgb(71,167,245)",
+    "successDarken": "rgb(0,163,68)",
+    "successLighten": "rgb(0,235,98)",
+    "warningDarken": "rgb(214,129,0)",
+    "warningLighten": "rgb(255,167,36)",
+    "errorDarken": "rgb(242,28,13)",
+    "errorLighten": "rgb(246,96,85)",
+    "darkDarken": "rgb(46,46,46)",
+    "darkLighten": "rgb(87,87,87)",
+    "borderOpacity": 1,
+    "hoverOpacity": 0.06,
+    "rippleOpacity": 0.1,
+    "rippleOpacitySecondary": 0.2,
+    "grayDefault": "#9E9E9E",
+    "grayLight": "#BDBDBD",
+    "grayLighter": "#E0E0E0",
+    "grayDark": "#757575",
+    "grayDarker": "#616161",
+    "overlayDark": "rgba(33,33,33,0.4980392156862745)",
+    "overlayLight": "rgba(255,255,255,0.4980392156862745)"
+  },
+  "darkPalette": {
+    "black": {
+      "r": 39,
+      "g": 39,
+      "b": 47,
+      "a": 255
+    },
+    "primary": {
+      "r": 1,
+      "g": 165,
+      "b": 223,
+      "a": 255
+    },
+    "info": {
+      "r": 50,
+      "g": 153,
+      "b": 255,
+      "a": 255
+    },
+    "success": {
+      "r": 11,
+      "g": 186,
+      "b": 131,
+      "a": 255
+    },
+    "warning": {
+      "r": 220,
+      "g": 162,
+      "b": 38,
+      "a": 255
+    },
+    "error": {
+      "r": 220,
+      "g": 38,
+      "b": 38,
+      "a": 255
+    },
+    "dark": {
+      "r": 39,
+      "g": 39,
+      "b": 47,
+      "a": 255
+    },
+    "textPrimary": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "textSecondary": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 127
+    },
+    "textDisabled": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 51
+    },
+    "actionDefault": {
+      "r": 173,
+      "g": 173,
+      "b": 177,
+      "a": 255
+    },
+    "actionDisabled": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 66
+    },
+    "actionDisabledBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 30
+    },
+    "background": {
+      "r": 5,
+      "g": 19,
+      "b": 39,
+      "a": 255
+    },
+    "backgroundGray": {
+      "r": 8,
+      "g": 29,
+      "b": 56,
+      "a": 255
+    },
+    "surface": {
+      "r": 9,
+      "g": 31,
+      "b": 60,
+      "a": 255
+    },
+    "drawerBackground": {
+      "r": 3,
+      "g": 12,
+      "b": 29,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 127
+    },
+    "drawerIcon": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 127
+    },
+    "appbarBackground": {
+      "r": 3,
+      "g": 12,
+      "b": 29,
+      "a": 255
+    },
+    "appbarText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 178
+    },
+    "linesDefault": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 30
+    },
+    "linesInputs": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 76
+    },
+    "tableLines": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 30
+    },
+    "tableStriped": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 51
+    },
+    "divider": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 30
+    },
+    "dividerLight": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 15
+    },
+    "consoleBackgroundColor": {
+      "r": 18,
+      "g": 17,
+      "b": 19,
+      "a": 255
+    },
+    "consoleCursorColor": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "white": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "primaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "secondary": {
+      "r": 255,
+      "g": 64,
+      "b": 129,
+      "a": 255
+    },
+    "secondaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tertiary": {
+      "r": 3,
+      "g": 85,
+      "b": 202,
+      "a": 255
+    },
+    "tertiaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "infoContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "successContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "warningContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "errorContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "darkContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tableHover": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 10
+    },
+    "skeleton": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 28
+    },
+    "primaryDarken": "rgb(1,134,183)",
+    "primaryLighten": "rgb(11,189,254)",
+    "secondaryDarken": "rgb(255,31,105)",
+    "secondaryLighten": "rgb(255,102,153)",
+    "tertiaryDarken": "rgb(2,68,161)",
+    "tertiaryLighten": "rgb(4,103,241)",
+    "infoDarken": "rgb(10,133,255)",
+    "infoLighten": "rgb(92,173,255)",
+    "successDarken": "rgb(9,154,108)",
+    "successLighten": "rgb(13,222,156)",
+    "warningDarken": "rgb(193,142,31)",
+    "warningLighten": "rgb(225,176,71)",
+    "errorDarken": "rgb(193,31,31)",
+    "errorLighten": "rgb(225,71,71)",
+    "darkDarken": "rgb(23,23,28)",
+    "darkLighten": "rgb(56,56,67)",
+    "borderOpacity": 1,
+    "hoverOpacity": 0.06,
+    "rippleOpacity": 0.1,
+    "rippleOpacitySecondary": 0.2,
+    "grayDefault": "#9E9E9E",
+    "grayLight": "#BDBDBD",
+    "grayLighter": "#E0E0E0",
+    "grayDark": "#757575",
+    "grayDarker": "#616161",
+    "overlayDark": "rgba(33,33,33,0.4980392156862745)",
+    "overlayLight": "rgba(255,255,255,0.4980392156862745)"
+  },
+  "layoutProperties": {
+    "defaultBorderRadius": "6px",
+    "drawerMiniWidthLeft": "56px",
+    "drawerMiniWidthRight": "56px",
+    "drawerWidthLeft": "256px",
+    "drawerWidthRight": "240px",
+    "appbarHeight": "64px"
+  },
+  "mainContentSettings": {
+    "extraClass": "mt-4 mb-12 pa-2",
+    "maxWidth": "ExtraLarge"
+  },
+  "navMenuSettings": {
+    "showLogo": true,
+    "elevation": 1,
+    "clipMode": "Never",
+    "variant": "Mini"
+  },
+  "topBarSettings": {
+    "showBreadcrumbs": true,
+    "dense": false,
+    "elevation": 1
+  },
+  "bottomBarSettings": {
+    "enabled": true,
+    "elevation": 1,
+    "showPoweredBy": true,
+    "showVersion": true,
+    "iconUrl": "/img/logos/tcadmin.png"
+  },
+  "advancedSettings": {},
+  "createdDate": "0001-01-01T00:00:00"
+}
