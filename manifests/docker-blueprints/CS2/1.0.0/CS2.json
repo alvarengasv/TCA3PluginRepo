@@ -1,7 +1,7 @@
 {
-  "__TCA:ExportVersion": "3.0.405.64990",
-  "__TCA:ExportedAt": "2025-12-04T06:12:27.1005318Z",
-  "blueprintId": 136,
+  "__TCA:ExportVersion": "3.0.571.23444",
+  "__TCA:ExportedAt": "2025-12-17T21:39:42.4884954Z",
+  "blueprintId": 27,
   "name": "Counter-Strike 2",
   "shortName": "CS2",
   "description": "CS2 docker image https://github.com/joedwards32/CS2",
@@ -45,7 +45,7 @@
   },
   "configFiles": [
     {
-      "id": 223,
+      "id": 57,
       "relativePath": "server-configuration.cfg",
       "description": "Server Configuration",
       "template": "SRCDS_TOKEN=\u0022${SRCDS_TOKEN}\u0022              (Game Server Token from https://steamcommunity.com/dev/managegameservers)\r\nCS2_SERVERNAME=\u0022${Hostname}\u0022   (Set the visible name for your private server.)\r\nCS2_CHEATS=\u0022${CS2_CHEATS}\u0022                (0 - disable cheats, 1 - enable cheats)\r\nCS2_SERVER_HIBERNATE=\u0022${CS2_SERVER_HIBERNATE}\u0022      (Put server in a low CPU state when there are no players. \r\n                             0 - hibernation disabled, 1 - hibernation enabled\r\n                             n.b. hibernation has been observed to trigger server crashes)\r\nCS2_LAN=\u0022${CS2_LAN}\u0022                 (0 - LAN mode disabled, 1 - LAN Mode enabled)\r\nCS2_RCONPW=\u0022${RconPassword}\u0022       (RCON password)\r\nCS2_PW=\u0022${PrivatePassword}\u0022                   (Optional, CS2 server password)\r\nCS2_MAXPLAYERS=\u0022${CS2_MAXPLAYERS}\u0022           (Max players)\r\nCS2_ADDITIONAL_ARGS=\u0022${CS2_ADDITIONAL_ARGS}\u0022      (Optional additional arguments to pass into cs2)\r\nSTEAMAPPVALIDATE=\u0022${STEAMAPPVALIDATE}\u0022       If you break the game through your customisations and want steamcmd to validate and redownload",
@@ -220,7 +220,7 @@
       ]
     },
     {
-      "id": 224,
+      "id": 58,
       "relativePath": "game-modes.cfg",
       "description": "Game Modes",
       "template": "CS2_GAMEALIAS=\u0022${CS2_GAMEALIAS}\u0022            (Game type, e.g. casual, competitive, deathmatch.\r\n                             See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers)\r\nCS2_GAMETYPE=\u0022${CS2_GAMETYPE}\u0022              (Used if CS2_GAMEALIAS not defined. See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers)\r\nCS2_GAMEMODE=\u0022${CS2_GAMEMODE}\u0022              (Used if CS2_GAMEALIAS not defined. See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers)\r\nCS2_MAPGROUP=\u0022${CS2_MAPGROUP}\u0022    (Map pool. Ignored if workshop maps are defined.)\r\nCS2_STARTMAP=\u0022${CS2_STARTMAP}\u0022   (Start map. Ignored if workshop maps are defined.)",
@@ -329,7 +329,7 @@
       ]
     },
     {
-      "id": 225,
+      "id": 59,
       "relativePath": "bots.cfg",
       "description": "Bots",
       "template": "CS2_BOT_DIFFICULTY=\u0022${CS2_BOT_DIFFICULTY}\u0022       (0 - easy, 1 - normal, 2 - hard, 3 - expert)\r\nCS2_BOT_QUOTA=\u0022${CS2_BOT_QUOTA}\u0022            (Number of bots)\r\nCS2_BOT_QUOTA_MODE=\u0022${CS2_BOT_QUOTA_MODE}\u0022       (fill, competitive)",
@@ -410,7 +410,7 @@
       ]
     },
     {
-      "id": 226,
+      "id": 60,
       "relativePath": "tv.cfg",
       "description": "CSTV/SourceTV",
       "template": "TV_ENABLE=\u0022${TV_ENABLE}\u0022                 (0 - disable, 1 - enable)\r\nTV_AUTORECORD=\u0022${TV_AUTORECORD}\u0022             (Automatically record all games as CSTV demos: 0=off, 1=on)\r\nTV_PW=\u0022${TV_PW}\u0022            (CSTV password for clients)\r\nTV_RELAY_PW=\u0022${TV_RELAY_PW}\u0022      (CSTV password for relay proxies)\r\nTV_MAXRATE=\u0022${TV_MAXRATE}\u0022                (Max CSTV spectator bandwidth rate allowed, 0 == unlimited)\r\nTV_DELAY=\u0022${TV_DELAY}\u0022                  (CSTV broadcast delay in seconds)",
@@ -520,7 +520,7 @@
       ]
     },
     {
-      "id": 227,
+      "id": 61,
       "relativePath": "logs.cfg",
       "description": "Logs",
       "template": "CS2_LOG=\u0022${CS2_LOG}\u0022                (\u0027on\u0027/\u0027off\u0027)\r\nCS2_LOG_MONEY=\u0022${CS2_LOG_MONEY}\u0022             (Turns money logging on/off: 0=off, 1=on)\r\nCS2_LOG_DETAIL=\u0022${CS2_LOG_DETAIL}\u0022            (Combat damage logging: 0=disabled, 1=enemy, 2=friendly, 3=all)\r\nCS2_LOG_ITEMS=\u0022${CS2_LOG_ITEMS}\u0022             (Turns item logging on/off: 0=off, 1=on)\r\nDEBUG=${DEBUG}",
@@ -644,7 +644,7 @@
       ]
     },
     {
-      "id": 228,
+      "id": 62,
       "relativePath": "workshop.cfg",
       "description": "Steam Workshop - experimental!",
       "template": "CS2_HOST_WORKSHOP_MAP=\u0022${CS2_HOST_WORKSHOP_MAP}\u0022         (Steam Workshop Map ID to load on server start)   \r\nCS2_HOST_WORKSHOP_COLLECTION=\u0022${CS2_HOST_WORKSHOP_COLLECTION}\u0022  (Steam Workshop Collection ID to download)",
@@ -688,16 +688,35 @@
       ]
     },
     {
-      "id": 229,
+      "id": 63,
       "relativePath": "pre.sh",
       "description": "Executed before the CS2 server starts",
-      "template": "#!/bin/bash\r\n\r\n# PRE HOOK\r\n#  Make your customisation here\r\necho \u0022pre-hook: noop\u0022\r\n\r\nif [ ! -x ./rcon.pl ]; then\r\n    echo \u0022Downloading RCON tool...\u0022\r\n    wget https://cdnsource.tcadmin.net/games/SourceRCON.pl -O rcon.pl\r\n    chmod \u002Bx rcon.pl\r\nelse\r\n    echo \u0022RCON tool already exists \u2014 skipping download.\u0022\r\nfi\r\n\r\nif [ ! -x ./exec.sh ]; then\r\n    echo \u0027#!/bin/bash\u0027 \u003E exec.sh\r\n    echo -n \u0027/home/steam/cs2-dedicated/game/rcon.pl 127.0.0.1 ${CS2_RCON_PORT} ${CS2_RCONPW}\u0027 \u003E\u003E exec.sh\r\n    chmod \u002Bx exec.sh\r\nelse\r\n    echo \u0022exec.sh already exists\u0022\r\nfi",
+      "template": "#!/bin/bash\r\n\r\n# PRE HOOK\r\n#  Make your customisation here\r\necho \u0022pre-hook: noop\u0022\r\n\r\nif [ ! -x ./rcon.pl ]; then\r\n    echo \u0022Downloading RCON tool...\u0022\r\n    wget https://cdnsource.tcadmin.net/games/SourceRCON.pl -O rcon.pl\r\n    chmod \u002Bx rcon.pl\r\nelse\r\n    echo \u0022RCON tool already exists \u2014 skipping download.\u0022\r\nfi\r\n\r\nif [ ! -x ./exec.sh ]; then\r\n    echo \u0027#!/bin/bash\u0027 \u003E exec.sh\r\n    echo -n \u0027/home/steam/cs2-dedicated/game/rcon.pl 127.0.0.1 ${RConPort} ${RconPassword}\u0027 \u003E\u003E exec.sh\r\n    chmod \u002Bx exec.sh\r\nelse\r\n    echo \u0022exec.sh already exists\u0022\r\nfi",
       "order": 7,
       "enableEditor": false,
-      "editor": []
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 1,
+          "id": "RconPassword",
+          "defaultValue": "changeme",
+          "label": "RCON password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
     },
     {
-      "id": 230,
+      "id": 64,
       "relativePath": "post.sh",
       "description": "Executed after the CS2 server stops",
       "template": "",
@@ -732,246 +751,246 @@
   ],
   "environmentVariables": [
     {
-      "id": 21,
-      "blueprintId": 136,
+      "id": 127,
+      "blueprintId": 27,
       "name": "SRCDS_TOKEN",
       "value": "${SRCDS_TOKEN}",
       "valueType": "Template"
     },
     {
-      "id": 26,
-      "blueprintId": 136,
+      "id": 128,
+      "blueprintId": 27,
       "name": "CS2_IP",
       "value": "0.0.0.0",
       "valueType": "Static"
     },
     {
-      "id": 27,
-      "blueprintId": 136,
+      "id": 129,
+      "blueprintId": 27,
       "name": "CS2_PORT",
       "value": "${GamePort}",
       "valueType": "Template"
     },
     {
-      "id": 28,
-      "blueprintId": 136,
+      "id": 130,
+      "blueprintId": 27,
       "name": "CS2_RCON_PORT",
       "value": "${RConPort}",
       "valueType": "Template"
     },
     {
-      "id": 29,
-      "blueprintId": 136,
+      "id": 131,
+      "blueprintId": 27,
       "name": "TV_PORT",
       "value": "${TVPort}",
       "valueType": "Template"
     },
     {
-      "id": 174,
-      "blueprintId": 136,
+      "id": 132,
+      "blueprintId": 27,
       "name": "CS2_SERVERNAME",
       "value": "${Hostname}",
       "valueType": "Template"
     },
     {
-      "id": 175,
-      "blueprintId": 136,
+      "id": 133,
+      "blueprintId": 27,
       "name": "CS2_CHEATS",
       "value": "${CS2_CHEATS}",
       "valueType": "Template"
     },
     {
-      "id": 176,
-      "blueprintId": 136,
+      "id": 134,
+      "blueprintId": 27,
       "name": "CS2_SERVER_HIBERNATE",
       "value": "${CS2_SERVER_HIBERNATE}",
       "valueType": "Template"
     },
     {
-      "id": 177,
-      "blueprintId": 136,
+      "id": 135,
+      "blueprintId": 27,
       "name": "CS2_LAN",
       "value": "${CS2_LAN}",
       "valueType": "Template"
     },
     {
-      "id": 178,
-      "blueprintId": 136,
+      "id": 136,
+      "blueprintId": 27,
       "name": "CS2_RCONPW",
       "value": "${RconPassword}",
       "valueType": "Template"
     },
     {
-      "id": 179,
-      "blueprintId": 136,
+      "id": 137,
+      "blueprintId": 27,
       "name": "CS2_PW",
       "value": "${PrivatePassword}",
       "valueType": "Template"
     },
     {
-      "id": 180,
-      "blueprintId": 136,
+      "id": 138,
+      "blueprintId": 27,
       "name": "CS2_MAXPLAYERS",
       "value": "${CS2_MAXPLAYERS}",
       "valueType": "Template"
     },
     {
-      "id": 181,
-      "blueprintId": 136,
+      "id": 139,
+      "blueprintId": 27,
       "name": "CS2_ADDITIONAL_ARGS",
       "value": "${CS2_ADDITIONAL_ARGS}",
       "valueType": "Template"
     },
     {
-      "id": 182,
-      "blueprintId": 136,
+      "id": 140,
+      "blueprintId": 27,
       "name": "CS2_GAMEALIAS",
       "value": "${CS2_GAMEALIAS}",
       "valueType": "Template"
     },
     {
-      "id": 183,
-      "blueprintId": 136,
+      "id": 141,
+      "blueprintId": 27,
       "name": "CS2_GAMETYPE",
       "value": "${CS2_GAMETYPE}",
       "valueType": "Template"
     },
     {
-      "id": 184,
-      "blueprintId": 136,
+      "id": 142,
+      "blueprintId": 27,
       "name": "CS2_GAMEMODE",
       "value": "${CS2_GAMEMODE}",
       "valueType": "Template"
     },
     {
-      "id": 185,
-      "blueprintId": 136,
+      "id": 143,
+      "blueprintId": 27,
       "name": "CS2_MAPGROUP",
       "value": "${CS2_MAPGROUP}",
       "valueType": "Template"
     },
     {
-      "id": 186,
-      "blueprintId": 136,
+      "id": 144,
+      "blueprintId": 27,
       "name": "CS2_STARTMAP",
       "value": "${CS2_STARTMAP}",
       "valueType": "Template"
     },
     {
-      "id": 187,
-      "blueprintId": 136,
+      "id": 145,
+      "blueprintId": 27,
       "name": "CS2_BOT_DIFFICULTY",
       "value": "${CS2_BOT_DIFFICULTY}",
       "valueType": "Template"
     },
     {
-      "id": 188,
-      "blueprintId": 136,
+      "id": 146,
+      "blueprintId": 27,
       "name": "CS2_BOT_QUOTA",
       "value": "${CS2_BOT_QUOTA}",
       "valueType": "Template"
     },
     {
-      "id": 189,
-      "blueprintId": 136,
+      "id": 147,
+      "blueprintId": 27,
       "name": "CS2_BOT_QUOTA_MODE",
       "value": "${CS2_BOT_QUOTA_MODE}",
       "valueType": "Template"
     },
     {
-      "id": 190,
-      "blueprintId": 136,
+      "id": 148,
+      "blueprintId": 27,
       "name": "TV_ENABLE",
       "value": "${TV_ENABLE}",
       "valueType": "Template"
     },
     {
-      "id": 191,
-      "blueprintId": 136,
+      "id": 149,
+      "blueprintId": 27,
       "name": "TV_AUTORECORD",
       "value": "${TV_AUTORECORD}",
       "valueType": "Template"
     },
     {
-      "id": 192,
-      "blueprintId": 136,
+      "id": 150,
+      "blueprintId": 27,
       "name": "TV_PW",
       "value": "${TV_PW}",
       "valueType": "Template"
     },
     {
-      "id": 193,
-      "blueprintId": 136,
+      "id": 151,
+      "blueprintId": 27,
       "name": "TV_RELAY_PW",
       "value": "${TV_RELAY_PW}",
       "valueType": "Template"
     },
     {
-      "id": 194,
-      "blueprintId": 136,
+      "id": 152,
+      "blueprintId": 27,
       "name": "TV_MAXRATE",
       "value": "${TV_MAXRATE}",
       "valueType": "Template"
     },
     {
-      "id": 195,
-      "blueprintId": 136,
+      "id": 153,
+      "blueprintId": 27,
       "name": "TV_DELAY",
       "value": "${TV_DELAY}",
       "valueType": "Template"
     },
     {
-      "id": 196,
-      "blueprintId": 136,
+      "id": 154,
+      "blueprintId": 27,
       "name": "CS2_LOG",
       "value": "${CS2_LOG}",
       "valueType": "Template"
     },
     {
-      "id": 197,
-      "blueprintId": 136,
+      "id": 155,
+      "blueprintId": 27,
       "name": "CS2_LOG_MONEY",
       "value": "${CS2_LOG_MONEY}",
       "valueType": "Template"
     },
     {
-      "id": 198,
-      "blueprintId": 136,
+      "id": 156,
+      "blueprintId": 27,
       "name": "CS2_LOG_DETAIL",
       "value": "${CS2_LOG_DETAIL}",
       "valueType": "Template"
     },
     {
-      "id": 199,
-      "blueprintId": 136,
+      "id": 157,
+      "blueprintId": 27,
       "name": "CS2_LOG_ITEMS",
       "value": "${CS2_LOG_ITEMS}",
       "valueType": "Template"
     },
     {
-      "id": 200,
-      "blueprintId": 136,
+      "id": 158,
+      "blueprintId": 27,
       "name": "CS2_HOST_WORKSHOP_MAP",
       "value": "${CS2_HOST_WORKSHOP_MAP}",
       "valueType": "Template"
     },
     {
-      "id": 201,
-      "blueprintId": 136,
+      "id": 159,
+      "blueprintId": 27,
       "name": "CS2_HOST_WORKSHOP_COLLECTION",
       "value": "${CS2_HOST_WORKSHOP_COLLECTION}",
       "valueType": "Template"
     },
     {
-      "id": 202,
-      "blueprintId": 136,
+      "id": 160,
+      "blueprintId": 27,
       "name": "DEBUG",
       "value": "${DEBUG}",
       "valueType": "Template"
     },
     {
-      "id": 203,
-      "blueprintId": 136,
+      "id": 161,
+      "blueprintId": 27,
       "name": "STEAMAPPVALIDATE",
       "value": "${STEAMAPPVALIDATE}",
       "valueType": "Template"
@@ -987,8 +1006,8 @@
   ],
   "volumeBinds": [
     {
-      "id": 2,
-      "blueprintId": 136,
+      "id": 10,
+      "blueprintId": 27,
       "hostPath": "",
       "containerPath": "/home/steam/cs2-dedicated",
       "readOnly": false
@@ -999,7 +1018,7 @@
     "oomKillEnabled": false
   },
   "dockerIpPortAllocationConfig": {
-    "dockerBlueprintId": 136,
+    "dockerBlueprintId": 27,
     "dockerCustomPorts": [
       {
         "protocol": "udp",
@@ -1029,10 +1048,11 @@
   },
   "dockerVariables": [
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "SRCDS_TOKEN",
       "defaultValue": "None",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1050,6 +1070,7 @@
         "description": "Check https://steamcommunity.com/dev/managegameservers",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 6,
         "xs": 12,
@@ -1060,7 +1081,7 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "Hostname",
       "defaultValue": "changeme",
       "required": true,
@@ -1093,10 +1114,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_CHEATS",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1111,6 +1133,7 @@
         "label": "Cheats",
         "description": "",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicSwitch",
         "sm": 4,
         "xs": 12,
@@ -1121,10 +1144,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_SERVER_HIBERNATE",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1139,6 +1163,7 @@
         "label": "Hibernate",
         "description": "Put server in a low CPU state when there are no players",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicSwitch",
         "sm": 4,
         "xs": 12,
@@ -1149,10 +1174,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_LAN",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1167,6 +1193,7 @@
         "label": "LAN mode",
         "description": "",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicSwitch",
         "sm": 4,
         "xs": 12,
@@ -1177,10 +1204,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "RconPassword",
       "defaultValue": "changeme",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1198,6 +1226,7 @@
         "description": "",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1208,7 +1237,7 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_MAXPLAYERS",
       "defaultValue": 10,
       "required": true,
@@ -1240,9 +1269,10 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "PrivatePassword",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1259,6 +1289,7 @@
         "description": "Optional, CS2 server password",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1269,9 +1300,10 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_GAMEALIAS",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1300,6 +1332,7 @@
         "description": "Game alias, e.g. casual, competitive, deathmatch",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicComboBox",
         "sm": 12,
         "xs": 12,
@@ -1310,10 +1343,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_GAMETYPE",
       "defaultValue": 0,
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1330,6 +1364,7 @@
         "label": "Game type",
         "description": "Used if CS2_GAMEALIAS not defined. See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicNumericTextBox",
         "sm": 12,
         "xs": 12,
@@ -1340,10 +1375,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_GAMEMODE",
       "defaultValue": 1,
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1360,6 +1396,7 @@
         "label": "Game mode",
         "description": "Used if CS2_GAMEALIAS not defined. See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicNumericTextBox",
         "sm": 12,
         "xs": 12,
@@ -1370,10 +1407,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_MAPGROUP",
       "defaultValue": "mg_active",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1391,6 +1429,7 @@
         "description": "Map pool. Ignored if workshop maps are defined.",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1401,10 +1440,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_STARTMAP",
       "defaultValue": "de_inferno",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1422,6 +1462,7 @@
         "description": "Start map. Ignored if workshop maps are defined.",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1432,10 +1473,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_BOT_DIFFICULTY",
       "defaultValue": "1",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1466,6 +1508,7 @@
         "description": "",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicComboBox",
         "sm": 12,
         "xs": 12,
@@ -1476,10 +1519,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_BOT_QUOTA",
       "defaultValue": 0,
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1496,6 +1540,7 @@
         "label": "Bot quota",
         "description": "Number of bots",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicNumericTextBox",
         "sm": 12,
         "xs": 12,
@@ -1506,10 +1551,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_BOT_QUOTA_MODE",
       "defaultValue": "fill",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1532,6 +1578,7 @@
         "description": "",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicComboBox",
         "sm": 12,
         "xs": 12,
@@ -1542,10 +1589,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "TV_ENABLE",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1560,6 +1608,7 @@
         "label": "TV Enabled",
         "description": "",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicCheckBox",
         "sm": 12,
         "xs": 12,
@@ -1570,10 +1619,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "TV_AUTORECORD",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1588,6 +1638,7 @@
         "label": "Auto record",
         "description": "Automatically record all games as CSTV demos",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicCheckBox",
         "sm": 12,
         "xs": 12,
@@ -1598,7 +1649,7 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "TV_PW",
       "defaultValue": "changeme",
       "required": false,
@@ -1631,10 +1682,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "TV_RELAY_PW",
       "defaultValue": "changeme",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1652,6 +1704,7 @@
         "description": "CSTV password for relay proxies",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1662,7 +1715,7 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "TV_MAXRATE",
       "defaultValue": 0,
       "required": false,
@@ -1694,10 +1747,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "TV_DELAY",
       "defaultValue": 0,
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1714,6 +1768,7 @@
         "label": "TV delay",
         "description": "CSTV broadcast delay in seconds",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicNumericTextBox",
         "sm": 12,
         "xs": 12,
@@ -1724,10 +1779,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_LOG",
       "defaultValue": "on",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1750,6 +1806,7 @@
         "description": "Turn logging on/off",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicComboBox",
         "sm": 4,
         "xs": 12,
@@ -1760,10 +1817,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_LOG_MONEY",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1778,6 +1836,7 @@
         "label": "Log money",
         "description": "Turns money logging on/off:",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicCheckBox",
         "sm": 4,
         "xs": 12,
@@ -1788,10 +1847,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_LOG_DETAIL",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1822,6 +1882,7 @@
         "description": "Combat damage logging",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicComboBox",
         "sm": 4,
         "xs": 12,
@@ -1832,9 +1893,10 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_LOG_ITEMS",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1848,6 +1910,7 @@
         "label": "Log items",
         "description": "Turns item logging on/off",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicCheckBox",
         "sm": 4,
         "xs": 12,
@@ -1858,9 +1921,10 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_HOST_WORKSHOP_MAP",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1877,6 +1941,7 @@
         "description": "Steam Workshop Map ID to load on server start",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1887,9 +1952,10 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_HOST_WORKSHOP_COLLECTION",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1906,6 +1972,7 @@
         "description": "Steam Workshop Collection ID to download",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1916,9 +1983,10 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "CS2_ADDITIONAL_ARGS",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1935,6 +2003,7 @@
         "description": "Optional additional arguments to pass into cs2",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicTextBox",
         "sm": 12,
         "xs": 12,
@@ -1945,10 +2014,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "DEBUG",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -1979,6 +2049,7 @@
         "description": "Increase the verbosity of log output",
         "required": false,
         "valueType": "string",
+        "requiredMessage": "Value is required",
         "controlType": "DynamicComboBox",
         "sm": 4,
         "xs": 12,
@@ -1989,10 +2060,11 @@
       "variableRoles": []
     },
     {
-      "dockerBlueprintId": 136,
+      "dockerBlueprintId": 27,
       "name": "STEAMAPPVALIDATE",
       "defaultValue": "0",
       "required": false,
+      "requiredMessage": "Value is required",
       "scriptParameter": false,
       "commandlineParameter": false,
       "saveScriptParameter": false,
@@ -2007,6 +2079,7 @@
         "label": "Steam app validate",
         "description": "If you break the game through your customizations and want steamcmd to validate and redownload",
         "required": false,
+        "requiredMessage": "Value is required",
         "controlType": "DynamicCheckBox",
         "sm": 12,
         "xs": 12,
@@ -2050,13 +2123,6 @@
     {
       "roleId": 2,
       "module": "BpFeature",
-      "permission": "ServiceSettings",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
       "permission": "ServiceActivity",
       "moduleData": "",
       "granted": true
@@ -2074,20 +2140,6 @@
       "permission": "Reinstall",
       "moduleData": "",
       "granted": true
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "PredefCmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "NetworkStats",
-      "moduleData": "",
-      "granted": false
     },
     {
       "roleId": 2,
@@ -2127,27 +2179,6 @@
     {
       "roleId": 2,
       "module": "BpFeature",
-      "permission": "Delete",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "CustomCmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Create",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
       "permission": "CpuStats",
       "moduleData": "",
       "granted": true
@@ -2172,90 +2203,6 @@
       "permission": "ConfigFiles",
       "moduleData": "",
       "granted": true
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Variables",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Scripts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Monitoring",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "IpAndPorts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "GeneralSettings",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "FileSystem",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "FeaturePermissions",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Console",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "ConfigFiles",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Cmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "ExecConsole",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "ServiceSettings",
-      "moduleData": "",
-      "granted": false
     },
     {
       "roleId": 3,
@@ -2330,20 +2277,6 @@
     {
       "roleId": 3,
       "module": "BpFeature",
-      "permission": "Delete",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Create",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
       "permission": "CpuStats",
       "moduleData": "",
       "granted": true
@@ -2368,111 +2301,6 @@
       "permission": "ConfigFiles",
       "moduleData": "",
       "granted": true
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "VolumeBinds",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "VolumeBinds",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Variables",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Scripts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Limits",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Limits",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "IpAndPorts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Images",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Images",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "GeneralSettings",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "FileSystem",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "FeaturePermissions",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "EnvironmentVariables",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "EnvironmentVariables",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "ConfigFiles",
-      "moduleData": "",
-      "granted": false
     }
   ]
 }
