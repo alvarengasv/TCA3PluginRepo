@@ -17,6 +17,6 @@ tags:
   
 files:
   - identifier: "language_english"
-    path: manifest.yaml
+    path: English.json
     type: LanguageConfig
     optional: false
