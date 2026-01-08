@@ -1,13 +1,16 @@
 {
-  "__TCA:ExportVersion": "3.0.320.53032",
-  "__TCA:ExportedAt": "2025-10-28T00:37:03.2638969Z",
+  "__TCA:ExportVersion": "3.0.702.39528",
+  "__TCA:ExportedAt": "2026-01-08T03:35:08.9200664Z",
   "name": "Multi Theft Auto",
   "shortName": "MTA",
+  "description": "",
   "operatingSystem": "Linux",
   "backgroundImage": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero/6b5bf4d4122957763ce3b07201e4003e.png",
   "minSlots": 0,
   "maxSlots": 64,
   "defaultSlots": 32,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
   "categoryId": 1,
   "editableExtensions": [
     ".txt",
@@ -27,7 +30,7 @@
   },
   "consoleConfig": {
     "enabled": true,
-    "outputSource": "LogFile",
+    "outputSource": "Terminal",
     "logFile": "mods/deathmatch/logs/server.log",
     "inputSource": "ConsoleCommands",
     "outputFilters": "",
@@ -47,7 +50,8 @@
     "customPorts": [
       {
         "id": "GamePort",
-        "port": 22003
+        "port": 22003,
+        "expression": ""
       },
       {
         "id": "RConPort",
@@ -115,6 +119,7 @@
           "lines": 1,
           "denyCharacters": [],
           "regExValidation": "",
+          "inputType": 0,
           "id": "Hostname",
           "label": "Hostname",
           "description": "",
@@ -123,13 +128,15 @@
           "requiredMessage": "Value is required",
           "controlType": "DynamicTextBox",
           "sm": 12,
-          "xs": 12
+          "xs": 12,
+          "requiresAnyVisible": []
         },
         {
           "maxLength": 0,
           "lines": 1,
           "denyCharacters": [],
           "regExValidation": "",
+          "inputType": 0,
           "id": "PrivatePassword",
           "label": "Private Password",
           "description": "Server access password.",
@@ -138,7 +145,8 @@
           "requiredMessage": "",
           "controlType": "DynamicTextBox",
           "sm": 4,
-          "xs": 12
+          "xs": 12,
+          "requiresAnyVisible": []
         }
       ]
     }
@@ -157,12 +165,12 @@
           "DownloadGameFiles"
         ],
         "name": "Download Linux game files",
-        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, System.IO.Compression.dll, System.Formats.Tar.dll\r\nusing System.Formats.Tar;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing System.IO;\r\nusing System.IO.Compression;\r\nusing System.Net.Http;\r\nusing TCAdmin.SDK.Misc.Extensions;\r\n\r\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGlobals(); // DO NOT MODIFY THIS LINE\r\n\r\nasync Task DownloadAndExtractTgz(string url, string extractPath, CancellationToken cancellationToken)\r\n{\r\n    using(HttpClient downloadClient = new HttpClient())\r\n    {\r\n        var tgzFile = Path.Combine(extractPath, \u0022tmp.tar.gz\u0022);\r\n        var tFile = Path.Combine(extractPath, \u0022tmp.tar\u0022);\r\n        await downloadClient.DownloadFile(url, tgzFile, cancellationToken);\r\n\r\n        using (FileStream compressedFileStream = File.OpenRead(tgzFile))\r\n        using (FileStream outputFileStream = File.Create(tFile))\r\n        using (GZipStream decompressionStream = new GZipStream(compressedFileStream, CompressionMode.Decompress, false))\r\n        {\r\n            decompressionStream.CopyTo(outputFileStream);\r\n        }\r\n\r\n        Directory.CreateDirectory(extractPath);\r\n        TarFile.ExtractToDirectory(tFile, extractPath, true);\r\n\r\n        File.Delete(tFile);\r\n        File.Delete(tgzFile);\r\n    }\r\n}\r\n\r\nasync Task DownloadAndExtractZip(string url, string extractPath, CancellationToken cancellationToken)\r\n{\r\n    Directory.CreateDirectory(extractPath);\r\n    using(HttpClient downloadClient = new HttpClient())\r\n    {\r\n        var zipFile = Path.Combine(extractPath, \u0022tmp.zip\u0022);\r\n        await downloadClient.DownloadFile(url, zipFile, cancellationToken);\r\n\r\n        using(ZipArchive archive = ZipFile.OpenRead(zipFile))\r\n        {\r\n            foreach (ZipArchiveEntry entry in archive.Entries)\r\n            {\r\n                string destinationPath = Path.Combine(extractPath, entry.FullName);\r\n\r\n                // Create directories if necessary\r\n                Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));\r\n\r\n                // Extract file if it\u0027s not a directory\r\n                if (!entry.FullName.EndsWith(\u0022/\u0022))\r\n                {\r\n                entry.ExtractToFile(destinationPath, overwrite: true);\r\n                }\r\n            }\r\n        }\r\n\r\n        File.Delete(zipFile);\r\n    }\r\n}\r\n\r\npublic static void MoveFilesToParentFolder(string folderPath)\r\n{\r\n    if (string.IsNullOrWhiteSpace(folderPath) || !Directory.Exists(folderPath))\r\n    {\r\n        return;\r\n    }\r\n\r\n    string parentFolder = Directory.GetParent(folderPath)?.FullName;\r\n    if (string.IsNullOrWhiteSpace(parentFolder))\r\n    {\r\n        return;\r\n    }\r\n\r\n    string[] files = Directory.GetFiles(folderPath);\r\n    foreach (string file in files)\r\n    {\r\n        string destinationPath = Path.Combine(parentFolder, Path.GetFileName(file));\r\n\r\n        // Ensure the file doesn\u0027t exist in the destination, otherwise rename it\r\n        string uniqueDestinationPath = destinationPath;\r\n        int counter = 1;\r\n        while (File.Exists(uniqueDestinationPath))\r\n        {\r\n            string fileNameWithoutExt = Path.GetFileNameWithoutExtension(file);\r\n            string extension = Path.GetExtension(file);\r\n            uniqueDestinationPath = Path.Combine(parentFolder, $\u0022{fileNameWithoutExt}({counter}){extension}\u0022);\r\n            counter\u002B\u002B;\r\n        }\r\n\r\n        File.Move(file, uniqueDestinationPath);\r\n    }\r\n}\r\n\r\n// download multitheftauto_linux_x64\r\nawait DownloadAndExtractTgz(\u0022https://linux.mtasa.com/dl/multitheftauto_linux_x64.tar.gz\u0022, Globals.ThisServer.Configuration.GameFilesPath, Globals.ThisCancellationToken);\r\nGlobals.Console.WriteLine(\u0022Extraction of multitheftauto_linux_x64 completed successfully!\u0022);\r\n\r\n// download base config\r\nvar deathMatchDir = Path.Combine(Globals.ThisServer.Configuration.GameFilesPath, \u0022multitheftauto_linux_x64\u0022, \u0022mods\u0022, \u0022deathmatch\u0022);\r\nawait DownloadAndExtractTgz(\u0022https://linux.mtasa.com/dl/baseconfig.tar.gz\u0022, deathMatchDir, Globals.ThisCancellationToken);\r\nvar baseConfig = Path.Combine(deathMatchDir, \u0022baseconfig\u0022);\r\nMoveFilesToParentFolder(baseConfig);\r\nDirectory.Delete(baseConfig);\r\nGlobals.Console.WriteLine(\u0022Extraction of baseconfig completed successfully!\u0022);\r\n\r\n// download resources\r\nvar resourcesDir = Path.Combine(deathMatchDir, \u0022resources\u0022);\r\nawait DownloadAndExtractZip(\u0022http://mirror.mtasa.com/mtasa/resources/mtasa-resources-latest.zip\u0022, resourcesDir, Globals.ThisCancellationToken);\r\nGlobals.Console.WriteLine(\u0022Extraction of resources completed successfully!\u0022);",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, System.IO.Compression.dll, System.Formats.Tar.dll\r\nusing System.Formats.Tar;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing System.IO;\r\nusing System.IO.Compression;\r\nusing System.Net.Http;\r\nusing TCAdmin.SDK.Misc.Extensions;\r\n\r\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGlobals(); // DO NOT MODIFY THIS LINE\r\n\r\nasync Task DownloadAndExtractTgz(string url, string extractPath, CancellationToken cancellationToken)\r\n{\r\n    if(!Directory.Exists(extractPath)) Directory.CreateDirectory(extractPath);\r\n    using(HttpClient downloadClient = new HttpClient())\r\n    {\r\n        var tgzFile = Path.Combine(extractPath, \u0022tmp.tar.gz\u0022);\r\n        var tFile = Path.Combine(extractPath, \u0022tmp.tar\u0022);\r\n        await downloadClient.DownloadFile(url, tgzFile, cancellationToken);\r\n\r\n        using (FileStream compressedFileStream = File.OpenRead(tgzFile))\r\n        using (FileStream outputFileStream = File.Create(tFile))\r\n        using (GZipStream decompressionStream = new GZipStream(compressedFileStream, CompressionMode.Decompress, false))\r\n        {\r\n            decompressionStream.CopyTo(outputFileStream);\r\n        }\r\n\r\n        Directory.CreateDirectory(extractPath);\r\n        TarFile.ExtractToDirectory(tFile, extractPath, true);\r\n\r\n        File.Delete(tFile);\r\n        File.Delete(tgzFile);\r\n    }\r\n}\r\n\r\nasync Task DownloadAndExtractZip(string url, string extractPath, CancellationToken cancellationToken)\r\n{\r\n    Directory.CreateDirectory(extractPath);\r\n    using(HttpClient downloadClient = new HttpClient())\r\n    {\r\n        var zipFile = Path.Combine(extractPath, \u0022tmp.zip\u0022);\r\n        await downloadClient.DownloadFile(url, zipFile, cancellationToken);\r\n\r\n        using(ZipArchive archive = ZipFile.OpenRead(zipFile))\r\n        {\r\n            foreach (ZipArchiveEntry entry in archive.Entries)\r\n            {\r\n                string destinationPath = Path.Combine(extractPath, entry.FullName);\r\n\r\n                // Create directories if necessary\r\n                Directory.CreateDirectory(Path.GetDirectoryName(destinationPath));\r\n\r\n                // Extract file if it\u0027s not a directory\r\n                if (!entry.FullName.EndsWith(\u0022/\u0022))\r\n                {\r\n                entry.ExtractToFile(destinationPath, overwrite: true);\r\n                }\r\n            }\r\n        }\r\n\r\n        File.Delete(zipFile);\r\n    }\r\n}\r\n\r\npublic static void MoveFilesToParentFolder(string folderPath)\r\n{\r\n    if (string.IsNullOrWhiteSpace(folderPath) || !Directory.Exists(folderPath))\r\n    {\r\n        return;\r\n    }\r\n\r\n    string parentFolder = Directory.GetParent(folderPath)?.FullName;\r\n    if (string.IsNullOrWhiteSpace(parentFolder))\r\n    {\r\n        return;\r\n    }\r\n\r\n    string[] files = Directory.GetFiles(folderPath);\r\n    foreach (string file in files)\r\n    {\r\n        string destinationPath = Path.Combine(parentFolder, Path.GetFileName(file));\r\n\r\n        // Ensure the file doesn\u0027t exist in the destination, otherwise rename it\r\n        string uniqueDestinationPath = destinationPath;\r\n        int counter = 1;\r\n        while (File.Exists(uniqueDestinationPath))\r\n        {\r\n            string fileNameWithoutExt = Path.GetFileNameWithoutExtension(file);\r\n            string extension = Path.GetExtension(file);\r\n            uniqueDestinationPath = Path.Combine(parentFolder, $\u0022{fileNameWithoutExt}({counter}){extension}\u0022);\r\n            counter\u002B\u002B;\r\n        }\r\n\r\n        File.Move(file, uniqueDestinationPath);\r\n    }\r\n}\r\n\r\n// download multitheftauto_linux_x64\r\nawait DownloadAndExtractTgz(\u0022https://linux.mtasa.com/dl/multitheftauto_linux_x64.tar.gz\u0022, Globals.ThisServer.Configuration.GameFilesPath, Globals.ThisCancellationToken);\r\nGlobals.ScriptConsole.WriteLine(\u0022Extraction of multitheftauto_linux_x64 completed successfully!\u0022);\r\n\r\n// download base config\r\nvar deathMatchDir = Path.Combine(Globals.ThisServer.Configuration.GameFilesPath, \u0022multitheftauto_linux_x64\u0022, \u0022mods\u0022, \u0022deathmatch\u0022);\r\nawait DownloadAndExtractTgz(\u0022https://linux.mtasa.com/dl/baseconfig.tar.gz\u0022, deathMatchDir, Globals.ThisCancellationToken);\r\nvar baseConfig = Path.Combine(deathMatchDir, \u0022baseconfig\u0022);\r\nMoveFilesToParentFolder(baseConfig);\r\nDirectory.Delete(baseConfig);\r\nGlobals.ScriptConsole.WriteLine(\u0022Extraction of baseconfig completed successfully!\u0022);\r\n\r\n// download resources\r\nvar resourcesDir = Path.Combine(deathMatchDir, \u0022resources\u0022);\r\nawait DownloadAndExtractZip(\u0022http://mirror.mtasa.com/mtasa/resources/mtasa-resources-latest.zip\u0022, resourcesDir, Globals.ThisCancellationToken);\r\nGlobals.ScriptConsole.WriteLine(\u0022Extraction of resources completed successfully!\u0022);",
         "runImpersonated": false,
         "stopService": false,
         "ignoreErrors": false,
         "order": 0,
-        "icon": "\u003Cg\u003E\u003Crect fill=\u0022none\u0022 height=\u002224\u0022 width=\u002224\u0022/\u003E\u003C/g\u003E\u003Cg\u003E\u003Cpath d=\u0022M12,2C6.49,2,2,6.49,2,12s4.49,10,10,10s10-4.49,10-10S17.51,2,12,2z M11,10V6h2v4h3l-4,4l-4-4H11z M17,17H7v-2h10V17z\u0022/\u003E\u003C/g\u003E",
+        "icon": "\u003Cpath d=\u0022M20.812 18.664c-1.164-.328-.834-1.798-1.333-2.557.354-1.35.093-2.796-.664-3.963-.775-1.415-1.801-2.672-2.65-4.037-.616-1.506-.105-3.221-.738-4.734-.413-1.499-1.943-2.55-3.491-2.361-1.292.083-2.72.825-2.96 2.21-.413 1.763.289 3.581-.102 5.344-.816 1.243-1.926 2.332-2.337 3.804-.243 1.07-.977 1.995-1.042 3.094.05.88-.9 1.776-1.844 1.841-1.283.149-.72 1.468-.735 2.276-.677.992-.085 2.123 1.11 2.125 1.22.097 2.357.536 3.498.94 1.055.6 2.007-.093 2.759-.627 1.445-.267 2.943-.307 4.38.028.501 1.198 2.254 1.23 3.011.277 1.018-.918 2.38-1.33 3.44-2.173.474-.444.315-1.271-.302-1.487zm-10.854-.098c-.393-.986-1.51-1.383-2.196-2.14-.855-.918-.477-2.394.054-3.387.607-1.028.685-2.314 1.483-3.238.462-.392.237-1.973.932-1.078 1.068.913 2.176-.328 3.159-.742.801-.13.914 1.422 1.36 2.047.706 1.76 1.685 3.582 1.337 5.542.05.733-1.35.312-1.057 1.38.01 1.019.073 2.114-1.027 2.606-1.09.809-2.534.813-3.829.719l-.686-.785a.843.843 0 0 0 .47-.924zm.87-12.94c.001-.437-.883-1.369-1.25-.473.17-1.385 1.558-.578 1.25.473zm2.719.333c.545-1.303-1.626-1.676-1.403-.225-.746-1.004 1.122-2.34 1.524-.885.12.364.083.783-.121 1.11zm-.35 1.177c-.745.288-1.55 1.38-2.373.893-.59-.291-1.07-.842-.21-1.173.72-.954 1.81-.088 2.582.28zm2.592 13.443c.274-1.106.401-2.246.256-3.38.015-.093.259 1.416 1.043 1.2.732.043 1.529-.286 1.877-.961-.19 1.021.726 1.637 1.336 2.107-.986.63-2.16.993-2.96 1.891-.793.98-1.891.271-1.552-.857zM3.88 18.706c-.183-1.083 1.851-.386 1.93-1.598.56-1.142 1.408.777 1.752 1.284.406.943 1.34 1.594 1.587 2.59-.1 1.258-1.513.847-2.269.462-.945-.492-2.012-.57-3.036-.79-.471-.403.43-1.353.036-1.948z\u0022/\u003E",
         "scriptInputVariables": [],
         "scriptRoles": [],
         "editor": [],
@@ -186,7 +194,7 @@
         "stopService": false,
         "ignoreErrors": false,
         "order": 0,
-        "icon": "\u003Cg\u003E\u003Crect fill=\u0022none\u0022 height=\u002224\u0022 width=\u002224\u0022/\u003E\u003C/g\u003E\u003Cg\u003E\u003Cpath d=\u0022M12,2C6.49,2,2,6.49,2,12s4.49,10,10,10s10-4.49,10-10S17.51,2,12,2z M11,10V6h2v4h3l-4,4l-4-4H11z M17,17H7v-2h10V17z\u0022/\u003E\u003C/g\u003E",
+        "icon": "\u003Cpath d=\u0022M3.008 11.471v-5.554l6.347-1.396v6.855l-6.347 0.095zM20.992 1.95v9.257l-10.579 0.159v-7.077l10.579-2.338zM3.008 12.529l6.347 0.095v7.204l-6.347-1.217v-6.083zM20.992 12.793v9.257l-10.579-2.021v-7.395l10.579 0.159z\u0022/\u003E",
         "scriptInputVariables": [],
         "scriptRoles": [],
         "editor": [],
@@ -219,262 +227,17 @@
     }
   ],
   "customModProviderConfigs": [],
-  "createdDate": "2025-04-07T19:04:00.481555",
-  "modifiedDate": "2025-09-08T01:31:28.74715",
+  "createdDate": "2025-12-28T02:54:23.330621",
+  "modifiedDate": "2025-12-28T02:54:23.411802",
   "metadata": {
     "Notes": "",
-    "notes": "Game imported from plugin TCA.Games.MTA version 1.0.2.Game imported from plugin TCA.Games.MTA version 1.0.2.",
-    "PluginVersion": "1.0.2",
+    "notes": "Game imported from plugin TCA.Games.MTA version 1.0.2.Game imported from plugin TCA.Games.MTA version 1.0.2.Game imported from plugin TCA.Games.MTA version 1.0.3.",
+    "PluginVersion": "1.0.3",
     "PluginIdentifier": "TCA.Games.MTA"
   },
   "rolePermissions": [
     {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "GeneralSettings",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "FileSystem",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "IpAndPorts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Monitoring",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "ConfigFiles",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Console",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Variables",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Scripts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "FeaturePermissions",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "RconAndQuery",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Cmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Paths",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "RunAs",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Steam",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Mods",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpEditFeature",
-      "permission": "Updates",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Control",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "ConfigFiles",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "PredefCmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "CustomCmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "FileManager",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "FTP",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "ScheduledTasks",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Console",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Logs",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "ServiceActivity",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "CpuStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "MemoryStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "NetworkStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "LiveStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Reinstall",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Create",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Delete",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "Mods",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
-      "module": "BpFeature",
-      "permission": "SteamUpdate",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 3,
+      "roleId": 2,
       "module": "BpFeature",
       "permission": "PlayerStats",
       "moduleData": "",
@@ -482,113 +245,134 @@
     },
     {
       "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "GeneralSettings",
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
       "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "FileSystem",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "IpAndPorts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Monitoring",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "ConfigFiles",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Console",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Variables",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Scripts",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "FeaturePermissions",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "RconAndQuery",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Cmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Paths",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "RunAs",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Steam",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpEditFeature",
+      "module": "BpFeature",
       "permission": "Mods",
       "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "module": "BpEditFeature",
-      "permission": "Updates",
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
       "moduleData": "",
       "granted": false
     },
@@ -601,141 +385,393 @@
     },
     {
       "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Control",
+      "module": "BpEditFeature",
+      "permission": "Updates",
       "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
-      "module": "BpFeature",
-      "permission": "ConfigFiles",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "PredefCmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "CustomCmdlines",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "FileManager",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "FTP",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "ScheduledTasks",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Console",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Logs",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "ServiceActivity",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "CpuStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "MemoryStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "NetworkStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "LiveStats",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Reinstall",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Create",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
-      "permission": "Delete",
-      "moduleData": "",
-      "granted": false
-    },
-    {
-      "roleId": 2,
-      "module": "BpFeature",
+      "module": "BpEditFeature",
       "permission": "Mods",
       "moduleData": "",
       "granted": false
     },
     {
       "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
       "module": "BpFeature",
       "permission": "SteamUpdate",
       "moduleData": "",
       "granted": false
     },
     {
-      "roleId": 2,
+      "roleId": 3,
       "module": "BpFeature",
-      "permission": "PlayerStats",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
       "moduleData": "",
       "granted": false
     }
