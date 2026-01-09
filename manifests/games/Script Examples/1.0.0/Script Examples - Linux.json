@@ -1,0 +1,235 @@
+{
+  "__TCA:ExportVersion": "3.0.710.9619",
+  "__TCA:ExportedAt": "2026-01-09T02:51:26.9032383Z",
+  "name": "Script Examples",
+  "shortName": "Script Examples",
+  "description": "",
+  "operatingSystem": "Linux",
+  "iconImage": "https://storage.needpix.com/rsynced_images/computer-1941945_1280.png",
+  "backgroundImage": "https://i1.pickpik.com/photos/650/796/872/code-programming-coding-web-preview.jpg",
+  "minSlots": 8,
+  "maxSlots": 200,
+  "defaultSlots": 32,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "custom_script",
+    "rconProtocol": "",
+    "privateRule": "",
+    "privateRuleValue": "",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "Terminal",
+    "logFile": ".tca/debug.log",
+    "inputSource": "ConsoleCommands",
+    "outputFilters": "",
+    "stopCommand": "exit",
+    "waitAfterStopCommand": 1000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 27016,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27017,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "start.cmd",
+    "autoSetupFolderName": "scripts",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false
+  },
+  "steamConfig": {
+    "steamUpdate": false,
+    "appId": 0,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 0,
+    "steamUsername": "anonymous",
+    "steamPassword": "keStupin",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {},
+  "commandlineConfig": {
+    "enableSelection": false,
+    "predefinedCommandlines": []
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [],
+  "configFiles": [],
+  "fileSystemPermissions": [],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Python - Advanced input",
+        "code": "#Advanced input\r\nimport clr\r\nclr.AddReference(\u0027TCAdmin.SDK\u0027)\r\nfrom TCAdmin.SDK.DynamicInput.Controls import *\r\n\r\n\r\nprint(\u0022Asking for values...\u0022)\r\n\r\nitem1 = DynamicTextBox()\r\nitem1.Id = \u00221\u0022\r\nitem1.Label = \u0022Enter first value\u0022\r\nitem1.Description = \u0022I\u0027m going to do something with this value\u0022\r\nitem1.DefaultValue = \u0022\u0022\r\nitem1.Required = False\r\n\r\nitem2 = DynamicTextBox()\r\nitem2.Label = \u0022Enter second value\u0022\r\nitem2.Description = \u0022This value is optional\u0022\r\nitem2.Id = \u00222\u0022\r\nitem2.DefaultValue = \u0022I set a default value\u0022\r\nitem2.Required = False\r\n\r\nitem3 = DynamicSwitch()\r\nitem3.Label = \u0022Uncheck this\u0022\r\nitem3.Id = \u00223\u0022\r\nitem3.DefaultValue = False\r\nitem3.Required = False\r\nitem3.CheckedValue=\u0022On\u0022\r\nitem3.UncheckedValue=\u0022Off\u0022\r\n\r\nitem4 = DynamicCheckBox()\r\nitem4.Label = \u0022Child value (only visible if parent is checked)\u0022\r\nitem4.Id = \u00224\u0022\r\nitem4.DefaultValue = False\r\nitem4.Required = False\r\nitem4.CheckedValue=\u0022On\u0022\r\nitem4.UncheckedValue=\u0022Off\u0022\r\nitem4.ParentId=\u00223\u0022\r\nitem4.ParentValue=\u0022On\u0022\r\n\r\nitem5 = DynamicNumericTextBox()\r\nitem5.Label = \u0022Enter a numeric value\u0022\r\nitem5.Description = \u0022This value is required\u0022\r\nitem5.Id = \u00225\u0022\r\nitem5.DefaultValue = None\r\nitem5.Required = True\r\n\r\nitem6 = DynamicComboBox()\r\nitem6.Label = \u0022Select from the list\u0022\r\nitem6.Description = \u0022This value is required\u0022\r\nitem6.Id = \u00226\u0022\r\nitem6.DefaultValue = None\r\nitem6.Required = True\r\nitem6_1 = DynamicComboBoxItem()\r\nitem6_1.Text=\u0022Value 1\u0022\r\nitem6_1.Value=\u00221\u0022\r\nitem6_2 = DynamicComboBoxItem()\r\nitem6_2.Text=\u0022Value 2\u0022\r\nitem6_2.Value=\u00222\u0022\r\nitem6.Items.Add(item6_1)\r\nitem6.Items.Add(item6_2)\r\n\r\nresult = ThisScript.Input(False, item1, item2, item3, item4, item5, item6)\r\n\r\nprint(\u0022------------------------------------------------------------------------------\u0022)\r\nprint(\u0022Value 1: {0}\u0022.format(result[\u00221\u0022]))\r\nprint(\u0022Value 2: {0}\u0022.format(result[\u00222\u0022]))\r\nprint(\u0022Value 3: {0}\u0022.format(result[\u00223\u0022]))\r\nprint(\u0022Value 4: {0}\u0022.format(result[\u00224\u0022]))\r\nprint(\u0022Value 5: {0}\u0022.format(result[\u00225\u0022]))\r\nprint(\u0022Value 6: {0}\u0022.format(result[\u00226\u0022]))\r\nprint(\u0022------------------------------------------------------------------------------\u0022)\r\n\r\n#ReturnValue=\u0022First: {0} Second: {1}\u0022.format(result[\u00221\u0022], result[\u00222\u0022])",
+        "runImpersonated": true,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 1,
+        "icon": "\u003Cpath d=\u0022M0 0h24v24H0V0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "138af1d8-af12-4f05-a851-f33a6c8bcd52"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Linux",
+          "Windows"
+        ],
+        "scriptEvents": [
+          "DownloadGameFiles"
+        ],
+        "name": "C# - Start file",
+        "description": "Creates start.cmd in the game\u0027s folder so the service can be created",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, System.IO.Compression.dll, System.Formats.Tar.dll\r\nusing System.Formats.Tar;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing System.IO;\r\nusing System.IO.Compression;\r\nusing System.Net.Http;\r\nusing TCAdmin.SDK.Misc.Extensions;\r\n\r\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\r\n\r\nvar gameFolder = Path.Combine(Globals.ThisServer.Configuration.GameFilesPath, Globals.ThisGame.FileAndDirectoryConfig.AutoSetupFolderName);\r\nvar startFile = Path.Combine(gameFolder, \u0022start.cmd\u0022);\r\nDirectory.CreateDirectory(gameFolder);\r\nif(Globals.ThisServer.OperatingSystem == TCAdmin.Web.Shared.Models.Enums.EOperatingSystem.Windows)\r\n{\r\n    File.WriteAllText(startFile, \u0022powershell.exe\u0022);\r\n}\r\nelse\r\n{\r\n    File.WriteAllText(startFile, \u0022sh\u0022);\r\n}\r\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "\u003Cpath d=\u0022M0 0h24v24H0V0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "de0f6b00-0756-45dd-bd77-483cfd0e515c"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Linux",
+          "Windows"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "C# - Advanced input",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll\r\nusing System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing TCAdmin.SDK.DynamicInput.Controls;\r\n\r\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGlobals(); // DO NOT MODIFY THIS LINE\r\n\r\nConsole.WriteLine(\u0022Asking for values...\u0022);\r\n\r\nvar item1 = new DynamicTextBox\r\n{\r\n    Id = \u00221\u0022,\r\n    Label = \u0022Enter first value\u0022,\r\n    Description = \u0022I\u0027m going to do something with this value\u0022,\r\n    DefaultValue = \u0022\u0022,\r\n    Required = false\r\n};\r\n\r\nvar item2 = new DynamicTextBox\r\n{\r\n    Id = \u00222\u0022,\r\n    Label = \u0022Enter second value\u0022,\r\n    Description = \u0022This value is optional\u0022,\r\n    DefaultValue = \u0022I set a default value\u0022,\r\n    Required = false\r\n};\r\n\r\nvar item3 = new DynamicSwitch\r\n{\r\n    Id = \u00223\u0022,\r\n    Label = \u0022Uncheck this\u0022,\r\n    DefaultValue = false,\r\n    Required = false,\r\n    CheckedValue = \u0022On\u0022,\r\n    UncheckedValue = \u0022Off\u0022\r\n};\r\n\r\nvar item4 = new DynamicCheckBox\r\n{\r\n    Id = \u00224\u0022,\r\n    Label = \u0022Child value (only visible if parent is checked)\u0022,\r\n    DefaultValue = false,\r\n    Required = false,\r\n    CheckedValue = \u0022On\u0022,\r\n    UncheckedValue = \u0022Off\u0022,\r\n    ParentId = \u00223\u0022,\r\n    ParentValue = \u0022On\u0022\r\n};\r\n\r\nvar item5 = new DynamicNumericTextBox\r\n{\r\n    Id = \u00225\u0022,\r\n    Label = \u0022Enter a numeric value\u0022,\r\n    Description = \u0022This value is required\u0022,\r\n    DefaultValue = null,\r\n    Required = true\r\n};\r\n\r\nvar item6 = new DynamicComboBox\r\n{\r\n    Id = \u00226\u0022,\r\n    Label = \u0022Select from the list\u0022,\r\n    Description = \u0022This value is required\u0022,\r\n    DefaultValue = null,\r\n    Required = true\r\n};\r\n\r\nitem6.Items.Add(new DynamicComboBoxItem { Text = \u0022Value 1\u0022, Value = \u00221\u0022 });\r\nitem6.Items.Add(new DynamicComboBoxItem { Text = \u0022Value 2\u0022, Value = \u00222\u0022 });\r\n\r\nvar result = Globals.ThisScript.Input(false, item1, item2, item3, item4, item5, item6);\r\n\r\nGlobals.ScriptConsole.WriteLine(\u0022------------------------------------------------------------------------------\u0022);\r\nGlobals.ScriptConsole.WriteLine($\u0022Value 1: {result[\u00221\u0022]}\u0022);\r\nGlobals.ScriptConsole.WriteLine($\u0022Value 2: {result[\u00222\u0022]}\u0022);\r\nGlobals.ScriptConsole.WriteLine($\u0022Value 3: {result[\u00223\u0022]}\u0022);\r\nGlobals.ScriptConsole.WriteLine($\u0022Value 4: {result[\u00224\u0022]}\u0022);\r\nGlobals.ScriptConsole.WriteLine($\u0022Value 5: {result[\u00225\u0022]}\u0022);\r\nGlobals.ScriptConsole.WriteLine($\u0022Value 6: {result[\u00226\u0022]}\u0022);\r\nGlobals.ScriptConsole.WriteLine(\u0022------------------------------------------------------------------------------\u0022);\r\n\r\n// ReturnValue = $\u0022First: {result[\u00221\u0022]} Second: {result[\u00222\u0022]}\u0022;\r\n",
+        "runImpersonated": true,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "\u003Cpath d=\u0022M0 0h24v24H0V0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "7217c27c-fb90-4b9c-9b27-24f14ce001eb"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Powershell",
+        "operatingSystem": [
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Powershell - Examples",
+        "code": "write-host Powershell version is $PSVersionTable.PSVersion\r\n\r\nWrite-Host \u0022This service is named \u0027$($ThisGameService.Variables[\u0022Hostname\u0022])\u0027\u0022\r\n\r\nif ($IsWindows) {\r\n    ping -n 5 127.0.0.1 | ForEach-Object { Write-Host $_ }\r\n}\r\nelseif ($IsLinux) {\r\n    ping -c 5 127.0.0.1 | ForEach-Object { Write-Host $_ }\r\n}",
+        "runImpersonated": true,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 3,
+        "icon": "\u003Cpath d=\u0022M0 0h24v24H0V0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "b4d768c3-bb0f-496c-9d68-b10e3a2c4f99"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Linux",
+          "Windows"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "C# - Security Example",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll\r\nusing System;\r\nusing System.IO;\r\n\r\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGlobals(); // DO NOT MODIFY THIS LINE\r\n\r\nGlobals.ScriptConsole.WriteLine(\u0022This script will fail if \\\u0022Run Impersonated\\\u0022 is checked\u0022);\r\n\r\nDirectoryInfo dir;\r\n\r\nif(Environment.OSVersion.Platform == PlatformID.Unix) {\r\n  dir = new System.IO.DirectoryInfo(\u0022/root\u0022);\r\n  if(dir.Exists) {\r\n    Globals.ScriptConsole.WriteLine(\u0022Printing contents of {0}:\u0022, dir.FullName);\r\n    foreach(var file in dir.GetFiles()) {\r\n      Globals.ScriptConsole.WriteLine(file.Name);\r\n    }\r\n  }\r\n}\r\nelse {\r\n  var username = System.Security.Principal.WindowsIdentity.GetCurrent().Name;\r\n  Globals.ScriptConsole.WriteLine($\u0022Running script as {username}\u0022);\r\n  dir = new System.IO.DirectoryInfo(\u0022C:\\\\Program Files\\\\DeleteMe\u0022);\r\n  Globals.ScriptConsole.WriteLine(\u0022Creating the path {0}\u0022, dir.FullName);\r\n  dir.Create();\r\n  Globals.ScriptConsole.WriteLine(\u0022Deleting the path {0}\u0022, dir.FullName);\r\n  dir.Delete();\r\n}",
+        "runImpersonated": true,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 4,
+        "icon": "\u003Cpath d=\u0022M0 0h24v24H0V0z\u0022 fill=\u0022none\u0022/\u003E\u003Cpath d=\u0022M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "e0d6b6d7-f4f9-4ee7-9877-76d02ff6e278"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "createdDate": "2026-01-09T02:24:04.867038",
+  "metadata": {
+    "Notes": ""
+  },
+  "rolePermissions": []
+}

@@ -1,0 +1,27 @@
+﻿identifier: TCA.Games.ScriptExamples
+version: 1.0.0
+author: TCAdmin
+name: Script Examples
+shortDescription: Some script examples
+longDescription: |
+  # Script Examples
+  
+  **Script examples for Windows and Linux.**
+  
+
+icon: https://storage.needpix.com/rsynced_images/computer-1941945_1280.png
+images:
+  - https://i1.pickpik.com/photos/650/796/872/code-programming-coding-web-preview.jpg
+tags:
+  - Game
+  - Windows
+  - Linux
+files:
+  - identifier: "game_config_windows"
+    path: Script Examples - Windows.json
+    type: GameConfig
+    optional: false
+  - identifier: "game_config_linux"
+    path: Script Examples - Linux.json
+    type: GameConfig
+    optional: false
