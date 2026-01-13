@@ -1,6 +1,6 @@
 {
-  "__TCA:ExportVersion": "3.0.701.23389",
-  "__TCA:ExportedAt": "2026-01-08T02:16:36.5740305Z",
+  "__TCA:ExportVersion": "3.0.740.33780",
+  "__TCA:ExportedAt": "2026-01-13T17:49:32.838207Z",
   "themeId": 0,
   "name": "TCAdmin Default",
   "titlePrefix": "TCAdmin V3 - ",
@@ -9,21 +9,21 @@
   "isEnabled": true,
   "lightPalette": {
     "consoleBackground": {
-      "r": 241,
-      "g": 239,
-      "b": 239,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "consoleForeground": {
-      "r": 55,
-      "g": 55,
-      "b": 55,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "consoleCursor": {
-      "r": 55,
-      "g": 55,
-      "b": 55,
+      "r": 0,
+      "g": 0,
+      "b": 0,
       "a": 255
     },
     "consoleSelection": {
@@ -39,45 +39,45 @@
       "a": 255
     },
     "consoleRed": {
-      "r": 194,
-      "g": 54,
-      "b": 33,
+      "r": 205,
+      "g": 49,
+      "b": 49,
       "a": 255
     },
     "consoleGreen": {
-      "r": 37,
-      "g": 137,
-      "b": 56,
+      "r": 20,
+      "g": 206,
+      "b": 20,
       "a": 255
     },
     "consoleYellow": {
-      "r": 173,
-      "g": 129,
+      "r": 181,
+      "g": 186,
       "b": 0,
       "a": 255
     },
     "consoleBlue": {
-      "r": 18,
-      "g": 86,
-      "b": 168,
+      "r": 4,
+      "g": 81,
+      "b": 165,
       "a": 255
     },
     "consoleMagenta": {
-      "r": 149,
-      "g": 40,
-      "b": 149,
+      "r": 188,
+      "g": 5,
+      "b": 188,
       "a": 255
     },
     "consoleCyan": {
-      "r": 6,
-      "g": 131,
-      "b": 154,
+      "r": 5,
+      "g": 152,
+      "b": 188,
       "a": 255
     },
     "consoleWhite": {
-      "r": 204,
-      "g": 204,
-      "b": 204,
+      "r": 85,
+      "g": 85,
+      "b": 85,
       "a": 255
     },
     "black": {
@@ -243,33 +243,33 @@
       "a": 255
     },
     "drawerBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 66,
+      "g": 66,
+      "b": 66,
+      "a": 255
+    },
+    "drawerIcon": {
+      "r": 97,
+      "g": 97,
+      "b": 97,
+      "a": 255
+    },
+    "appbarBackground": {
       "r": 0,
       "g": 75,
       "b": 130,
       "a": 255
     },
-    "drawerText": {
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "drawerIcon": {
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
-    "appbarBackground": {
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
-    },
     "appbarText": {
-      "r": 66,
-      "g": 66,
-      "b": 66,
+      "r": 255,
+      "g": 255,
+      "b": 255,
       "a": 255
     },
     "linesDefault": {
@@ -512,9 +512,9 @@
       "a": 15
     },
     "consoleBackground": {
-      "r": 3,
-      "g": 12,
-      "b": 29,
+      "r": 30,
+      "g": 30,
+      "b": 30,
       "a": 255
     },
     "consoleForeground": {
