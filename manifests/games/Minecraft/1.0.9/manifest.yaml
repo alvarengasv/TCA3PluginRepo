@@ -28,6 +28,6 @@ files:
     type: GameConfig
     optional: false
   - identifier: "game_config_linux"
-    path: MTA - Linux.json
+    path: Minecraft - Linux.json
     type: GameConfig
     optional: false
