@@ -1,0 +1,497 @@
+{
+  "__TCA:ExportVersion": "3.0.781.57711",
+  "__TCA:ExportedAt": "2026-01-28T18:10:48.6549003Z",
+  "name": "CitizenFX - FiveM",
+  "shortName": "FiveM",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/5/5a/FiveM-Logo.png",
+  "backgroundImage": "https://i.pinimg.com/originals/96/15/c4/9615c4807307ae00ee0b4cbdaca2b1f0.jpg",
+  "minSlots": 0,
+  "maxSlots": 64,
+  "defaultSlots": 32,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "defaultDiskSpace": 12884901888,
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "fivem",
+    "rconProtocol": "",
+    "privateRule": "",
+    "privateRuleValue": "",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "ScreenCapture",
+    "logFile": "logs/console.log",
+    "inputSource": "ConsoleCommands",
+    "outputFilters": "",
+    "stopCommand": "quit",
+    "waitAfterStopCommand": 5000,
+    "screenCaptureTitleBar": true,
+    "screenCaptureQuality": 30,
+    "screenCaptureFPS": 20,
+    "screenCaptureAllowMouse": true,
+    "screenCaptureAllowKeys": true,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 30120,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 30120,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 30120,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "FXServer.exe",
+    "relativeWorkingDirectory": "server-data/",
+    "autoSetupFolderName": "fivem-windows",
+    "failOnMissingExecutable": true,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": "",
+    "externalDownloadFileName": ""
+  },
+  "steamConfig": {
+    "steamUpdate": false,
+    "appId": 0,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 0,
+    "steamUsername": "anonymous",
+    "steamPassword": "keStupin",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "\u002Bexec server.cfg"
+  },
+  "commandlineConfig": {
+    "enableSelection": false,
+    "defaultCommandline": "\u002Bexec server.cfg",
+    "predefinedCommandlines": []
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "LicenseKey",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${LicenseKey}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "LicenseKey",
+        "defaultValue": "",
+        "label": "LicenseKey",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-08-11T16:11:21.165239",
+      "metadata": {
+        "notes": null
+      },
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 15,
+      "relativePath": "server-data/server.cfg",
+      "description": "Main configuration file",
+      "template": "set sv_licenseKey \u0022${LicenseKey}\u0022\r\n\r\n# you probably don\u0027t want to change these!\r\n# only change them if you\u0027re using a server with multiple network interfaces\r\nendpoint_add_tcp \u0022${IPAddress}:${GamePort}\u0022\r\nendpoint_add_udp \u0022${IPAddress}:${GamePort}\u0022\r\n\r\nstart mapmanager\r\nstart chat\r\nstart spawnmanager\r\nstart sessionmanager\r\nstart fivem\r\nstart hardcap\r\nstart rconlog\r\nstart scoreboard\r\nstart playernames\r\n\r\nsv_scriptHookAllowed 1\r\n\r\n# change this\r\nrcon_password ${RconPassword}\r\n\r\nsv_hostname \u0022${Hostname}\u0022\r\n\r\n# nested configs!\r\n#exec server_internal.cfg\r\n\r\n# loading a server icon (96x96 PNG file)\r\n#load_server_icon myLogo.png\r\n\r\n# convars for use from script\r\nset temp_convar \u0022hey world!\u0022\r\n\r\n# disable announcing? clear out the master by uncommenting this\r\n#sv_master1 \u0022\u0022\r\n\r\n# want to only allow players authenticated with a third-party provider like Steam?\r\n#sv_authMaxVariance 1\r\n#sv_authMinTrust 5\r\n\r\n# add system admins\r\nadd_ace group.admin command allow # allow all commands\r\nadd_ace group.admin command.quit deny # but don\u0027t allow quit\r\nadd_principal identifier.steam:110000112345678 group.admin # add the admin to the group\r\n\r\n# hide player endpoints in external log output\r\nsv_endpointprivacy true\r\n\r\n# server slots limit (default to 30)\r\nsv_maxclients ${Slots}\r\n\r\n# disable gui\r\nset svgui_disable true,",
+      "order": 1,
+      "enableEditor": true,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "LicenseKey",
+          "label": "LicenseKey",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "Rcon Password",
+          "description": "Remote console password.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 4,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "relativePath": "server-data\\imgui.ini",
+      "description": "Imgui configuration file",
+      "template": "[Window][Debug##Default]\r\nPos=60,60\r\nSize=400,400\r\nCollapsed=0\r\n\r\n[Window][Resource Monitor]\r\nViewportPos=245,650\r\nViewportId=0x1147BFB0\r\nSize=720,387\r\nCollapsed=0\r\n\r\n[Window][Network Object Viewer]\r\nViewportPos=411,689\r\nViewportId=0x8B115B82\r\nSize=972,421\r\nCollapsed=0\r\n\r\n[Window][Player List]\r\nViewportPos=213,213\r\nViewportId=0xBBFEFFDC\r\nSize=1458,791\r\nCollapsed=0\r\n\r\n[Table][0xC54ACC14,6]\r\nColumn 0  Weight=1.0000\r\nColumn 1  Weight=1.0000\r\nColumn 2  Weight=1.0000\r\nColumn 3  Weight=1.0000\r\nColumn 4  Weight=1.0000 Sort=0^\r\nColumn 5  Weight=1.0000\r\n\r\n[Table][0xDE34FDC5,5]\r\nColumn 0  Weight=1.0000 Sort=0^\r\nColumn 1  Weight=1.0000\r\nColumn 2  Weight=1.0000\r\nColumn 3  Weight=1.0000\r\nColumn 4  Weight=1.0000\r\n\r\n[Docking][Data]\r\n\r\n",
+      "order": 2,
+      "enableEditor": false,
+      "editor": []
+    }
+  ],
+  "fileSystemPermissions": [],
+  "gamesScripts": [],
+  "customModProviderConfigs": [],
+  "createdDate": "2026-01-08T15:11:20.928124",
+  "metadata": {
+    "Notes": ""
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": false
+    }
+  ]
+}
