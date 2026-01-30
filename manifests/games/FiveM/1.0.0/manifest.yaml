@@ -1,0 +1,28 @@
+﻿identifier: TCA.Games.FiveM
+version: 1.0.0
+author: TCAdmin
+name: FiveM
+shortDescription: FiveM game config for TCAdmin 3
+longDescription: |
+  # FiveM
+  
+  **FiveM** FiveM is a multiplayer modification framework for GTA V, allowing you to play on customized dedicated servers.
+  
+  ## Key Features
+  - **Screen capture console with mouse support**
+  
+  ## Instructions
+  - Get a key from https://keymaster.fivem.net/ and configure it in server.cfg.
+  - Requires interact with desktop **and unlocked session**. Use tca.exe to configure Windows to log on automatically.
+  
+icon: https://upload.wikimedia.org/wikipedia/commons/5/5a/FiveM-Logo.png
+images:
+  - https://i.pinimg.com/originals/96/15/c4/9615c4807307ae00ee0b4cbdaca2b1f0.jpg
+tags:
+  - Game
+  - Windows
+files:
+  - identifier: "game_config_windows"
+    path: FiveM - Windows.json
+    type: GameConfig
+    optional: false
