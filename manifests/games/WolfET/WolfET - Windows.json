@@ -1,0 +1,494 @@
+{
+  "__TCA:ExportVersion": "3.0.781.57711",
+  "__TCA:ExportedAt": "2026-01-28T18:10:00.3341511Z",
+  "name": "Wolfenstein: Enemy Territory",
+  "shortName": "WolfET",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/ET-Legacy.svg/250px-ET-Legacy.svg.png",
+  "backgroundImage": "https://upload.wikimedia.org/wikipedia/it/8/83/Etscreen.jpg",
+  "minSlots": 8,
+  "maxSlots": 200,
+  "defaultSlots": 32,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "rws",
+    "rconProtocol": "",
+    "privateRule": "",
+    "privateRuleValue": "",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "ScreenCapture",
+    "logFile": "etmain\\etconsole.log",
+    "inputSource": "ConsoleCommands",
+    "outputFilters": "",
+    "stopCommand": "quit",
+    "waitAfterStopCommand": 3000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": true,
+    "screenCaptureAllowKeys": true,
+    "screenCaptureMouseHardware": false
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 27960,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 27960,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27960,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "ETDED.exe",
+    "autoSetupFolderName": "wolfet",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false
+  },
+  "steamConfig": {
+    "steamUpdate": false,
+    "appId": 0,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 0,
+    "steamUsername": "anonymous",
+    "steamPassword": "keStupin",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "\u002Bset dedicated 2 \u002Bset net_ip \u0022${IPAddress}\u0022 \u002Bset net_port \u0022${GamePort}\u0022 \u002Bset sv_maxclients \u0022${Slots}\u0022 \u002Bset fs_game etmain \u002Bexec \u0022server.cfg\u0022"
+  },
+  "commandlineConfig": {
+    "enableSelection": false,
+    "defaultCommandline": "\u002Bset dedicated 2 \u002Bset net_ip \u0022${IPAddress}\u0022 \u002Bset net_port \u0022${GamePort}\u0022 \u002Bset sv_maxclients \u0022${Slots}\u0022 \u002Bset fs_game etmain \u002Bexec \u0022server.cfg\u0022",
+    "predefinedCommandlines": []
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "interactWithDesktop": true,
+    "elevated": true
+  },
+  "gameVariables": [],
+  "configFiles": [
+    {
+      "id": 14,
+      "relativePath": "etmain\\server.cfg",
+      "description": "Main configuration file",
+      "template": "// PASSWORDS \u0026 CLIENTS \r\n\r\nset g_password \u0022\u0022\t\t\t\t// set to password protect the server\r\nset sv_privateclients \u00224\u0022\t\t\t// if set \u003E 0, then this number of client slots will be reserved for connections\r\nset sv_privatepassword \u0022${PrivatePassword}\u0022\t\t\t// that have \u0022password\u0022 set to the value of \u0022sv_privatePassword\u0022\r\nset rconpassword \u0022${RconPassword}\u0022 \t\t\t\t// remote console access password\r\nset refereePassword \u0022${RconPassword}\u0022\t\t\t\t// referee status password\r\n\r\n// DL, RATE\r\n\r\nset sv_maxRate \u002213000\u0022\t\t\t\t// 10000 standard but poor for ET \r\nset sv_dl_maxRate \u002242000\u0022\t\t\t// increase/decerease if you have plenty/little spare bandwidth \r\nset sv_allowDownload \u00220\u0022        \t\t\t// global toggle for both legacy download and web download\r\nset sv_wwwDownload \u00220\u0022\t\t\t\t// toggle to enable web download\r\nset sv_wwwBaseURL \u0022\u0022 \t\t\t\t// base URL for redirection\r\nset sv_wwwDlDisconnected \u00220\u0022\t\t\t// tell clients to perform their downloads while disconnected from the server\r\nset sv_wwwFallbackURL \u0022\u0022\t\t\t// URL to send to if an http/ftp fails or is refused client side\r\n\r\n// MOTD ETC\r\n\r\nset sv_hostname \u0022${Hostname}\u0022 \t\t\t// name of server here\r\nset server_motd0 \u0022 ^NEnemy Territory ^7MOTD \u0022\t// message in right corner of join screen here\r\nset server_motd1 \u0022\u0022\r\nset server_motd2 \u0022\u0022\r\nset server_motd3 \u0022\u0022\r\nset server_motd4 \u0022\u0022\r\nset server_motd5 \u0022\u0022\r\n\r\n// MISC SETTINGS\r\n\r\nset g_heavyWeaponRestriction \u0022100\u0022\r\nset g_antilag \u00221\u0022\r\nset g_altStopwatchMode \u00220\u0022\r\nset g_autofireteams \u00221\u0022\r\nset g_complaintlimit \u00226\u0022\r\nset g_ipcomplaintlimit \u00223\u0022\r\nset g_fastres \u00220\u0022\r\nset g_friendlyFire \u00221\u0022\r\n//set g_gametype \u00224\u0022\t\t\t\t// Game type should be set from map rotation script\r\nset g_minGameClients \u00228\u0022\r\nset g_maxlives \u00220\u0022\r\nset g_alliedmaxlives \u00220\u0022\r\nset g_axismaxlives \u00220\u0022\r\nset g_teamforcebalance \u00221\u0022\r\nset g_noTeamSwitching \u00220\u0022\r\nset g_voiceChatsAllowed \u00224\u0022\r\nset g_doWarmup \u00220\u0022\r\nset g_warmup \u002230\u0022\r\nset g_spectatorInactivity \u00220\u0022\r\nset sv_floodProtect \u00221\u0022\r\nset sv_allowDownload \u00221\u0022\r\nset sv_pure \u00221\u0022\r\nset sv_minping \u00220\u0022\r\nset sv_maxping \u00220\u0022\r\nset match_latejoin \u00221\u0022\r\nset match_minplayers \u00224\u0022\r\nset match_mutespecs \u00220\u0022\r\nset match_readypercent \u0022100\u0022\r\nset match_timeoutcount \u00220\u0022\r\nset match_warmupDamage \u00221\u0022\r\nset team_maxplayers \u00220\u0022\r\nset team_nocontrols \u00221\u0022\r\nset pmove_fixed \u00220\u0022\r\nset pmove_msec \u00228\u0022\r\n\r\n// LMS ONLY SETTINGS\r\n\r\nset g_lms_teamForceBalance \u00221\u0022\r\nset g_lms_roundlimit \u00223\u0022\r\nset g_lms_matchlimit \u00222\u0022\r\nset g_lms_currentMatch \u00220\u0022\r\nset g_lms_lockTeams \u00220\u0022\r\nset g_lms_followTeamOnly \u00221\u0022\r\n\r\n// VOTING\r\n\r\nset g_allowVote \u00221\u0022\r\nset vote_limit \u00225\u0022\r\nset vote_percent \u002250\u0022\r\nset vote_allow_comp \u00221\u0022\r\nset vote_allow_gametype \u00221\u0022\r\nset vote_allow_kick \u00221\u0022\r\nset vote_allow_map \u00221\u0022\r\nset vote_allow_matchreset \u00221\u0022\r\nset vote_allow_mutespecs \u00221\u0022\r\nset vote_allow_nextmap \u00221\u0022\r\nset vote_allow_pub \u00221\u0022\r\nset vote_allow_referee \u00220\u0022\r\nset vote_allow_shuffleteams \u00221\u0022\r\nset vote_allow_swapteams \u00221\u0022\r\nset vote_allow_friendlyfire \u00221\u0022\r\nset vote_allow_timelimit \u00220\u0022\r\nset vote_allow_warmupdamage \u00221\u0022\r\nset vote_allow_antilag \u00221\u0022\r\nset vote_allow_balancedteams \u00221\u0022\r\nset vote_allow_muting \u00221\u0022\r\n\r\n// PUNKBUSTER\r\n\r\n// sv_punkbuster is a readonly variable. Use \u002Bset sv_punkbuster on command line or use the command pb_sv_enable in the console\r\n//pb_sv_enable\r\n\r\n// LOGGING\r\n\r\nset g_log \u0022etserver.log\u0022 \t\t\t// Game logging\r\nset g_logsync 1\r\nset logfile 2 \t\t\t\t\t// Console logging ( 1: enable 2: enable and sync )\r\n\r\n// MAP ROTATION\r\n\r\nexec campaigncycle.cfg\t\t\t\t// Campaign mode\r\n//exec objectivecycle.cfg\t\t\t// Objective mode\r\n//exec lmscycle.cfg\t\t\t\t// Last Man Standing mode\r\n\r\n// WATCHDOG\r\n\r\n// in case the game dies with an ERR_DROP\r\n// or any situation leading to server running with no map\r\n//set com_watchdog 10\t\t\t\t// defaults 60\r\nset com_watchdog_cmd \u0022exec campaigncycle.cfg\u0022\t// defaults to quit\r\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "ReadFile, WriteFile, DeleteFile, RenameFile, ListDirectory, CreateDirectory, DeleteDirectory, RenameDirectory",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "ReadFile, WriteFile, DeleteFile, RenameFile, ListDirectory, CreateDirectory, DeleteDirectory, RenameDirectory",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "DownloadGameFiles"
+        ],
+        "name": "Download Windows game files",
+        "code": "using System;\nusing System.Diagnostics;\nusing System.IO;\nusing System.Net.Http;\nusing TCAdmin.SDK.Misc;\nusing TCAdmin.SDK.Misc.Extensions;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\nvar gameFilesPath = Globals.ThisServer.Configuration.GameFilesPath;\nvar downloadedFile = Path.Combine(gameFilesPath, \u0022WolfET.exe\u0022);\nvar patchFile = Path.Combine(gameFilesPath, \u0022__ET_Patch_2_60.exe\u0022);\n\nif (!Directory.Exists(gameFilesPath)) \n    Directory.CreateDirectory(gameFilesPath);\n\nusing (HttpClient downloadClient = new HttpClient())\n{\n    // Download and run WolfET.exe\n    await downloadClient.DownloadFile(\u0022http://downloads.tcadmin.com/games/wolfet-windows.aspx\u0022, downloadedFile, Globals.ThisCancellationToken);\n    \n    var process = new Process();\n    process.StartInfo.FileName = downloadedFile;\n    process.StartInfo.Arguments = \u0022/s\u0022;\n    process.Start();\n    await process.WaitForExitAsync(Globals.ThisCancellationToken);\n    \n    // Download and run ET_Patch_2_60.exe\n    await downloadClient.DownloadFile(\u0022http://downloads.tcadmin.net/games/wolfet-update-windows.aspx\u0022, patchFile, Globals.ThisCancellationToken);\n}\n\nvar patchProcess = new Process();\npatchProcess.StartInfo.FileName = patchFile;\npatchProcess.StartInfo.Arguments = \u0022/s\u0022;\npatchProcess.Start();\nawait patchProcess.WaitForExitAsync(Globals.ThisCancellationToken);\n\n// Clean up downloaded files\nFile.Delete(downloadedFile);\nFile.Delete(patchFile);\n\n// Determine install folder based on architecture\nstring installFolder;\nif (Environment.Is64BitOperatingSystem)\n{\n    installFolder = Path.Combine(Environment.GetEnvironmentVariable(\u0022ProgramFiles(x86)\u0022), \u0022Wolfenstein - Enemy Territory\u0022);\n}\nelse\n{\n    installFolder = Path.Combine(Environment.GetEnvironmentVariable(\u0022ProgramFiles\u0022), \u0022Wolfenstein - Enemy Territory\u0022);\n}\n\n// Copy game files to service folder\nvar filesFolderFullName = Path.Combine(gameFilesPath, Globals.ThisGame.FileAndDirectoryConfig.AutoSetupFolderName);\nFileSystem.CopyDirectory(installFolder, filesFolderFullName);",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "\u003Cg\u003E\u003Crect fill=\u0022none\u0022 height=\u002224\u0022 width=\u002224\u0022/\u003E\u003C/g\u003E\u003Cg\u003E\u003Cpath d=\u0022M12,2C6.49,2,2,6.49,2,12s4.49,10,10,10s10-4.49,10-10S17.51,2,12,2z M11,10V6h2v4h3l-4,4l-4-4H11z M17,17H7v-2h10V17z\u0022/\u003E\u003C/g\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "58de8eca-693a-4370-b142-066930662bae"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "createdDate": "2026-01-08T06:05:56.274543",
+  "modifiedDate": "2025-08-26T01:22:31.227827",
+  "metadata": {
+    "Notes": ""
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": false
+    }
+  ]
+}
