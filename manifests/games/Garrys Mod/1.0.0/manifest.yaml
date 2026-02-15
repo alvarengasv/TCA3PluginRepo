@@ -1,7 +1,7 @@
-identifier: "Community.Games.GarrysMod"
+identifier: "TCA.Games.GarrysMod"
 name: "Garry's Mod"
 version: "1.0.0"
-author: "alvarengasv"
+author: "TCAdmin"
 shortDescription: "A sandbox game where players use tools and physics to build, experiment, and create their own gameplay experiences."
 longDescription: |
   Garry’s Mod is a sandbox game built on Valve’s Source engine that gives players tools to manipulate objects, characters, and environments. Instead of having fixed objectives, it allows users to create contraptions, build structures, script game modes, and experiment with physics. The game supports extensive community-created content through mods and add-ons, leading to a wide range of custom maps, modes (such as roleplay, prop hunt, and trouble-in-terrorist-town), and creative projects. Multiplayer servers further expand the experience with user-generated rules and scenarios.
@@ -15,3 +15,4 @@ files:
     type: "GameConfig"
   - path: "GMOD - Linux.json"
     type: "GameConfig"
+
