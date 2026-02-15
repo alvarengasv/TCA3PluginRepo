@@ -1,0 +1,648 @@
+{
+  "__TCA:ExportVersion": "3.0.860.8019",
+  "__TCA:ExportedAt": "2026-02-15T18:16:11.8779593Z",
+  "name": "Garry\u0027s Mod",
+  "shortName": "GMOD",
+  "description": "",
+  "operatingSystem": "Linux",
+  "iconImage": "https://wallpapercave.com/wp/JkmU5HR.jpg",
+  "backgroundImage": "https://getwallpapers.com/wallpaper/full/9/4/e/1027889-widescreen-gmod-wallpapers-1920x1080-phone.jpg",
+  "minSlots": 2,
+  "maxSlots": 64,
+  "defaultSlots": 32,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "LinuxScreen",
+    "logFile": "garrysmod/console.log",
+    "inputSource": "ConsoleCommands",
+    "outputFilters": "",
+    "stopCommand": "quit",
+    "waitAfterStopCommand": 5000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": true,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "HLTVPort",
+        "expression": "GamePort \u002B 1",
+        "description": "HLTV Port"
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "srcds_run",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "garrysmod-linux",
+    "failOnMissingExecutable": true,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": "",
+    "externalDownloadFileName": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 4020,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 4000,
+    "steamUsername": "anonymous",
+    "steamPassword": "keStupin",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022",
+    "privateCustomCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} "
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022",
+    "defaultCustomCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} ",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022"
+      },
+      {
+        "id": 2,
+        "name": "Custom",
+        "commandLine": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} ${exec} \u002Bmap ${map}"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "interactWithDesktop": false,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "sv_region",
+      "defaultValue": 255,
+      "required": true,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${sv_region}",
+      "editor": {
+        "items": [
+          {
+            "text": "US - East",
+            "value": "0"
+          },
+          {
+            "text": "US - West",
+            "value": "1"
+          },
+          {
+            "text": "South America",
+            "value": "2"
+          },
+          {
+            "text": "Europe",
+            "value": "3"
+          },
+          {
+            "text": "Asia",
+            "value": "4"
+          },
+          {
+            "text": "Australia",
+            "value": "5"
+          },
+          {
+            "text": "Middle East",
+            "value": "6"
+          },
+          {
+            "text": "Africa",
+            "value": "7"
+          },
+          {
+            "text": "World (default)",
+            "value": "255"
+          }
+        ],
+        "id": "sv_region",
+        "defaultValue": 255,
+        "label": "Region",
+        "description": "The region of the world to report this server in.",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-08-11T16:11:21.129989",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "exec",
+      "defaultValue": "server.cfg",
+      "required": true,
+      "requiredMessage": "The script file is required",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": " \u002Bexec \u0022${exec}\u0022",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "exec",
+        "defaultValue": "server.cfg",
+        "label": "Exec",
+        "description": "Execute a script file",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "The script file is required",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-08-11T16:11:21.130216",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "map",
+      "defaultValue": "gm_flatgrass",
+      "required": true,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": " \u002Bmap \u0022${map}\u0022",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "map",
+        "defaultValue": "gm_flatgrass",
+        "label": "Map",
+        "description": "Start playing on specified map",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-08-11T16:11:21.13049",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "host_workshop_collection",
+      "required": false,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": " \u002Bhost_workshop_collection ${host_workshop_collection}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "host_workshop_collection",
+        "label": "Workshop Collection",
+        "description": "The server will download Workshop items from given collection on start up",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-08-11T16:11:21.130491",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "AuthKey",
+      "required": false,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "  -authkey ${AuthKey}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "AuthKey",
+        "label": "AuthKey",
+        "description": "Authorization key for Steam Web API",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-08-11T16:11:21.130491",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "sv_lan",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${sv_lan}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "sv_lan",
+        "label": "Server is a lan server",
+        "description": "No heartbeat, no authentication, no non-class C addresses",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSwitch",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-12-11T00:40:01.555",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "sv_minrate",
+      "defaultValue": "0",
+      "required": true,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${sv_minrate}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "id": "sv_minrate",
+        "defaultValue": "0",
+        "label": "Min bandwidth rate",
+        "description": "Min bandwidth rate allowed on server, 0 == unlimited",
+        "required": true,
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-12-11T03:52:32.065",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "sv_maxrate",
+      "defaultValue": "20000",
+      "required": true,
+      "requiredMessage": "Value is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${sv_maxrate}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "id": "sv_maxrate",
+        "defaultValue": "20000",
+        "label": "Max bandwidth rate",
+        "description": "Max bandwidth rate allowed on server, 0 == unlimited",
+        "required": true,
+        "requiredMessage": "Value is required",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-12-11T03:55:39.175",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    },
+    {
+      "name": "Hostname",
+      "required": true,
+      "requiredMessage": "The hostname is required",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Hostname}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "Hostname",
+        "label": "Hostname",
+        "description": "",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "The hostname is required",
+        "controlType": "DynamicTextBox",
+        "sm": 4,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2024-12-14T22:57:43.798",
+      "metadata": {
+        "Notes": ""
+      },
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 26,
+      "relativePath": "garrysmod/cfg/server.cfg",
+      "description": "Main configuration file",
+      "template": "log\t\t\ton\r\n\r\nhostname\t\t\u0022${Hostname}\u0022\r\nrcon_password\t\t\u0022${RconPassword}\u0022\r\nsv_password\t\t\u0022${PrivatePassword}\u0022\r\nsv_region\t\t${sv_region}\r\nsv_lan\t\t\t${sv_lan}\r\nsv_logbans\t\t0\r\nsv_logecho\t\t0\r\nsv_logfile\t\t1 \r\nsv_log_onefile\t\t0\r\nsv_noclipspeed\t\t5\r\nsv_noclipaccelerate\t5\r\n\r\nsbox_allownpcs\t\t1\r\nsbox_godmode\t\t0\r\nsbox_plpldamage\t\t0\r\nsbox_playergod\t\t0\r\nsbox_noclip\t\t1\r\n\r\nsbox_maxprops\t\t150\r\nsbox_maxragdolls\t5\r\nsbox_maxnpcs\t\t10\r\nsbox_maxballoons\t10\r\nsbox_maxeffects\t\t50\r\nsbox_maxdynamite\t10\r\nsbox_maxlamps\t\t20\r\nsbox_maxthrusters\t30\r\nsbox_maxwheels\t\t20\r\nsbox_maxhoverballs\t20\r\nsbox_maxvehicles\t6\r\nsbox_maxbuttons\t\t20\r\nsbox_maxsents\t\t20\r\nsbox_maxemitters\t5\r\nsbox_maxspawners\t3\r\nsbox_maxturrets\t\t2\r\n\r\nnet_maxfilesize\t\t30\r\n\r\nsv_minrate\t\t${sv_minrate} \r\nsv_maxrate\t\t${sv_maxrate}\r\ndecalfrequency\t\t10 \r\nsv_maxupdaterate\t66 \r\nsv_minupdaterate\t10 \r\n\r\n// execute ban files\r\nexec banned_ip.cfg \r\nexec banned_user.cfg ",
+      "order": 1,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header-49557",
+          "label": "Basic Configuration",
+          "description": "extra info here",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "Rcon Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header-84225",
+          "label": "Advanced Configuration",
+          "description": "extra info here",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "US - East",
+              "value": "0"
+            },
+            {
+              "text": "US - West",
+              "value": "1"
+            },
+            {
+              "text": "South America",
+              "value": "2"
+            },
+            {
+              "text": "Europe",
+              "value": "3"
+            },
+            {
+              "text": "Asia",
+              "value": "4"
+            },
+            {
+              "text": "Australia",
+              "value": "5"
+            },
+            {
+              "text": "Middle East",
+              "value": "6"
+            },
+            {
+              "text": "Africa",
+              "value": "7"
+            },
+            {
+              "text": "World (default)",
+              "value": "255"
+            }
+          ],
+          "id": "sv_region",
+          "defaultValue": {
+            "ValueKind": 1
+          },
+          "label": "Region",
+          "description": "The region of the world to report this server in.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "sv_lan",
+          "label": "Server is a lan server",
+          "description": "No heartbeat, no authentication, no non-class C addresses",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicSwitch",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "id": "sv_minrate",
+          "defaultValue": {
+            "ValueKind": 1
+          },
+          "label": "Min bandwidth rate",
+          "description": "Min bandwidth rate allowed on server, 0 == unlimited",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "id": "sv_maxrate",
+          "defaultValue": {
+            "ValueKind": 1
+          },
+          "label": "Max bandwidth rate",
+          "description": "Max bandwidth rate allowed on server, 0 == unlimited",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [],
+  "gamesScripts": [],
+  "customModProviderConfigs": [],
+  "createdDate": "2026-02-15T17:26:41.594533",
+  "metadata": {
+    "Notes": ""
+  },
+  "rolePermissions": []
+}
