@@ -1,6 +1,6 @@
 {
   "__TCA:ExportVersion": "3.0.809.62880",
-  "__TCA:ExportedAt": "2026-02-16T02:53:29.2804795Z",
+  "__TCA:ExportedAt": "2026-02-16T03:36:51.3490413Z",
   "name": "Garry\u0027s Mod",
   "shortName": "GMOD",
   "description": "",
@@ -31,7 +31,7 @@
   },
   "consoleConfig": {
     "enabled": true,
-    "outputSource": "Terminal",
+    "outputSource": "MemoryWrapper",
     "logFile": "garrysmod/console.log",
     "inputSource": "ConsoleCommands",
     "outputFilters": "",
