@@ -1,6 +1,6 @@
 {
-  "__TCA:ExportVersion": "3.0.860.8019",
-  "__TCA:ExportedAt": "2026-02-15T19:45:58.7511925Z",
+  "__TCA:ExportVersion": "3.0.809.62880",
+  "__TCA:ExportedAt": "2026-02-16T02:53:29.4859839Z",
   "name": "Garry\u0027s Mod",
   "shortName": "GMOD",
   "description": "",
@@ -96,23 +96,23 @@
     "steamTool": "DepotDownloader"
   },
   "gameCommandlineConfig": {
-    "privateCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022",
-    "privateCustomCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} "
+    "privateCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022",
+    "privateCustomCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} "
   },
   "commandlineConfig": {
     "enableSelection": true,
-    "defaultCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022",
-    "defaultCustomCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} ",
+    "defaultCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022",
+    "defaultCustomCommandline": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} ",
     "predefinedCommandlines": [
       {
         "id": 1,
         "name": "Default",
-        "commandLine": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022"
+        "commandLine": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022gm_flatgrass\u0022"
       },
       {
         "id": 2,
         "name": "Custom",
-        "commandLine": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IpAddress} -port ${GamePort} ${exec} \u002Bmap ${map}"
+        "commandLine": "-norestart -console -game garrysmod -nohltv \u002Btv_port ${HLTVPort} -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} ${exec} \u002Bmap ${map}"
       }
     ]
   },
@@ -449,7 +449,7 @@
   ],
   "configFiles": [
     {
-      "id": 26,
+      "id": 11,
       "relativePath": "garrysmod/cfg/server.cfg",
       "description": "Main configuration file",
       "template": "log\t\t\ton\r\n\r\nhostname\t\t\u0022${Hostname}\u0022\r\nrcon_password\t\t\u0022${RconPassword}\u0022\r\nsv_password\t\t\u0022${PrivatePassword}\u0022\r\nsv_region\t\t${sv_region}\r\nsv_lan\t\t\t${sv_lan}\r\nsv_logbans\t\t0\r\nsv_logecho\t\t0\r\nsv_logfile\t\t1 \r\nsv_log_onefile\t\t0\r\nsv_noclipspeed\t\t5\r\nsv_noclipaccelerate\t5\r\n\r\nsbox_allownpcs\t\t1\r\nsbox_godmode\t\t0\r\nsbox_plpldamage\t\t0\r\nsbox_playergod\t\t0\r\nsbox_noclip\t\t1\r\n\r\nsbox_maxprops\t\t150\r\nsbox_maxragdolls\t5\r\nsbox_maxnpcs\t\t10\r\nsbox_maxballoons\t10\r\nsbox_maxeffects\t\t50\r\nsbox_maxdynamite\t10\r\nsbox_maxlamps\t\t20\r\nsbox_maxthrusters\t30\r\nsbox_maxwheels\t\t20\r\nsbox_maxhoverballs\t20\r\nsbox_maxvehicles\t6\r\nsbox_maxbuttons\t\t20\r\nsbox_maxsents\t\t20\r\nsbox_maxemitters\t5\r\nsbox_maxspawners\t3\r\nsbox_maxturrets\t\t2\r\n\r\nnet_maxfilesize\t\t30\r\n\r\nsv_minrate\t\t${sv_minrate} \r\nsv_maxrate\t\t${sv_maxrate}\r\ndecalfrequency\t\t10 \r\nsv_maxupdaterate\t66 \r\nsv_minupdaterate\t10 \r\n\r\n// execute ban files\r\nexec banned_ip.cfg \r\nexec banned_user.cfg ",
@@ -640,9 +640,13 @@
   "fileSystemPermissions": [],
   "gamesScripts": [],
   "customModProviderConfigs": [],
-  "createdDate": "2026-02-15T17:26:41.594533",
+  "createdDate": "2026-02-16T02:37:09.458979",
+  "modifiedDate": "2026-02-16T02:37:09.493408",
   "metadata": {
-    "Notes": ""
+    "Notes": "",
+    "notes": "Game imported from plugin TCA.Games.GarrysMod version 1.0.1.",
+    "PluginIdentifier": "TCA.Games.GarrysMod",
+    "PluginVersion": "1.0.1"
   },
   "rolePermissions": []
 }
