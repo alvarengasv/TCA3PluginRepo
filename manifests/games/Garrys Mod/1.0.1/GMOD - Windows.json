@@ -1,6 +1,6 @@
 {
-  "__TCA:ExportVersion": "3.0.860.8019",
-  "__TCA:ExportedAt": "2026-02-15T19:45:58.6490025Z",
+  "__TCA:ExportVersion": "3.0.809.62880",
+  "__TCA:ExportedAt": "2026-02-16T02:53:29.2804795Z",
   "name": "Garry\u0027s Mod",
   "shortName": "GMOD",
   "description": "",
@@ -512,7 +512,7 @@
   ],
   "configFiles": [
     {
-      "id": 25,
+      "id": 10,
       "relativePath": "garrysmod/cfg/server.cfg",
       "description": "Main configuration file",
       "template": "log\t\t\ton\r\n\r\nhostname\t\t\u0022${Hostname}\u0022\r\nrcon_password\t\t\u0022${RconPassword}\u0022\r\nsv_password\t\t\u0022${PrivatePassword}\u0022\r\nsv_region\t\t${sv_region}\r\nsv_lan\t\t\t${sv_lan}\r\nsv_logbans\t\t0\r\nsv_logecho\t\t0\r\nsv_logfile\t\t1 \r\nsv_log_onefile\t\t0\r\nsv_noclipspeed\t\t5\r\nsv_noclipaccelerate\t5\r\n\r\nsbox_allownpcs\t\t1\r\nsbox_godmode\t\t0\r\nsbox_plpldamage\t\t0\r\nsbox_playergod\t\t0\r\nsbox_noclip\t\t1\r\n\r\nsbox_maxprops\t\t150\r\nsbox_maxragdolls\t5\r\nsbox_maxnpcs\t\t10\r\nsbox_maxballoons\t10\r\nsbox_maxeffects\t\t50\r\nsbox_maxdynamite\t10\r\nsbox_maxlamps\t\t20\r\nsbox_maxthrusters\t30\r\nsbox_maxwheels\t\t20\r\nsbox_maxhoverballs\t20\r\nsbox_maxvehicles\t6\r\nsbox_maxbuttons\t\t20\r\nsbox_maxsents\t\t20\r\nsbox_maxemitters\t5\r\nsbox_maxspawners\t3\r\nsbox_maxturrets\t\t2\r\n\r\nnet_maxfilesize\t\t30\r\n\r\nsv_minrate\t\t${sv_minrate} \r\nsv_maxrate\t\t${sv_maxrate}\r\ndecalfrequency\t\t10 \r\nsv_maxupdaterate\t66 \r\nsv_minupdaterate\t10 \r\n\r\n// execute ban files\r\nexec banned_ip.cfg \r\nexec banned_user.cfg ",
@@ -755,7 +755,7 @@
   "customModProviderConfigs": [
     {
       "providerId": 1,
-      "gameId": 12,
+      "gameId": 9,
       "enabled": false,
       "configuration": {
         "SingleIcon": false
@@ -763,7 +763,7 @@
     },
     {
       "providerId": 2,
-      "gameId": 12,
+      "gameId": 9,
       "enabled": true,
       "configuration": {
         "ShowDescription": true,
@@ -775,15 +775,18 @@
     },
     {
       "providerId": 3,
-      "gameId": 12,
+      "gameId": 9,
       "enabled": false,
       "configuration": {}
     }
   ],
-  "createdDate": "2026-02-15T17:26:18.9996",
-  "modifiedDate": "2025-10-14T00:43:41.328787",
+  "createdDate": "2026-02-16T02:37:01.927266",
+  "modifiedDate": "2026-02-16T02:37:02.641284",
   "metadata": {
-    "Notes": ""
+    "Notes": "",
+    "notes": "Game imported from plugin TCA.Games.GarrysMod version 1.0.1.",
+    "PluginIdentifier": "TCA.Games.GarrysMod",
+    "PluginVersion": "1.0.1"
   },
   "rolePermissions": [
     {
