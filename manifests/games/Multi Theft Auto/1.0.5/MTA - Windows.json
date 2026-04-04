@@ -90,7 +90,7 @@
     "branch": "public",
     "storeId": 0,
     "steamUsername": "anonymous",
-    "steamPassword": "keStupin",
+    "steamPassword": "",
     "steamDownloadRetries": 5,
     "updateAfterCreateOrReinstall": false,
     "verifyAll": false,
