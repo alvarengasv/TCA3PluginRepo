@@ -1,0 +1,869 @@
+{
+  "__TCA:ExportVersion": "3.3.88.44401",
+  "__TCA:ExportedAt": "2026-04-24T02:33:03.4057859Z",
+  "name": "AA Proving Grounds",
+  "shortName": "AAPG",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/b/bf/AA4logobrand_vert.png",
+  "backgroundImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/203290/ss_d33fa90532510f13aca8a420a9304bac33d449d8.jpg",
+  "minSlots": 2,
+  "maxSlots": 128,
+  "defaultSlots": 28,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "americasarmy",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "LogFile",
+    "logFile": "AAPG\\AAGame\\Logs\\AAServer.log",
+    "inputSource": "None",
+    "printRconResponse": true,
+    "outputFilters": "",
+    "stopCommand": "",
+    "waitAfterStopCommand": 1000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 7778,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 7779,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 1
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "AAPG\\Binaries\\win64\\AAGame.exe",
+    "relativeWorkingDirectory": "AAPG\\Binaries\\win64\\",
+    "autoSetupFolderName": "AAPG",
+    "failOnMissingExecutable": true,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 203290,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 203290,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": true,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "server BDX_Breach_EX /GLOBAL /AuthServerUserName=${AuthServerUserName} /AuthServerPassword=${AuthServerPassword} /AuthServerIP=${IPAddress} /STEAMSERVERIP=${IPAddress} MULTIHOME=${IPAddress} /NOPAUSE /NOHOMEDIR /CONFIGSUBDIR=AAHostAServerConfig0 /SGSP=${GamePort} /SAP=${RConPort} /SQP=${QueryPort}",
+    "defaultCustomCommandline": "",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "server BDX_Breach_EX /GLOBAL /AuthServerUserName=${AuthServerUserName} /AuthServerPassword=${AuthServerPassword} /AuthServerIP=${IPAddress} /STEAMSERVERIP=${IPAddress} MULTIHOME=${IPAddress} /NOPAUSE /NOHOMEDIR /CONFIGSUBDIR=AAHostAServerConfig0 /SGSP=${GamePort} /SAP=${RConPort} /SQP=${QueryPort}"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "LocalSystem",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "AuthServerPassword",
+      "defaultValue": "",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AuthServerPassword}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "AuthServerPassword",
+        "defaultValue": "",
+        "label": "AuthServerPassword",
+        "description": "",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T00:21:50.855658",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "AuthServerUserName",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AuthServerUserName}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "AuthServerUserName",
+        "defaultValue": "",
+        "label": "AuthServerUserName",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T00:21:50.856185",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 70,
+      "relativePath": "AAPG\\AAGame\\Config\\AAHostAServerConfig0\\DefaultGame.ini",
+      "description": "Main configuration file",
+      "template": "[Configuration]\nBasedOn=..\\Engine\\Config\\BaseGame.ini\n\n[Engine.AccessControl]\n; if left blank then no player may login as admin\nAdminPassword=${RconPassword}\n; Password required to enter the game\nGamePassword=${PrivatePassword}\n\n[AAGame.AAAccessControl]\n; 5 minute ban time\nVoteKickBanTime=300\nROEKickBanTime=600\n\n[Engine.GameInfo]\nDefaultGame=AAGame.AAGameDevelopment\nDefaultServerGame=AAGame.AAGameDevelopment\nGameDifficulty=\u002B1.0\n;This is the number of spectators in addition to the number of players\nMaxSpectators=8\nMaxPlayers=${Slots}\n;Time limit no longer has any affect\nTimeLimit=0\n;Time in seconds before a player will be moved to spectator team for being idle\nMaxIdleTime=61\n;If set to false then players will not be kicked for being idle\nbKickLiveIdlers=true\nbAdminCanPause=true\n\n[Engine.GameReplicationInfo]\n;The name of the server as displayed on the server info screen as well as the scoreboard\nServerName=\u0022${Hostname}\u0022\n\n[AAGame.AAGameInfo]\nGameplayEventsWriterClassName=Engine.GameplayEventsWriter\nbLogGameplayEvents=false\nGameSettingsUpdateInterval=20.0\nbAutoDemoRecEnabled=false\nDemoRecDir=\nTimeToSelfKill=20.0\nInitialConnectionKillTimeout=90.0\nAAMaxPlayersAllowed=32\n\n\n;This list determines which maps the server will rotate through\n[AAGame.AADataStore_OnlineGameSearch]\n\u002BMapRotationList=\u0022BDX_Breach_EX\u0022\n\u002BMapRotationList=\u0022BDX_Crossfire_C4\u0022\n\u002BMapRotationList=\u0022BDX_Lockdown_EX\u0022\n\u002BMapRotationList=\u0022BDX_Springstreet_VIP\u0022\n\u002BMapRotationList=\u0022BDX_Hydra_EX\u0022\n\u002BMapRotationList=\u0022BDX_InnerHospital_EX\u0022\n\u002BMapRotationList=\u0022BDX_Watchdog_C4\u0022\n\u002BMapRotationList=\u0022BDX_Intercept_EX\u0022\n\u002BMapRotationList=\u0022BDX_Raptus_EX\u0022\n\u002BMapRotationList=\u0022BDX_Furious_TH\u0022\n\u002BMapRotationList=\u0022BDX_Shadowstep_EX\u0022\n\u002BMapRotationList=\u0022BDX_Springstreet_EX\u0022\n\u002BMapRotationList=\u0022FLO_Uptown_EX\u0022\n\u002BMapRotationList=\u0022FLO_InsurgentCamp_AC\u0022\n\u002BMapRotationList=\u0022FLO_Sandstorm_TH\u0022\n\u002BMapRotationList=\u0022FLO_InnerHospital_EX\u0022\n\u002BMapRotationList=\u0022FLO_StoneRuins_C4\u0022\n\u002BMapRotationList=\u0022FLO_Intercept_VIP\u0022\n\u002BMapRotationList=\u0022FLO_Checkout_EX\u0022\n\u002BMapRotationList=\u0022FLO_Homestead_C4\u0022\n\u002BMapRotationList=\u0022FLO_InnerHospital_VIP\u0022\n\u002BMapRotationList=\u0022FLO_InsurgentCamp_AC\u0022\n\u002BMapRotationList=\u0022FLO_Sandstorm_TH\u0022\n\u002BMapRotationList=\u0022FLO_Uptown_VIP\u0022\n\u002BMapRotationList=\u0022FLO_CabinFever_TH\u0022\n\u002BMapRotationList=\u0022FLO_Homestead_VIP\u0022\n\u002BMapRotationList=\u0022FLO_Intercept_EX\u0022\n\u002BMapRotationList=\u0022FLO_Watchdog_C4\u0022\n\u002BMapRotationList=\u0022FLO_Slums_VIP\u0022\n\u002BMapRotationList=\u0022FLO_RockyRoad_EX\u0022\n\u002BMapRotationList=\u0022FLO_Overload_VIP\u0022\n\u002BMapRotationList=\u0022FLO_Raptus_EX\u0022\n\u002BMapRotationList=\u0022FLO_ColdFront_C4\u0022\n\u002BMapRotationList=\u0022FLO_Redline_VIP\u0022\n\u002BMapRotationList=\u0022FLO_Rusneyev_EX\u0022\n\n;This is the list of possible maps player can vote to. Please keep it in alphabetical order\n\u002BMapVoteList=\u0022BDX_Breach_EX\u0022\n\u002BMapVoteList=\u0022BDX_Bridge_EX\u0022\n\u002BMapVoteList=\u0022BDX_Checkout_EX\u0022\n\u002BMapVoteList=\u0022BDX_Crossfire_C4\u0022\n\u002BMapVoteList=\u0022BDX_Crossfire_EX\u0022\n\u002BMapVoteList=\u0022BDX_Furious_TH\u0022\n\u002BMapVoteList=\u0022BDX_Hydra_EX\u0022\n\u002BMapVoteList=\u0022BDX_InnerHospital_EX\u0022\n\u002BMapVoteList=\u0022BDX_InnerHospital_VIP\u0022\n\u002BMapVoteList=\u0022BDX_Intercept_C4\u0022\n\u002BMapVoteList=\u0022BDX_Intercept_EX\u0022\n\u002BMapVoteList=\u0022BDX_Lockdown_EX\u0022\n\u002BMapVoteList=\u0022BDX_OuterHospital_C4\u0022\n\u002BMapVoteList=\u0022BDX_Raptus_EX\u0022\n\u002BMapVoteList=\u0022BDX_Reaction_EX\u0022\n\u002BMapVoteList=\u0022BDX_Redline_C4\u0022\n\u002BMapVoteList=\u0022BDX_Redline_EX\u0022\n\u002BMapVoteList=\u0022BDX_Rusneyev_EX\u0022\n\u002BMapVoteList=\u0022BDX_Shadowstep_EX\u0022\n\u002BMapVoteList=\u0022BDX_Siege_C4\u0022\n\u002BMapVoteList=\u0022BDX_Siege_EX\u0022\n\u002BMapVoteList=\u0022BDX_Springstreet_EX\u0022\n\u002BMapVoteList=\u0022BDX_SpringStreet_VIP\u0022\n\u002BMapVoteList=\u0022BDX_Watchdog_C4\u0022\n\u002BMapVoteList=\u0022FLO_Bridge_EX\u0022\n\u002BMapVoteList=\u0022FLO_BridgeNight_EX\u0022\n\u002BMapVoteList=\u0022FLO_CabinFever_TH\u0022\n\u002BMapVoteList=\u0022FLO_Checkout_EX\u0022\n\u002BMapVoteList=\u0022FLO_ColdFront_C4\u0022\n\u002BMapVoteList=\u0022FLO_ColdFront_EX\u0022\n\u002BMapVoteList=\u0022FLO_Downtown_EX\u0022\n\u002BMapVoteList=\u0022FLO_Furious_TH\u0022\n\u002BMapVoteList=\u0022FLO_HarborAssault_TH\u0022\n\u002BMapVoteList=\u0022FLO_HarborAssaultNight_TH\u0022\n\u002BMapVoteList=\u0022FLO_Homestead_C4\u0022\n\u002BMapVoteList=\u0022FLO_Homestead_VIP\u0022\n\u002BMapVoteList=\u0022FLO_Hospital_EX\u0022\n\u002BMapVoteList=\u0022FLO_InnerHospital_EX\u0022\n\u002BMapVoteList=\u0022FLO_InnerHospital_VIP\u0022\n\u002BMapVoteList=\u0022FLO_InsurgentCamp_AC\u0022\n\u002BMapVoteList=\u0022FLO_Intercept_C4\u0022\n\u002BMapVoteList=\u0022FLO_Intercept_EX\u0022\n\u002BMapVoteList=\u0022FLO_Intercept_VIP\u0022\n\u002BMapVoteList=\u0022FLO_Overload_C4\u0022\n\u002BMapVoteList=\u0022FLO_Overload_VIP\u0022\n\u002BMapVoteList=\u0022FLO_Raptus_EX\u0022\n\u002BMapVoteList=\u0022FLO_Reaction_EX\u0022\n\u002BMapVoteList=\u0022FLO_Redline_C4\u0022\n\u002BMapVoteList=\u0022FLO_Redline_EX\u0022\n\u002BMapVoteList=\u0022FLO_RedLine_VIP\u0022\n\u002BMapVoteList=\u0022FLO_RockyRoad_EX\u0022\n\u002BMapVoteList=\u0022FLO_Rusneyev_EX\u0022\n\u002BMapVoteList=\u0022FLO_Sandstorm_TH\u0022\n\u002BMapVoteList=\u0022FLO_Slums_C4\u0022\n\u002BMapVoteList=\u0022FLO_Slums_TH\u0022\n\u002BMapVoteList=\u0022FLO_Slums_VIP\u0022\n\u002BMapVoteList=\u0022FLO_StoneRuins_C4\u0022\n\u002BMapVoteList=\u0022FLO_Uptown_EX\u0022\n\u002BMapVoteList=\u0022FLO_Uptown_VIP\u0022\n\u002BMapVoteList=\u0022FLO_Watchdog_AC\u0022\n\u002BMapVoteList=\u0022FLO_Watchdog_C4\u0022\n\n;List of training maps\n\u002BTrainingMapList=\u0022STX_Tutorial\u0022\n\u002BTrainingMapList=\u0022STX_Giunta_Range\u0022\n\u002BTrainingMapList=\u0022STX_Swenson_Range\u0022\n\n;List of Shoot houses in alphabetical order\n\u002BShoothouseMapList=\u0022SH_870MCS\u0022\n\u002BShoothouseMapList=\u0022SH_M4\u0022\n\u002BShoothouseMapList=\u0022SH_M9\u0022\n\u002BShoothouseMapList=\u0022SH_M14\u0022\n\u002BShoothouseMapList=\u0022SH_M16\u0022\n\u002BShoothouseMapList=\u0022SH_M24\u0022\n\u002BShoothouseMapList=\u0022SH_M67\u0022\n\u002BShoothouseMapList=\u0022SH_M249\u0022\n\n[AAGame.AAGameMultiplayerBase]\n; Minimum number of players to wait for before starting the match\nMinNetPlayers=2\n; Time after MinNetPlayers join to wait for more players\nNetWait=60\n;Time spent in weapon selection and communication\nBeginningOfRoundDelay=12\n;Extra time spent in weapon selection and communication for swap round\nSwapRoundDelay=6\n; False - match ends early if one team wins over half the rounds\n; True - match will be played for all rounds, regardless of team score\nbPlayAllRounds=false\n; Time spent (in seconds) in WarmUpMode before the server triggers another UGC Maps Update\nServerNeedsUGCMapsUpdateDelay=600\n; A flag indicating that the server should auto-update UGC maps\nbServerSteamUGCAutoUpdate=true\n\n[AAGame.AAGamePVPBase]\nbScaleWithNumPlayers=true\n; These override MaxPlayers in production maps\nMaxTeamSizeBDX=6\nMaxTeamSizeFLO=12\n; If \u003E 0, these override the map TimeLimits\nTimeLimitOverrideBDX=180\nTimeLimitOverrideFLO=240\n; Maximum number of rounds per match\nRoundsPerMatchBDX=15\nRoundsPerMatchFLO=15\n\n[AAGame.AAGameReplicationInfo]\n;Time in seconds before a flash or frag grenade may be thrown\nForbidGrenadeTimeFLO=0\nForbidGrenadeTimeBDX=0\n;If true, then players must use autopick to choose their team\nbDefaultOnlyAllowAutoPick=false\n;Refers to aim assist when using a controller\nbDefaultAllowControllerAimAssist=true\nbOnlineVoiceEnabled=true\n;The server owner name, website and hosting company and admin name and email, if filled out, appear on the Server Info screen\nsDefaultServerOwnerName=\nsDefaultServerOwnerWebsite=\nsDefaultServerHostingCompany=\nsDefaultAdminName=\nsDefaultAdminEmail=\n;The message of the day is displayed on the team select screen (first screen seen when joining a game) and on the server info screen\nsDefaultServerMOTD=\u0022Visit the forums! forum.americasarmy.com\u0022\n;The admin message is displayed on the server info screen\nsDefaultAdminMessage=\u0022Welcome to AA Proving Grounds!\u0022\n;toggles Kick Player voting\nbDefaultAllowKickPlayerVoting=false\n;toggles Change Map voting\nbDefaultAllowChangeMapVoting=true \n;toggles Set Next Map voting\nbDefaultAllowSetNextMapVoting=true \n;toggles Restart Mission voting\nbDefaultAllowRestartMissionVoting=true \n;toggles Scramble Teams voting\nbDefaultAllowScrambleTeamsVoting=true \n;If NumberOfVotes \u003E= NumberOfVoters / VoteKickRate, the vote to kick a player will be passed.\nDefaultVoteKickRate=2.25\nDefaultVoteDuration=15\n;When true players may vote for the next map at the end of a match\nbDefaultAllowAARMapVoting=true\n;When true hard core mode is enabled - NOTE - this feature is no longer officially supported any may not work as expected\n;Hard core = Reduced HUD and no revives\nbDefaultHardcoreMode=false\n;If true then teams will attempt to balance numbers at the start of each round\nbDefaultAutoBalanceTeams=true\n;When true friendly fire damage is reduced\nbDefaultReduceFriendlyFire=true\n;When true players are punished for ROE violations (ROE = dealing large amount of damage to friendlies)\nbDefaultROEEnabled=true\n;When false players bleed to 1% and then stop bleeding\nbDefaultAllowBleedOut=true\n;When false disables the minimap dot for enemies that have fired recently\nbDefaultAllowEnemyFireMapDot=true\n;When true weapons will reload automatically once the current magazine is expended\nbDefaultAutoReloadEnabled=true\n;When false players cannot be revived following a head shot\nbDefaultReviveOnHeadshots=true\n;The number of times a player may be revived\nMaxRevives=1\n;When false all character shadows for all clients are forced off\nbDefaultShadowsAllowed=true\n;When true anchoring is allowed\nbDefaultAnchoringAllowed=true\n;When true the minimal HUD option is forced on for all clients - NOTE - this feature is no longer officially supported any may not work as expected\nbHUD_ForceMinimalHUD=false\n;When false the active players for each team is not displayed on the HUD and only friendlies are displayed on the scoreboard\n;NOTE - this feature is no longer officially supported any may not work as expected\nbDefaultHUD_ForcePlayerCountOff=true\n;When false enemy spots only appear on the minimap - NOTE - this feature is no longer officially supported any may not work as expected\nbDefaultHUD_ForceInWorldEnemySpots=true\n;When true the messages for when a player kills another are turned off for all clients - NOTE- this feature is no longer officially supported any may not work as expected\nbDefaultHUD_ForceActivityFeedOff=false\n;No longer used\nbHUD_ForceHitIndicatorOff=true\nbAllowAdminSpectate=true\nbAllowSpectateMode_ActionCam=true\nbAllowSpectateMode_3pOrbit=true\nbAllowSpectateMode_FreeCam=true\n;When true, players on the spectate team experience suppression, flash grenades and other screen FX\nbDefaultForceSpectateTeamScreenFX=false\n;When false, prevents spectators from seeing occluded mesh outlines\nbDefaultAllowOccludedMeshSpectate=true\n;When true, will use the roles setup as dictated by the map\nbDefaultUseRoles=true\n;When true, the server will do hit detection instead of the client\nbDefaultUseServerSideHitDetection=false\n;When true, the server will allow global VoIP for all players\nbDefaultAllowGlobalVoiceChat=true\n;When true, the server will allow VoIP for all spectators\nbDefaultAllowSpectatorVoiceChat=true\n;When true, the server will allow text chat for all players\nbDefaultAllowGlobalTextChat=true\n;Time that must pass before prone can be attempted again\nProneRetryTimer=1.0\n;Allows RPG pickups to be used\nbAllowRPGPickup=true\n;Whether or not AAU-related systems should be called\nbEnableAAUDatabaseService=true\n;Whether or not AWS-related systems should be called\nbEnableAWSServiceServer=true\nbEnableAWSServiceClient=true\n;See Kartigan\nbDefaultAllowSpecial=false\n\n[Engine.WorldInfo]\nbShowLightingRebuildMessage=TRUE\nDecalManagerClassPath=AAGame.AADecalManager\n\n[DefaultPlayer]\nName=Player\nteam=255\n\n[Engine.PlayerController]\nForceFeedbackManagerClassName=\u0022WinDrv.XnaForceFeedbackManager\u0022\n\n[Engine.DecalManager]\n;The time in seconds bullet decals and grenade scorch marks hang around\nDecalLifeSpan=30.0\n\n[AAGame.AAPlayerController] \n;How many times a player can hit friendlies before incurring an ROE violation\nFriendlyFireHitLimit=4\n;These are all client-side settings\nbPunkbusterMsgs=false\nbHoldToSprint=false\nbDoubleTapSprint=false\nbGrenadesInWeaponCycle=false\nfMasterVolume=1.f\nfMusicVolume=0.8f\nfUIVolume=0.8.f\nfSoundEffectsVolume=100.f\nfVOVolume=100.f\nbMuteWhenFocusLost=true\nbMuteVOIPWhenFocusLost=false\nbVOIPEnabled=true\n;This refers to the music which plays at the 30 second mark in a round\nbRoundEndWarningMusic=true\nAudio_VoiceSelection=255\nbDisplayNumPing=true\nbCameraBob=false\nsNonAuthSoldierName=DidNotSetName\nVIPProbabilityRank=VPROB_Normal\nbParentalLock_Violence=false\nbParentalLock_VOIP=false\nbParentalLock_Chat=false\nbUseDualRenderScopes=false\nGameSettingsUpdateInterval=15\n;Is actually the cosine of the angle between the view and target.\n;This should be a large enough area that it has a target before the aim assist\n;systems activate on it.\nAimAssistTargetAngle=.94\nAimAssistTargetAngleLarge=.9\n;How often to check for a new aim assist target.  Also, if framerate is not\n;above this value it will skip aim assist target checks\nAimAssistTargetSearchTime=0.1f\n;Softening angle for aim adhesion.  When within this radius, the strength will\n;fade out of the aim adhesion system.  This will scale with distance.  The\n;value here is for a close range target.\nAimAdhesionSoftenAngle=0.99993\nAimAdhesionMinSoftenAngleStrength=0.75\n;ConfigStrength * this value of change is the max change per frame for aim adhesion\nAimAdhesionInterpSpeed=0.001\nAimSnapDelay=2\nbSwitchToWeaponOnPickup=true\nPawnCamoIdx[0]=-1\nPawnCamoIdx[1]=-1\nPawnCamoIdx[2]=-1\nPawnCamoIdx[3]=-1\nPawnCamoIdx[4]=-1\nHeadPreference[0]=HEAD_Random\nHeadPreference[1]=HEAD_Random\nHeadPreference[2]=HEAD_Random\nHeadPreference[3]=HEAD_Random\nHeadPreference[4]=HEAD_Random\nBadgePreference=0\nGearPreference[0]=0\nGearPreference[1]=0\nGearPreference[2]=0\nGearPreference[3]=0\nGearPreference[4]=0\nbShowOccludedMeshes=true\n; the window to open if the bug report method is one of AAPC_RM_SteamOverlay or AAPC_RM_DefaultBrowser\nBugReportURL=\u0022http://bugreport.americasarmy.com/\u0022\n; one of AAPC_RM_SteamOverlay, AAPC_RM_DefaultBrowser, AAPC_RM_ExternalApplication (the last one is not implemented)\nBugReportMethod=AAPC_RM_DefaultBrowser\n; the window to open if the commend/report player method is one of AAPC_RM_SteamOverlay or AAPC_RM_DefaultBrowser\nCommendOrReportPlayerURL=\u0022http://www.americasarmy.com/support/abuse\u0022\n; one of AAPC_RM_SteamOverlay, AAPC_RM_DefaultBrowser, AAPC_RM_ExternalApplication (the last one is not implemented)\nCommendOrReportPlayerMethod=AAPC_RM_DefaultBrowser\nPlayerInfoURL=\u0022https://my.goarmy.com/info/form/GetBrcFormRedirectByUrl.action?url=/info/send1\u0022\nfSafeArea=1.0\nbAdminIncognito=True\n; Weapon to force at startup\n; Primaries: ak105,ak107,czalpha,m4a1,m16a4,scarh,mp7a1,m870,supernova,m249,rpk,dragunov,m14ebr,m24,sv98,rpg7\n; Sidearms: cz2,m9,m17,m1911\nAdminForcedWeapon=\n;Classes to force: rifleman,autorifleman,marksman,sniper\nAdminForcedRole=\n\n[AAGame.AAPawn]\n; Pawn relative speed indicates target pawn is moving, for aim adhesion\nAimAdhesionRelativeVelocity=0.005\n\n; Low speed is for bHighAnim targets, when the target is moving\nAimAdhesionInterpSpeedLow=1.5\n; High speed is for all other cases\nAimAdhesionInterpSpeedHigh=15\n\n; Range 0 to 1, where 1 is 100%; if not 0, aim adhesion will function when\n; the player\u0027s pawn is not moving or rotating\n; if zero, aim snap will not function unless player\u0027s pawn is moving\nAimAdhesionNonMovingStrengthModifier=0.001\n\n; When running, modifies the strength of aim adhesion\nAimAdhesionRunningStrengthModifier=0.25\n\n; When running, modifies the strength of aim friction\nAimFrictionRunningStrengthModifier=0.25\n\n; Aim friction distance modifiers , where aim friction is max strength up to\n; the min and is at min strength at the max distance.  \nAimFrictionMinDistance=500\nAimFrictionMaxDistance=3000\n\n; Modifies the AimFriction max speed by adding: (GamepadSensitivity * this)\n; for the lower axis curve, and twice that amount for the higher axis curve\n; **Compensates for differing gamepad sensitivity levels\nAimFrictionGamepadSensitivityMod=0.05\n\n; Reduces the gamepad axis speed by a percentage, depending on if the axis is\n; using the low speed (inner area), or high speed (outer edges).  Recommend\n; the high speed be twice the low speed.  This value also has the above value\n; added to it.  Example:  At 1 GamepadSensitivity the friction strength is\n; (1 * 0.05) \u002B 0.25 = 0.3  or at high speed: 0.05 \u002B 0.05 \u002B 0.50 = 0.6\nAimFrictionMaxStrength[0]=0.25\nAimFrictionMaxStrength[1]=0.50\n\n; Range 0 to 2, where 2 indicates Right and Up axis are at 100%\n; When the combined value of the Right and Up axis\u0027s are below this value\n; it will scale the strength of aim adhesion by the distance of \n; 0 to \u003Cspecified value\u003E.  This is for lightening up aim adhesion for minor\n; aim corrections\nAimAdhesionRawJoyMin=0.5\n\n; Sets aim snap to target the aim assist bone target instead of the center \n; position of the target pawn\nAimSnapTargetBones=true\n\n\u002BSightCheckBones=Head\n\u002BSightCheckBones=L_Shoulder\n\u002BSightCheckBones=R_Shoulder\n\u002BSightCheckBones=Pelvis\n\u002BSightCheckBones=L_Knee\n\u002BSightCheckBones=R_Knee\n\n; Bone names for AimAssist to check for target aquisition\n; this list MUST match AimAssistTargetPoints, minus the extra information\n; of bHighAnim, bValidBulletMag, and BoneOffsets.  It is used for threaded\n; checking of targets, so it cannot be a struct.\n\u002BAimAssistCheckBones=Right_Eye\n\u002BAimAssistCheckBones=Left_Eye\n\u002BAimAssistCheckBones=BackSling\n\u002BAimAssistCheckBones=ChestSling\n\u002BAimAssistCheckBones=Spine2\n\u002BAimAssistCheckBones=L_Wrist\n\u002BAimAssistCheckBones=R_Wrist\n\u002BAimAssistCheckBones=L_Shoulder\n\u002BAimAssistCheckBones=R_Shoulder\n\u002BAimAssistCheckBones=L_Elbow\n\u002BAimAssistCheckBones=R_Elbow\n\u002BAimAssistCheckBones=Pelvis\n\u002BAimAssistCheckBones=L_Knee\n\u002BAimAssistCheckBones=R_Knee\n\u002BAimAssistCheckBones=L_Ankle\n\u002BAimAssistCheckBones=R_Ankle\n\u002BAimAssistCheckBones=L_Toe\n\u002BAimAssistCheckBones=R_Toe\n\n; bHighAnim indicates the target point has a lot of translation when animating\n; bValidBulletMag indicates availability of the target for bullet magnetism\n\u002BAimAssistTargetPoints=(BoneName=Right_Eye, bHighAnim=false, bValidBulletMag=false, BoneOffset=(X=-3.000000,Y=0.000000,Z=0.000000))\n\u002BAimAssistTargetPoints=(BoneName=Left_Eye, bHighAnim=false, bValidBulletMag=false, BoneOffset=(X=-3.000000,Y=0.000000,Z=0.000000))\n\u002BAimAssistTargetPoints=(BoneName=BackSling, bHighAnim=false, bValidBulletMag=true, BoneOffset=(X=4.000000,Y=0.000000,Z=0.000000))\n\u002BAimAssistTargetPoints=(BoneName=ChestSling, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=Spine2, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=L_Wrist, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=R_Wrist, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=L_Shoulder, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=R_Shoulder, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=L_Elbow, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=R_Elbow, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=Pelvis, bHighAnim=false, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=L_Knee, bHighAnim=true, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=R_Knee, bHighAnim=true, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=L_Ankle, bHighAnim=true, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=R_Ankle, bHighAnim=true, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=L_Toe, bHighAnim=true, bValidBulletMag=true)\n\u002BAimAssistTargetPoints=(BoneName=R_Toe, bHighAnim=true, bValidBulletMag=true)\n\n[Engine.AutoTestManager]\nbExitOnCyclesComplete=true\nNumAutomatedMapTestingCycles=1\n\u002BAutomatedMapTestingList=BDX_Breach_EX_Benchmark\n\u002BAutomatedMapTestingList=BDX_Lockdown_EX_Benchmark\n\u002BAutomatedMapTestingList=BDX_Siege_EX_Benchmark\n\u002BAutomatedMapTestingList=FLO_ColdFront_Benchmark\n\u002BAutomatedMapTestingList=FLO_Downtown_EX_Benchmark\n\u002BAutomatedMapTestingList=FLO_Hospital_EX_Benchmark\n\u002BAutomatedMapTestingList=FLO_Slums_Benchmark\n\n; This allows enable/disabling kicking players that haven\u0027t first logged into their AAU account\n; on authorized (non LAN) servers.\n[AAGame.AASteamClientAuthentication]\nbKickIfNoAAUAccount=true\n\n[AAGame.AASteamServerAuthentication]\nbDisableMBSUpdatingMessage=true\n\n[AAGame.AAOnlineGameSearch]\nAutoCreateOnlineGameFallback=true\nShortTimer=0.001\nSearchWaitTime=1.5\nSearchRetryTime=3.5\nCancelFinalizeTime=3.0\nHostWaitPhaseTime=30\nPartyLeaderTime=2.0\nSonyQueriesMax=2\nSearchRoundMax=3\n\u002BMaxPingPerRound=60\n\u002BMaxPingPerRound=100\n\u002BMaxPingPerRound=140\n\u002BMaxPingPerRound=200\n\n[AAGame.AAPrivateGameSettings]\nRoundCount=6\nFriendlyFire=true\nMaxRevives=1\nUseRoles=true\nAllowAimAssist=true\nAllowSpectator=false\nUseDedicatedServer=true\n\n[AkAudio.AkComponent]\nOcclusionUpdateFrequency=0.4f\nOcclusionUpdateRandomization=0.2f\nOcclusionInterpolationTime=0.35f\nBSPMinOcclusion=0.1\nBSPMaxOcclusion=0.4\nBSPMinOcclusionThickness=50\nBSPMaxOcclusionThickness=600\nBSPMinObstruction=0.0\nBSPMaxObstruction=0.5\nBSPMinObstructionThickness=50\nBSPMaxObstructionThickness=400\nMaxOcclusionDistance=7000.0f\n\n[AAGame.AADebugCommands]\nCommandWidgetX=10\nCommandWidgetY=150\n\n; Base config\n[AAGame.AAWeapon]\nAimAdhesionConfiguration=(bEnabled=false, StandardStrength=500, SightedStrength=600, MinDistance=0.0, MaxDistance=6000.0, OuterRadius=0.981, InnerRadius=0.9994)\nBulletMagnetismConfiguration=(bEnabled=false, StandardStrength=0.0, SightedStrength=0.0, MinDistance=0.0, MaxDistance=0.0, OuterRadius=0.0, InnerRadius=0.0)\nTightAimSnapConfiguration=(bEnabled=true, StandardStrength=2250, SightedStrength=0, MinDistance=0.0, MaxDistance=0, OuterRadius=0.987, InnerRadius=0)\nMinAimAssistDistance=100.0\nMaxAimAssistDistance=10000.0\n; This min/max act as an extra scalar on aim adhesion for pawns that are obscured by cover.  At a certain distance, it will also effect the strength.\nMinVisiblePawnPercent=0.00004\nMaxVisiblePawnPercent=0.0004\n; AimFrictionConfiguration=(bEnabled=false, StandardStrength=0.0, SightedStrength=0.0, MinDistance=0.0, MaxDistance=0.0, OuterRadius=0.0, InnerRadius=0.5)\n\n; misc\n[AAGame.AAWeap_Scope]\n\n; group 1\n[AAGame.AAWeap_M9Pistol]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1700, SightedStrength=2050, MinDistance=500.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n[AAGame.AAWeap_M1911Pistol]\n[AAGame.AAWeap_CZ2Pistol]\n[AAGame.AAeap_DevHandgun]\n\n; group 2\n[AAGame.AAWeap_Shotgun]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1700, SightedStrength=2050, MinDistance=500.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n[AAGame.AAWeap_M870Shotgun]\n[AAGame.AAWeap_SuperNovaShotgun]\n\n; group 3\n[AAGame.AAWeap_M4A1Rifle]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1700, SightedStrength=2050, MinDistance=100.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n[AAGame.AAWeap_AK105Rifle]\n\n; group 4\n[AAGame.AAWeap_M16A4Rifle]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1700, SightedStrength=2050, MinDistance=100.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n[AAGame.AAWeap_AK107Rifle]\n\n; group 5\n[AAGame.AAWeap_MP7A1SMG]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1700, SightedStrength=2050, MinDistance=100.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n\n; group 6\n[AAGame.AAWeap_M249LMG]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1700, SightedStrength=2050, MinDistance=100.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n[AAGame.AAWeap_RPKLMG]\n\n; group 7\n[AAGame.AAWeap_M14EBRRifle]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=500, SightedStrength=500, MinDistance=0.0, MaxDistance=15000.0, OuterRadius=0.981, InnerRadius=0)\nTightAimSnapConfiguration=(bEnabled=true, StandardStrength=1000, SightedStrength=0, MinDistance=0.0, MaxDistance=0, OuterRadius=0.987, InnerRadius=0)\n[AAGame.AAWeap_DragunovSniper]\n\n; group 8\n[AAGame.AAWeap_M24Sniper]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=500, SightedStrength=500, MinDistance=0.0, MaxDistance=15000.0, OuterRadius=0.981, InnerRadius=0)\nTightAimSnapConfiguration=(bEnabled=true, StandardStrength=1000, SightedStrength=0, MinDistance=0.0, MaxDistance=0, OuterRadius=0.987, InnerRadius=0)\n[AAGame.AAWeap_SV98Sniper]\n\n; group 9\n[AAGame.AAWeap_SCARHRifle]\nAimAdhesionConfiguration=(bEnabled=true, StandardStrength=1500, SightedStrength=1850, MinDistance=100.0, MaxDistance=6000.0, OuterRadius=0.968, InnerRadius=0)\n[AAGame.AAWeap_CZAlphaRifle]\n\n\n\n\n\n\n\n",
+      "order": 1,
+      "enableEditor": true,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "AfterServiceCreated",
+          "AfterServiceReinstalled"
+        ],
+        "name": "Copy ini files",
+        "description": "Copy ini files",
+        "code": "cd AAPG\\AAGame\\Config\ncopy /y AAHostAServerConfig0\\DefaultGame.ini DefaultGame.ini\ncopy /y *.ini AAHostAServerConfig0\\\n\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "a92fcac0-5314-43d1-b083-e768fe243218"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "createdDate": "2026-04-17T00:21:50.891974",
+  "metadata": {},
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    }
+  ]
+}
