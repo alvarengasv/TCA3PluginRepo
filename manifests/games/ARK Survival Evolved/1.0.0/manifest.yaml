@@ -1,0 +1,42 @@
+identifier: "Community.Games.ARKSurvivalEvolved"
+name: "ARK: Survival Evolved"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Ark: Survival Evolved (stylized as ARK) is a 2017 action-adventure survival video game developed by Studio Wildcard. In the game, players must survive being stranded on one of several maps filled with roaming dinosaurs, fictional fantasy monsters, and other prehistoric animals, natural hazards, and potentially hostile human players."
+longDescription: |
+  # ARK: Survival Evolved
+  
+  ## Features
+  
+  * Steam Workshop installer/updater/uninstaller (using these scripts)
+  * Shut down properly using custom script with rcon commands
+  * Easy configuration of each service using variables and configuration editor
+  * Predefined command line for each official map up to Crystal Isles
+  * Support for custom maps
+  * Support for clustering
+  * Wipe server (wipe everything in ShooterGame/Saved/SavedArks)
+  * Reset cluster
+  * Restore backups
+  ## How do I setup a cluster?
+  
+  You must have at least 2 servers to configure a cluster.
+  
+  * Go to each server's command line
+  * Create a new custom command line
+  * Set 'Cluster ID'
+  * When you set Cluster ID, the Cluster Path will automatically get set. On Windows, it's set to X:\Users\TCA3Game_Usr<TCAdminUserId>. On Linux, it's set to /home/tca3game_usr<tcadminuserid>.
+  
+  ## Instructions
+  Do not change the "Run As" user. This config depends heavily on the "Run As Unique operating system user for each service" setting.
+icon: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/logo.png"
+images:
+  - "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/ss_2fd997a2f7151cb2187043a1f41589cc6a9ebf3a.jpg"
+tags:
+  - "Game"
+  - "Windows"
+  - "Linux"
+files:
+  - path: "ARKSE - Windows.json"
+    type: "GameConfig"
+  - path: "ARKSE - Linux.json"
+    type: "GameConfig"
