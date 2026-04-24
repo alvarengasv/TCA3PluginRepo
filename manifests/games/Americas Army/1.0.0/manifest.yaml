@@ -1,0 +1,14 @@
+identifier: "Community.Games.AmericasArmy"
+name: "America's Army"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "America's Army is a multiplayer video game that enables players to act as soldiers in the U.S. Army in a round-based team tactical shooter with combat at squad-level and three fireteams."
+longDescription: |
+  # America's Army
+icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Americasarmy-logo.svg/1280px-Americasarmy-logo.svg.png"
+tags:
+  - "Game"
+  - "Windows"
+files:
+  - path: "AA - Windows.json"
+    type: "GameConfig"
