@@ -1,0 +1,16 @@
+identifier: "Community.Games.AAProvingGrounds"
+name: "AA Proving Grounds"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "America’s Army: Proving Grounds is the official game of the U.S. Army and part of the highly acclaimed America’s Army game series. This free military game focuses on small unit tactical maneuvers and puts you to the test in a wide variety of new America’s Army maps and AA fan favorites."
+longDescription: |
+  # AA Proving Grounds
+icon: "https://upload.wikimedia.org/wikipedia/commons/b/bf/AA4logobrand_vert.png"
+images:
+  - "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/203290/ss_d33fa90532510f13aca8a420a9304bac33d449d8.jpg"
+tags:
+  - "Game"
+  - "Windows"
+files:
+  - path: "AAPG - Windows.json"
+    type: "GameConfig"
