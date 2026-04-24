@@ -1,0 +1,1823 @@
+{
+  "__TCA:ExportVersion": "3.3.88.44401",
+  "__TCA:ExportedAt": "2026-04-24T02:34:30.7850227Z",
+  "name": "America\u0027s Army",
+  "shortName": "AA",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Americasarmy-logo.svg/1280px-Americasarmy-logo.svg.png",
+  "backgroundImage": "",
+  "minSlots": 0,
+  "maxSlots": 128,
+  "defaultSlots": 8,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "ams",
+    "rconProtocol": "",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": false,
+    "outputSource": "LogFile",
+    "logFile": "",
+    "inputSource": "RconProtocol",
+    "printRconResponse": false,
+    "outputFilters": "",
+    "stopCommand": "",
+    "waitAfterStopCommand": 1000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 1716,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 1717,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 1718,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "system\\server.exe",
+    "relativeWorkingDirectory": "system\\",
+    "autoSetupFolderName": "aa",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 0,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 0,
+    "extraParameters": "",
+    "steamUsername": "",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "global Tunnel.aao?multihome=${IPAddress}?port=${GamePort} -nohomedir",
+    "privateCustomCommandline": "${UserCommandLine} multihome=${IPAddress}?port=${GamePort} -nohomedir"
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "global Tunnel.aao?multihome=${IPAddress}?port=${GamePort} -nohomedir",
+    "defaultCustomCommandline": "${UserCommandLine} multihome=${IPAddress} port=${GamePort} -nohomedir",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "global Tunnel.aao?multihome=${IPAddress}?port=${GamePort} -nohomedir"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": false,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "globalridgeaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalridgeaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Bridge.aao",
+        "uncheckedValue": "",
+        "id": "globalridgeaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Bridge",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.91796",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalridgeSEaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalridgeSEaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Bridge_SE.aao",
+        "uncheckedValue": "",
+        "id": "globalridgeSEaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Bridge SE",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.918763",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalFLSaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalFLSaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global FLS.aao",
+        "uncheckedValue": "",
+        "id": "globalFLSaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map FLS Assault",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.919209",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalHQRaidaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalHQRaidaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global HQ_Raid.aao",
+        "uncheckedValue": "",
+        "id": "globalHQRaidaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Headquarters Raid",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.919793",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalInsurgentampaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalInsurgentampaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Insurgent_Camp.aao",
+        "uncheckedValue": "",
+        "id": "globalInsurgentampaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Insurgent Camp",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.92029",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalJRTFarmaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalJRTFarmaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global JRTC_Farm.aao",
+        "uncheckedValue": "",
+        "id": "globalJRTFarmaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map JRTC Farm",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.920673",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalMountainmbushaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalMountainmbushaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Mountain_Ambush.aao",
+        "uncheckedValue": "",
+        "id": "globalMountainmbushaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Mountain Ambush",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.921021",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalMountainPassaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalMountainPassaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Mountain_Pass.aao",
+        "uncheckedValue": "",
+        "id": "globalMountainPassaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Mountain Pass",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.921462",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalMountainPassSEaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalMountainPassSEaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Mountain_Pass_SE.aao",
+        "uncheckedValue": "",
+        "id": "globalMountainPassSEaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Mountain Pass SE",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.921967",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalMOUTMcKennaaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalMOUTMcKennaaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global MOUT_McKenna.aao",
+        "uncheckedValue": "",
+        "id": "globalMOUTMcKennaaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map MOUT McKenna",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.922531",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalPipelineaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalPipelineaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Pipeline.aao",
+        "uncheckedValue": "",
+        "id": "globalPipelineaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Pipeline",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.923037",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalPipelineSFaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalPipelineSFaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Pipeline_SF.aao",
+        "uncheckedValue": "",
+        "id": "globalPipelineSFaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Pipeline SF",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.923374",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalRadioToweraao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalRadioToweraao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Radio_Tower.aao",
+        "uncheckedValue": "",
+        "id": "globalRadioToweraao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Radio Tower",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.923789",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalRiverasinaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalRiverasinaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global River_Basin.aao",
+        "uncheckedValue": "",
+        "id": "globalRiverasinaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map River Basin",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.924298",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFarcticaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFarcticaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFarctic.aao",
+        "uncheckedValue": "",
+        "id": "globalSFarcticaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Arctic",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.924658",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFblizzardaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFblizzardaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFblizzard.aao",
+        "uncheckedValue": "",
+        "id": "globalSFblizzardaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Blizzard",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.925331",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFourtyardaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFourtyardaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFCourtyard.aao",
+        "uncheckedValue": "",
+        "id": "globalSFourtyardaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Courtyard",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.925703",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFcsaraao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFcsaraao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFcsar.aao",
+        "uncheckedValue": "",
+        "id": "globalSFcsaraao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF CSAR",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.926259",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFhospitalaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFhospitalaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFhospital.aao",
+        "uncheckedValue": "",
+        "id": "globalSFhospitalaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Hospital",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.926708",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFoasisaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFoasisaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFoasis.aao",
+        "uncheckedValue": "",
+        "id": "globalSFoasisaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Oasis",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.927171",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFPRaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFPRaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFPCR.aao",
+        "uncheckedValue": "",
+        "id": "globalSFPRaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF PCR",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.927493",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFreconaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFreconaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFrecon.aao",
+        "uncheckedValue": "",
+        "id": "globalSFreconaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Recon",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.927832",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFsandstormaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFsandstormaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFsandstorm.aao",
+        "uncheckedValue": "",
+        "id": "globalSFsandstormaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Sandstorm",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.928391",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFtaigaaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFtaigaaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFtaiga.aao",
+        "uncheckedValue": "",
+        "id": "globalSFtaigaaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Taiga",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.929014",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFvillageaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFvillageaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFvillage.aao",
+        "uncheckedValue": "",
+        "id": "globalSFvillageaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Village",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.929372",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSFWaterTreatmentaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSFWaterTreatmentaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global SFWaterTreatment.aao",
+        "uncheckedValue": "",
+        "id": "globalSFWaterTreatmentaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map SF Water Treatment",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.930056",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalSwampRaidaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalSwampRaidaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Swamp_Raid.aao",
+        "uncheckedValue": "",
+        "id": "globalSwampRaidaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Swamp Raid",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.93073",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalTunnelaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalTunnelaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Tunnel.aao",
+        "uncheckedValue": "",
+        "id": "globalTunnelaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Collapsed Tunnel",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.931074",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalUrbanssaultaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalUrbanssaultaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Urban_Assault.aao",
+        "uncheckedValue": "",
+        "id": "globalUrbanssaultaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Urban Assault",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.931557",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalWeaponsacheaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalWeaponsacheaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Weapons_Cache.aao",
+        "uncheckedValue": "",
+        "id": "globalWeaponsacheaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Weapons Cache",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.932005",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalWeaponsacheSEaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalWeaponsacheSEaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Weapons_Cache_SE.aao",
+        "uncheckedValue": "",
+        "id": "globalWeaponsacheSEaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Weapons Cache SE",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.932516",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalWoodlandOutpostaao",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalWoodlandOutpostaao}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "global Woodland_Outpost.aao",
+        "uncheckedValue": "",
+        "id": "globalWoodlandOutpostaao",
+        "defaultValue": "",
+        "label": "Enable",
+        "description": "Load Map Woodland Outpost",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-04-17T02:56:38.933121",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 71,
+      "relativePath": "system\\ArmyOps.ini",
+      "description": "Americas Army Server Configuration",
+      "template": "[URL]\nProtocol=armyops\nProtocolDescription=ArmyOps Protocol\nMapExt=aao\nPort=1716\n\n[Engine.Engine]\nNetworkDevice=IpDrv.TcpNetDriver\nGameEngine=Engine.GameEngine\nDefaultServerGame=AGP_Gameplay.AGP_GameTeamObjective\n\n[Core.System]\nPurgeCacheDays=30\nSavePath=../Save\nCachePath=../Cache\nCacheExt=.uxx\nPaths=../System/*.u\nPaths=../Maps/*.aao\nPaths=../Textures/*.utx\nPaths=../Sounds/*.uax\nPaths=../Music/*.umx\nPaths=../StaticMeshes/*.usx\nPaths=../Animations/*.ukx\nSuppress=DevLoad\nSuppress=DevSave\nSuppress=DevNetTraffic\nSuppress=DevGarbage\nSuppress=DevKill\nSuppress=DevReplace\nSuppress=DevCompile\nSuppress=DevBind\nSuppress=DevBsp\n\n[Engine.GameEngine]\nServerActors=IpDrv.GameSpyQR\nServerActors=IpDrv.SCIQR\nServerPackages=GamePlay\nServerPackages=AGP_Effects\nServerPackages=AGP_UI\nServerPackages=AGP\nServerPackages=AGP_Gameplay\nServerPackages=AGP_Characters\nServerPackages=AGP_AI\nServerPackages=AGP_Inventory\nServerPackages=AGP_Script\nServerPackages=AGP_Objects\n\n[IpDrv.TcpNetDriver]\nAllowDownloads=False\nConnectionTimeout=60.0\nInitialConnectTimeout=500.0\nAckTimeout=1.0\nKeepAliveTime=0.2\nMaxClientRate=20000\nSimLatency=0\nRelevantTimeout=5.0\nSpawnPrioritySeconds=1.0\nServerTravelPause=4.0\nNetServerMaxTickRate=20\nLanServerMaxTickRate=35\nDownloadManagers=IpDrv.HTTPDownload\nDownloadManagers=Engine.ChannelDownload\nAllowPlayerPortUnreach=False\nLogPortUnreach=False\nMaxConnPerIPPerMinute=5\nLogMaxConnPerIPPerMin=False\n\n[Engine.GameReplicationInfo]\nServerName=${servername1}\nShortName=${servername1}\nServerRegion=3\nAdminName=${adminname1}\nAdminEmail=${adminemail1}\nMessageOfTheDay=${motd11}\nRegion=3\nMOTDLine1=${motd11}\nMOTDLine2=${motd21}\nMOTDLine3=${motd31}\nMOTDLine4=\nbHUDHideAmmoCount=${hideammocount1}\nbHUDHideWeaponStatus=${hideweaponstatus1}\nbHUDHideWeapon=${hideweapon1}\nbHUDHideGrenades=${hidegrenades1}\nbHUDHideMedical=${hidemedical1}\nbHUDHideHealth=${hidehealth1}\nbHUDHideCombatEffect=${hidecombateffect1}\nbHUDHideOptics=${hideoptics1}\nbHUDHideCompass=${hidecompass1}\nbHUDHideTimer=${hidetimer1}\nbHUDHideObjectives=${hideobjectives1}\nbHUDHideRadar=${hideradar1}\n\n[Engine.AccessControl]\nAdminPassword=${adminpassword1}\nGamePassword=${gamepassword1}\nPlayerAdmin=${playeradmin11}\nPlayerAdmin=${playeradmin21}\nPlayerAdmin=${playeradmin31}\n\n[Engine.GameInfo]\nbLowGore=False\nbVeryLowGore=False\nbChangeLevels=False\nGoreLevel=0\nMaxSpectators=2\nMaxPlayers=${Slots}\nMaxAdmins=0\nAutoAim=0.930000\nbLocalLog=True\nbWorldLog=True\nGameDifficulty=1.000000\nGameSpeed=1.000000\nbChangeLevels=True\nbStartUpLocked=False\nbNoBots=False\nbAttractAlwaysFirstPerson=False\nNumMusicFiles=13\nbEnableStatLogging=false\nHUDType=Engine.Hud\nMaxLives=0\nTimeLimit=0\nGoalScore=0\n;GameStatsClass=IpDrv.MasterServerGameStats\n;SecurityClass=UnrealGame.UnrealSecurity\nAccessControlClass=Engine.AccessControl\n;VotingHandlerType=xVoting.xVotingHandler\nMaxIdleTime=\u002B0.0\nServerSetting=AccessControl.AdminPassword\nServerSetting=AccessControl.GamePassword\nServerSetting=AGP_GameTeamObjective.MaxPlayers\nServerSetting=AGP_GameTeamObjective.MaxAdmins\nServerSetting=AGP_GameTeamObjective.ForceGameplay\nServerSetting=AGP_GameTeamObjective.bRequireAuthorization\nServerSetting=AGP_GameTeamObjective.bMPCheatsEnabled\nServerSetting=AGP_GameTeamObjective.MinHonor\nServerSetting=AGP_GameTeamObjective.MaxHonor\nServerSetting=AGP_GameTeam.bSpectatePlayersOnly\nServerSetting=AGP_GameTeam.bSpectateFriendsOnly\nServerSetting=AGP_GameTeamObjective.FFScoreLimit\nServerSetting=AGP_GameTeamObjective.MaxTeamSize\nServerSetting=AGP_GameTeamObjective.bPlayersBalanceTeams\nServerSetting=AGP_GameTeamObjective.bAutoBalanceBetweenRounds\nServerSetting=AGP_GameTeamObjective.MinNetPlayers\nServerSetting=AGP_GameTeamObjective.TimeLimit\nServerSetting=AGP_GameTeamObjective.bMustJoinBeforeStart\nServerSetting=AGP_GameTeamObjective.bSpectatePlayersOnly\nServerSetting=AGP_GameTeamObjective.bSpectateFirstPersonOnly\nServerSetting=AGP_GameTeamObjective.bSpectateFriendsOnly\nServerSetting=AGP_GameTeamObjective.RoundsPerMatch\nServerSetting=AGP_GameTeamObjective.MatchesBeforeCycle\nServerSetting=AGP_GameTeamObjective.bCycleMaps\nServerSetting=AGP_GameTeamObjective.bKickIdlePlayersTimed\nServerSetting=AGP_GameTeamObjective.bKickIdleSpectators\nServerSetting=AGP_GameTeamObjective.IdlePlayerKickTime\nServerSetting=AGP_GameTeamObjective.bKickIdlePlayersRounds\nServerSetting=AGP_GameTeamObjective.IdlePlayerKickRounds\nServerSetting=AGP_GameTeamObjective.bTournamentMode\n;ServerSetting=AGP_GameTeamObjective.TournamentWarmupTime\n;ServerSetting=AGP_GameTeamObjective.TournamentStartTime\n;ServerSetting=AGP_GameTeamObjective.bTournamentSLCanAddToTeam\n;ServerSetting=AGP_GameTeamObjective.bTournamentSLCanStartTournament\n;ServerSetting=AGP_GameTeamObjective.bTournamentSLCanStartWarmUp\n;ServerSetting=AGP_GameTeamObjective.bTournamentSLCanSetStartTime\n;ServerSetting=AGP_GameTeamObjective.bTournamentSLCanStartCountDown\n;ServerSetting=AGP_GameTeamObjective.bTournamentSLCanRestartTournament\nServerSetting=GameReplicationInfo.bHUDHideAmmoCount\nServerSetting=GameReplicationInfo.bHUDHideWeaponStatus\nServerSetting=GameReplicationInfo.bHUDHideWeapon\nServerSetting=GameReplicationInfo.bHUDHideGrenades\nServerSetting=GameReplicationInfo.bHUDHideHealth\nServerSetting=GameReplicationInfo.bHUDHideMedical\nServerSetting=GameReplicationInfo.bHUDHideCombatEffect\nServerSetting=GameReplicationInfo.bHUDHideOptics\nServerSetting=GameReplicationInfo.bHUDHideCompass\nServerSetting=GameReplicationInfo.bHUDHideTimer\nServerSetting=GameReplicationInfo.bHUDHideObjectives\nServerSetting=GameReplicationInfo.bHUDHideRadar\n\n[IpDrv.GameSpyQR]\n;(delete the \u0027;\u0027 in front of \u0027IP=1.2.3.4\u0027 when setting your IP)\nIP=${IPAddress}\nbNAT=True\n\n[IpDrv.SCIQR]\n;(delete the \u0027;\u0027 in front of \u0027IP=1.2.3.4\u0027 when setting your IP)\nIP=${IPAddress}\n\n[AGP_Gameplay.AGP_GameTeamObjective]\nMinHonor=${minhonor1}\nMaxHonor=${maxhonor1}\nbRequireAuthorization=true\nbMPCheatsEnabled=${cheats1}\nbPlayersBalanceTeams=${autobalance1}\nbAutoBalanceBetweenRounds=${autobalancebetweenrounds1}\nbNeverAutoBalance=${neverautobalance1}\nVoteKick_Cooldown=${votekickcooldown1}\nMaxTeamSize=${maxplayersperteam1}\nMinNetPlayers=${minplayers1}\nFFScoreLimit=${maxroe1}\nTimeLimit=${roundtimelimit1}\nbKickIdleSpectators=${kickidlespectators1}\nbKickIdlePlayersTimed=${kickidleplayerstimed1}\t\nIdlePlayerKickTime=${kickidleplayerstime1}\nbKickIdlePlayersRounds=${kickidleplayersround1}\nIdlePlayerKickRounds=${kickidleplayersrounds1}\nbSpectatePlayersOnly=${spectateplayersonly1}\nbSpectateFirstPersonOnly=${spectatefirstpersononly1}\nbSpectateFriendsOnly=${spectatefriendsonly1}\nForceGameplay=FORCE_Normal\nRoundsPerMatch=${roundspermatch1}\nMatchesBeforeCycle=1\nbCycleMaps=false\nInitialWarmupTime=0\n\n[AGP_Gameplay.AGP_MapList]\nMaps[1]=Weapon_Cache.aao\n\n[AGP.AGP_GameInfo]\nMaxAuthConnections=1",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Server Configuration",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_6",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_7",
+          "label": "Message of the Day",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_11",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_12",
+          "label": "Password Settings",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_15",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_16",
+          "label": "Player Admins (Can play while logged in as an administrator)",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_20",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_21",
+          "label": "Gameplay Settings",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_33",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_36",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_39",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_45",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_46",
+          "label": "Hud Settings",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [],
+  "gamesScripts": [],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "createdDate": "2026-04-17T02:56:38.965006",
+  "metadata": {},
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    }
+  ]
+}
