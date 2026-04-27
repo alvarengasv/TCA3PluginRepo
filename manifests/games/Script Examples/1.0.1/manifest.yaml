@@ -1,0 +1,22 @@
+identifier: "TCA.Games.ScriptExamples"
+name: "Script Examples"
+version: "1.0.1"
+author: "TCAdmin"
+shortDescription: "Some script examples"
+longDescription: |
+  # Script Examples
+  
+  **Script examples for Windows and Linux.**
+  
+icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Programming_icon_flat_circle.svg/960px-Programming_icon_flat_circle.svg.png"
+images:
+  - "https://upload.wikimedia.org/wikipedia/commons/e/ef/Programming_code.jpg"
+tags:
+  - "Game"
+  - "Windows"
+  - "Linux"
+files:
+  - path: "Script Examples - Windows.json"
+    type: "GameConfig"
+  - path: "Script Examples - Linux.json"
+    type: "GameConfig"
