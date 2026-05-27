@@ -1,7 +1,7 @@
 identifier: "Community.ThemeBundles.APEXCONTROLTacticalHUD"
 name: "APEX//CONTROL — Tactical HUD"
 version: "1.0.0"
-minimumApplicationVersion: "3.6"
+minimumApplicationVersion: "3.7"
 author: "TCAdmin"
 shortDescription: "*v3.6 is required!* An esports command-center HUD"
 longDescription: |
