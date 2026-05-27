@@ -1,0 +1,748 @@
+{
+  "__TCA:ExportVersion": "3.6.2.0",
+  "__TCA:ExportedAt": "2026-05-27T03:50:01.8902646Z",
+  "themeId": 0,
+  "name": "APEX//CONTROL \u2014 Tactical HUD",
+  "titlePrefix": "APEX | ",
+  "titlePostfix": "",
+  "isDefault": false,
+  "isEnabled": true,
+  "lightPalette": {
+    "consoleBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "consoleForeground": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleCursor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleSelection": {
+      "r": 173,
+      "g": 214,
+      "b": 255,
+      "a": 255
+    },
+    "consoleBlack": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleRed": {
+      "r": 205,
+      "g": 49,
+      "b": 49,
+      "a": 255
+    },
+    "consoleGreen": {
+      "r": 20,
+      "g": 206,
+      "b": 20,
+      "a": 255
+    },
+    "consoleYellow": {
+      "r": 181,
+      "g": 186,
+      "b": 0,
+      "a": 255
+    },
+    "consoleBlue": {
+      "r": 4,
+      "g": 81,
+      "b": 165,
+      "a": 255
+    },
+    "consoleMagenta": {
+      "r": 188,
+      "g": 5,
+      "b": 188,
+      "a": 255
+    },
+    "consoleCyan": {
+      "r": 5,
+      "g": 152,
+      "b": 188,
+      "a": 255
+    },
+    "consoleWhite": {
+      "r": 85,
+      "g": 85,
+      "b": 85,
+      "a": 255
+    },
+    "black": {
+      "r": 39,
+      "g": 44,
+      "b": 52,
+      "a": 255
+    },
+    "white": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "primary": {
+      "r": 90,
+      "g": 125,
+      "b": 0,
+      "a": 255
+    },
+    "primaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "secondary": {
+      "r": 0,
+      "g": 151,
+      "b": 167,
+      "a": 255
+    },
+    "secondaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tertiary": {
+      "r": 230,
+      "g": 81,
+      "b": 0,
+      "a": 255
+    },
+    "tertiaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "info": {
+      "r": 0,
+      "g": 151,
+      "b": 167,
+      "a": 255
+    },
+    "infoContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "success": {
+      "r": 46,
+      "g": 125,
+      "b": 50,
+      "a": 255
+    },
+    "successContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "warning": {
+      "r": 237,
+      "g": 108,
+      "b": 2,
+      "a": 255
+    },
+    "warningContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "error": {
+      "r": 211,
+      "g": 47,
+      "b": 47,
+      "a": 255
+    },
+    "errorContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "dark": {
+      "r": 66,
+      "g": 66,
+      "b": 66,
+      "a": 255
+    },
+    "darkContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "textPrimary": {
+      "r": 28,
+      "g": 33,
+      "b": 40,
+      "a": 255
+    },
+    "textSecondary": {
+      "r": 90,
+      "g": 100,
+      "b": 112,
+      "a": 255
+    },
+    "textDisabled": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 96
+    },
+    "actionDefault": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 137
+    },
+    "actionDisabled": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 66
+    },
+    "actionDisabledBackground": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 30
+    },
+    "background": {
+      "r": 238,
+      "g": 241,
+      "b": 244,
+      "a": 255
+    },
+    "backgroundGray": {
+      "r": 228,
+      "g": 232,
+      "b": 236,
+      "a": 255
+    },
+    "surface": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 45,
+      "g": 52,
+      "b": 64,
+      "a": 255
+    },
+    "drawerIcon": {
+      "r": 90,
+      "g": 125,
+      "b": 0,
+      "a": 255
+    },
+    "appbarBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "appbarText": {
+      "r": 28,
+      "g": 33,
+      "b": 40,
+      "a": 255
+    },
+    "linesDefault": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 24
+    },
+    "linesInputs": {
+      "r": 189,
+      "g": 189,
+      "b": 189,
+      "a": 255
+    },
+    "tableLines": {
+      "r": 224,
+      "g": 224,
+      "b": 224,
+      "a": 255
+    },
+    "tableStriped": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 5
+    },
+    "tableHover": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 10
+    },
+    "divider": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 24
+    },
+    "dividerLight": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 204
+    },
+    "skeleton": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 28
+    },
+    "primaryDarken": "rgb(72,100,0)",
+    "primaryLighten": "rgb(118,158,0)",
+    "secondaryDarken": "rgb(0,121,134)",
+    "secondaryLighten": "rgb(34,169,201)",
+    "tertiaryDarken": "rgb(191,67,0)",
+    "tertiaryLighten": "rgb(255,112,40)",
+    "infoDarken": "rgb(12,128,223)",
+    "infoLighten": "rgb(71,167,245)",
+    "successDarken": "rgb(0,163,68)",
+    "successLighten": "rgb(0,235,98)",
+    "warningDarken": "rgb(214,129,0)",
+    "warningLighten": "rgb(255,167,36)",
+    "errorDarken": "rgb(242,28,13)",
+    "errorLighten": "rgb(246,96,85)",
+    "darkDarken": "rgb(46,46,46)",
+    "darkLighten": "rgb(87,87,87)",
+    "borderOpacity": 1,
+    "hoverOpacity": 0.06,
+    "rippleOpacity": 0.1,
+    "rippleOpacitySecondary": 0.2,
+    "grayDefault": "#9E9E9E",
+    "grayLight": "#BDBDBD",
+    "grayLighter": "#E0E0E0",
+    "grayDark": "#757575",
+    "grayDarker": "#616161",
+    "overlayDark": "rgba(33,33,33,0.4980392156862745)",
+    "overlayLight": "rgba(255,255,255,0.4980392156862745)"
+  },
+  "darkPalette": {
+    "black": {
+      "r": 13,
+      "g": 17,
+      "b": 23,
+      "a": 255
+    },
+    "primary": {
+      "r": 198,
+      "g": 255,
+      "b": 0,
+      "a": 255
+    },
+    "info": {
+      "r": 0,
+      "g": 184,
+      "b": 212,
+      "a": 255
+    },
+    "success": {
+      "r": 0,
+      "g": 230,
+      "b": 118,
+      "a": 255
+    },
+    "warning": {
+      "r": 255,
+      "g": 196,
+      "b": 0,
+      "a": 255
+    },
+    "error": {
+      "r": 255,
+      "g": 82,
+      "b": 82,
+      "a": 255
+    },
+    "dark": {
+      "r": 10,
+      "g": 13,
+      "b": 18,
+      "a": 255
+    },
+    "textPrimary": {
+      "r": 230,
+      "g": 237,
+      "b": 243,
+      "a": 240
+    },
+    "textSecondary": {
+      "r": 148,
+      "g": 163,
+      "b": 184,
+      "a": 255
+    },
+    "textDisabled": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 51
+    },
+    "actionDefault": {
+      "r": 173,
+      "g": 173,
+      "b": 177,
+      "a": 255
+    },
+    "actionDisabled": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 66
+    },
+    "actionDisabledBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 30
+    },
+    "background": {
+      "r": 13,
+      "g": 17,
+      "b": 23,
+      "a": 255
+    },
+    "backgroundGray": {
+      "r": 17,
+      "g": 22,
+      "b": 29,
+      "a": 255
+    },
+    "surface": {
+      "r": 28,
+      "g": 33,
+      "b": 40,
+      "a": 255
+    },
+    "drawerBackground": {
+      "r": 22,
+      "g": 27,
+      "b": 34,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 200,
+      "g": 210,
+      "b": 220,
+      "a": 185
+    },
+    "drawerIcon": {
+      "r": 148,
+      "g": 163,
+      "b": 184,
+      "a": 210
+    },
+    "appbarBackground": {
+      "r": 22,
+      "g": 27,
+      "b": 34,
+      "a": 255
+    },
+    "appbarText": {
+      "r": 230,
+      "g": 237,
+      "b": 243,
+      "a": 235
+    },
+    "linesDefault": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 18
+    },
+    "linesInputs": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 76
+    },
+    "tableLines": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 16
+    },
+    "tableStriped": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 51
+    },
+    "divider": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 18
+    },
+    "dividerLight": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 15
+    },
+    "consoleBackground": {
+      "r": 30,
+      "g": 30,
+      "b": 30,
+      "a": 255
+    },
+    "consoleForeground": {
+      "r": 212,
+      "g": 212,
+      "b": 212,
+      "a": 255
+    },
+    "consoleCursor": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "consoleSelection": {
+      "r": 38,
+      "g": 79,
+      "b": 120,
+      "a": 255
+    },
+    "consoleBlack": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleRed": {
+      "r": 205,
+      "g": 49,
+      "b": 49,
+      "a": 255
+    },
+    "consoleGreen": {
+      "r": 13,
+      "g": 188,
+      "b": 121,
+      "a": 255
+    },
+    "consoleYellow": {
+      "r": 229,
+      "g": 229,
+      "b": 16,
+      "a": 255
+    },
+    "consoleBlue": {
+      "r": 36,
+      "g": 114,
+      "b": 200,
+      "a": 255
+    },
+    "consoleMagenta": {
+      "r": 188,
+      "g": 63,
+      "b": 188,
+      "a": 255
+    },
+    "consoleCyan": {
+      "r": 17,
+      "g": 168,
+      "b": 205,
+      "a": 255
+    },
+    "consoleWhite": {
+      "r": 229,
+      "g": 229,
+      "b": 229,
+      "a": 255
+    },
+    "white": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "primaryContrastText": {
+      "r": 13,
+      "g": 17,
+      "b": 23,
+      "a": 255
+    },
+    "secondary": {
+      "r": 0,
+      "g": 184,
+      "b": 212,
+      "a": 255
+    },
+    "secondaryContrastText": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "tertiary": {
+      "r": 255,
+      "g": 109,
+      "b": 0,
+      "a": 255
+    },
+    "tertiaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "infoContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "successContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "warningContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "errorContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "darkContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tableHover": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 10
+    },
+    "skeleton": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 28
+    },
+    "primaryDarken": "rgb(166,216,0)",
+    "primaryLighten": "rgb(214,255,77)",
+    "secondaryDarken": "rgb(0,151,167)",
+    "secondaryLighten": "rgb(77,208,225)",
+    "tertiaryDarken": "rgb(230,81,0)",
+    "tertiaryLighten": "rgb(255,145,77)",
+    "infoDarken": "rgb(10,133,255)",
+    "infoLighten": "rgb(92,173,255)",
+    "successDarken": "rgb(9,154,108)",
+    "successLighten": "rgb(13,222,156)",
+    "warningDarken": "rgb(193,142,31)",
+    "warningLighten": "rgb(225,176,71)",
+    "errorDarken": "rgb(193,31,31)",
+    "errorLighten": "rgb(225,71,71)",
+    "darkDarken": "rgb(23,23,28)",
+    "darkLighten": "rgb(56,56,67)",
+    "borderOpacity": 1,
+    "hoverOpacity": 0.06,
+    "rippleOpacity": 0.1,
+    "rippleOpacitySecondary": 0.2,
+    "grayDefault": "#9E9E9E",
+    "grayLight": "#BDBDBD",
+    "grayLighter": "#E0E0E0",
+    "grayDark": "#757575",
+    "grayDarker": "#616161",
+    "overlayDark": "rgba(33,33,33,0.4980392156862745)",
+    "overlayLight": "rgba(255,255,255,0.4980392156862745)"
+  },
+  "layoutProperties": {
+    "defaultBorderRadius": "0px",
+    "drawerMiniWidthLeft": "56px",
+    "drawerMiniWidthRight": "56px",
+    "drawerWidthLeft": "268px",
+    "drawerWidthRight": "240px",
+    "appbarHeight": "64px"
+  },
+  "mainContentSettings": {
+    "extraClass": "mt-4 mb-12 pa-2",
+    "extraClassWithBanners": "mt-n2 mb-12 pa-2",
+    "maxWidth": "ExtraLarge"
+  },
+  "navMenuSettings": {
+    "showLogo": false,
+    "enableLogoFilter": true,
+    "elevation": 1,
+    "clipMode": "Never",
+    "variant": "Mini"
+  },
+  "topBarSettings": {
+    "showBreadcrumbs": true,
+    "dense": false,
+    "elevation": 1
+  },
+  "bottomBarSettings": {
+    "enabled": true,
+    "elevation": 1,
+    "showPoweredBy": true,
+    "showVersion": true,
+    "iconUrl": "/img/logos/tcadmin.png"
+  },
+  "advancedSettings": {
+    "css": "",
+    "js": ""
+  },
+  "loginSettings": {
+    "backgroundOverlayOpacity": 0.6,
+    "showFooter": true
+  },
+  "loadingScreen": {
+    "useDefaultTitles": false,
+    "titles": [
+      "APEX//CONTROL",
+      "COMMAND DECK",
+      "SECURE UPLINK"
+    ],
+    "textColor": "#c6ff00",
+    "backgroundColor": "#0d1117",
+    "backgroundImageUrl": "/img/background.png",
+    "backgroundOverlayOpacity": 0.55,
+    "glassCardBackground": "rgba(28,33,40,0.92)",
+    "progressBarColor": "#c6ff00",
+    "customCss": "#tcadmin-loading .loading-bg-image{background:radial-gradient(60% 70% at 15% 0,rgba(198,255,0,.12),transparent 60%),repeating-linear-gradient(0deg,rgba(198,255,0,.05) 0 1px,transparent 1px 40px),repeating-linear-gradient(90deg,rgba(198,255,0,.05) 0 1px,transparent 1px 40px)!important;background-color:#0d1117!important;}#tcadmin-loading .loading-glass-card{border:1px solid rgba(198,255,0,.35);border-radius:0;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));box-shadow:inset 0 2px 0 0 rgba(198,255,0,.4);}#tcadmin-loading .loading-brand-title{font-family:Bahnschrift,\u0027DIN Condensed\u0027,\u0027Roboto Condensed\u0027,sans-serif;letter-spacing:.14em;text-transform:uppercase;}\n/* --- loading-window scan sweep (mirrors APEX\u0027s login/drawer scan; the card\u0027s clip-path already clips the line to the notched silhouette) --- */\n#tcadmin-loading .loading-glass-card::after{content:\u0022\u0022;position:absolute;left:0;right:0;top:-2%;height:2px;background:linear-gradient(90deg,transparent,rgba(198,255,0,.85),transparent);box-shadow:0 0 12px rgba(198,255,0,.8);pointer-events:none;z-index:3;animation:ax-loading-scan 3s linear infinite;}\n@keyframes ax-loading-scan{0%{top:-2%;opacity:0}12%{opacity:1}88%{opacity:1}100%{top:102%;opacity:0}}\n@media (prefers-reduced-motion:reduce){#tcadmin-loading .loading-glass-card::after{animation:none;opacity:0}}"
+  },
+  "createdDate": "0001-01-01T00:00:00"
+}
