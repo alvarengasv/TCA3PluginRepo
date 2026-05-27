@@ -8,6 +8,10 @@ longDescription: |
   
   ## Description
   A reference template demoing every layout surface — LoginPage, a custom hand-rolled Shell, and all eight Shell regions (TopBar, Drawer header/footer, Before/After content, Footer, MenuLinks). Shows how to combine {% component %}, {% surface %}, and model variables. Great for learning the layout system and as a scaffold to copy from.
+    ## Instructions
+    - Go to Settings > Themes > Select your current theme > Advanced.
+    - Under "Layout Template" select "Template Demos".
+    - Save and reload the page.
 icon: "<svg fill=\"#ffffff\" height=\"200px\" width=\"200px\" version=\"1.1\" id=\"XMLID_89_\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 24 24\" xml:space=\"preserve\" stroke=\"#ffffff\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <g id=\"template\"> <g> <path d=\"M8,22H0V2h24v20H8z M2,20h4V7.9H2V20z M8,20h14V8H8V20z M6,6h16V4H2v2H6z\"></path> </g> </g> </g></svg>"
 tags:
   - "LayoutTemplate"
