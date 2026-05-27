@@ -1,8 +1,9 @@
 identifier: "Community.ThemeBundles.NIMBUSAuroraGlass"
 name: "NIMBUS - Aurora Glass"
 version: "1.0.0"
+minimumApplicationVersion: "3.6"
 author: "TCAdmin"
-shortDescription: "A premium \"aurora glass\" theme: frosted panels over an animated aurora"
+shortDescription: "*v3.6 is required!* A premium \"aurora glass\" theme: frosted panels over an animated aurora"
 longDescription: |
   # NIMBUS - Aurora Glass
   
@@ -20,6 +21,7 @@ longDescription: |
   
     ## What's new
     - **1.0.0** — Initial release.
+  
 icon: "<svg viewBox=\"-4 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"#000000\" stroke=\"#000000\"><g id=\"SVGRepo_bgCarrier\" stroke-width=\"0\"></g><g id=\"SVGRepo_tracerCarrier\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></g><g id=\"SVGRepo_iconCarrier\"> <g id=\"lightning\" transform=\"translate(-6 -2)\"> <path id=\"secondary\" fill=\"#2ca9bc\" d=\"M7,12l5,2-1,7,6-9-4-2,1-7Z\"></path> <path id=\"primary\" d=\"M7,12l5,2-1,7,6-9-4-2,1-7Z\" fill=\"none\" stroke=\"#000000\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"></path> </g> </g></svg>"
 tags:
   - "Theme1"
