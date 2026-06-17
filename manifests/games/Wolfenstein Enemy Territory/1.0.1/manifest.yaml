@@ -1,0 +1,25 @@
+identifier: "TCA.Games.WolfET"
+name: "Wolfenstein: Enemy Territory"
+version: "1.0.1"
+author: "TCAdmin"
+shortDescription: "WolfET game config for TCAdmin 3"
+longDescription: |
+  # WolfET
+  
+  **Wolfenstein: Enemy Territory** is a free-to-play, objective-based multiplayer World War 2 first-person shooter. Featuring up to 32 players, choose either the Axis or Allies, as you fight across six maps based on real-world battle locations.
+  
+  ## Key Features
+  - **Screen capture console with mouse support**
+  
+  ## Instructions
+  - Requires interact with desktop. Use tca.exe to configure Windows to log on automatically.
+  
+icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/ET-Legacy.svg/250px-ET-Legacy.svg.png"
+images:
+  - "https://upload.wikimedia.org/wikipedia/it/8/83/Etscreen.jpg"
+tags:
+  - "Game"
+  - "Windows"
+files:
+  - path: "WolfET - Windows.json"
+    type: "GameConfig"
