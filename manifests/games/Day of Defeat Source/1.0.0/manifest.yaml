@@ -1,0 +1,29 @@
+identifier: "Community.Games.DayOfDefeatSource"
+name: "Day of Defeat: Source"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "DoD:S"
+longDescription: |
+  # Day of Defeat: Source
+  
+  ## Description
+  
+  
+  ## Key Features
+  
+  ## What's new
+  
+  ## Instructions
+  
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/300/062754bb5853b0534283ae27dc5d58200692b22d.jpg"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/300/0000000045.1920x1080.jpg?t=1763407002"
+tags:
+  - "Game"
+  - "Windows"
+  - "Linux"
+files:
+  - path: "DODS - Windows.json"
+    type: "GameConfig"
+  - path: "DODS - Linux.json"
+    type: "GameConfig"
