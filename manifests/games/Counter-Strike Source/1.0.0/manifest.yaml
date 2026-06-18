@@ -1,0 +1,19 @@
+identifier: "Community.Games.CounterStrikeSource"
+name: "Counter-Strike: Source"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "CS:S"
+longDescription: |
+  # Counter-Strike: Source
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/240/9052fa60c496a1c03383b27687ec50f4bf0f0e10.jpg"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/240/0000000031.1920x1080.jpg?t=1745368575"
+tags:
+  - "Game"
+  - "Windows"
+  - "Linux"
+files:
+  - path: "CSS - Windows.json"
+    type: "GameConfig"
+  - path: "CSS - Linux.json"
+    type: "GameConfig"
