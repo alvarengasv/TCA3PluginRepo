@@ -1,0 +1,19 @@
+identifier: "Community.Games.HoldfastNationsAtWar"
+name: "Holdfast: Nations At War"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Holdfast"
+longDescription: |
+  # Holdfast: Nations At War
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/589290/4a1d30894946a782014e8542884e64c25c2b062a.jpg"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/589290/d4cad516a50da670d27950538127dac08742257d/ss_d4cad516a50da670d27950538127dac08742257d.1920x1080.jpg?t=1781206709"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "Holdfast - Linux.json"
+    type: "GameConfig"
+  - path: "Holdfast - Windows.json"
+    type: "GameConfig"
