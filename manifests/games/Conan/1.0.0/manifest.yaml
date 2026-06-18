@@ -1,0 +1,19 @@
+identifier: "Community.Games.Conan"
+name: "Conan"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Conan"
+longDescription: |
+  # Conan Exiles Dedicated Server
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/440900/5a86306c8f4a7ff2b0873fcc90696e501ce2f6a3.ico"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/440900/6c1deec9379cbfb34b887cbcbf518294b38625b9/ss_6c1deec9379cbfb34b887cbcbf518294b38625b9.1920x1080.jpg?t=1781618428"
+tags:
+  - "Game"
+  - "Windows"
+  - "Linux"
+files:
+  - path: "Conan - Windows.json"
+    type: "GameConfig"
+  - path: "Conan - Linux.json"
+    type: "GameConfig"
