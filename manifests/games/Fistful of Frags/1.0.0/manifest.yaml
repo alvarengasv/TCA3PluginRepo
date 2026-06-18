@@ -1,0 +1,19 @@
+identifier: "Community.Games.FistfulOfFrags"
+name: "Fistful of Frags"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "FoF"
+longDescription: |
+  # Fistful of Frags
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/265630/e70c19e10125ea3f221666327af2b90f3fcecad9.jpg"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/265630/ss_11400f0e04e49e08ac5fab27c290dded1ec4a818.1920x1080.jpg?t=1709219464"
+tags:
+  - "Game"
+  - "Windows"
+  - "Linux"
+files:
+  - path: "fof - Windows.json"
+    type: "GameConfig"
+  - path: "fof - Linux.json"
+    type: "GameConfig"
