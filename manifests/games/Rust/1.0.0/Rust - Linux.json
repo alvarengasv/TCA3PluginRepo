@@ -1,0 +1,2376 @@
+{
+  "__TCA:ExportVersion": "3.10.31.45532",
+  "__TCA:ExportedAt": "2026-06-19T03:52:29.6832304Z",
+  "name": "Rust",
+  "shortName": "Rust",
+  "description": "",
+  "operatingSystem": "Linux",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/252490/acf87ad23570b3c81f8c9cfc19544a07edd8b632.ico",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/252490/ss_d0fdacaeef5a28a7cee525fd73376adfe083c964.1920x1080.jpg?t=1781536981",
+  "minSlots": 2,
+  "maxSlots": 500,
+  "defaultSlots": 50,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "custom_script",
+    "rconProtocol": "rustweb",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": []
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "LogFile",
+    "logFile": "logs\\latest.log",
+    "inputSource": "RconProtocol",
+    "printRconResponse": false,
+    "outputFilters": "(Filename: C:\\buildslave\\",
+    "stopCommand": "server.save",
+    "waitAfterStopCommand": 5000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 28015,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 28016,
+        "expression": "GamePort \u002B 1"
+      },
+      {
+        "id": "RConPort",
+        "port": 28017,
+        "expression": "GamePort \u002B 2"
+      },
+      {
+        "id": "CustomPort1",
+        "port": 28082,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "RustDedicated",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "rust-linux",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 258550,
+    "runAsServiceUser": true,
+    "branch": "",
+    "storeId": 252490,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": true,
+    "verifyAll": true,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-batchmode -nographics \u002Bserver.maxplayers ${Slots} \u002Bserver.ip ${IPAddress} \u002Bserver.port ${GamePort} \u002Bserver.queryport ${QueryPort} \u002Brcon.web 1 \u002Brcon.ip ${IPAddress} \u002Brcon.port ${RConPort} \u002Brcon.password \u0022${RconPassword}\u0022 \u002Bapp.listenip ${IPAddress} \u002Bapp.port ${CustomPort1} -logfile \u0022logs\\latest.log\u0022",
+    "defaultCustomCommandline": "-batchmode -nographics \u002Bserver.maxplayers ${Slots} \u002Bserver.ip ${IPAddress} \u002Bserver.port ${GamePort} \u002Bserver.queryport ${QueryPort} \u002Brcon.web 1 \u002Brcon.ip ${IPAddress} \u002Brcon.port ${RConPort} \u002Brcon.password \u0022${RconPassword}\u0022 \u002Bapp.listenip ${IPAddress} \u002Bapp.port ${CustomPort1} \u002Bfps.limit \u002230\u0022 -logfile \u0022logs\\latest.log\u0022",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Standard",
+        "commandLine": "-batchmode -nographics \u002Bserver.maxplayers ${Slots} \u002Bserver.ip ${IPAddress} \u002Bserver.port ${GamePort} \u002Bserver.queryport ${QueryPort} \u002Brcon.web 1 \u002Brcon.ip ${IPAddress} \u002Brcon.port ${RConPort} \u002Brcon.password \u0022${RconPassword}\u0022 \u002Bapp.listenip ${IPAddress} \u002Bapp.port ${CustomPort1} \u002Bfps.limit \u002230\u0022 -logfile \u0022logs\\latest.log\u0022"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "antihackadmincheat",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${antihackadmincheat}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "antihackadmincheat",
+        "defaultValue": "true",
+        "label": "Antihack Admin Cheat",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.442707",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "antihackenabled",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${antihackenabled}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "antihackenabled",
+        "defaultValue": "true",
+        "label": "Antihack Enabled",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.44291",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "branch",
+      "defaultValue": "public",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${branch}",
+      "editor": {
+        "items": [
+          {
+            "text": "Public",
+            "value": "public"
+          },
+          {
+            "text": "Staging",
+            "value": "staging"
+          }
+        ],
+        "id": "branch",
+        "defaultValue": "public",
+        "label": "Branch",
+        "description": "Select a branch for your server.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.443194",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "chatenabled",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${chatenabled}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "chatenabled",
+        "defaultValue": "true",
+        "label": "Chat Enabled",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.443377",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "CustomSeeds",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": true,
+      "syncCommandlineParameter": false,
+      "template": "${CustomSeeds}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 7,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "CustomSeeds",
+        "defaultValue": "",
+        "label": "Seed list",
+        "description": "Each item must be on a separate line.\u003Cbr /\u003E\nOnce a seed (and possible world size) has been used, it will be removed from the list.\u003Cbr /\u003E\nA seed can be combined with a world size with the following syntax: seed:size\u003Cbr /\u003E\n\nExample:\u003Cbr /\u003E\n\u003Ccode\u003E1234567890:3500\u003Cbr /\u003E\n89714174\u003Cbr /\u003E\n1247417593\n\u003C/code\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.44357",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "deleteplayerdata",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${deleteplayerdata}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "rm -rf server/my_server_identity/Users",
+        "uncheckedValue": "",
+        "id": "deleteplayerdata",
+        "defaultValue": "",
+        "label": "Delete Player Data",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.443756",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "description",
+      "defaultValue": "This server is hosted by TCAdmin.com",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${description}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "description",
+        "defaultValue": "This server is hosted by TCAdmin.com",
+        "label": "Description",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.44392",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "gamemode",
+      "defaultValue": "vanilla",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${gamemode}",
+      "editor": {
+        "items": [
+          {
+            "text": "Vanilla",
+            "value": "vanilla"
+          },
+          {
+            "text": "Softcore",
+            "value": "softcore"
+          },
+          {
+            "text": "Hardcore",
+            "value": "hardcore"
+          },
+          {
+            "text": "WeaponTest",
+            "value": "weapontest"
+          },
+          {
+            "text": "Deathmatch",
+            "value": "deathmatch"
+          },
+          {
+            "text": "TeamDM",
+            "value": "teamdm"
+          },
+          {
+            "text": "OneDeath",
+            "value": "onedeath"
+          },
+          {
+            "text": "KoTH Solo",
+            "value": "koth_solo"
+          },
+          {
+            "text": "KoTH Team",
+            "value": "koth_team"
+          }
+        ],
+        "id": "gamemode",
+        "defaultValue": "vanilla",
+        "label": "Gamemode",
+        "description": "For information about gamemodes, please visit \u003Ca href=\u0022https://wiki.facepunch.com/rust/server-gamemodes\u0022 target=\u0022blank\u0022\u003EServer Gamemodes - Rust Wiki\u003C/a\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.444379",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "globalchat",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${globalchat}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "globalchat",
+        "defaultValue": "true",
+        "label": "Global Chat",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.444724",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "headerimage",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${headerimage}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "(?:(http|ftp|https):\\/\\/[\\w\\-_]\u002B(\\.[\\w\\-_]\u002B)\u002B([\\w\\-\\.,@?^=%\u0026amp;:/~\\\u002B#]*[\\w\\-\\@?^=%\u0026amp;/~\\\u002B#])?)?",
+        "inputType": 0,
+        "id": "headerimage",
+        "defaultValue": "",
+        "label": "Header Image",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.444883",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "level",
+      "defaultValue": "Procedural Map",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bserver.level \u0022${level}\u0022",
+      "editor": {
+        "items": [
+          {
+            "text": "Procedural Map",
+            "value": "Procedural Map"
+          },
+          {
+            "text": "Craggy Island",
+            "value": "CraggyIsland"
+          },
+          {
+            "text": "Barren",
+            "value": "Barren"
+          },
+          {
+            "text": "Hapis Island",
+            "value": "HapisIsland"
+          },
+          {
+            "text": "Savas Island",
+            "value": "SavasIsland"
+          },
+          {
+            "text": "Savas Island KotH",
+            "value": "SavasIsland_koth"
+          }
+        ],
+        "id": "level",
+        "defaultValue": "Procedural Map",
+        "label": "Map",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "parentId": "UseCustomMap",
+        "parentValue": "False",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.445229",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "levelurl",
+      "defaultValue": "",
+      "required": true,
+      "requiredMessage": "You need to set a value for level URL or uncheck \u0022Use custom map\u0022",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${levelurl}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 0,
+        "denyCharacters": [],
+        "regExValidation": "^^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]\u002B([\\-\\.]{1}[a-z0-9]\u002B)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$",
+        "inputType": 0,
+        "id": "levelurl",
+        "defaultValue": "",
+        "label": "Level URL",
+        "description": "Use this if you want to use a custom map for your Rust server.\nPlease read \u003Ca href=\u0022https://wiki.facepunch.com/rust/Hosting_a_custom_map\u0022 target=\u0022_blank\u0022\u003Ethis\u003C/a\u003E for more information.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "You need to set a value for level URL or uncheck \u0022Use custom map\u0022",
+        "parentId": "UseCustomMap",
+        "parentValue": "True",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.445457",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "mapsize",
+      "defaultValue": "2000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bserver.worldsize \u0022${mapsize}\u0022",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 500,
+        "maxValue": 8000,
+        "id": "mapsize",
+        "defaultValue": "2000",
+        "label": "Map Size",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "parentId": "UseCustomMap",
+        "parentValue": "False",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.445674",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "PerformSteamUpdate",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PerformSteamUpdate}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "true",
+        "uncheckedValue": "false",
+        "id": "PerformSteamUpdate",
+        "defaultValue": "",
+        "label": "Yes",
+        "description": "If checked, a Steam Update will be performed on the server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.44588",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "pluginName",
+      "defaultValue": "",
+      "required": true,
+      "requiredMessage": "You must enter the valid part of the URL!",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${pluginName}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "pluginName",
+        "defaultValue": "",
+        "label": "http://oxidemod.org/plugins/",
+        "description": "Please write the valid URL of plugin from oxidemod.org\u003C/br\u003E\nFor example: from http://oxidemod.org/plugins/metabolism.680/ you have to write only \u0022metabolism.680\u0022 (without quotes)",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "You must enter the valid part of the URL!",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.446063",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "pve",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${pve}",
+      "editor": {
+        "items": [
+          {
+            "text": "False (PvP enabled)",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "pve",
+        "defaultValue": "false",
+        "label": "PvE",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.446267",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "RemoveUsedSeed",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": true,
+      "syncCommandlineParameter": false,
+      "template": "${RemoveUsedSeed}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "RemoveUsedSeed",
+        "defaultValue": "True",
+        "label": "Yes",
+        "description": "Check this box to have the randomy selected seed from the field above be removed once used.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.44645",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "saveinterval",
+      "defaultValue": "60",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bserver.saveinterval ${saveinterval}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "saveinterval",
+        "defaultValue": "60",
+        "label": "Save Interval",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.446608",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "secure",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bserver.secure ${secure}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "secure",
+        "defaultValue": "true",
+        "label": "Secure Server",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.446796",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "seed",
+      "defaultValue": "6738",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bserver.seed ${seed}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": -70368744177664,
+        "maxValue": 70368744177664,
+        "id": "seed",
+        "defaultValue": "6738",
+        "label": "Map Seed",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "parentId": "UseCustomMap",
+        "parentValue": "False",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.447008",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "serverlog",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${serverlog}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "serverlog",
+        "defaultValue": "true",
+        "label": "Serverlog",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.447199",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "umodurl",
+      "defaultValue": "",
+      "required": true,
+      "requiredMessage": "You need to enter a URL from uMods website",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${umodurl}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 10,
+        "denyCharacters": [],
+        "regExValidation": "^https\\:\\/\\/umod\\.org\\/plugins\\/[a-zA-Z0-9-#]\u002B(.cs)?",
+        "inputType": 0,
+        "id": "umodurl",
+        "defaultValue": "",
+        "label": "uMod plugin URL",
+        "description": "Insert the full URL to the plugin page on uMod\u0027s website.\n",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "You need to enter a URL from uMods website",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.447382",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "url",
+      "defaultValue": "https://tcadmin.com",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${url}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "url",
+        "defaultValue": "https://tcadmin.com",
+        "label": "URL",
+        "description": "URL for your website.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.447523",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "UseCustomMap",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": true,
+      "syncCommandlineParameter": false,
+      "template": "${UseCustomMap}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "UseCustomMap",
+        "defaultValue": "False",
+        "label": "Use custom map",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.447696",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "WipeFiles",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": true,
+      "syncCommandlineParameter": false,
+      "template": "${WipeFiles}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 10,
+        "denyCharacters": [],
+        "regExValidation": "^((?!\\.{2}).(\\r?\\n)?)*$",
+        "inputType": 0,
+        "id": "WipeFiles",
+        "defaultValue": "",
+        "label": "Additional files/folders to wipe",
+        "description": "Each file and folder should be on a separate line. Paths are relative to the service\u0027s root directory.\nWildcards (*) are supported for files.\u003Cbr /\u003E\n\u003Cb\u003EPlease note:\u003C/b\u003E Folders should include a trailing slash. \u003Cbr /\u003EDeleting a folder will also delete any files and subfolders inside.\n\u003Cbr /\u003E\u003Cbr /\u003E\nExample:\u003Cbr /\u003E\n\u003Ccode\u003Elogs/\u003Cbr /\u003E\nlog.txt\u003Cbr /\u003E\nuserdata/*.sav\n\u003C/code\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.447902",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "wipemap",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${wipemap}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "true",
+        "uncheckedValue": "false",
+        "id": "wipemap",
+        "defaultValue": "false",
+        "label": "Wipe map?",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.448075",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "wipemapnewseed",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${wipemapnewseed}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "true",
+        "uncheckedValue": "false",
+        "id": "wipemapnewseed",
+        "defaultValue": "false",
+        "label": "Use random seed",
+        "description": "If ticked, a random seed will be entered into your server.cfg.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.448378",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "wipeplayers",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${wipeplayers}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "true",
+        "uncheckedValue": "false",
+        "id": "wipeplayers",
+        "defaultValue": "false",
+        "label": "Wipe players and blueprints?",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:42:10.448552",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 115,
+      "relativePath": "server\\my_server_identity\\cfg\\settings.cfg",
+      "description": "Main configuration file. Will be merged to server.cfg before server starts.",
+      "template": "antihack.enabled ${antihackenabled}\nantihack.admincheat ${antihackadmincheat}\ngamemode.set ${gamemode}\nchat.enabled ${chatenabled}\nchat.serverlog ${serverlog}\nserver.hostname \u0022${Hostname}\u0022\nserver.secure ${secure}\nserver.globalchat ${globalchat}\nserver.pve ${pve}\nserver.description \u0022${description}\u0022\nserver.headerimage ${headerimage}\nserver.url ${url}\nrcon.password ${RconPassword}\n$ipy\u003C%\nif ThisService.Variables.GetValue(\u0022UseCustomMap\u0022) == \u0022True\u0022:\n  ReturnValue = \u0022server.levelurl {}\u0022.format(ThisService.Variables.GetValue(\u0022levelurl\u0022))\nelse:\n  ReturnValue = \u0022server.level \\\u0022{}\\\u0022\\nserver.seed {}\\nserver.worldsize {}\u0022.format(ThisService.Variables.GetValue(\u0022level\u0022), ThisService.Variables.GetValue(\u0022seed\u0022), ThisService.Variables.GetValue(\u0027mapsize\u0027))\n%\u003E\nserver.saveinterval 600\nserver.idlekick          \u002210\u0022\nserver.idlekickmode      \u00222\u0022\nfps.limit 120\n",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Rust Server Configuration",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "(?:(http|ftp|https):\\/\\/[\\w\\-_]\u002B(\\.[\\w\\-_]\u002B)\u002B([\\w\\-\\.,@?^=%\u0026amp;:/~\\\u002B#]*[\\w\\-\\@?^=%\u0026amp;/~\\\u002B#])?)?",
+          "inputType": 0,
+          "id": "headerimage",
+          "defaultValue": "",
+          "label": "Header Image",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "description",
+          "defaultValue": "This server is hosted by TCAdmin.com",
+          "label": "Description",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "url",
+          "defaultValue": "https://tcadmin.com",
+          "label": "URL",
+          "description": "URL for your website.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "chatenabled",
+          "defaultValue": "true",
+          "label": "Chat Enabled",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False (PvP enabled)",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "pve",
+          "defaultValue": "false",
+          "label": "PvE",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "antihackenabled",
+          "defaultValue": "true",
+          "label": "Antihack Enabled",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "antihackadmincheat",
+          "defaultValue": "true",
+          "label": "Antihack Admin Cheat",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "globalchat",
+          "defaultValue": "true",
+          "label": "Global Chat",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "secure",
+          "defaultValue": "true",
+          "label": "Secure Server",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "serverlog",
+          "defaultValue": "true",
+          "label": "Serverlog",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_14",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Vanilla",
+              "value": "vanilla"
+            },
+            {
+              "text": "Softcore",
+              "value": "softcore"
+            },
+            {
+              "text": "Hardcore",
+              "value": "hardcore"
+            },
+            {
+              "text": "WeaponTest",
+              "value": "weapontest"
+            },
+            {
+              "text": "Deathmatch",
+              "value": "deathmatch"
+            },
+            {
+              "text": "TeamDM",
+              "value": "teamdm"
+            },
+            {
+              "text": "OneDeath",
+              "value": "onedeath"
+            },
+            {
+              "text": "KoTH Solo",
+              "value": "koth_solo"
+            },
+            {
+              "text": "KoTH Team",
+              "value": "koth_team"
+            }
+          ],
+          "id": "gamemode",
+          "defaultValue": "vanilla",
+          "label": "Gamemode",
+          "description": "For information about gamemodes, please visit \u003Ca href=\u0022https://wiki.facepunch.com/rust/server-gamemodes\u0022 target=\u0022blank\u0022\u003EServer Gamemodes - Rust Wiki\u003C/a\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "UseCustomMap",
+          "defaultValue": "False",
+          "label": "Use custom map",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Procedural Map",
+              "value": "Procedural Map"
+            },
+            {
+              "text": "Craggy Island",
+              "value": "CraggyIsland"
+            },
+            {
+              "text": "Barren",
+              "value": "Barren"
+            },
+            {
+              "text": "Hapis Island",
+              "value": "HapisIsland"
+            },
+            {
+              "text": "Savas Island",
+              "value": "SavasIsland"
+            },
+            {
+              "text": "Savas Island KotH",
+              "value": "SavasIsland_koth"
+            }
+          ],
+          "id": "level",
+          "defaultValue": "Procedural Map",
+          "label": "Map",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "parentId": "UseCustomMap",
+          "parentValue": "False",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 0,
+          "denyCharacters": [],
+          "regExValidation": "^^(http:\\/\\/www\\.|https:\\/\\/www\\.|http:\\/\\/|https:\\/\\/)?[a-z0-9]\u002B([\\-\\.]{1}[a-z0-9]\u002B)*\\.[a-z]{2,5}(:[0-9]{1,5})?(\\/.*)?$",
+          "inputType": 0,
+          "id": "levelurl",
+          "defaultValue": "",
+          "label": "Level URL",
+          "description": "Use this if you want to use a custom map for your Rust server.\nPlease read \u003Ca href=\u0022https://wiki.facepunch.com/rust/Hosting_a_custom_map\u0022 target=\u0022_blank\u0022\u003Ethis\u003C/a\u003E for more information.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "You need to set a value for level URL or uncheck \u0022Use custom map\u0022",
+          "parentId": "UseCustomMap",
+          "parentValue": "True",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": true,
+          "valueType": "double",
+          "minValue": -70368744177664,
+          "maxValue": 70368744177664,
+          "id": "seed",
+          "defaultValue": "6738",
+          "label": "Map Seed",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "parentId": "UseCustomMap",
+          "parentValue": "False",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": true,
+          "valueType": "double",
+          "minValue": 500,
+          "maxValue": 8000,
+          "id": "mapsize",
+          "defaultValue": "2000",
+          "label": "Map Size",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "parentId": "UseCustomMap",
+          "parentValue": "False",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "relativePath": "server\\my_server_identity\\cfg\\additionalsettings.cfg",
+      "description": "Configure additional settings here. Will be merged to server.cfg before server starts.",
+      "template": "",
+      "order": 2,
+      "enableEditor": false,
+      "editor": []
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [],
+        "name": "Wipe on Rust Wipe Day",
+        "description": "Wipe on Rust Wipe Day",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.Linq;\nusing System.Threading.Tasks;\nusing TCAdmin.SDK.Constants;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Wipe on Rust Wipe Day.\n// Runs as a scheduled task; only wipes when today is the first Thursday of the month.\n// It stops the service (if running), runs the \u0022Wipe Server\u0022 script, then restarts it.\n//\n// V2 called Script.Execute(gameId, 8) to run the wipe script by its numeric id. Script ids\n// change on import, so V3 looks the wipe script up by name among the game\u0027s CustomServiceIcon\n// scripts and runs it through the scripting environment.\n\nasync Task ReportProgress(string log)\n{\n    if (ThisTaskStepHandler != null)\n        await ThisTaskStepHandler.UpdateProgress(log: log);\n    else\n        ScriptConsole.WriteLine(log);\n}\n\n// Determine the first Thursday of the current month.\nvar now = DateTime.Now;\nvar firstOfMonth = new DateTime(now.Year, now.Month, 1);\nvar offset = ((int)DayOfWeek.Thursday - (int)firstOfMonth.DayOfWeek \u002B 7) % 7;\nvar firstThursday = firstOfMonth.AddDays(offset);\n\nif (now.Date != firstThursday.Date)\n{\n    await ReportProgress(\u0022[Rust Wipe Script] Not wiping server as today is not the first Thursday of the month\u0022);\n    return;\n}\n\n// Stop the service first so the wipe touches no open files. Remember whether it was running\n// so we can bring it back afterwards.\nvar wasRunning = ThisService.Status == EServiceStatus.Started;\nif (wasRunning)\n{\n    await ReportProgress(\u0022Service is running. Stopping the service...\u0022);\n    await ServiceManagerService.StopService(ThisService.ServiceId);\n}\n\n// Find and run the \u0022Wipe Server\u0022 script bound to this game.\nvar iconScripts = await ServiceManager.GetScripts(ThisService, GameScriptEvents.CustomServiceIcon);\nvar wipeScript = iconScripts.FirstOrDefault(s =\u003E\n    string.Equals(s.Name, \u0022Wipe Server\u0022, StringComparison.OrdinalIgnoreCase));\n\nif (wipeScript == null)\n{\n    await ReportProgress(\u0022[Rust Wipe Script] Could not find the \u0027Wipe Server\u0027 script to execute.\u0022);\n}\nelse\n{\n    var result = await ScriptingEnvironment.ExecuteScript(ThisService, wipeScript, null, ThisCancellationToken);\n    if (!result.Success)\n        await ReportProgress($\u0022[Rust Wipe Script] Wipe Server script reported an error: {result.Error?.Message}\u0022);\n}\n\n// Start the service again if it was running before the wipe.\nif (wasRunning)\n{\n    await ReportProgress(\u0022Starting service...\u0022);\n    await ServiceManagerService.StartService(ThisService.ServiceId);\n    await ReportProgress(\u0022Service was started successfully.\u0022);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "e7bb1b59-cb12-4974-9d35-40c1680f1947"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeServiceStarted"
+        ],
+        "name": "Combine settings files",
+        "description": "Combine settings files",
+        "code": "using System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Combine settings files (BeforeServiceStarted).\n// Merges settings.cfg \u002B additionalsettings.cfg into server.cfg, removes duplicate lines\n// (preserving first-seen order) and prepends a \u0022do not edit\u0022 warning to the first line.\n\nvar cfgDir = Path.Combine(ThisService.RootDirectory, \u0022server\u0022, \u0022my_server_identity\u0022, \u0022cfg\u0022);\nvar settingsFile = Path.Combine(cfgDir, \u0022settings.cfg\u0022);\nvar additionalSettingsFile = Path.Combine(cfgDir, \u0022additionalsettings.cfg\u0022);\nvar serverCfgFile = Path.Combine(cfgDir, \u0022server.cfg\u0022);\n\n// Only include files that actually exist, in order.\nvar files = new[] { settingsFile, additionalSettingsFile }.Where(File.Exists).ToList();\nif (files.Count == 0)\n{\n    ScriptConsole.WriteLine(\u0022No settings.cfg or additionalsettings.cfg found. Nothing to combine.\u0022);\n    return;\n}\n\n// Read all lines from each file in order, de-duplicating while keeping first-seen order.\nvar seen = new HashSet\u003Cstring\u003E();\nvar settings = new List\u003Cstring\u003E();\nforeach (var file in files)\n{\n    foreach (var line in await File.ReadAllLinesAsync(file, ThisCancellationToken))\n    {\n        if (seen.Add(line))\n            settings.Add(line);\n    }\n}\n\nif (settings.Count == 0)\n{\n    ScriptConsole.WriteLine(\u0022Settings files were empty. Nothing written.\u0022);\n    return;\n}\n\n// Prepend the warning to the first content line (mirrors the V2 behaviour).\nsettings[0] = \u0022#Do not update this file manually. Use settings.cfg or additionalsettings.cfg instead.\\n\u0022 \u002B settings[0];\n\nawait File.WriteAllTextAsync(serverCfgFile, string.Join(\u0022\\n\u0022, settings), ThisCancellationToken);\nScriptConsole.WriteLine($\u0022Combined {files.Count} settings file(s) into server.cfg.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "1eb4b898-707d-4ab6-8206-29c79836624c"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeServiceStarted"
+        ],
+        "name": "Move logfile",
+        "description": "Move logfile",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.IO;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Move logfile (BeforeServiceStarted).\n// Archives logs/latest.log to a timestamped server_\u003Cdate\u003E.log before the server starts so\n// each run keeps its own log. Creates the logs directory if missing and (on a Linux host)\n// fixes the directory owner so the impersonated game user can write to it.\n\nvar logDir = Path.Combine(ThisService.RootDirectory, \u0022logs\u0022);\nif (!Directory.Exists(logDir))\n{\n    Directory.CreateDirectory(logDir);\n    // The owner fixup is a server-box concern; only meaningful when the host runs Linux.\n    if (ThisServer.OperatingSystem == EOperatingSystem.Linux)\n        OperatingSystem.SetDirectoryOwnerAutoDetect(logDir, false);\n}\n\nvar logFile = Path.Combine(logDir, \u0022latest.log\u0022);\nif (!File.Exists(logFile))\n{\n    ScriptConsole.WriteLine(\u0022No latest.log to archive.\u0022);\n    return;\n}\n\n// V2 used ThisService.StartTime (the previous run\u0027s start). It can be null before the first\n// start, so fall back to now.\nvar lastStarted = ThisService.StartTime ?? DateTime.Now;\nvar timeFormat = $\u0022{lastStarted.Year}-{lastStarted.Month}-{lastStarted.Day}__{lastStarted.Hour}-{lastStarted.Minute}-{lastStarted.Second}\u0022;\nvar newLogFileName = $\u0022server_{timeFormat}.log\u0022;\nvar destination = Path.Combine(logDir, newLogFileName);\n\nFile.Move(logFile, destination);\nScriptConsole.WriteLine($\u0022Archived latest.log to {newLogFileName}.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "8f8ab523-9034-40c8-89c4-67c5c56a2f53"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeServiceStopped"
+        ],
+        "name": "Shutdown service properly",
+        "description": "Shutdown service properly",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Shutdown service properly.\n// V2 parsed rcon.password out of server.cfg and sent \u0022quit\u0022 over the RustWeb RCON client.\n// V3 routes the command through the service console \u2014 the monitor uses the in-sync\n// ThisService.Variables[\u0022RconPassword\u0022] internally, so no config parsing is needed.\n\nif (ThisService.Status != EServiceStatus.Started)\n{\n    ScriptConsole.WriteLine($\u0022Service {ThisService.ServiceId} ({ThisService.Name}) is not running. The script will not continue.\u0022);\n    return;\n}\n\nScriptConsole.WriteLine(\u0022Shutting down server...\u0022);\nvar result = await ServiceManagerService.SendConsoleInput(ThisService.ServiceId, \u0022quit\u0022);\nif (!string.IsNullOrEmpty(result.RconResponse))\n    ScriptConsole.WriteLine($\u0022RCon Response: {result.RconResponse}\u0022);\n\nScriptConsole.WriteLine(\u0022Done.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "309d097c-2b59-46bc-a556-2103f9104eed"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Switch update branch",
+        "description": "Switch branch to either Staging or Public. Will not take effect before the server has been updated.",
+        "code": "using System;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Switch update branch (Staging / Public). Bound to CustomServiceIcon.\n// In V2 the popup field set ThisService.Variables[\u0027branch\u0027] and the script called\n// ThisService.Save(). V3 has no GameService.Save(); the platform already writes the\n// chosen value into ThisService.Variables before the script runs (VerifyInputVariables),\n// so we persist the service via the manager and report the selection.\n\nvar branch = ThisService.Variables.Parse\u003Cstring\u003E(\u0022branch\u0022);\n\nawait ServiceManager.UpdateAsync(ThisService, true, ThisCancellationToken);\n\nScriptConsole.WriteLine($\u0022Branch switched to {branch}. Please run the Steam Update to update the server.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "e7db96d6-a932-4027-9fdf-cc24ed6c75f7"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Wipe Server",
+        "description": "This will wipe selected files on your server",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll, Microsoft.EntityFrameworkCore.dll\nusing System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Text.RegularExpressions;\nusing System.Threading.Tasks;\nusing Microsoft.EntityFrameworkCore;\nusing TCAdmin.SDK.Database.Entities;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Wipe Server (CustomServiceIcon / ScheduledTask).\n// Wipes the selected combination of map / players / additional files and optionally rolls a new\n// seed. Each section is gated by a service variable the popup (or scheduled step) sets.\n//\n// Notable V2 -\u003E V3 changes:\n//  * The manual SteamCmd subprocess \u002B Before/AfterSteamUpdate event scripts are replaced by\n//    GameServiceManager.RunServiceSteamUpdate, which runs the update and fires those events itself.\n//  * ThisService.Configure()/Save() are gone; service variable changes persist via\n//    ServiceManager.UpdateAsync.\n//  * Seed-list \u0022remove used seed\u0022 updates the recurring step\u0027s Variables directly (V3 stores them\n//    as a clean JSON dictionary, not the V2 nested XML field).\n\nasync Task Report(string log)\n{\n    if (ThisTaskStepHandler != null)\n        await ThisTaskStepHandler.UpdateProgress(log: log);\n    else\n        ScriptConsole.WriteLine(log);\n}\n\nvar root = ThisService.RootDirectory;\nvar identityDir = Path.Combine(root, \u0022server\u0022, \u0022my_server_identity\u0022);\nvar cfgFile = Path.Combine(identityDir, \u0022cfg\u0022, \u0022settings.cfg\u0022);\n\nstring GetVar(string name) =\u003E ThisService.Variables.Parse\u003Cstring\u003E(name) ?? string.Empty;\nbool IsTrue(string name) =\u003E string.Equals(GetVar(name), \u0022true\u0022, StringComparison.OrdinalIgnoreCase);\n\n// --- Steam update -----------------------------------------------------------------------------\nif (IsTrue(\u0022PerformSteamUpdate\u0022))\n{\n    await Report(\u0022[Starting] Update Server\u0022);\n    try\n    {\n        var steamResult = await GameServiceManager.RunServiceSteamUpdate(ThisService.ServiceId, null, ThisCancellationToken);\n        if (!steamResult.Success)\n            await Report($\u0022Steam update reported a problem: {steamResult.Message}\u0022);\n    }\n    catch (Exception ex)\n    {\n        await Report($\u0022Something went wrong during Steam Update. Error: {ex.Message}\u0022);\n    }\n    await Report(\u0022[Complete] Update Server\u0022);\n}\n\n// --- Wipe map ---------------------------------------------------------------------------------\nif (IsTrue(\u0022wipemap\u0022))\n{\n    await Report(\u0022[Starting] Wipe Map\u0022);\n    if (Directory.Exists(identityDir))\n    {\n        var mapFiles = Directory.GetFiles(identityDir, \u0022*.sav*\u0022)\n            .Concat(Directory.GetFiles(identityDir, \u0022*.map*\u0022));\n        foreach (var f in mapFiles)\n        {\n            try\n            {\n                File.Delete(f);\n                await Report($\u0022Deleted savefile {f}\u0022);\n            }\n            catch (Exception ex)\n            {\n                await Report($\u0022Could not delete {f}, error was: {ex.Message}\u0022);\n            }\n        }\n    }\n    await Report(\u0022[Complete] Wipe Map\u0022);\n}\n\n// --- New random seed --------------------------------------------------------------------------\n// oldSize/newSize carry through to the cfg rewrite that runs after the CustomSeeds section.\nstring oldSize = null;\nstring newSize = null;\n\nif (IsTrue(\u0022wipemapnewseed\u0022) \u0026\u0026 File.Exists(cfgFile))\n{\n    await Report(\u0022[Starting] New Seed\u0022);\n    await Report(\u0022Specifying a new seed\u0022);\n    var contents = await File.ReadAllTextAsync(cfgFile, ThisCancellationToken);\n    var match = Regex.Match(contents, @\u0022server.seed[ \\t]*(?\u003Coldseed\u003E-?[0-9, \\t]*)\u0022, RegexOptions.IgnoreCase);\n    var oldSeed = match.Groups[\u0022oldseed\u0022].Value;\n\n    var newSeed = Random.Shared.Next(-2147483647, 2147483647).ToString();\n    while (oldSeed == newSeed)\n        newSeed = Random.Shared.Next(-2147483647, 2147483647).ToString();\n\n    await Report($\u0022New seed is {newSeed}\u0022);\n    contents = contents.Replace($\u0022server.seed {oldSeed}\u0022, $\u0022server.seed {newSeed}\u0022);\n    await File.WriteAllTextAsync(cfgFile, contents, ThisCancellationToken);\n    await Report(\u0022[Complete] New Seed\u0022);\n}\n\n// --- Wipe players -----------------------------------------------------------------------------\nif (IsTrue(\u0022wipeplayers\u0022))\n{\n    await Report(\u0022[Starting] Wipe Playerdata and Blueprints\u0022);\n    var userdataFolder = Path.Combine(root, \u0022userdata\u0022);\n    if (Directory.Exists(userdataFolder))\n    {\n        try\n        {\n            Directory.Delete(userdataFolder, true);\n            await Report(\u0022Userdata wiped\u0022);\n        }\n        catch (Exception ex)\n        {\n            await Report($\u0022Could not delete {userdataFolder}, error was: {ex.Message}\u0022);\n        }\n    }\n\n    if (Directory.Exists(identityDir))\n    {\n        foreach (var f in Directory.GetFiles(identityDir, \u0022*.db*\u0022))\n        {\n            try\n            {\n                File.Delete(f);\n                await Report($\u0022File {f} was deleted successfully\u0022);\n            }\n            catch (Exception ex)\n            {\n                await Report($\u0022Could not delete {f}, error was: {ex.Message}\u0022);\n            }\n        }\n    }\n    await Report(\u0022[Complete] Wipe Playerdata and Blueprints\u0022);\n}\n\n// --- Wipe additional files / folders ----------------------------------------------------------\nvar wipeFiles = GetVar(\u0022WipeFiles\u0022);\nif (!string.IsNullOrEmpty(wipeFiles))\n{\n    await Report(\u0022[Starting] Wipe Additional Files/Folders\u0022);\n    foreach (var raw in wipeFiles.Split(\u0027\\n\u0027, \u0027\\r\u0027).Where(x =\u003E x.Length \u003E 0))\n    {\n        var entry = raw.Trim();\n        if (entry.Length == 0) continue;\n\n        if (entry.EndsWith(\u0027/\u0027))\n        {\n            // Folder\n            var folder = Path.Combine(root, entry);\n            if (Directory.Exists(folder))\n            {\n                try\n                {\n                    Directory.Delete(folder, true);\n                    await Report($\u0022Deleted folder {entry}\u0022);\n                }\n                catch (Exception)\n                {\n                    await Report($\u0022Could not delete folder {entry}\u0022);\n                }\n            }\n        }\n        else if (entry.Contains(\u0027*\u0027))\n        {\n            // Glob within its directory\n            var combined = Path.Combine(root, entry);\n            var dir = Path.GetDirectoryName(combined) ?? root;\n            var pattern = Path.GetFileName(combined);\n            if (Directory.Exists(dir))\n            {\n                foreach (var filePath in Directory.GetFiles(dir, pattern))\n                {\n                    try\n                    {\n                        await Report($\u0022Deleting {filePath}\u0022);\n                        File.Delete(filePath);\n                        await Report($\u0022Deleted file {filePath}\u0022);\n                    }\n                    catch (Exception)\n                    {\n                        await Report($\u0022Could not delete file {filePath}\u0022);\n                    }\n                }\n            }\n        }\n        else\n        {\n            // Single file\n            var file = Path.Combine(root, entry);\n            if (File.Exists(file))\n            {\n                try\n                {\n                    File.Delete(file);\n                    await Report($\u0022Deleted file {entry}\u0022);\n                }\n                catch (Exception)\n                {\n                    await Report($\u0022Could not delete file {entry}\u0022);\n                }\n            }\n        }\n    }\n    await Report(\u0022[Complete] Wipe Additional Files/Folders\u0022);\n}\n\n// --- Replace seed from the CustomSeeds list ---------------------------------------------------\nvar customSeeds = GetVar(\u0022CustomSeeds\u0022);\nif (!string.IsNullOrEmpty(customSeeds) \u0026\u0026 File.Exists(cfgFile))\n{\n    await Report(\u0022[Starting] Replacing Seed\u0022);\n    var seeds = customSeeds.Split(\u0027\\n\u0027, \u0027\\r\u0027).Where(x =\u003E x.Trim().Length \u003E 0).Select(x =\u003E x.Trim()).ToList();\n    if (seeds.Count \u003E 0)\n    {\n        var contents = await File.ReadAllTextAsync(cfgFile, ThisCancellationToken);\n        var seedMatch = Regex.Match(contents, @\u0022server.seed[ \\t]*(?\u003Coldseed\u003E-?[0-9, \\t]*)\u0022, RegexOptions.IgnoreCase);\n        var oldSeed = seedMatch.Groups[\u0022oldseed\u0022].Value;\n        var chosen = seeds[Random.Shared.Next(seeds.Count)];\n\n        // If RemoveUsedSeed is set, drop the chosen seed from the recurring step\u0027s stored list\n        // (so it isn\u0027t reused next run) and from the service variable.\n        if (string.Equals(GetVar(\u0022RemoveUsedSeed\u0022), \u0022True\u0022, StringComparison.OrdinalIgnoreCase))\n        {\n            seeds.Remove(chosen);\n            var updatedSeeds = string.Join(\u0022\\n\u0022, seeds);\n\n            var recurringTaskId = ThisTask?.RecurringTaskId;\n            if (recurringTaskId != null)\n            {\n                try\n                {\n                    var recurringTask = await RecurringTaskManager.TCAdminDbContext.RecurringTasks\n                        .Include(x =\u003E x.Steps)\n                        .FirstOrDefaultAsync(x =\u003E x.RecurringTaskId == recurringTaskId.Value, ThisCancellationToken);\n                    var step = recurringTask?.Steps.OrderBy(x =\u003E x.RecurringStepId).FirstOrDefault();\n                    if (step != null)\n                    {\n                        step.Variables[\u0022CustomSeeds\u0022] = updatedSeeds;\n                        await RecurringTaskManager.UpdateAsync(recurringTask, true, ThisCancellationToken);\n                    }\n                }\n                catch (Exception ex)\n                {\n                    await Report($\u0022Could not update recurring task seed list: {ex.Message}\u0022);\n                }\n            }\n        }\n\n        var newSeed = chosen;\n        // A \u0022seed:size\u0022 entry also sets the world size.\n        if (chosen.Contains(\u0027:\u0027))\n        {\n            var parts = chosen.Split(\u0027:\u0027);\n            newSeed = parts[0];\n            newSize = parts[1];\n            await Report($\u0022Setting new seed. Was {oldSeed}, now {newSeed}\u0022);\n            var sizeMatch = Regex.Match(contents, @\u0022server.worldsize[ \\t]*(?\u003Coldsize\u003E-?[0-9, \\t]*)\u0022, RegexOptions.IgnoreCase);\n            oldSize = sizeMatch.Groups[\u0022oldsize\u0022].Value;\n            await Report($\u0022Setting new world size. Was {oldSize}, now {newSize}\u0022);\n            ThisService.Variables[\u0022mapsize\u0022] = newSize;\n        }\n\n        // Persist the remaining seed list back to the service variable.\n        ThisService.Variables[\u0022CustomSeeds\u0022] = string.Join(\u0022\\n\u0022, seeds);\n\n        contents = contents.Replace($\u0022server.seed {oldSeed}\u0022, $\u0022server.seed {newSeed}\u0022);\n        if (oldSize != null \u0026\u0026 newSize != null)\n            contents = contents.Replace($\u0022server.worldsize {oldSize}\u0022, $\u0022server.worldsize {newSize}\u0022);\n        await File.WriteAllTextAsync(cfgFile, contents, ThisCancellationToken);\n\n        ThisService.Variables[\u0022seed\u0022] = newSeed;\n        await Report(\u0022[Complete] Replacing Seed\u0022);\n    }\n}\n\nawait Report(\u0022The task completed successfully\u0022);\n\n// Persist any service variable changes (mapsize / seed / CustomSeeds).\nawait ServiceManager.UpdateAsync(ThisService, true, ThisCancellationToken);\n",
+        "runImpersonated": false,
+        "stopService": true,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "819235ef-7f7d-4281-8973-d18cf2b50e59"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "DownloadGameFiles"
+        ],
+        "name": "Update uMod after Steam Update",
+        "description": "Update uMod after Steam Update",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.IO;\nusing System.Net.Http;\nusing TCAdmin.SDK.Misc.Compression;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Update uMod (Oxide) after a Steam update (DownloadGameFiles event).\n// Re-downloads the matching Oxide.Rust build and extracts it over the freshly-updated\n// game files, but only if uMod is already installed (the \u0027oxide\u0027 folder exists).\n//\n// V2 chose the Windows vs Linux build from the HOST OS. That is wrong under V3 because a\n// Rust server can run on a Linux box via Wine or a Windows box via WSL \u2014 the Oxide build\n// must match the GAME\u0027s OS, so we key off ThisGame.OperatingSystem.\n\nvar root = ThisService.RootDirectory;\nvar oxideDir = Path.Combine(root, \u0022oxide\u0022);\nif (!Directory.Exists(oxideDir))\n{\n    ScriptConsole.WriteLine(\u0022uMod not installed.\u0022);\n    return;\n}\n\nvar zipPath = Path.Combine(root, \u0022Oxide.Rust.zip\u0022);\nif (File.Exists(zipPath))\n    File.Delete(zipPath);\n\nScriptConsole.WriteLine(\u0022Found uMod installation... Updating uMod.\u0022);\n\nvar isWindowsGame = ThisGame.OperatingSystem == EOperatingSystem.Windows;\nvar branch = ThisService.Variables.Parse\u003Cstring\u003E(\u0022branch\u0022);\n\nstring url;\nif (string.Equals(branch, \u0022staging\u0022, StringComparison.OrdinalIgnoreCase))\n{\n    ScriptConsole.WriteLine(\u0022Staging branch detected\u0022);\n    url = isWindowsGame\n        ? \u0022https://ci.appveyor.com/api/projects/oxidemod/oxide-rust/artifacts/Oxide.Rust-staging.zip?pr=false\u0026branch=staging\u0022\n        : \u0022https://ci.appveyor.com/api/projects/oxidemod/oxide-rust/artifacts/Oxide.Rust-linux-staging.zip?pr=false\u0026branch=staging\u0022;\n}\nelse\n{\n    url = isWindowsGame\n        ? \u0022https://umod.org/games/rust/download\u0022\n        : \u0022https://umod.org/games/rust/download/develop\u0022;\n}\n\nScriptConsole.WriteLine($\u0022Downloading file {zipPath} from {url}...\u0022);\nusing (var httpClient = new HttpClient())\n{\n    httpClient.Timeout = TimeSpan.FromMinutes(5);\n    await using var stream = await httpClient.GetStreamAsync(url, ThisCancellationToken);\n    await using var fileStream = File.Create(zipPath);\n    await stream.CopyToAsync(fileStream, ThisCancellationToken);\n}\n\nif (!File.Exists(zipPath))\n{\n    ScriptConsole.WriteLine(\u0022Download failed - Oxide.Rust.zip was not created.\u0022);\n    return;\n}\n\n// Stop the service before overwriting binaries if it is running.\nif (ThisService.Status == EServiceStatus.Started)\n{\n    ScriptConsole.WriteLine(\u0022Stopping the service.\u0022);\n    await ServiceManagerService.StopService(ThisService.ServiceId);\n}\n\nvar compressionTools = new CompressionTools(OperatingSystem);\ncompressionTools.Decompress(zipPath, root, ThisCancellationToken);\nFile.Delete(zipPath);\nScriptConsole.WriteLine(\u0022uMod updated successfully.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "c67d3cb4-b87e-47f5-86ab-079ad48690d4"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomQueryProtocol"
+        ],
+        "name": "Custom query",
+        "description": "Custom query",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll, OpenGSQ.dll\nusing System;\nusing System.Text.RegularExpressions;\nusing OpenGSQ.Protocols;\nusing OpenGSQ.Responses.Source;\nusing TCAdmin.SDK.Hubs.Models.GameQuery;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Custom query protocol (bound to CustomQueryProtocol).\n//\n// V2 returned a qstat-style XML string. V3\u0027s custom_script provider instead JSON-serializes the\n// script\u0027s ReturnValue and deserializes it into a GameQueryResponse (see\n// CustomScriptQuery.cs), so we build and return that object directly with the same data the\n// V2 XML carried: name, gametype, map, players, rules and the game_tag cp/mp override.\n//\n// The provider injects Address/Port for the service being queried.\nvar address = ThisService.Variables.Parse\u003Cstring\u003E(\u0022Address\u0022) ?? ThisService.IPAddress;\nvar port = ThisService.Variables.ContainsKey(\u0022Port\u0022)\n    ? ThisService.Variables.Parse\u003Cint\u003E(\u0022Port\u0022)\n    : ThisService.QueryPort;\n\ntry\n{\n    // Rust answers the Source (A2S) query protocol.\n    var source = new Source(address, port, 5000);\n    var info = await source.GetInfo();\n    var players = await source.GetPlayers();\n    var rules = await source.GetRules();\n\n    var response = new GameQueryResponse\n    {\n        Success = true,\n        Status = \u0022UP\u0022,\n        Protocol = \u0022custom_script\u0022,\n        Address = address,\n        Hostname = $\u0022{address}:{port}\u0022,\n        Name = info.Name,\n        GameType = info.Game,\n        Map = info.Map,\n        NumPlayers = info.Players,\n        MaxPlayers = info.MaxPlayers,\n        NumSpectators = 0,\n        MaxSpectators = 0,\n        Retries = 0\n    };\n\n    if (rules != null)\n    {\n        foreach (var rule in rules)\n            response.Rules[rule.Key] = rule.Value;\n    }\n\n    if (players != null)\n    {\n        foreach (var player in players)\n        {\n            response.Players.Add(new GameQueryPlayer\n            {\n                Name = player.Name,\n                // Source A2S exposes Score and Duration but not a per-player ping.\n                Score = (int)player.Score,\n                Ping = 0\n            });\n        }\n    }\n\n    // Rust reports real player/slot counts in the \u0022game tag\u0022 (A2S keywords), e.g. \u0022cp12,mp50\u0022.\n    // Prefer the game_tag rule, falling back to the A2S keywords field on the info packet.\n    var gameTag = response.Rules.TryGetValue(\u0022game_tag\u0022, out var tagFromRules) \u0026\u0026 !string.IsNullOrEmpty(tagFromRules)\n        ? tagFromRules\n        : (info as SourceInfo)?.Keywords ?? string.Empty;\n\n    if (!string.IsNullOrEmpty(gameTag))\n    {\n        var cp = Regex.Match(gameTag, @\u0022cp(\\d\u002B)\u0022);\n        if (cp.Success)\n            response.NumPlayers = int.Parse(cp.Groups[1].Value);\n\n        var mp = Regex.Match(gameTag, @\u0022mp(\\d\u002B)\u0022);\n        if (mp.Success)\n            response.MaxPlayers = int.Parse(mp.Groups[1].Value);\n    }\n\n    Globals.ReturnValue = response;\n}\ncatch (Exception ex)\n{\n    // Returning an offline response keeps the query subsystem happy when the server is down.\n    Globals.ReturnValue = GameQueryResponse.DefaultOfflineResponse(address, \u0022custom_script\u0022, ex.Message);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "f1168f32-c663-4593-8a8d-0663d6794a63"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [
+    {
+      "customLink": {
+        "global": false,
+        "allGames": false,
+        "name": "Rcon Login",
+        "description": "Execute rcon commands to your server.",
+        "url": "http://facepunch.github.io/webrcon/#/${HostnameOrIP}:${RConPort}/info?password=${RconPassword}",
+        "icon": "",
+        "order": 0,
+        "openInNewWindow": true,
+        "openInMainContents": false,
+        "identifier": "c7a1eec5-a67f-45c9-b5ac-1fcae25eeea0",
+        "customLinkRoles": []
+      }
+    }
+  ],
+  "updates": [
+    {
+      "name": "uMod - Latest",
+      "groupName": "uMod",
+      "comments": "Latest version of uMod",
+      "source": "https://umod.org/games/rust/download",
+      "reinstallable": true,
+      "defaultInstall": false,
+      "viewOrder": 0,
+      "identifier": "aa053626-0f2b-4f69-b9d0-f57387975645",
+      "updateRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "updateScripts": []
+    }
+  ],
+  "createdDate": "2026-06-17T23:42:10.458922",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": false,
+    "backupType": "Full",
+    "compressBackup": true,
+    "includedPaths": []
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [
+    {
+      "name": "Rust:IO",
+      "groupName": "uMod",
+      "homepageUrl": "http://playrust.io/",
+      "helpUrl": "http://playrust.io/manual/",
+      "source": "http://playrust.io/latest",
+      "extractPath": "RustDedicated_Data/Managed",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "b7921b1f-a5a3-404c-8120-9c55c6193559",
+      "addLines": [],
+      "removeLines": [],
+      "requiredModNames": [
+        "uMod"
+      ],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [],
+      "modRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "modScripts": []
+    },
+    {
+      "name": "uMod",
+      "groupName": "uMod",
+      "source": "https://umod.org/games/rust/download/develop",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "8077179e-7acf-42fd-8283-55c335f9f301",
+      "addLines": [],
+      "removeLines": [],
+      "requiredModNames": [],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [],
+      "modRoles": [
+        {
+          "roleId": 3
+        },
+        {
+          "roleId": 2
+        }
+      ],
+      "modScripts": []
+    }
+  ],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "None",
+    "maxFailureAction": "Stop",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": true,
+    "slotDetectionAction": "Stop",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": false,
+    "privateDetectionAction": "None",
+    "brandDetectionEnabled": false,
+    "brandDetectionAction": "None",
+    "brandedText": "| By TCAdmin.com",
+    "brandedTextAtEnd": true,
+    "brandedTextAddSpace": true,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
