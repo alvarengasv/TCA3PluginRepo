@@ -1,0 +1,19 @@
+identifier: "Community.Games.Squad"
+name: "Squad"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Squad"
+longDescription: |
+  # Squad
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/393380/e31f512b65773b50b79b1f9c994e1c7fa1402e76.ico"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/393380/ss_a50882d54e8fdf8478bbbe5cd8df4bd086fc1a0f.1920x1080.jpg?t=1781548039"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "squad - Linux.json"
+    type: "GameConfig"
+  - path: "squad - Windows.json"
+    type: "GameConfig"
