@@ -1,0 +1,21 @@
+identifier: "Community.Scripts.UsedPorts"
+name: "Used Ports"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Listing of TCP/UDP ports opened by the process and child processes."
+longDescription: |
+  # Used Ports
+  
+  ## Description
+  Listing of TCP/UDP ports opened by the process and child processes.
+  
+  ## Key Features
+  Supports Windows and Linux.
+  
+  ## Instructions
+  After installing the script is available in the game server's advanced options tab.
+tags:
+  - "GameScript"
+files:
+  - path: "Used Ports.json"
+    type: "GameScript"
