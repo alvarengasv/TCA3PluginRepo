@@ -1,0 +1,499 @@
+{
+  "__TCA:ExportVersion": "3.11.23.0",
+  "__TCA:ExportedAt": "2026-06-21T03:17:33.8962716Z",
+  "name": "Scum",
+  "shortName": "Scum",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/513710/960a5d5c5b6dc60226b3a52954990269919261ed.ico",
+  "backgroundImage": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/513710/ss_62f56143b1c35cb843a4f3e29290a09176532ee5.jpg",
+  "minSlots": 4,
+  "maxSlots": 64,
+  "defaultSlots": 4,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "custom_script",
+    "rconProtocol": "",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "MemoryWrapper",
+    "logFile": "SCUM/Saved/Logs/SCUM.log",
+    "inputSource": "ConsoleCommands",
+    "printRconResponse": false,
+    "outputFilters": "",
+    "stopCommand": "",
+    "waitAfterStopCommand": 180000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": true,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 7000,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 0,
+        "expression": ""
+      },
+      {
+        "id": "CustomPort1",
+        "port": 7002,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "SCUM\\Binaries\\Win64\\SCUMServer.exe",
+    "relativeWorkingDirectory": "SCUM\\Binaries\\Win64\\",
+    "autoSetupFolderName": "scum",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 3792580,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 513710,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": true,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-port=${GamePort} -queryport=${QueryPort} -MaxPlayers=${Slots} -log",
+    "defaultCustomCommandline": "",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "-port=${GamePort} -queryport=${QueryPort} -MaxPlayers=${Slots} -log"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [],
+  "configFiles": [
+    {
+      "id": 1281,
+      "relativePath": "SCUM\\Saved\\Config\\WindowsServer\\AdminUsers.ini",
+      "description": "Main configuration file",
+      "template": "",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 1282,
+      "relativePath": "SCUM\\Saved\\Config\\WindowsServer\\BannedUsers.ini",
+      "description": "Main configuration file",
+      "template": "",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 1283,
+      "relativePath": "SCUM\\Saved\\Config\\WindowsServer\\EconomyOverride.json",
+      "description": "Main configuration file",
+      "template": "\n{\n\t\u0022economy-override\u0022:\n\t{\n\t\t\u0022economy-reset-time-hours\u0022 : \u0022-1.0\u0022,\n\t\t\u0022prices-randomization-time-hours\u0022 : \u0022-1.0\u0022,\n\t\t\u0022tradeable-rotation-time-ingame-hours-min\u0022 : \u002248.0\u0022,\n\t\t\u0022tradeable-rotation-time-ingame-hours-max\u0022 : \u002296.0\u0022,\n\t\t\u0022tradeable-rotation-time-of-day-min\u0022 : \u00228.0\u0022,\n\t\t\u0022tradeable-rotation-time-of-day-max\u0022 : \u002216.0\u0022,\n\t\t\u0022fully-restock-tradeable-hours\u0022 : \u00222.0\u0022,\n\t\t\u0022trader-funds-change-rate-per-hour-multiplier\u0022 : \u00221.0\u0022,\n\t\t\u0022prices-subject-to-player-count\u0022 : \u00220\u0022,\n\t\t\u0022gold-price-subject-to-global-multiplier\u0022 : \u00221\u0022,\n\t\t\u0022gold-base-price\u0022 : \u0022-1\u0022,\n\t\t\u0022gold-sale-price-modifier\u0022 : \u0022-1.0\u0022,\n\t\t\u0022gold-price-change-percentage-step\u0022 : \u0022-1.0\u0022,\n\t\t\u0022gold-price-change-per-step\u0022 : \u0022-1.0\u0022,\n\t\t\u0022economy-logging\u0022 : \u00221\u0022,\n\t\t\u0022traders-unlimited-funds\u0022 : \u00220\u0022,\n\t\t\u0022traders-unlimited-stock\u0022 : \u00220\u0022,\n\t\t\u0022tradeable-rotation-enabled\u0022 : \u00221\u0022,\n\t\t\u0022enable-fame-point-requirement\u0022 : \u00221\u0022,\n\t\t\u0022traders\u0022 :\n\t\t{ \n\t\t\t\u0022A_0_Armory\u0022: \n\t\t\t[\n\t\t\t\t{\u0022tradeable-code\u0022 : \u0022Frag_Grenade\u0022, \u0022base-purchase-price\u0022 : \u0022-1\u0022, \u0022base-sell-price\u0022 : \u0022-1\u0022, \u0022delta-price\u0022 : \u0022-1.0\u0022, \u0022can-be-purchased\u0022 : \u0022default\u0022, \u0022required-famepoints\u0022 : \u0022-1\u0022},\n\t\t\t\t{\u0022tradeable-code\u0022 : \u0022Weapon_AK47\u0022, \u0022base-purchase-price\u0022 : \u0022-1\u0022, \u0022base-sell-price\u0022 : \u0022-1\u0022, \u0022delta-price\u0022 : \u0022-1.0\u0022, \u0022can-be-purchased\u0022 : \u0022default\u0022, \u0022required-famepoints\u0022 : \u0022-1\u0022}\n\t\t\t],\n\t\t\t\u0022A_0_BoatShop\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022A_0_Hospital\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022A_0_Mechanic\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022A_0_Saloon\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022A_0_Trader\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022B_4_Armory\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022B_4_BoatShop\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022B_4_Hospital\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022B_4_Mechanic\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022B_4_Saloon\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022B_4_Trader\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022C_2_Armory\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022C_2_BoatShop\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022C_2_Hospital\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022C_2_Mechanic\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022C_2_Saloon\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022C_2_Trader\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022Z_3_Armory\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022Z_3_BoatShop\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022Z_3_Hospital\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022Z_3_Mechanic\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022Z_3_Saloon\u0022:\n\t\t\t[\n\t\t\t],\n\t\t\t\u0022Z_3_Trader\u0022:\n\t\t\t[\n\t\t\t]\n\t\t}\t\n\t}\n}\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 1284,
+      "relativePath": "SCUM\\Saved\\Config\\WindowsServer\\RaidTimes.json",
+      "description": "Main configuration file",
+      "template": "{\n\t\u0022raiding-times\u0022: [\n\t\t{\n\t\t\t\u0022day\u0022: \u0022Weekdays\u0022,\n\t\t\t\u0022time\u0022: \u002217:00-19:00\u0022,\n\t\t\t\u0022start-announcement-time\u0022: \u002230\u0022,\n\t\t\t\u0022end-announcement-time\u0022: \u002230\u0022\n\t\t},\n\t\t{\n\t\t\t\u0022day\u0022: \u0022Weekend\u0022,\n\t\t\t\u0022time\u0022: \u002212:00-15:00\u0022,\n\t\t\t\u0022start-announcement-time\u0022: \u002230\u0022,\n\t\t\t\u0022end-announcement-time\u0022: \u002230\u0022\n\t\t},\n\t\t{\n\t\t\t\u0022day\u0022: \u0022Monday-Wednesday\u0022,\n\t\t\t\u0022time\u0022: \u002210:00-11:30\u0022,\n\t\t\t\u0022start-announcement-time\u0022: \u002230\u0022,\n\t\t\t\u0022end-announcement-time\u0022: \u002215\u0022\n\t\t},\n\t\t{\n\t\t\t\u0022day\u0022: \u0022Monday,Wednesday,Friday\u0022,\n\t\t\t\u0022time\u0022: \u002207:12-09:01\u0022,\n\t\t\t\u0022start-announcement-time\u0022: \u002230\u0022,\n\t\t\t\u0022end-announcement-time\u0022: \u002220\u0022\n\t\t},\n\t\t{\n\t\t\t\u0022day\u0022: \u0022Thursday\u0022,\n\t\t\t\u0022time\u0022: \u002221:00-23:45\u0022,\n\t\t\t\u0022start-announcement-time\u0022: \u002230\u0022,\n\t\t\t\u0022end-announcement-time\u0022: \u002230\u0022\n\t\t}\n\t]\n}",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 1285,
+      "relativePath": "SCUM\\Saved\\Config\\WindowsServer\\ServerSettings.ini",
+      "description": "Main configuration file",
+      "template": "[General]\nscum.ServerName=${Hostname}\nscum.ServerDescription=Server Description\nscum.ServerPassword=\nscum.MaxPlayers=${Slots}\nscum.ServerBannerUrl=\nscum.ServerPlaystyle=PVE\nscum.WelcomeMessage=Welcome to our SCUM Server\nscum.MessageOfTheDay=This is the Message of the Day.\nscum.MessageOfTheDayCooldown=10.000000\nscum.MinServerTickRate=5\nscum.MaxServerTickRate=30\nscum.MaxPing=200.000000\nscum.LogoutTimer=60.000000\nscum.LogoutTimerWhileCaptured=120.000000\nscum.LogoutTimerInBunker=30000.000000\nscum.AllowFirstPerson=1\nscum.AllowThirdPerson=1\nscum.AllowCrosshair=1\nscum.AllowVoting=1\nscum.AllowMapScreen=1\nscum.AllowKillClaiming=1\nscum.AllowComa=1\nscum.AllowMinesAndTraps=1\nscum.AllowSkillGainInSafeZones=0\nscum.AllowEvents=1\nscum.LimitGlobalChat=0\nscum.AllowGlobalChat=1\nscum.AllowLocalChat=1\nscum.AllowSquadChat=1\nscum.AllowAdminChat=1\nscum.RustyLocksLogging=0\nscum.HideKillNotification=1\nscum.DisableTimedGifts=0\nscum.UseMapBaseBuildingRestriction=1\nscum.DisableBaseBuilding=0\nscum.VotingDuration=60.000000\nscum.PlayerMinimalVotingInterest=0.500000\nscum.PlayerPositiveVotePercentage=0.500000\nscum.MasterServerEndpoints=\nscum.MasterServerUpdateSendInterval=60.000000\nscum.PartialWipe=0\nscum.GoldWipe=0\nscum.FullWipe=0\nscum.ItemVirtualizationRelevancyUpdatePeriod=1.000000\nscum.ItemVirtualizationEventProcessingTimeBudget=5.000000\nscum.ItemVirtualizationVisitorDistanceTravelledForUpdate=100.000000\nscum.ItemVirtualizationVisitorBounds=10000.000000\nscum.VirtualizedItemBounds=100.000000\nscum.FameGainMultiplier=1.000000\nscum.FamePointPenaltyOnDeath=0.100000\nscum.FamePointPenaltyOnKilled=0.500000\nscum.FamePointRewardOnKill=0.250000\nscum.LogSuicides=0\nscum.EnableSpawnOnGround=0\nscum.DeleteInactiveUsers=1\nscum.DaysSinceLastLoginToBecomeInactive=180\nscum.DeleteBannedUsers=0\nscum.MaximumTimeForChestsInForbiddenZones=02:00:00\nscum.LogChestOwnership=1\nscum.SettingsVersion=3\n\n[World]\nscum.MaxAllowedBirds=15\nscum.MaxAllowedCharacters=-1\nscum.MaxAllowedPuppets=-1\nscum.MaxAllowedAnimals=-1\nscum.MaxAllowedNPCs=-1\nscum.EncounterBaseCharacterAmountMultiplier=1.000000\nscum.EncounterExtraCharacterPerPlayerMultiplier=1.000000\nscum.EncounterExtraCharacterPlayerCapMultiplier=1.000000\nscum.EncounterCharacterRespawnTimeMultiplier=1.000000\nscum.EncounterCharacterRespawnBatchSizeMultiplier=1.000000\nscum.EncounterCharacterAggressiveSpawnChanceOverride=-1.000000\nscum.EncounterCharacterAINoiseResponseRadiusMultiplier=1.000000\nscum.EncounterHordeGroupBaseCharacterAmountMultiplier=1.000000\nscum.EncounterHordeGroupExtraCharacterPerPlayerMultiplier=1.000000\nscum.EncounterHordeGroupExtraCharacterPlayerCapMultiplier=1.000000\nscum.EncounterHordeBaseCharacterAmountMultiplier=1.000000\nscum.EncounterHordeExtraCharacterPerPlayerMultiplier=1.000000\nscum.EncounterHordeExtraCharacterPlayerCapMultiplier=1.000000\nscum.EncounterHordeActivationChanceMultiplier=1.000000\nscum.EncounterHordeNoiseCheckCooldownMultiplier=1.000000\nscum.EncounterHordeSpawnDistanceMultiplier=1.000000\nscum.EncounterHordeGroupRefillTimeMultiplier=1.000000\nscum.EncounterHordeShouldPlayActivationSound=0\nscum.EncounterHordePuppetHordeActivationScreamOverrideChance=-1.000000\nscum.EncounterCanRemoveLowPriorityCharacters=1\nscum.EncounterCanClampCharacterNumWhenOutOfResources=1\nscum.EncounterGlobalZoneCooldownMultiplier=1.000000\nscum.EncounterEnableSpawnPreventionAreaSpawnOnCharacterDeath=0\nscum.PuppetWorldEncounterSpawnWeightMultiplier=1.000000\nscum.AnimalWorldEncounterSpawnWeightMultiplier=1.000000\nscum.DropshipWorldEncounterSpawnWeightMultiplier=1.000000\nscum.EnableDropshipAbandonedBunkerEncounter=1\nscum.DropshipAbandonedBunkerEncounterTriggerChance=-1.000000\nscum.BaseBuildingEncounterTriggerChance=-1.000000\nscum.BaseBuildingEncounterTriggerTimeMultiplier=1.000000\nscum.EnableDropshipBaseBuildingEncounter=0\nscum.SpawnEncountersInThreatZonesIgnoringBaseBuilding=0\nscum.EnableEncounterManagerLowPlayerCountMode=0\nscum.BaseBuildingEncounterMinNumElementsToStart=-1\nscum.BaseBuildingEncounterMinNumElementsToEnd=-1\nscum.BaseBuildingEncounterDamagePercentageIncreasePerSquadMember=0.000000\nscum.BaseBuildingEncounterTimeToFullMinNumToEnd=-1.000000\nscum.BaseBuildingEncounterMaximumMinToEndReduction=-1\nscum.MaxAllowedDrones=0\nscum.DisableSentrySpawning=0\nscum.EnableSentryRespawning=1\nscum.DisableSuicidePuppetSpawning=0\nscum.AbandonedBunkerCommotionThreshold=-1.000000\nscum.AbandonedBunkerCommotionThresholdPerPlayerExtra=-1.000000\nscum.AbandonedBunkerEnemyActivationThreshold=-1.000000\nscum.AbandonedBunkerEnemyActivationThresholdPerPlayerExtra=-1.000000\nscum.AbandonedBunkerResetArmoryLockersOnActivationOnly=1\nscum.PuppetsCanOpenDoors=1\nscum.PuppetsCanVaultWindows=1\nscum.PuppetHealthMultiplier=1.000000\nscum.DropshipHealthMultiplier=1.000000\nscum.SentryHealthMultiplier=1.000000\nscum.BaseBuildingAttackerSentryHealthMultiplier=1.000000\nscum.ArmedNPCDifficultyLevel=2\nscum.ProbabilityForArmedNPCToDropItemFromHandsWhenSearched=0.400000\nscum.StartTimeOfDay=08:00:00\nscum.TimeOfDaySpeed=3.840000\nscum.NighttimeDarkness=0.000000\nscum.SunriseTime=06:00:00\nscum.SunsetTime=21:00:00\nscum.ShouldDestroyEntitiesOutsideMapLimitsOnRestart=1\nscum.EnableLockedLootContainers=1\nscum.CustomMapEnabled=0\nscum.CustomMapCenterXCoordinate=0.000000\nscum.CustomMapCenterYCoordinate=0.000000\nscum.CustomMapWidth=15.240000\nscum.CustomMapHeight=15.240000\nscum.DoorLockability.Garage=0\nscum.CargoDropCooldownMinimum=90.000000\nscum.CargoDropCooldownMaximum=120.000000\nscum.CargoDropFallDelay=540.000000\nscum.CargoDropFallDuration=60.000000\nscum.CargoDropSelfdestructTime=1200.000000\nscum.CargoDropZombieEncounterWeightMultiplier=1.000000\nscum.CargoDropDropshipEncounterWeightMultiplier=1.000000\nscum.MaxAllowedHunts=20\nscum.HuntTriggerChanceOverride_ContinentalForest=-1.000000\nscum.HuntTriggerChanceOverride_ContinentalMeadow=-1.000000\nscum.HuntTriggerChanceOverride_Mediterranean=-1.000000\nscum.HuntTriggerChanceOverride_Mountain=-1.000000\nscum.HuntTriggerChanceOverride_Urban=-1.000000\nscum.HuntTriggerChanceOverride_Village=-1.000000\nscum.HuntFailureTime=150.000000\nscum.HuntFailureDistance=300.000000\nscum.BearMaxHealthMultiplier=1.000000\nscum.BoarMaxHealthMultiplier=1.000000\nscum.ChickenMaxHealthMultiplier=1.000000\nscum.DeerMaxHealthMultiplier=1.000000\nscum.DonkeyMaxHealthMultiplier=1.000000\nscum.GoatMaxHealthMultiplier=1.000000\nscum.HorseMaxHealthMultiplier=1.000000\nscum.RabbitMaxHealthMultiplier=1.000000\nscum.WolfMaxHealthMultiplier=1.000000\nscum.MaxAllowedKillboxKeycards=2\nscum.MaxAllowedKillboxKeycards_PoliceStation=1\nscum.MaxAllowedKillboxKeycards_RadiationZone=1\nscum.AbandonedBunkerMaxSimultaneouslyActive=2\nscum.AbandonedBunkerActiveDurationHours=24.000000\nscum.AbandonedBunkerKeyCardActiveDurationHours=3.000000\nscum.SecretBunkerKeyCardActiveDurationHours=0.500000\n\n[Respawn]\nscum.AllowSectorRespawn=1\nscum.AllowShelterRespawn=1\nscum.AllowSquadmateRespawn=1\nscum.RandomRespawnPrice=250\nscum.SectorRespawnPrice=1000\nscum.ShelterRespawnPrice=1g\nscum.SquadRespawnPrice=3g\nscum.RandomRespawnInitialTime=0.000000\nscum.SectorRespawnInitialTime=60.000000\nscum.ShelterRespawnInitialTime=60.000000\nscum.SquadRespawnInitialTime=60.000000\nscum.RandomRespawnCooldown=0.000000\nscum.SectorRespawnCooldown=240.000000\nscum.ShelterRespawnCooldown=240.000000\nscum.SquadRespawnCooldown=60.000000\nscum.RandomCooldownResetMultiplier=0.000000\nscum.SectorCooldownResetMultiplier=3.000000\nscum.ShelterCooldownResetMultiplier=3.000000\nscum.SquadCooldownResetMultiplier=2.000000\nscum.RandomPricePerSquadmateModifier=0.000000\nscum.SectorPricePerSquadmateModifier=0.000000\nscum.ShelterPricePerSquadmateModifier=0.000000\nscum.CommitSuicideInitialTime=0.000000\nscum.CommitSuicideCooldown=60.000000\nscum.CommitSuicideCooldownResetMultiplier=1.250000\nscum.MaximumBaseProximityWhenSpawning=10000.000000\nscum.PermadeathThreshold=-2500\n\n[Vehicles]\nscum.FuelDrainFromEngineMultiplier=1.000000\nscum.BatteryDrainFromEngineMultiplier=1.000000\nscum.BatteryDrainFromDevicesMultiplier=1.000000\nscum.BatteryDrainFromInactivityMultiplier=1.000000\nscum.BatteryChargeWithAlternatorMultiplier=1.000000\nscum.BatteryChargeWithDynamoMultiplier=1.000000\nscum.KingletDusterMaxAmount=2\nscum.KingletDusterMaxFunctionalAmount=2\nscum.KingletDusterMinPurchasedAmount=0\nscum.DirtbikeMaxAmount=20\nscum.DirtbikeMaxFunctionalAmount=20\nscum.DirtbikeMinPurchasedAmount=5\nscum.LaikaMaxAmount=50\nscum.LaikaMaxFunctionalAmount=20\nscum.LaikaMinPurchasedAmount=5\nscum.MotorboatMaxAmount=11\nscum.MotorboatMaxFunctionalAmount=11\nscum.MotorboatMinPurchasedAmount=5\nscum.WheelbarrowMaxAmount=20\nscum.WheelbarrowMaxFunctionalAmount=20\nscum.WheelbarrowMinPurchasedAmount=10\nscum.WolfswagenMaxAmount=50\nscum.WolfswagenMaxFunctionalAmount=20\nscum.WolfswagenMinPurchasedAmount=5\nscum.BicycleMaxAmount=20\nscum.BicycleMaxFunctionalAmount=20\nscum.BicycleMinPurchasedAmount=5\nscum.RagerMaxAmount=50\nscum.RagerMaxFunctionalAmount=20\nscum.RagerMinPurchasedAmount=5\nscum.CruiserMaxAmount=50\nscum.CruiserMaxFunctionalAmount=20\nscum.CruiserMinPurchasedAmount=5\nscum.RisMaxAmount=50\nscum.RisMaxFunctionalAmount=20\nscum.RisMinPurchasedAmount=5\nscum.SUPMaxAmount=30\nscum.SUPMaxFunctionalAmount=20\nscum.SUPMinPurchasedAmount=5\nscum.KingletMarinerMaxAmount=1\nscum.KingletMarinerMaxFunctionalAmount=1\nscum.KingletMarinerMinPurchasedAmount=0\nscum.TractorMaxAmount=50\nscum.TractorMaxFunctionalAmount=20\nscum.TractorMinPurchasedAmount=5\nscum.MaximumTimeOfVehicleInactivity=240:00:00\nscum.MaximumTimeForVehiclesInForbiddenZones=02:00:00\nscum.LogVehicleDestroyed=1\n\n[Damage]\nscum.HumanToHumanDamageMultiplier=1.000000\nscum.HumanToHumanArmedMeleeDamageMultiplier=1.000000\nscum.HumanToHumanUnarmedMeleeDamageMultiplier=1.000000\nscum.HumanToHumanThrowingDamageMultiplier=1.000000\nscum.SentryDamageMultiplier=1.000000\nscum.SentryRailgunDamageMultiplier=1.000000\nscum.SentryGrenadeDamageMultiplier=1.000000\nscum.BaseBuildingAttackerSentryDamageMultiplier=1.000000\nscum.BaseBuildingAttackerSentryRailgunDamageMultiplier=1.000000\nscum.BaseBuildingAttackerSentryGrenadeDamageMultiplier=1.000000\nscum.SentryBaseBuildingDamageMultiplier=1.000000\nscum.DropshipDamageMultiplier=1.000000\nscum.DropshipRailgunDamageMultiplier=1.000000\nscum.DropshipBaseBuildingElementsDamageMultiplier=1.000000\nscum.ZombieDamageMultiplier=1.000000\nscum.ItemDecayDamageMultiplier=0.500000\nscum.FoodDecayDamageMultiplier=1.000000\nscum.WeaponDecayDamageOnFiring=1.000000\nscum.LockProtectionDamageMultiplier=1.000000\n\n[Features]\nscum.FlagOvertakeDuration=24:00:00\nscum.MaximumAmountOfElementsPerFlag=100\nscum.ExtraElementsPerFlagForAdditionalSquadMember=25\nscum.MaximumNumberOfExpandedElementsPerFlag=75\nscum.AllowMultipleFlagsPerPlayer=0\nscum.AllowFlagPlacementOnBBElements=0\nscum.ChestAcquisitionDuration=24.000000\nscum.WeaponRackMaxAmountPerFlagArea=-1\nscum.WeaponRackStartDecayingIfFlagAreaHasMoreThan=-1\nscum.WallWeaponRackMaxAmountPerFlagArea=-1\nscum.WallWeaponRackStartDecayingIfFlagAreaHasMoreThan=-1\nscum.WellMaxAmountPerFlagArea=-1\nscum.WellStartDecayingIfFlagAreaHasMoreThan=-1\nscum.TurretMaxAmountPerFlagArea=-1\nscum.TurretStartDecayingIfFlagAreaHasMoreThan=-1\nscum.GardenMaxAmountPerFlagArea=-1\nscum.AllowFloorPlacementOnHalfAndLowWalls=0\nscum.AllowWallPlacementOnHalfAndLowWalls=1\nscum.RaidProtectionType=0\nscum.RaidProtectionEnableLog=0\nscum.RaidProtectionFlagSpecificChangeSettingCooldown=120:00:00\nscum.RaidProtectionFlagSpecificChangeSettingPrice=10g\nscum.RaidProtectionFlagSpecificMaxProtectionTime=08:00:00\nscum.RaidProtectionOfflineProtectionStartDelay=00:30:00\nscum.RaidProtectionOfflineMaxProtectionTime=-\nscum.RaidProtectionGlobalShouldShowRaidTimesMessage=1\nscum.RaidProtectionGlobalShouldShowRaidAnnouncementMessage=1\nscum.RaidProtectionGlobalShouldShowRaidStartEndMessages=1\nscum.WaterPricePerUnitMultiplier=1.000000\nscum.WaterPeriodicInitialAmountMultiplier=1.000000\nscum.WaterPeriodicMaxAmountMultiplier=1.000000\nscum.WaterPeriodicReplenishAmountMultiplier=1.000000\nscum.WaterPeriodicReplenishIntervalMultiplier=1.000000\nscum.WaterProximityReplenishAmountMultiplier=1.000000\nscum.WaterProximityReplenishChanceMultiplier=1.000000\nscum.WaterProximityReplenishTimeoutMultiplier=1.000000\nscum.GasolinePricePerUnitMultiplier=1.000000\nscum.GasolinePeriodicInitialAmountMultiplier=1.000000\nscum.GasolinePeriodicMaxAmountMultiplier=1.000000\nscum.GasolinePeriodicReplenishAmountMultiplier=1.000000\nscum.GasolinePeriodicReplenishIntervalMultiplier=1.000000\nscum.GasolineProximityReplenishAmountMultiplier=1.000000\nscum.GasolineProximityReplenishChanceMultiplier=1.000000\nscum.GasolineProximityReplenishTimeoutMultiplier=1.000000\nscum.PropanePricePerUnitMultiplier=1.000000\nscum.PropanePeriodicInitialAmountMultiplier=1.000000\nscum.PropanePeriodicMaxAmountMultiplier=1.000000\nscum.PropanePeriodicReplenishAmountMultiplier=1.000000\nscum.PropanePeriodicReplenishIntervalMultiplier=1.000000\nscum.PropaneProximityReplenishAmountMultiplier=1.000000\nscum.PropaneProximityReplenishChanceMultiplier=1.000000\nscum.PropaneProximityReplenishTimeoutMultiplier=1.000000\nscum.SpawnerProbabilityMultiplier=1.000000\nscum.ExamineSpawnerProbabilityMultiplier=1.000000\nscum.ExamineSpawnerExpirationTimeMultiplier=1.000000\nscum.SpawnerExpirationTimeMultiplier=1.000000\nscum.EnableItemCooldownGroups=1\nscum.ItemCooldownGroupsDurationMultiplier=1.000000\nscum.SquadMemberCountAtIntLevel1=2\nscum.SquadMemberCountAtIntLevel2=4\nscum.SquadMemberCountAtIntLevel3=6\nscum.SquadMemberCountAtIntLevel4=8\nscum.SquadMemberCountAtIntLevel5=10\nscum.SquadMemberCountLimitForPunishment=2\nscum.RTSquadProbationDuration=1.000000\nscum.SquadMoneyPenaltyPerPrevSquadMember=0\nscum.SquadFamePointsPenaltyPerPrevSquadMember=0\nscum.EnableSquadMemberNameWidget=0\nscum.PlantHarvestExamineTimeMultiplier=1.000000\nscum.FirstPlantHarvestAdditionalChance=1.000000\nscum.ArcherySkillMultiplier=1.000000\nscum.AviationSkillMultiplier=1.000000\nscum.AwarenessSkillMultiplier=1.000000\nscum.BrawlingSkillMultiplier=1.000000\nscum.CamouflageSkillMultiplier=1.000000\nscum.CookingSkillMultiplier=1.000000\nscum.DemolitionSkillMultiplier=1.000000\nscum.DrivingSkillMultiplier=1.000000\nscum.EnduranceSkillMultiplier=1.000000\nscum.EngineeringSkillMultiplier=1.000000\nscum.FarmingSkillMultiplier=1.000000\nscum.HandgunSkillMultiplier=1.000000\nscum.MedicalSkillMultiplier=1.000000\nscum.MeleeWeaponsSkillMultiplier=1.000000\nscum.MotorcycleSkillMultiplier=1.000000\nscum.RiflesSkillMultiplier=1.000000\nscum.RunningSkillMultiplier=1.000000\nscum.SnipingSkillMultiplier=1.000000\nscum.StealthSkillMultiplier=1.000000\nscum.SurvivalSkillMultiplier=1.000000\nscum.ThieverySkillMultiplier=1.000000\nscum.QuestsEnabled=1\nscum.QuestsGlobalCycleDuration=23:59:59\nscum.MaxQuestsPerCyclePerTrader=3\nscum.MaxSimultaneousQuestsPerTrader=1\nscum.QuestsTraderRefillCooldown=03:00:00\nscum.QuestsPhoneRefillCooldown=01:00:00\nscum.QuestsNoticeBoardRefillCooldown=02:00:00\nscum.QuestRequirementsBlockTradeableItems=0\nscum.TurretsAttackPrisoners=1\nscum.TurretsAttackPuppets=1\nscum.TurretsAttackVehicles=1\nscum.TurretsAttackSentries=1\nscum.TurretsAttackAnimals=1\nscum.TurretsAttackArmedNPCs=1\nscum.MovementInertiaAmount=1.000000\nscum.StaminaDrainOnJumpMultiplier=1.000000\nscum.StaminaDrainOnClimbMultiplier=1.000000\nscum.DisableExhaustion=0\nscum.BodySimulationSpeedMultiplier=3.840000\nscum.MaintainItemsExpirationTime=360:00:00\nscum.KillboxDefuseFailureBonus=0.200000\nscum.BedrollVisibilityTimer=1.000000\nscum.EnableBCULocking=1\nscum.NameChangeCooldown=168.000000\nscum.NameChangeCost=1000\nscum.EnableNewPlayerProtection=1\nscum.NewPlayerProtectionDuration=120.000000\nscum.AllowAutomaticParachuteOpening=1\nscum.HideQuickAccessBar=0\nscum.HideLifeIndicators=0\nscum.EnableDeenaOnServer=1\nscum.EnableDigitalDeluxeStarterPack=1\n\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "AfterServiceCreated",
+          "AfterServiceReinstalled",
+          "BeforeServiceStarted"
+        ],
+        "name": "download windows-kill.exe",
+        "description": "download windows-kill.exe",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, TCAdmin.Web.Shared.dll, System.Net.Http.dll, System.IO.Compression.dll, System.IO.Compression.ZipFile.dll, System.Diagnostics.Process.dll\nusing System;\nusing System.IO;\nusing System.IO.Compression;\nusing System.Net.Http;\nusing System.Diagnostics;\nusing System.Threading.Tasks;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// SCUM dependency provisioning (standalone \u2014 this official config carries its own deps and\n// does not rely on the shared \u0022Install VC\u002B\u002B/DirectX\u0022 global scripts).\n//   * Linux host  -\u003E SCUM runs under Wine. Install the VC\u002B\u002B/D3D runtimes it links against\n//                    into the service\u0027s Wine prefix via winetricks. windows-kill.exe is a\n//                    Windows-only tool and is NOT needed here \u2014 the BeforeServiceStopped\n//                    script sends a native SIGINT on Linux.\n//   * Windows host -\u003E download windows-kill.exe (used by the BeforeServiceStopped Ctrl\u002BC script).\n// Marked Windows in the blueprint so the script DB-filter (which keys on the GAME OS) fetches\n// it on a Wine host; the host check below routes to the correct branch.\n\nstring root = ThisService.RootDirectory;\n\nif (System.OperatingSystem.IsLinux())\n{\n    string prefix = Path.Combine(root, \u0022.wine\u0022);\n    string marker = Path.Combine(prefix, \u0022.tcadmin-winedeps\u0022);\n    if (File.Exists(marker))\n    {\n        ScriptConsole.WriteLine(\u0022[scum-deps] Wine runtimes already installed in the prefix.\u0022);\n        return;\n    }\n\n    ScriptConsole.WriteLine(\u0022[scum-deps] Installing VC\u002B\u002B/D3D runtimes into the Wine prefix via winetricks (can take a few minutes)...\u0022);\n\n    string b = string.Join(\u0022 \u0022,\n        \u0022set -e;\u0022,\n        $\u0022ROOT=\u0027{root}\u0027;\u0022,\n        \u0022PREFIX=\\\u0022$ROOT/.wine\\\u0022;\u0022,\n        \u0022MARKER=\\\u0022$PREFIX/.tcadmin-winedeps\\\u0022;\u0022,\n        \u0022OWNER=$(stat -c \u0027%U\u0027 \\\u0022$ROOT\\\u0022);\u0022,\n        \u0022echo \\\u0022[scum-deps] service user: $OWNER\\\u0022;\u0022,\n        \u0022RT=\\\u0022$ROOT/.tca/xdg-runtime\\\u0022; mkdir -p \\\u0022$RT\\\u0022; chmod 700 \\\u0022$RT\\\u0022; chown \\\u0022$OWNER\\\u0022 \\\u0022$RT\\\u0022;\u0022,\n        \u0022runuser -u \\\u0022$OWNER\\\u0022 -- env WINEPREFIX=\\\u0022$PREFIX\\\u0022 HOME=\\\u0022$ROOT\\\u0022 XDG_RUNTIME_DIR=\\\u0022$RT\\\u0022 WINEARCH=win64 WINEDEBUG=-all WINEDLLOVERRIDES=\u0027mscoree=;mshtml=\u0027 xvfb-run -a winetricks -q vcrun2019 d3dcompiler_47;\u0022,\n        \u0022touch \\\u0022$MARKER\\\u0022; chown \\\u0022$OWNER\\\u0022 \\\u0022$MARKER\\\u0022;\u0022,\n        \u0022echo \u0027[scum-deps] winetricks finished\u0027;\u0022);\n\n    var psi = new ProcessStartInfo\n    {\n        FileName = \u0022/bin/bash\u0022,\n        UseShellExecute = false,\n        RedirectStandardOutput = true,\n        RedirectStandardError = true,\n    };\n    psi.ArgumentList.Add(\u0022-c\u0022);\n    psi.ArgumentList.Add(b);\n\n    using (var p = Process.Start(psi))\n    {\n        string outText = await p.StandardOutput.ReadToEndAsync();\n        string errText = await p.StandardError.ReadToEndAsync();\n        await p.WaitForExitAsync();\n        if (!string.IsNullOrWhiteSpace(outText))\n            ScriptConsole.WriteLine(outText.Length \u003E 2500 ? outText.Substring(outText.Length - 2500) : outText);\n        if (!string.IsNullOrWhiteSpace(errText))\n            ScriptConsole.WriteLine(\u0022[scum-deps stderr] \u0022 \u002B (errText.Length \u003E 1000 ? errText.Substring(errText.Length - 1000) : errText));\n        ScriptConsole.WriteLine($\u0022[scum-deps] winetricks exit code: {p.ExitCode}\u0022);\n    }\n    return;\n}\n\n// Native Windows: download windows-kill.exe into the service root for the Ctrl\u002BC stop script.\nconst string url = \u0022https://github.com/ElyDotDev/windows-kill/releases/download/1.1.4/windows-kill_1.1.4_release.zip\u0022;\nconst string entryPath = \u0022windows-kill_x64_1.1.4_lib_release/windows-kill.exe\u0022;\n\nstring targetDir = root;\nDirectory.CreateDirectory(targetDir);\nstring targetExe = Path.Combine(targetDir, \u0022windows-kill.exe\u0022);\nif (File.Exists(targetExe))\n{\n    ScriptConsole.WriteLine(\u0022windows-kill.exe already present; skipping download.\u0022);\n    return;\n}\n\nstring zipPath = Path.Combine(targetDir, \u0022windows-kill_1.1.4_release.zip\u0022);\n\nScriptConsole.WriteLine($\u0022Downloading {url}\u0022);\nusing (var http = new HttpClient())\n{\n    byte[] data = await http.GetByteArrayAsync(url, ThisCancellationToken);\n    await File.WriteAllBytesAsync(zipPath, data, ThisCancellationToken);\n}\nScriptConsole.WriteLine($\u0022Downloaded to {zipPath}\u0022);\n\nusing (ZipArchive archive = ZipFile.OpenRead(zipPath))\n{\n    ZipArchiveEntry entry = archive.GetEntry(entryPath);\n    if (entry == null)\n        throw new Exception($\u0022Entry \u0027{entryPath}\u0027 not found in the archive.\u0022);\n    entry.ExtractToFile(targetExe, overwrite: true);\n}\nScriptConsole.WriteLine($\u0022Extracted windows-kill.exe to {targetExe}\u0022);\n\ntry\n{\n    File.Delete(zipPath);\n    ScriptConsole.WriteLine($\u0022Deleted archive {zipPath}\u0022);\n}\ncatch (Exception ex)\n{\n    ScriptConsole.WriteLine($\u0022Warning: could not delete zip file: {ex.Message}\u0022);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "926dfc44-d262-4a60-95ac-705a9309a568"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeServiceStopped"
+        ],
+        "name": "kill process with control\u002Bc",
+        "description": "kill process with control\u002Bc",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, TCAdmin.Web.Shared.dll, System.Diagnostics.Process.dll\nusing System;\nusing System.Diagnostics;\nusing System.IO;\nusing System.Threading;\nusing System.Threading.Tasks;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// SCUM must receive ONE Ctrl\u002BC (SIGINT) to save and shut down cleanly. A plain kill \u2014 or a SECOND\n// Ctrl\u002BC (the log literally says \u0022CTRL-C TO FORCE QUIT\u0022) \u2014 skips the save and can corrupt the world.\n// BeforeServiceStopped runs before the handler, so this delivers exactly one Ctrl\u002BC and waits for the\n// save to finish (it must be the SOLE Ctrl\u002BC source \u2014 the blueprint StopCommand is cleared, because the\n// built-in FindWineProcess path signals the wrong/many processes).\n//   * Linux/Wine: SCUMServer.exe runs behind a \u0060start.exe /exec\u0060 wrapper, and the monitor\u0027s tracked\n//     PID is that wrapper (signalling it does nothing). Send ONE native SIGINT to the real\n//     SCUMServer.exe process \u2014 wine forwards it as a console Ctrl\u002BC, firing SCUM\u0027s ConsoleCtrl handler.\n//   * Windows: use windows-kill.exe (Windows has no simple \u0022send Ctrl\u002BC to another process\u0022).\n\nstring RunBash(string cmd)\n{\n    var psi = new ProcessStartInfo { FileName = \u0022/bin/bash\u0022, UseShellExecute = false, RedirectStandardOutput = true, RedirectStandardError = true };\n    psi.ArgumentList.Add(\u0022-c\u0022);\n    psi.ArgumentList.Add(cmd);\n    using var p = Process.Start(psi);\n    string o = p.StandardOutput.ReadToEnd();\n    p.WaitForExit();\n    return o;\n}\n\nif (System.OperatingSystem.IsLinux())\n{\n    // Scope to THIS service so multiple SCUM servers on one host never cross-signal: every SCUM\n    // process (the start.exe launcher AND the game) carries this service\u0027s root directory in its\n    // args. Match it slash-agnostically \u2014 wine shows the path as \u0060Z:\\...\\\u0060 (backslashes) while the\n    // launcher uses \u0060/...\u0060 (forward). The real game = the matching SCUMServer.exe that is NOT the\n    // start.exe wrapper; lowest PID is the main process (its workers have higher PIDs). Send ONE\n    // SIGINT only (a second Ctrl\u002BC force-quits SCUM without saving).\n    string rootNorm = ThisService.RootDirectory.Replace(\u0027\\\\\u0027, \u0027/\u0027);\n    if (!rootNorm.EndsWith(\u0022/\u0022)) rootNorm \u002B= \u0022/\u0022;   // trailing slash = path boundary (so /189/ != /1890/)\n\n    int gamePid = -1;\n    foreach (var raw in RunBash(\u0022ps -eo pid=,args=\u0022).Split(\u0027\\n\u0027))\n    {\n        var line = raw.Trim();\n        int sp = line.IndexOf(\u0027 \u0027);\n        if (sp \u003C= 0) continue;\n        if (!int.TryParse(line.Substring(0, sp), out int pid)) continue;\n        string argsNorm = line.Substring(sp \u002B 1).Replace(\u0027\\\\\u0027, \u0027/\u0027);\n        if (argsNorm.IndexOf(\u0022SCUMServer.exe\u0022, StringComparison.OrdinalIgnoreCase) \u003C 0) continue; // a SCUM process\n        if (!argsNorm.Contains(rootNorm)) continue;                                               // belongs to THIS service\n        if (argsNorm.IndexOf(\u0022start.exe\u0022, StringComparison.OrdinalIgnoreCase) \u003E= 0) continue;     // skip the launcher\n        if (gamePid \u003C 0 || pid \u003C gamePid) gamePid = pid;                                          // main game = lowest PID\n    }\n\n    if (gamePid \u003C 0)\n    {\n        ScriptConsole.WriteLine(\u0022[scum-stop] No running SCUMServer.exe for this service; nothing to stop.\u0022);\n        return;\n    }\n\n    ScriptConsole.WriteLine($\u0022[scum-stop] Sending one SIGINT (Ctrl\u002BC) to this service\u0027s SCUMServer.exe pid {gamePid} for a clean save \u002B shutdown.\u0022);\n    RunBash($\u0022kill -INT {gamePid}\u0022);\n\n    // Wait up to 180s for SCUM to finish saving and exit. Do NOT send a second SIGINT (it force-quits).\n    for (int i = 1; i \u003C= 180; i\u002B\u002B)\n    {\n        string alive = RunBash($\u0022kill -0 {gamePid} 2\u003E/dev/null \u0026\u0026 echo yes || echo no\u0022).Trim();\n        if (alive == \u0022no\u0022)\n        {\n            ScriptConsole.WriteLine($\u0022[scum-stop] SCUMServer.exe ({gamePid}) saved and exited after {i}s.\u0022);\n            return;\n        }\n        await Task.Delay(TimeSpan.FromSeconds(1), ThisCancellationToken);\n    }\n    ScriptConsole.WriteLine(\u0022[scum-stop] WARNING: SCUMServer.exe did not exit within 180s.\u0022);\n    return;\n}\n\n// Windows: windows-kill.exe (downloaded by the provisioning script).\nint? pid = ThisService.ProcessId;\nif (pid == null || pid \u003C= 0)\n{\n    ScriptConsole.WriteLine(\u0022No running process id for this service; nothing to stop.\u0022);\n    return;\n}\n\nstring killExe = Path.Combine(ThisService.RootDirectory, \u0022windows-kill.exe\u0022);\nif (!File.Exists(killExe))\n{\n    ScriptConsole.WriteLine($\u0022windows-kill.exe not found at {killExe}; skipping graceful Ctrl\u002BC stop.\u0022);\n    return;\n}\n\nScriptConsole.WriteLine($\u0022Sending SIGINT (Ctrl\u002BC) to process {pid} via windows-kill.exe\u0022);\nvar wpsi = new ProcessStartInfo\n{\n    FileName = killExe,\n    Arguments = $\u0022-SIGINT {pid}\u0022,\n    WorkingDirectory = ThisService.RootDirectory,\n    UseShellExecute = false,\n    CreateNoWindow = true,\n    RedirectStandardOutput = true,\n    RedirectStandardError = true\n};\ntry\n{\n    using var killer = Process.Start(wpsi);\n    if (killer != null)\n        await killer.WaitForExitAsync(ThisCancellationToken);\n}\ncatch (Exception ex)\n{\n    ScriptConsole.WriteLine($\u0022Failed to run windows-kill.exe: {ex.Message}\u0022);\n    return;\n}\n\nfor (int count = 1; count \u003C= 180; count\u002B\u002B)\n{\n    bool running;\n    try { using var proc = Process.GetProcessById(pid.Value); running = !proc.HasExited; }\n    catch (ArgumentException) { running = false; }\n    if (!running)\n    {\n        ScriptConsole.WriteLine($\u0022Process {pid} has exited after {count} second(s).\u0022);\n        return;\n    }\n    await Task.Delay(TimeSpan.FromSeconds(1), ThisCancellationToken);\n}\nScriptConsole.WriteLine(\u0022WARNING: process did not exit within 180s.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "e57203c1-2f68-4413-b0d2-4115a306441b"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomQueryProtocol"
+        ],
+        "name": "player query",
+        "description": "player query",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, TCAdmin.Web.Shared.dll\nusing System;\nusing System.IO;\nusing System.Linq;\nusing System.Text;\nusing TCAdmin.SDK.Hubs.Models.GameQuery;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// CustomQueryProtocol: V3 deserializes the ReturnValue into a GameQueryResponse (V2 returned qstat XML).\n// The query subsystem injects the resolved query Address/Port; fall back to the service\u0027s own.\nstring address = Variables.Parse\u003Cstring\u003E(\u0022Address\u0022, ThisService.IPAddress);\nint queryPort = Variables.Parse\u003Cint\u003E(\u0022Port\u0022, ThisService.QueryPort);\nstring gameType = \u0022SCUM\u0022;\nstring mapName = ThisService.Variables.Parse\u003Cstring\u003E(\u0022Map\u0022, \u0022SCUM\u0022) ?? \u0022SCUM\u0022;\n\n// 1) Player count from the most recent login_*.log (joins minus leaves).\nstring rootDir = ThisService.RootDirectory;\nstring logDir = Path.Combine(rootDir, \u0022SCUM\u0022, \u0022Saved\u0022, \u0022SaveFiles\u0022, \u0022Logs\u0022);\nint joins = 0;\nint leaves = 0;\ntry\n{\n    if (Directory.Exists(logDir))\n    {\n        string latest = Directory.GetFiles(logDir, \u0022login_*.log\u0022)\n            .OrderByDescending(f =\u003E f)\n            .FirstOrDefault();\n        if (latest != null)\n        {\n            // SCUM writes these logs as UTF-16LE (with BOM); ReadAllLines honours the BOM.\n            foreach (string line in File.ReadAllLines(latest, Encoding.Unicode))\n            {\n                string l = line.ToLowerInvariant();\n                if (l.Contains(\u0022logged in at\u0022)) joins\u002B\u002B;\n                else if (l.Contains(\u0022logged out at\u0022)) leaves\u002B\u002B;\n            }\n        }\n    }\n}\ncatch (Exception ex)\n{\n    ScriptConsole.WriteLine($\u0022player query: could not read login logs: {ex.Message}\u0022);\n}\n\nint numPlayers = Math.Max(0, joins - leaves);\n\n// 2) ServerName \u002B MaxPlayers from ServerSettings.ini.\nstring iniPath = Path.Combine(rootDir, \u0022SCUM\u0022, \u0022Saved\u0022, \u0022Config\u0022, \u0022WindowsServer\u0022, \u0022ServerSettings.ini\u0022);\nstring serverName = \u0022SCUM Server\u0022;\nint maxPlayers = ThisService.Slots;\nif (File.Exists(iniPath))\n{\n    try\n    {\n        foreach (string raw in File.ReadAllLines(iniPath))\n        {\n            string line = raw.Trim();\n            if (line.StartsWith(\u0022scum.ServerName=\u0022, StringComparison.OrdinalIgnoreCase))\n                serverName = line.Substring(line.IndexOf(\u0027=\u0027) \u002B 1);\n            else if (line.StartsWith(\u0022scum.MaxPlayers=\u0022, StringComparison.OrdinalIgnoreCase)\n                     \u0026\u0026 int.TryParse(line.Substring(line.IndexOf(\u0027=\u0027) \u002B 1).Trim(), out int mp))\n                maxPlayers = mp;\n        }\n    }\n    catch (Exception ex)\n    {\n        ScriptConsole.WriteLine($\u0022player query: could not read ServerSettings.ini: {ex.Message}\u0022);\n    }\n}\n\nGlobals.ReturnValue = new GameQueryResponse\n{\n    Status = \u0022online\u0022,\n    Hostname = $\u0022{address}:{queryPort}\u0022,\n    Name = serverName,\n    GameType = gameType,\n    Map = mapName,\n    NumPlayers = numPlayers,\n    MaxPlayers = maxPlayers\n};",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "0da5f3fd-d325-45ab-9382-0412b5e7a69b"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "updates": [],
+  "createdDate": "2026-06-20T23:51:12.840134",
+  "modifiedDate": "2026-06-20T15:16:56.368259",
+  "metadata": {
+    "notes": "Game imported from plugin TCA.Games.V2.173 version 1.0.0.Game imported from plugin Community.Games.Scum version 1.0.0.",
+    "PluginVersion": "1.0.0",
+    "PluginIdentifier": "Community.Games.Scum"
+  },
+  "backupConfig": {
+    "enabled": false,
+    "backupType": "Full",
+    "compressBackup": true,
+    "includedPaths": []
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "None",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": false,
+    "slotDetectionAction": "None",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": true,
+    "privateDetectionAction": "Stop",
+    "brandDetectionEnabled": true,
+    "brandDetectionAction": "Stop",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
