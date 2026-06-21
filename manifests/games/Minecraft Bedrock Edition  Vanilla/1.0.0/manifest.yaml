@@ -1,0 +1,29 @@
+identifier: "Community.Games.MinecraftBedrockEditionVanilla"
+name: "Minecraft Bedrock Edition | Vanilla"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "MC:BE | Vanilla"
+longDescription: |
+  # Minecraft Bedrock Edition | Vanilla
+  
+  ## Description
+  
+  
+  ## Key Features
+  
+  ## What's new
+  
+  ## Instructions
+  
+icon: "https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg"
+images:
+  - "https://img.primaservers.dk/minecraft/index.php"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "MC Bedrock  Vanilla - Linux.json"
+    type: "GameConfig"
+  - path: "MCBE  Vanilla - Windows.json"
+    type: "GameConfig"
