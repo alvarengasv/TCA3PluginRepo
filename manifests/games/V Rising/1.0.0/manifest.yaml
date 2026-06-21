@@ -1,0 +1,19 @@
+identifier: "Community.Games.VRising"
+name: "V Rising"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "V Rising"
+longDescription: |
+  # V Rising
+  ## Key Features
+  Supports Windows and Linux (with Wine)
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/1604030/d18204000a839feb84393b3d860c17cd4a4b269c.jpg"
+images:
+  - "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1604030/227d19e9aedac1933bffcdb373ccdbd9250a6bdc/ss_227d19e9aedac1933bffcdb373ccdbd9250a6bdc.jpg"
+tags:
+  - "Game"
+  - "Windows"
+  - "Wine"
+files:
+  - path: "V Rising - Windows.json"
+    type: "GameConfig"
