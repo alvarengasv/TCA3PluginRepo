@@ -1,0 +1,24 @@
+identifier: "Community.Games.Scum"
+name: "Scum"
+version: "1.0.1"
+author: "TCAdmin"
+shortDescription: "Scum"
+longDescription: |
+  # Scum
+  
+  ## Description
+  SCUM is a hardcore, realistic open-world multiplayer survival game where players take on the role of prison inmates dumped on a hostile island to fight for survival and the entertainment of viewers and sponsors. It is known for its incredibly deep, realistic mechanics and brutal difficulty.
+  
+  ## Key Features
+  Stops gracefully with windows-kill
+  Supports Linux (Wine)
+  
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/513710/960a5d5c5b6dc60226b3a52954990269919261ed.ico"
+images:
+  - "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/513710/ss_62f56143b1c35cb843a4f3e29290a09176532ee5.jpg"
+tags:
+  - "Game"
+  - "Windows Wine"
+files:
+  - path: "Scum - Windows.json"
+    type: "GameConfig"
