@@ -1,0 +1,23 @@
+identifier: "Community.Games.Enshrouded"
+name: "Enshrouded"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Enshrouded"
+longDescription: |
+  # Enshrouded
+  
+  ## Description
+  
+  
+  ## Key Features
+  - Supports Linux (Wine)
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/2278520/b51ff4aa19722a1f3587b35f37f590a998f36a9a.ico"
+images:
+  - "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1203620/9c2db32975d266f1051f77e46d347a118c824c57/ss_9c2db32975d266f1051f77e46d347a118c824c57.jpg"
+tags:
+  - "Game"
+  - "Windows"
+  - "Wine"
+files:
+  - path: "Enshrouded - Windows.json"
+    type: "GameConfig"
