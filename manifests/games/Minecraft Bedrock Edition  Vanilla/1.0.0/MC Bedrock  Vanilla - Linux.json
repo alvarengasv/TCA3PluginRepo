@@ -1,0 +1,1856 @@
+{
+  "__TCA:ExportVersion": "3.10.34.45532",
+  "__TCA:ExportedAt": "2026-06-21T00:50:44.068798Z",
+  "name": "Minecraft Bedrock Edition | Vanilla",
+  "shortName": "MC:BE | Vanilla",
+  "description": "",
+  "operatingSystem": "Linux",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg",
+  "backgroundImage": "https://img.primaservers.dk/minecraft/index.php",
+  "minSlots": 10,
+  "maxSlots": 100,
+  "defaultSlots": 10,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "custom_script",
+    "rconProtocol": "",
+    "privateRule": "public",
+    "privateRuleValue": "false",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "Terminal",
+    "logFile": "",
+    "inputSource": "ConsoleCommands",
+    "printRconResponse": false,
+    "outputFilters": "",
+    "stopCommand": "stop",
+    "waitAfterStopCommand": 10000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": true,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 19132,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 19132,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 0,
+        "expression": ""
+      },
+      {
+        "id": "CustomPort1",
+        "port": 19133,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "bedrock_server",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "minecraft-bedrock-linux",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": "https://mcjarfiles.com/api/get-latest-jar/bedrock/linux"
+  },
+  "steamConfig": {
+    "steamUpdate": false,
+    "appId": 0,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 0,
+    "steamUsername": "anonymous",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader",
+    "steamPassword": ""
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "",
+    "defaultCustomCommandline": "",
+    "predefinedCommandlines": []
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "allowCheats",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${allowCheats}",
+      "editor": {
+        "items": [
+          {
+            "text": "True",
+            "value": "true"
+          },
+          {
+            "text": "False",
+            "value": "false"
+          }
+        ],
+        "id": "allowCheats",
+        "defaultValue": "false",
+        "label": "Allow Cheats",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EIf true then cheats like commands can be used.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022true\u0022 or \u0022false\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.355227",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "compressionThreshold",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${compressionThreshold}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "compressionThreshold",
+        "defaultValue": "1",
+        "label": "Compression Threshold",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EDetermines the smallest size of raw network payload to compress\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.355505",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "contentLogFileEnabled",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${contentLogFileEnabled}",
+      "editor": {
+        "items": [
+          {
+            "text": "True",
+            "value": "true"
+          },
+          {
+            "text": "False",
+            "value": "false"
+          }
+        ],
+        "id": "contentLogFileEnabled",
+        "defaultValue": "false",
+        "label": "Enable Content Logging",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EEnables logging content errors to a file\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.355784",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "correctPlayerMovement",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${correctPlayerMovement}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "correctPlayerMovement",
+        "defaultValue": "false",
+        "label": "Correct Player Movement",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EIf true, the client position will get corrected to the server position if the movement score exceeds the threshold.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.356129",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "defaultPlayerPermissionLevel",
+      "defaultValue": "member",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${defaultPlayerPermissionLevel}",
+      "editor": {
+        "items": [
+          {
+            "text": "Member",
+            "value": "member"
+          },
+          {
+            "text": "Visitor",
+            "value": "visitor"
+          },
+          {
+            "text": "Operator",
+            "value": "operator"
+          }
+        ],
+        "id": "defaultPlayerPermissionLevel",
+        "defaultValue": "member",
+        "label": "Default Player Permission Level",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe permission level for new players joining for the first time.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022visitor\u0022, \u0022member\u0022, \u0022operator\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.35643",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "difficulty",
+      "defaultValue": "easy",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${difficulty}",
+      "editor": {
+        "items": [
+          {
+            "text": "Easy",
+            "value": "easy"
+          },
+          {
+            "text": "Peaceful",
+            "value": "peaceful"
+          },
+          {
+            "text": "Normal",
+            "value": "normal"
+          },
+          {
+            "text": "Hard",
+            "value": "hard"
+          }
+        ],
+        "id": "difficulty",
+        "defaultValue": "easy",
+        "label": "Difficulty",
+        "description": "\u003Cul\u003E\n\u003Cli\u003ESets the difficulty of the world.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022peaceful\u0022, \u0022easy\u0022, \u0022normal\u0022, or \u0022hard\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.356658",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "forceGamemode",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${forceGamemode}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "forceGamemode",
+        "defaultValue": "false",
+        "label": "Force Game Mode",
+        "description": "\u003Cul\u003E\n\u003Cli\u003Eforce-gamemode=false (or force-gamemode  is not defined in the server.properties)\u003C/li\u003E\n\u003Cli\u003Eprevents the server from sending to the client gamemode values other\u003C/li\u003E\n\u003Cli\u003Ethan the gamemode value saved by the server during world creation\u003C/li\u003E\n\u003Cli\u003Eeven if those values are set in server.properties after world creation. \u003C/li\u003E\n\u003Cli\u003Eforce-gamemode=true forces the server to send to the client gamemode values\u003C/li\u003E\n\u003Cli\u003Eother than the gamemode value saved by the server during world creation\u003C/li\u003E\n\u003Cli\u003Eif those values are set in server.properties after world creation.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.356895",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "gamemode",
+      "defaultValue": "survival",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${gamemode}",
+      "editor": {
+        "items": [
+          {
+            "text": "Survival",
+            "value": "survival"
+          },
+          {
+            "text": "Creative",
+            "value": "creative"
+          },
+          {
+            "text": "Adventure",
+            "value": "adventure"
+          }
+        ],
+        "id": "gamemode",
+        "defaultValue": "survival",
+        "label": "Game Mode",
+        "description": "\u003Cul\u003E\n\u003Cli\u003ESets the game mode for new players.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022survival\u0022, \u0022creative\u0022, or \u0022adventure\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.357122",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "levelName",
+      "defaultValue": "Bedrock level",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${levelName}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "levelName",
+        "defaultValue": "Bedrock level",
+        "label": "World Name",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EAllowed values: Any string without semicolon symbol or symbols illegal for file name: /\\n\\r\\t\\f\u0060?*\\\\\u003C\u003E|\\\u0022:\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.357317",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "levelSeed",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${levelSeed}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "levelSeed",
+        "defaultValue": "",
+        "label": "World Seed",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EUse to randomize the world\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any string\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.357503",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "maxPlayers",
+      "defaultValue": "10",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${maxPlayers}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 65535,
+        "id": "maxPlayers",
+        "defaultValue": "10",
+        "label": "Max Player Slots ",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe maximum number of players that can play on the server.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any positive integer\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.357718",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "maxThreads",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${maxThreads}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 128,
+        "id": "maxThreads",
+        "defaultValue": "0",
+        "label": "Max threads",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EMaximum number of threads the server will try to use. If set to 0 or removed then it will use as many as possible.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any positive integer.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.357919",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "onlineMode",
+      "defaultValue": "true",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${onlineMode}",
+      "editor": {
+        "items": [
+          {
+            "text": "True",
+            "value": "true"
+          },
+          {
+            "text": "False",
+            "value": "false"
+          }
+        ],
+        "id": "onlineMode",
+        "defaultValue": "true",
+        "label": "Online Mode",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EIf true then all connected players must be authenticated to Xbox Live.\u003C/li\u003E\n\u003Cli\u003EClients connecting to remote (non-LAN) servers will always require Xbox Live authentication regardless of this setting.\u003C/li\u003E\n\u003Cli\u003EIf the server accepts connections from the Internet, then it\u0027s highly recommended to enable online-mode.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022true\u0022 or \u0022false\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.358137",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "playerIdleTimeout",
+      "defaultValue": "30",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${playerIdleTimeout}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 1000,
+        "id": "playerIdleTimeout",
+        "defaultValue": "30",
+        "label": "Player Idle Timeout",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EAfter a player has idled for this many minutes they will be kicked. If set to 0 then players can idle indefinitely.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any non-negative integer.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.358339",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "playerMovementDistanceThreshold",
+      "defaultValue": "0.3",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${playerMovementDistanceThreshold}",
+      "editor": {
+        "decimals": 2,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "playerMovementDistanceThreshold",
+        "defaultValue": "0.3",
+        "label": "Player Movement Distance Threshold",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe difference between server and client positions that needs to be exceeded before abnormal behavior is detected.\u003C/li\u003E\n\u003Cli\u003EDisabled by server-authoritative-movement.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.358604",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "playerMovementDurationThresholdInMs",
+      "defaultValue": "500",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${playerMovementDurationThresholdInMs}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "playerMovementDurationThresholdInMs",
+        "defaultValue": "500",
+        "label": "Player Movement Duration Threshold in milliseconds",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe duration of time the server and client positions can be out of sync (as defined by player-movement-distance-threshold)\u003C/li\u003E\n\u003Cli\u003Ebefore the abnormal movement score is incremented. This value is defined in milliseconds.\u003C/li\u003E\n\u003Cli\u003EDisabled by server-authoritative-movement.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.358839",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "playerMovementScoreThreshold",
+      "defaultValue": "20",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${playerMovementScoreThreshold}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 65535,
+        "id": "playerMovementScoreThreshold",
+        "defaultValue": "20",
+        "label": "Player Movement Score threshold",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe number of incongruent time intervals needed before abnormal behavior is reported.\u003C/li\u003E\n\u003Cli\u003EDisabled by server-authoritative-movement.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.359069",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "serverAuthoritativeBlockBreaking",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${serverAuthoritativeBlockBreaking}",
+      "editor": {
+        "items": [
+          {
+            "text": "True",
+            "value": "true"
+          },
+          {
+            "text": "False",
+            "value": "false"
+          }
+        ],
+        "id": "serverAuthoritativeBlockBreaking",
+        "defaultValue": "false",
+        "label": "Server Authoritative Block Breaking",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EIf true, the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.359372",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "serverAuthoritativeMovement",
+      "defaultValue": "server-auth",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${serverAuthoritativeMovement}",
+      "editor": {
+        "items": [
+          {
+            "text": "server-auth",
+            "value": "server-auth"
+          },
+          {
+            "text": "Server Auth With Rewind",
+            "value": "server-auth-with-rewind"
+          },
+          {
+            "text": "Client Auth",
+            "value": "client-auth"
+          }
+        ],
+        "id": "serverAuthoritativeMovement",
+        "defaultValue": "server-auth",
+        "label": "Server Authoritative Movement",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EEnables server authoritative movement. If \u0022server-auth\u0022, the server will replay local user input on\u003C/li\u003E\n\u003Cli\u003Ethe server and send down corrections when the client\u0027s position doesn\u0027t match the server\u0027s.\u003C/li\u003E\n\u003Cli\u003EIf \u0022server-auth-with-rewind\u0022 is enabled and the server sends a correction, the clients will be instructed\u003C/li\u003E\n\u003Cli\u003Eto rewind time back to the correction time, apply the correction, then replay all the player\u0027s inputs since then. This results in smoother and more frequent corrections.\u003C/li\u003E\n\u003Cli\u003ECorrections will only happen if correct-player-movement is set to true.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.359694",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "texturepackRequired",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${texturepackRequired}",
+      "editor": {
+        "items": [
+          {
+            "text": "True",
+            "value": "true"
+          },
+          {
+            "text": "False",
+            "value": "false"
+          }
+        ],
+        "id": "texturepackRequired",
+        "defaultValue": "false",
+        "label": "Texturepack Required ",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EForce clients to use texture packs in the current world\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.359971",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "tickDistance",
+      "defaultValue": "4",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${tickDistance}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 4,
+        "maxValue": 12,
+        "id": "tickDistance",
+        "defaultValue": "4",
+        "label": "Tick Distance",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe world will be ticked this many chunks away from any player.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Integers in the range [4, 12]\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.360152",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "viewDistance",
+      "defaultValue": "15",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${viewDistance}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 5,
+        "maxValue": 100,
+        "id": "viewDistance",
+        "defaultValue": "15",
+        "label": "View Distance",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EThe maximum allowed view distance in a number of chunks.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Positive integer equal to 5 or greater.\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.360324",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "whiteList",
+      "defaultValue": "false",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${whiteList}",
+      "editor": {
+        "items": [
+          {
+            "text": "False",
+            "value": "false"
+          },
+          {
+            "text": "True",
+            "value": "true"
+          }
+        ],
+        "id": "whiteList",
+        "defaultValue": "false",
+        "label": "White List",
+        "description": "\u003Cul\u003E\n\u003Cli\u003EIf true then all connected players must be listed in the separate whitelist.json file.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022true\u0022 or \u0022false\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-20T16:36:28.360568",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 259,
+      "relativePath": "permissions.json",
+      "description": "Main configuration file",
+      "template": "[]",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 260,
+      "relativePath": "server.properties",
+      "description": "Main configuration file",
+      "template": "server-name=${Hostname}\n# Used as the server name\n# Allowed values: Any string without semicolon symbol.\n\ngamemode=${gamemode}\n# Sets the game mode for new players.\n# Allowed values: \u0022survival\u0022, \u0022creative\u0022, or \u0022adventure\u0022\n\nforce-gamemode=${forceGamemode}\n# force-gamemode=false (or force-gamemode  is not defined in the server.properties)\n# prevents the server from sending to the client gamemode values other\n# than the gamemode value saved by the server during world creation\n# even if those values are set in server.properties after world creation.\n# \n# force-gamemode=true forces the server to send to the client gamemode values\n# other than the gamemode value saved by the server during world creation\n# if those values are set in server.properties after world creation.\n\ndifficulty=${difficulty}\n# Sets the difficulty of the world.\n# Allowed values: \u0022peaceful\u0022, \u0022easy\u0022, \u0022normal\u0022, or \u0022hard\u0022\n\nallow-cheats=${allowCheats}\n# If true then cheats like commands can be used.\n# Allowed values: \u0022true\u0022 or \u0022false\u0022\n\nmax-players=${maxPlayers}\n# The maximum number of players that can play on the server.\n# Allowed values: Any positive integer\n\nonline-mode=${onlineMode}\n# If true then all connected players must be authenticated to Xbox Live.\n# Clients connecting to remote (non-LAN) servers will always require Xbox Live authentication regardless of this setting.\n# If the server accepts connections from the Internet, then it\u0027s highly recommended to enable online-mode.\n# Allowed values: \u0022true\u0022 or \u0022false\u0022\n\nwhite-list=${whiteList}\n# If true then all connected players must be listed in the separate whitelist.json file.\n# Allowed values: \u0022true\u0022 or \u0022false\u0022\n\nserver-port=${GamePort}\n# Which IPv4 port the server should listen to.\n# Allowed values: Integers in the range [1, 65535]\n\nserver-portv6=${CustomPort1}\n# Which IPv6 port the server should listen to.\n# Allowed values: Integers in the range [1, 65535]\n\nview-distance=${viewDistance}\n# The maximum allowed view distance in number of chunks.\n# Allowed values: Positive integer equal to 5 or greater.\n\ntick-distance=${tickDistance}\n# The world will be ticked this many chunks away from any player.\n# Allowed values: Integers in the range [4, 12]\n\nplayer-idle-timeout=${playerIdleTimeout}\n# After a player has idled for this many minutes they will be kicked. If set to 0 then players can idle indefinitely.\n# Allowed values: Any non-negative integer.\n\nmax-threads=${maxThreads}\n# Maximum number of threads the server will try to use. If set to 0 or removed then it will use as many as possible.\n# Allowed values: Any positive integer.\n\nlevel-name=${levelName}\n# Allowed values: Any string without semicolon symbol or symbols illegal for file name: /\\n\\r\\t\\f\u0060?*\\\\\u003C\u003E|\\\u0022:\n\nlevel-seed=${levelSeed}\n# Use to randomize the world\n# Allowed values: Any string\n\ndefault-player-permission-level=${defaultPlayerPermissionLevel}\n# Permission level for new players joining for the first time.\n# Allowed values: \u0022visitor\u0022, \u0022member\u0022, \u0022operator\u0022\n\ntexturepack-required=${texturepackRequired}\n# Force clients to use texture packs in the current world\n# Allowed values: \u0022true\u0022 or \u0022false\u0022\n\ncontent-log-file-enabled=${contentLogFileEnabled}\n# Enables logging content errors to a file\n# Allowed values: \u0022true\u0022 or \u0022false\u0022\n\ncompression-threshold=${compressionThreshold}\n# Determines the smallest size of raw network payload to compress\n# Allowed values: 0-65535\n\nserver-authoritative-movement=${serverAuthoritativeMovement}\n# Allowed values: \u0022client-auth\u0022, \u0022server-auth\u0022, \u0022server-auth-with-rewind\u0022\n# Enables server authoritative movement. If \u0022server-auth\u0022, the server will replay local user input on\n# the server and send down corrections when the client\u0027s position doesn\u0027t match the server\u0027s.\n# If \u0022server-auth-with-rewind\u0022 is enabled and the server sends a correction, the clients will be instructed\n# to rewind time back to the correction time, apply the correction, then replay all the player\u0027s inputs since then. This results in smoother and more frequent corrections.\n# Corrections will only happen if correct-player-movement is set to true.\n\nplayer-movement-score-threshold=${playerMovementScoreThreshold}\n# The number of incongruent time intervals needed before abnormal behavior is reported.\n# Disabled by server-authoritative-movement.\n\nplayer-movement-distance-threshold=${playerMovementDistanceThreshold}\n# The difference between server and client positions that needs to be exceeded before abnormal behavior is detected.\n# Disabled by server-authoritative-movement.\n\nplayer-movement-duration-threshold-in-ms=${playerMovementDurationThresholdInMs}\n# The duration of time the server and client positions can be out of sync (as defined by player-movement-distance-threshold)\n# before the abnormal movement score is incremented. This value is defined in milliseconds.\n# Disabled by server-authoritative-movement.\n\ncorrect-player-movement=${correctPlayerMovement}\n# If true, the client position will get corrected to the server position if the movement score exceeds the threshold.\n\n\nserver-authoritative-block-breaking=${serverAuthoritativeBlockBreaking}\n# If true, the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can.",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Basic Settings",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 65535,
+          "id": "maxPlayers",
+          "defaultValue": "10",
+          "label": "Max Player Slots ",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe maximum number of players that can play on the server.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any positive integer\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Survival",
+              "value": "survival"
+            },
+            {
+              "text": "Creative",
+              "value": "creative"
+            },
+            {
+              "text": "Adventure",
+              "value": "adventure"
+            }
+          ],
+          "id": "gamemode",
+          "defaultValue": "survival",
+          "label": "Game Mode",
+          "description": "\u003Cul\u003E\n\u003Cli\u003ESets the game mode for new players.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022survival\u0022, \u0022creative\u0022, or \u0022adventure\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Easy",
+              "value": "easy"
+            },
+            {
+              "text": "Peaceful",
+              "value": "peaceful"
+            },
+            {
+              "text": "Normal",
+              "value": "normal"
+            },
+            {
+              "text": "Hard",
+              "value": "hard"
+            }
+          ],
+          "id": "difficulty",
+          "defaultValue": "easy",
+          "label": "Difficulty",
+          "description": "\u003Cul\u003E\n\u003Cli\u003ESets the difficulty of the world.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022peaceful\u0022, \u0022easy\u0022, \u0022normal\u0022, or \u0022hard\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "True",
+              "value": "true"
+            },
+            {
+              "text": "False",
+              "value": "false"
+            }
+          ],
+          "id": "allowCheats",
+          "defaultValue": "false",
+          "label": "Allow Cheats",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EIf true then cheats like commands can be used.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022true\u0022 or \u0022false\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "True",
+              "value": "true"
+            },
+            {
+              "text": "False",
+              "value": "false"
+            }
+          ],
+          "id": "onlineMode",
+          "defaultValue": "true",
+          "label": "Online Mode",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EIf true then all connected players must be authenticated to Xbox Live.\u003C/li\u003E\n\u003Cli\u003EClients connecting to remote (non-LAN) servers will always require Xbox Live authentication regardless of this setting.\u003C/li\u003E\n\u003Cli\u003EIf the server accepts connections from the Internet, then it\u0027s highly recommended to enable online-mode.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022true\u0022 or \u0022false\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "whiteList",
+          "defaultValue": "false",
+          "label": "White List",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EIf true then all connected players must be listed in the separate whitelist.json file.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022true\u0022 or \u0022false\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 5,
+          "maxValue": 100,
+          "id": "viewDistance",
+          "defaultValue": "15",
+          "label": "View Distance",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe maximum allowed view distance in a number of chunks.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Positive integer equal to 5 or greater.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "levelName",
+          "defaultValue": "Bedrock level",
+          "label": "World Name",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EAllowed values: Any string without semicolon symbol or symbols illegal for file name: /\\n\\r\\t\\f\u0060?*\\\\\u003C\u003E|\\\u0022:\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "levelSeed",
+          "defaultValue": "",
+          "label": "World Seed",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EUse to randomize the world\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any string\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_12",
+          "label": "Advanced Settings",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "forceGamemode",
+          "defaultValue": "false",
+          "label": "Force Game Mode",
+          "description": "\u003Cul\u003E\n\u003Cli\u003Eforce-gamemode=false (or force-gamemode  is not defined in the server.properties)\u003C/li\u003E\n\u003Cli\u003Eprevents the server from sending to the client gamemode values other\u003C/li\u003E\n\u003Cli\u003Ethan the gamemode value saved by the server during world creation\u003C/li\u003E\n\u003Cli\u003Eeven if those values are set in server.properties after world creation. \u003C/li\u003E\n\u003Cli\u003Eforce-gamemode=true forces the server to send to the client gamemode values\u003C/li\u003E\n\u003Cli\u003Eother than the gamemode value saved by the server during world creation\u003C/li\u003E\n\u003Cli\u003Eif those values are set in server.properties after world creation.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 4,
+          "maxValue": 12,
+          "id": "tickDistance",
+          "defaultValue": "4",
+          "label": "Tick Distance",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe world will be ticked this many chunks away from any player.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Integers in the range [4, 12]\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 1000,
+          "id": "playerIdleTimeout",
+          "defaultValue": "30",
+          "label": "Player Idle Timeout",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EAfter a player has idled for this many minutes they will be kicked. If set to 0 then players can idle indefinitely.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any non-negative integer.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 128,
+          "id": "maxThreads",
+          "defaultValue": "0",
+          "label": "Max threads",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EMaximum number of threads the server will try to use. If set to 0 or removed then it will use as many as possible.\u003C/li\u003E\n\u003Cli\u003EAllowed values: Any positive integer.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Member",
+              "value": "member"
+            },
+            {
+              "text": "Visitor",
+              "value": "visitor"
+            },
+            {
+              "text": "Operator",
+              "value": "operator"
+            }
+          ],
+          "id": "defaultPlayerPermissionLevel",
+          "defaultValue": "member",
+          "label": "Default Player Permission Level",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe permission level for new players joining for the first time.\u003C/li\u003E\n\u003Cli\u003EAllowed values: \u0022visitor\u0022, \u0022member\u0022, \u0022operator\u0022\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "True",
+              "value": "true"
+            },
+            {
+              "text": "False",
+              "value": "false"
+            }
+          ],
+          "id": "texturepackRequired",
+          "defaultValue": "false",
+          "label": "Texturepack Required ",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EForce clients to use texture packs in the current world\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "True",
+              "value": "true"
+            },
+            {
+              "text": "False",
+              "value": "false"
+            }
+          ],
+          "id": "contentLogFileEnabled",
+          "defaultValue": "false",
+          "label": "Enable Content Logging",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EEnables logging content errors to a file\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "compressionThreshold",
+          "defaultValue": "1",
+          "label": "Compression Threshold",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EDetermines the smallest size of raw network payload to compress\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "server-auth",
+              "value": "server-auth"
+            },
+            {
+              "text": "Server Auth With Rewind",
+              "value": "server-auth-with-rewind"
+            },
+            {
+              "text": "Client Auth",
+              "value": "client-auth"
+            }
+          ],
+          "id": "serverAuthoritativeMovement",
+          "defaultValue": "server-auth",
+          "label": "Server Authoritative Movement",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EEnables server authoritative movement. If \u0022server-auth\u0022, the server will replay local user input on\u003C/li\u003E\n\u003Cli\u003Ethe server and send down corrections when the client\u0027s position doesn\u0027t match the server\u0027s.\u003C/li\u003E\n\u003Cli\u003EIf \u0022server-auth-with-rewind\u0022 is enabled and the server sends a correction, the clients will be instructed\u003C/li\u003E\n\u003Cli\u003Eto rewind time back to the correction time, apply the correction, then replay all the player\u0027s inputs since then. This results in smoother and more frequent corrections.\u003C/li\u003E\n\u003Cli\u003ECorrections will only happen if correct-player-movement is set to true.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 65535,
+          "id": "playerMovementScoreThreshold",
+          "defaultValue": "20",
+          "label": "Player Movement Score threshold",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe number of incongruent time intervals needed before abnormal behavior is reported.\u003C/li\u003E\n\u003Cli\u003EDisabled by server-authoritative-movement.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 2,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "playerMovementDistanceThreshold",
+          "defaultValue": "0.3",
+          "label": "Player Movement Distance Threshold",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe difference between server and client positions that needs to be exceeded before abnormal behavior is detected.\u003C/li\u003E\n\u003Cli\u003EDisabled by server-authoritative-movement.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "playerMovementDurationThresholdInMs",
+          "defaultValue": "500",
+          "label": "Player Movement Duration Threshold in milliseconds",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EThe duration of time the server and client positions can be out of sync (as defined by player-movement-distance-threshold)\u003C/li\u003E\n\u003Cli\u003Ebefore the abnormal movement score is incremented. This value is defined in milliseconds.\u003C/li\u003E\n\u003Cli\u003EDisabled by server-authoritative-movement.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "False",
+              "value": "false"
+            },
+            {
+              "text": "True",
+              "value": "true"
+            }
+          ],
+          "id": "correctPlayerMovement",
+          "defaultValue": "false",
+          "label": "Correct Player Movement",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EIf true, the client position will get corrected to the server position if the movement score exceeds the threshold.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "True",
+              "value": "true"
+            },
+            {
+              "text": "False",
+              "value": "false"
+            }
+          ],
+          "id": "serverAuthoritativeBlockBreaking",
+          "defaultValue": "false",
+          "label": "Server Authoritative Block Breaking",
+          "description": "\u003Cul\u003E\n\u003Cli\u003EIf true, the server will compute block mining operations in sync with the client so it can verify that the client should be able to break blocks when it thinks it can.\u003C/li\u003E\n\u003C/ul\u003E",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 261,
+      "relativePath": "whitelist.json",
+      "description": "Main configuration file",
+      "template": "[]\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    }
+  ],
+  "fileSystemPermissions": [],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeServiceCreated",
+          "DownloadGameFiles",
+          "AfterServiceCreated",
+          "AfterServiceReinstalled"
+        ],
+        "name": "Download latest release",
+        "description": "Download latest release",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.IO;\nusing System.IO.Compression;\nusing System.Net.Http;\nusing System.Text.Json;\nusing System.Threading.Tasks;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY\n\n// Bedrock dedicated server provisioning for V3 (replaces the V2 TaskScheduler \u0022install update\u0022 call).\n// Bound to BeforeServiceCreated (base folder) \u002B DownloadGameFiles/AfterServiceCreated/Reinstalled\n// (binary). Idempotent: the base folder is created only if missing, the server is downloaded only if\n// bedrock_server isn\u0027t already present, so running at multiple events is safe.\n// Mojang\u0027s CDN requires a browser User-Agent (without it you get an empty/partial response \u00E2\u20AC\u201D which is\n// why the mcjarfiles \u0022Latest Bedrock Update\u0022 delivered only config files).\n\nconst string Ua = \u0022Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36\u0022;\nbool isWin = ThisGame.OperatingSystem == EOperatingSystem.Windows;\n\n// 1) Ensure the auto-setup base folder exists before the create \u0022copy game files\u0022 step.\nstring rdNorm = ThisService.RootDirectory;\nrdNorm = rdNorm.Replace(\u0022\\\\\u0022, \u0022/\u0022);\nint iu = rdNorm.IndexOf(\u0022/users/\u0022, StringComparison.OrdinalIgnoreCase);\nif (iu \u003E 0)\n{\n    string baseFolder = Path.Combine(rdNorm.Substring(0, iu), \u0022games\u0022, isWin ? \u0022minecraft-bedrock-windows\u0022 : \u0022minecraft-bedrock-linux\u0022);\n    try\n    {\n        if (!Directory.Exists(baseFolder))\n        {\n            Directory.CreateDirectory(baseFolder);\n            ScriptConsole.WriteLine($\u0022Created base folder {baseFolder}\u0022);\n        }\n    }\n    catch (Exception ex) { ScriptConsole.WriteLine($\u0022Base folder note: {ex.Message}\u0022); }\n}\n\n// 2) Download \u002B extract the Bedrock server if not already installed.\nstring root = ThisService.RootDirectory;\nstring exeName = isWin ? \u0022bedrock_server.exe\u0022 : \u0022bedrock_server\u0022;\nstring exePath = Path.Combine(root, exeName);\nif (Directory.Exists(root) \u0026\u0026 !File.Exists(exePath))\n{\n    using (var http = new HttpClient { Timeout = TimeSpan.FromMinutes(10) })\n    {\n        http.DefaultRequestHeaders.Add(\u0022User-Agent\u0022, Ua);\n\n        // Resolve the latest official download URL from Mojang\u0027s links API.\n        string url = null;\n        string linksJson = await http.GetStringAsync(\u0022https://net-secondary.web.minecraft-services.net/api/v1.0/download/links\u0022, ThisCancellationToken);\n        using (JsonDocument doc = JsonDocument.Parse(linksJson))\n        {\n            string want = isWin ? \u0022serverBedrockWindows\u0022 : \u0022serverBedrockLinux\u0022;\n            foreach (JsonElement l in doc.RootElement.GetProperty(\u0022result\u0022).GetProperty(\u0022links\u0022).EnumerateArray())\n            {\n                if (l.TryGetProperty(\u0022downloadType\u0022, out JsonElement dt) \u0026\u0026 dt.GetString() == want)\n                {\n                    url = l.GetProperty(\u0022downloadUrl\u0022).GetString();\n                    break;\n                }\n            }\n        }\n        if (string.IsNullOrEmpty(url))\n            throw new Exception(\u0022Could not resolve Bedrock download URL from Mojang links API.\u0022);\n\n        ScriptConsole.WriteLine($\u0022Downloading Bedrock server: {url}\u0022);\n        string zipPath = Path.Combine(root, \u0022bedrock-server.zip\u0022);\n        byte[] data = await http.GetByteArrayAsync(url, ThisCancellationToken);\n        await File.WriteAllBytesAsync(zipPath, data, ThisCancellationToken);\n        ScriptConsole.WriteLine($\u0022Downloaded {data.Length} bytes; extracting...\u0022);\n\n        using (ZipArchive zip = ZipFile.OpenRead(zipPath))\n        {\n            foreach (ZipArchiveEntry e in zip.Entries)\n            {\n                string rel = e.FullName.Replace(\u0027\\\\\u0027, \u0027/\u0027);\n                string dest = Path.Combine(root, rel);\n                if (rel.EndsWith(\u0022/\u0022))\n                {\n                    Directory.CreateDirectory(dest);\n                    continue;\n                }\n                string destDir = Path.GetDirectoryName(dest);\n                if (!string.IsNullOrEmpty(destDir)) Directory.CreateDirectory(destDir);\n                // Don\u0027t clobber config files the template already wrote (server.properties, allowlist, permissions).\n                if (!File.Exists(dest)) e.ExtractToFile(dest, false);\n            }\n        }\n        try { File.Delete(zipPath); } catch { }\n\n        if (!isWin \u0026\u0026 File.Exists(exePath))\n        {\n            try\n            {\n                File.SetUnixFileMode(exePath,\n                    UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute |\n                    UnixFileMode.GroupRead | UnixFileMode.GroupExecute |\n                    UnixFileMode.OtherRead | UnixFileMode.OtherExecute);\n            }\n            catch (Exception ex) { ScriptConsole.WriteLine($\u0022chmod note: {ex.Message}\u0022); }\n        }\n        ScriptConsole.WriteLine(File.Exists(exePath) ? \u0022Bedrock server installed.\u0022 : \u0022WARNING: bedrock_server not found after extract.\u0022);\n    }\n}\n",
+        "runImpersonated": false,
+        "stopService": true,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "89bf340f-dbd3-4752-8b66-7da83db20523"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomQueryProtocol"
+        ],
+        "name": "Player Query",
+        "description": "Player Query",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.GameHosting.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, TCAdmin.Web.Shared.dll\nusing System;\nusing System.Net.Http;\nusing System.Text.Json;\nusing System.Threading.Tasks;\nusing TCAdmin.SDK.Hubs.Models.GameQuery;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\nstring address = Variables.Parse\u003Cstring\u003E(\u0022Address\u0022, ThisService.IPAddress);\nint port = Variables.Parse\u003Cint\u003E(\u0022Port\u0022, ThisService.QueryPort);\n\nstring data;\nusing (var http = new HttpClient { Timeout = TimeSpan.FromSeconds(8) })\n{\n    data = await http.GetStringAsync($\u0022https://api.mcstatus.io/v2/status/bedrock/{address}:{port}\u0022, ThisCancellationToken);\n}\n\nint numPlayers = 0;\nint maxPlayers = ThisService.Slots;\nstring name = \u0022Minecraft Bedrock\u0022;\nbool online = false;\nusing (var doc = JsonDocument.Parse(data))\n{\n    var root = doc.RootElement;\n    online = root.TryGetProperty(\u0022online\u0022, out JsonElement onl) \u0026\u0026 onl.ValueKind == JsonValueKind.True;\n    if (root.TryGetProperty(\u0022players\u0022, out JsonElement players) \u0026\u0026 players.ValueKind == JsonValueKind.Object)\n    {\n        if (players.TryGetProperty(\u0022online\u0022, out JsonElement on) \u0026\u0026 on.ValueKind == JsonValueKind.Number) numPlayers = on.GetInt32();\n        if (players.TryGetProperty(\u0022max\u0022, out JsonElement mx) \u0026\u0026 mx.ValueKind == JsonValueKind.Number) maxPlayers = mx.GetInt32();\n    }\n    if (root.TryGetProperty(\u0022motd\u0022, out JsonElement motd) \u0026\u0026 motd.ValueKind == JsonValueKind.Object\n        \u0026\u0026 motd.TryGetProperty(\u0022clean\u0022, out JsonElement clean) \u0026\u0026 clean.ValueKind == JsonValueKind.String)\n        name = clean.GetString();\n}\n\nGlobals.ReturnValue = new GameQueryResponse\n{\n    Status = online ? \u0022online\u0022 : \u0022offline\u0022,\n    Hostname = $\u0022{address}:{port}\u0022,\n    Name = name,\n    GameType = \u0022Minecraft Bedrock\u0022,\n    Map = \u0022Unknown\u0022,\n    NumPlayers = numPlayers,\n    MaxPlayers = maxPlayers,\n};\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "d491bbb2-1c6c-426a-a2cf-f1a9275ee4ca"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Linux"
+        ],
+        "scriptEvents": [],
+        "name": "backup server properties",
+        "description": "backup server properties",
+        "code": "#!/bin/bash\n\n# Set the target directory (modify this path as needed)\ntarget_dir=\u0022${ThisService_RootDirectory:-/path/to/default/directory}\u0022\ntargetFile=\u0022$target_dir/server.properties\u0022\nbackupFile=\u0022$target_dir/server.properties.backup\u0022\n\n# Check if target directory exists\nif [ ! -d \u0022$target_dir\u0022 ]; then\n    echo \u0022Error: Directory $target_dir does not exist.\u0022\n    exit 1\nfi\n\nif [ -f \u0022$targetFile\u0022 ]; then\n    mv \u0022$targetFile\u0022 \u0022$backupFile\u0022\n    echo \u0022Renamed $targetFile to $backupFile\u0022\nelse\n    echo \u0022$targetFile not found in the specified directory.\u0022\nfi",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "c89959aa-3d44-4d9c-8046-8f7b6b16be3c"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [],
+        "name": "restore server properties",
+        "description": "restore server properties",
+        "code": "#!/bin/bash\n\n# Set the target directory and file paths\ntarget_dir=\u0022${ThisService_RootDirectory}\u0022\ntargetFile=\u0022$target_dir/server.properties\u0022\nbackupFile=\u0022$target_dir/server.properties.backup\u0022\n\nif [ -f \u0022$backupFile\u0022 ]; then\n    if [ -f \u0022$targetFile\u0022 ]; then\n        rm \u0022$targetFile\u0022\n        echo \u0022Deleted existing $targetFile\u0022\n    fi\n    mv \u0022$backupFile\u0022 \u0022$targetFile\u0022\n    echo \u0022Renamed $backupFile to server.properties\u0022\nelse\n    echo \u0022$backupFile not found in the specified directory.\u0022\nfi",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "fc29aac4-abf7-4894-a026-8af12c369a5d"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "updates": [
+    {
+      "name": "Latest Bedrock Update",
+      "comments": "\u003Cp\u003EDownloads the latest bedrock version from \u003Ca href=\u0022https://mcjarfiles.com\u0022 target=\u0022_blank\u0022\u003Ehttps://mcjarfiles.com\u003C/a\u003E\u003C/p\u003E",
+      "source": "https://mcjarfiles.com/api/get-latest-jar/bedrock/latest/linux",
+      "saveAsFilename": "linux.zip",
+      "reinstallable": true,
+      "defaultInstall": true,
+      "viewOrder": 0,
+      "icon": "https://media.hyperlayer.net/creeper-icon.png",
+      "identifier": "1d774e88-efb0-485f-a08c-c97dfc6b5343",
+      "updateRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "updateScripts": []
+    },
+    {
+      "name": "Preview Bedrock Version",
+      "comments": "\u003Cp\u003EDownloads the preview build for bedrock from \u003Ca href=\u0022https://mcjarfiles.com\u0022 target=\u0022_blank\u0022\u003Ehttps://mcjarfiles.com\u003C/a\u003E\u003C/p\u003E",
+      "source": "https://mcjarfiles.com/api/get-latest-jar/bedrock/preview/linux",
+      "saveAsFilename": "linux.zip",
+      "reinstallable": true,
+      "defaultInstall": false,
+      "viewOrder": 0,
+      "icon": "https://media.hyperlayer.net/creeper-icon.png",
+      "identifier": "29a11054-dadc-492b-a07c-a91fb9d19233",
+      "updateRoles": [
+        {
+          "roleId": 3
+        },
+        {
+          "roleId": 2
+        }
+      ],
+      "updateScripts": []
+    }
+  ],
+  "createdDate": "2026-06-20T16:36:28.371241",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": false,
+    "backupType": "Full",
+    "compressBackup": true,
+    "includedPaths": []
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "None",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": false,
+    "slotDetectionAction": "None",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": true,
+    "privateDetectionAction": "Stop",
+    "brandDetectionEnabled": true,
+    "brandDetectionAction": "Stop",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
