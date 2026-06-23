@@ -1,0 +1,1218 @@
+{
+  "__TCA:ExportVersion": "3.11.36.0",
+  "__TCA:ExportedAt": "2026-06-23T22:52:49.592457Z",
+  "name": "Valheim",
+  "shortName": "Valheim",
+  "description": "",
+  "operatingSystem": "Linux",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/2f64c9a826e2c6cf3253fea4834c2e612db09143.jpg",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/892970/ss_a600a7d4ca954543e22f571a9629521a13f82143.1920x1080.jpg?t=1765967243",
+  "minSlots": 2,
+  "maxSlots": 128,
+  "defaultSlots": 10,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    "Steam/logs/*.txt"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "Terminal",
+    "logFile": "",
+    "inputSource": "None",
+    "printRconResponse": false,
+    "outputFilters": "C:\\buildslave\\unity\\build\\Runtime/Export/Debug/Debug.bindings.h",
+    "stopCommand": "^C",
+    "waitAfterStopCommand": 10000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": true,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 2456,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 2457,
+        "expression": "GamePort\u002B1"
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "valheim_server.x86_64",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "valheim",
+    "failOnMissingExecutable": true,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 896660,
+    "runAsServiceUser": false,
+    "branch": "",
+    "storeId": 892970,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": true,
+    "verifyAll": true,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-nographics -batchmode -port ${GamePort} -name \u0022${Hostname}\u0022 -world \u0022${world}\u0022 -password \u0022${PrivatePassword}\u0022 -public 1 -savedir ${RootDirectory}",
+    "defaultCustomCommandline": "-nographics -batchmode -port ${GamePort} -name \u0022${Hostname}\u0022 -world \u0022${world}\u0022 -password \u0022${PrivatePassword}\u0022 -public 1 -savedir ${RootDirectory}",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "-nographics -batchmode -port ${GamePort} -name \u0022${Hostname}\u0022 -world \u0022${world}\u0022 -password \u0022${PrivatePassword}\u0022 -public 1 -savedir ${RootDirectory}"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "admin",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${admin}",
+      "createdDate": "2026-06-18T00:00:13.752907",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "banned",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${banned}",
+      "createdDate": "2026-06-18T00:00:13.753046",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "branch",
+      "defaultValue": "public",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": true,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${branch}",
+      "editor": {
+        "items": [
+          {
+            "text": "Public",
+            "value": "public"
+          },
+          {
+            "text": "Public Testing",
+            "value": "public-testing"
+          }
+        ],
+        "id": "branch",
+        "defaultValue": "public",
+        "label": "Branch",
+        "description": "Select a branch for your server.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-18T00:00:13.753402",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "crossplay",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": true,
+      "template": "${crossplay}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "-crossplay",
+        "uncheckedValue": "",
+        "id": "crossplay",
+        "defaultValue": "",
+        "label": "Crossplay",
+        "description": "Enable Crossplay on the server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-18T00:00:13.753518",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "permitted",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${permitted}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "permitted",
+        "defaultValue": "",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-18T00:00:13.753595",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "world",
+      "defaultValue": "Dedicated",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${world}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "^([a-zA-Z0-9])\u002B",
+        "inputType": 0,
+        "id": "world",
+        "defaultValue": "Dedicated",
+        "label": "World name",
+        "description": "",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-18T00:00:13.753921",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PrivatePassword",
+      "required": true,
+      "requiredMessage": "A server password of at least 5 characters is required \u2014 Valheim refuses to create a public (-public 1) world without one.",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PrivatePassword}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "^.{5,}$",
+        "inputType": 1,
+        "id": "PrivatePassword",
+        "defaultValue": "936J9V8SFY",
+        "label": "Private Password",
+        "description": "Required. Minimum 5 characters.",
+        "required": true,
+        "valueType": "string",
+        "requiredMessage": "A server password of at least 5 characters is required \u2014 Valheim refuses to create a public (-public 1) world without one.",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-21T16:13:26.651",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 229,
+      "relativePath": "adminlist.txt",
+      "description": "Configure admins",
+      "template": "// List admin players ID  ONE per line\n${admin}",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Admin Configuration",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 230,
+      "relativePath": "bannedlist.txt",
+      "description": "Banned players",
+      "template": "// List banned players ID  ONE per line\n${banned}",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Banned Players",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 231,
+      "relativePath": "permittedlist.txt",
+      "description": "Permitted players",
+      "template": "// List permitted players ID ONE per line\n${permitted}",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "permitted",
+          "defaultValue": "",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "relativePath": "BepInEx\\config\\valheim_plus.cfg",
+      "description": "Main configuration file",
+      "template": "",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeServiceCreated",
+          "AfterServiceReinstalled"
+        ],
+        "name": "Set private password",
+        "description": "Set private password",
+        "code": "using System;\nusing System.Linq;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// V2: if the PrivatePassword variable is empty, generate a 10-char password from\n// uppercase letters \u002B digits and ThisService.Save(). V3 has no GameService.Save();\n// mutate ThisService.Variables then persist with ServiceManager.UpdateAsync (the\n// ServiceManager global shares the same DbContext scope that loaded ThisService).\nstring current = ThisService.Variables.Parse\u003Cstring\u003E(\u0022PrivatePassword\u0022);\nif (string.IsNullOrEmpty(current))\n{\n    const string alphabet = \u0022ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\u0022;\n    var random = new Random();\n    string password = new string(Enumerable.Range(0, 10)\n        .Select(_ =\u003E alphabet[random.Next(alphabet.Length)])\n        .ToArray());\n\n    ThisService.Variables[\u0022PrivatePassword\u0022] = password;\n    await ServiceManager.UpdateAsync(ThisService, true, ThisCancellationToken);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "e19041b9-c994-4411-a0e5-90e34925fa98"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterServiceCreated",
+          "AfterServiceReinstalled"
+        ],
+        "name": "Correct steamclient.so",
+        "description": "Correct steamclient.so",
+        "code": "rm -f steamclient.so\ncp linux64/steamclient.so .",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "98d044f2-68c8-42b6-88b5-ebf35ab95df7"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Switch update branch",
+        "description": "Switch branch to either Staging or Public. Will not take effect before the server has been updated.",
+        "code": "using System;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// CustomServiceIcon. The user picks a branch (Public/Staging) from the icon\u0027s input form;\n// V3 already persists that input into ThisService.Variables[\u0022branch\u0022] before this script runs\n// (ServiceController.VerifyInputVariables, saveVariableValues:true on the web hub path).\n// We persist again explicitly so the behaviour matches V2\u0027s ThisService.Save() even if the\n// variable isn\u0027t flagged to auto-save, then tell the user to run the Steam update.\nstring branch = ThisService.Variables.Parse\u003Cstring\u003E(\u0022branch\u0022);\n\nawait ServiceManager.UpdateAsync(ThisService, true, ThisCancellationToken);\n\nScriptConsole.WriteLine($\u0022Branch switched to {branch}. Please run the Steam Update to update the server.\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "45377a3f-9cfd-4f0e-83ee-cd3de0066a04"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Wipe server",
+        "description": "Wipe map and player data",
+        "code": "using System;\nusing System.IO;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// CustomServiceIcon, stop-service = true (the framework stops the service before this runs).\n// Deletes the Valheim world save folder. Faithful port of the V2 wipe: existence check,\n// recursive delete, wrap failures in a clear exception so the icon action reports an error.\nstring worldFolder = Path.Combine(ThisService.RootDirectory, \u0022worlds\u0022);\n\nif (Directory.Exists(worldFolder))\n{\n    try\n    {\n        Directory.Delete(worldFolder, true);\n        ScriptConsole.WriteLine(\u0022Server has been wiped\u0022);\n    }\n    catch (IOException e)\n    {\n        throw new Exception($\u0022Could not wipe data. Error was: {e.Message}\u0022, e);\n    }\n}\nelse\n{\n    ScriptConsole.WriteLine(\u0022No files to delete\u0022);\n}\n",
+        "runImpersonated": false,
+        "stopService": true,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "d23fa3d5-0289-4c38-b7a9-509fcdb6b536"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterSteamUpdate"
+        ],
+        "name": "Update Valheim Plus after update",
+        "description": "Update Valheim Plus after update",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.IO;\nusing System.Net.Http;\nusing System.Threading.Tasks;\nusing TCAdmin.SDK.Misc.Compression;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// DownloadGameFiles event \u2014 runs after the game files are updated. If ValheimPlus is\n// installed, re-download the matching release archive and extract it over the service root.\n//\n// V2 chose the archive by HOST OS (Environment.OSVersion.Platform). That is the exact\n// latent bug the V3 playbook warns about: a Windows Valheim server can run on a Linux host\n// (Wine) and vice versa (WSL), so the archive must follow the GAME\u0027s OS, not the host\u0027s.\nScriptConsole.WriteLine(\u0022Checking if Valheim Plus is installed...\u0022);\n\nstring modZipFile = ThisGame.OperatingSystem == EOperatingSystem.Windows\n    ? \u0022WindowsServer.zip\u0022\n    : \u0022UnixServer.tar.gz\u0022;\n\nstring pluginDll = Path.Combine(ThisService.RootDirectory, \u0022BepInEx\u0022, \u0022plugins\u0022, \u0022ValheimPlus.dll\u0022);\nif (!File.Exists(pluginDll))\n{\n    ScriptConsole.WriteLine(\u0022Valheim Plus not installed.\u0022);\n    return;\n}\n\nstring archivePath = Path.Combine(ThisService.RootDirectory, modZipFile);\nif (File.Exists(archivePath))\n    File.Delete(archivePath);\n\nScriptConsole.WriteLine(\u0022Found Valheim Plus installation... Updating mod.\u0022);\nstring url = \u0022https://github.com/valheimPlus/ValheimPlus/releases/latest/download/\u0022 \u002B modZipFile;\nScriptConsole.WriteLine($\u0022Downloading File {archivePath} from {url}...\\n\\n\u0022);\n\nusing (var httpClient = new HttpClient())\n{\n    httpClient.Timeout = TimeSpan.FromMinutes(10);\n    using var response = await httpClient.GetAsync(url, HttpCompletionOption.ResponseHeadersRead, ThisCancellationToken);\n    response.EnsureSuccessStatusCode();\n    using var httpStream = await response.Content.ReadAsStreamAsync(ThisCancellationToken);\n    using var fileStream = new FileStream(archivePath, FileMode.Create, FileAccess.Write, FileShare.None);\n    await httpStream.CopyToAsync(fileStream, ThisCancellationToken);\n}\n\nif (File.Exists(archivePath))\n{\n    // V2 used TCAdmin.SDK.Misc.CompressionTools().Decompress(zip, root). V3\u0027s CompressionTools\n    // takes the IOperatingSystem (the OperatingSystem global) and the overload that builds its\n    // own VirtualDirectoryRoot handles the extraction target.\n    var compressionTools = new CompressionTools(OperatingSystem)\n    {\n        SetFileOwnerAutomatically = true,\n        ThrowException = true\n    };\n    compressionTools.Decompress(archivePath, ThisService.RootDirectory, ThisCancellationToken);\n    File.Delete(archivePath);\n    ScriptConsole.WriteLine(\u0022Valheim Plus updated.\u0022);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "f8ccabe7-9f04-4f40-b977-82eb32136008"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterModInstall"
+        ],
+        "name": "Change exe",
+        "description": "Change exe",
+        "code": "import clr\nclr.AddReference(\u0022TCAdmin.SDK\u0022)\nfrom TCAdmin.SDK.Database.Entities import GameService\n\nctx = ServiceManager.TCAdminDbContext\nsvc = ctx.Find[GameService](ThisService.ServiceId)\nsvc.Executable = \u0022start_server_bepinex.sh\u0022\nctx.SaveChanges()",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "77ef22a2-bea0-4859-a6ab-b40edd0c085c"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeModUninstall"
+        ],
+        "name": "Delete ValheimPlus.dll",
+        "description": "Delete ValheimPlus.dll",
+        "code": "from System.IO import File, Path\n\nif File.Exists(Path.Combine(ThisService.RootDirectory, \u0027BepInEx\u0027, \u0027plugins\u0027, \u0027ValheimPlus.dll\u0027)):\n  File.Delete(Path.Combine(ThisService.RootDirectory, \u0027BepInEx\u0027, \u0027plugins\u0027, \u0027ValheimPlus.dll\u0027))",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "cd41af3f-510a-49ff-9d50-2f0b40ecf867"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterModUninstall"
+        ],
+        "name": "Change exe",
+        "description": "Change exe",
+        "code": "import clr\nclr.AddReference(\u0022TCAdmin.SDK\u0022)\nfrom TCAdmin.SDK.Database.Entities import GameService\n\nctx = ServiceManager.TCAdminDbContext\nsvc = ctx.Find[GameService](ThisService.ServiceId)\nsvc.Executable = \u0022valheim_server.x86_64\u0022\nctx.SaveChanges()",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "6684469c-1528-4f14-8c8e-5198dbab9af8"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "updates": [
+    {
+      "name": "Latest Valheim Plus",
+      "source": "https://github.com/valheimPlus/ValheimPlus/releases/latest/download/UnixServer.tar.gz",
+      "reinstallable": true,
+      "defaultInstall": false,
+      "viewOrder": 0,
+      "icon": "https://staticdelivery.nexusmods.com/mods/3667/images/thumbnails/4/4-1613398423-1464233609.png",
+      "identifier": "3a512bb5-3628-4545-ae09-7a1eb2a2416e",
+      "updateRoles": [],
+      "updateScripts": []
+    }
+  ],
+  "createdDate": "2026-06-18T00:00:13.768818",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": false,
+    "backupType": "Full",
+    "compressBackup": true,
+    "includedPaths": []
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [
+    {
+      "name": "Valheim Plus",
+      "homepageUrl": "https://github.com/valheimPlus/ValheimPlus",
+      "helpUrl": "https://github.com/valheimPlus/ValheimPlus",
+      "icon": "https://staticdelivery.nexusmods.com/mods/3667/images/thumbnails/4/4-1613398423-1464233609.png",
+      "source": "https://github.com/valheimPlus/ValheimPlus/releases/latest/download/UnixServer.tar.gz",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "312f8ea4-e0f9-478b-a339-adbbe8cfa164",
+      "addLines": [],
+      "removeLines": [],
+      "requiredModNames": [],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [
+        "BepInEx\\config\\valheim_plus.cfg"
+      ],
+      "modRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "modScripts": [
+        {
+          "scriptIdentifier": "77ef22a2-bea0-4859-a6ab-b40edd0c085c"
+        },
+        {
+          "scriptIdentifier": "cd41af3f-510a-49ff-9d50-2f0b40ecf867"
+        },
+        {
+          "scriptIdentifier": "6684469c-1528-4f14-8c8e-5198dbab9af8"
+        }
+      ]
+    }
+  ],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "Restart",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": false,
+    "slotDetectionAction": "None",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": true,
+    "privateDetectionAction": "Stop",
+    "brandDetectionEnabled": true,
+    "brandDetectionAction": "Stop",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": [
+    {
+      "id": 44,
+      "blueprintId": 90,
+      "name": "LD_LIBRARY_PATH",
+      "value": "linux64",
+      "valueType": "Static"
+    }
+  ]
+}
