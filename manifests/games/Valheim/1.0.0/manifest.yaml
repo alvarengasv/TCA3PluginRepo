@@ -1,0 +1,20 @@
+identifier: "Community.Games.Valheim"
+name: "Valheim"
+version: "1.0.0"
+minimumApplicationVersion: "3.10.24.45532"
+author: "TCAdmin"
+shortDescription: "Valheim"
+longDescription: |
+  # Valheim
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/892970/2f64c9a826e2c6cf3253fea4834c2e612db09143.jpg"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/892970/ss_a600a7d4ca954543e22f571a9629521a13f82143.1920x1080.jpg?t=1765967243"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "Valheim - Linux.json"
+    type: "GameConfig"
+  - path: "Valheim - Windows.json"
+    type: "GameConfig"
