@@ -1,0 +1,29 @@
+identifier: "Community.Games.CounterStrike2"
+name: "Counter-Strike 2"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Counter-Strike 2"
+longDescription: |
+  # Counter-Strike 2
+  
+  ## Description
+  
+  
+  ## Key Features
+  
+  ## What's new
+  
+  ## Instructions
+  
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/730/324b323045b09bace182f928f4104dfcd93cb7f3.ico"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/ss_13bb35638c0267759276f511ee97064773b37a51.1920x1080.jpg?t=1780435263"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "CS2 - Linux.json"
+    type: "GameConfig"
+  - path: "CS2 - Windows.json"
+    type: "GameConfig"
