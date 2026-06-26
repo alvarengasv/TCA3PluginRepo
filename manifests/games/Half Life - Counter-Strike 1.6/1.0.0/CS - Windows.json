@@ -1,0 +1,3477 @@
+{
+  "__TCA:ExportVersion": "3.11.382.37490",
+  "__TCA:ExportedAt": "2026-06-26T00:49:31.7880234Z",
+  "name": "Half Life - Counter-Strike 1.6",
+  "shortName": "CS",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/10/6b0312cda02f5f777efa2f3318c307ff9acafbb5.jpg",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/10/0000000134.1920x1080.jpg?t=1745368572",
+  "minSlots": 1,
+  "maxSlots": 64,
+  "defaultSlots": 8,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "hl1",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "LogFile",
+    "logFile": "qconsole.log",
+    "inputSource": "ConsoleCommands",
+    "printRconResponse": true,
+    "outputFilters": "",
+    "stopCommand": "",
+    "waitAfterStopCommand": 1000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 27015,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "hlds.exe",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "cs",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 90,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 10,
+    "extraParameters": "\u002Bapp_set_config 90 mod cstrike",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-norestart -console -game cstrike -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} ${ConfigFile} ${StartupMap}",
+    "defaultCustomCommandline": "-norestart -console -game cstrike -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} ${UserCommandLine} ${StartupMap}",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "-norestart -console -game cstrike -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} \u002Bexec \u0022server.cfg\u0022 \u002Bmap \u0022de_dust2\u0022"
+      },
+      {
+        "id": 2,
+        "name": "Advanced",
+        "commandLine": "-norestart -console -game cstrike -condebug \u002Bmaxplayers ${Slots} \u002Bip ${IPAddress} -port ${GamePort} ${ConfigFile} ${Insecure} ${StartupMap}"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "Aim",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Aim}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "Aim",
+        "defaultValue": "0",
+        "label": "Aim",
+        "description": "Activate or deactivate the aim",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.296352",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "AllowUpload",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AllowUpload}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "AllowUpload",
+        "defaultValue": "1",
+        "label": "Allow upload",
+        "description": "Allow or disallow tags to be uploaded",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.296529",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "AllTalk",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AllTalk}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "AllTalk",
+        "defaultValue": "0",
+        "label": "Talk beween teams",
+        "description": "Allow or disallow talking between teams.",
+        "required": false,
+        "requiredMessage": "",
+        "parentId": "VoiceEnable",
+        "parentValue": "1",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.296729",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "AMXAdmins",
+      "defaultValue": "\u0022loopback\u0022 \u0022\u0022 \u0022abcdefghijklmnopqrstu\u0022 \u0022de\u0022",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AMXAdmins}",
+      "createdDate": "2026-06-17T23:56:35.297062",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "AutoKick",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AutoKick}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "AutoKick",
+        "defaultValue": "1",
+        "label": "Auto kick",
+        "description": "If enabled, the server will automatically kick team killers and idle players.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.297202",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "AutoTeamBalance",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AutoTeamBalance}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "AutoTeamBalance",
+        "defaultValue": "1",
+        "label": "Auto team balance",
+        "description": "If enabled, the server will always make sure that teams are balanced and that there is no advantaged team.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.29733",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "C4Timer",
+      "defaultValue": "30",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${C4Timer}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 65535,
+        "id": "C4Timer",
+        "defaultValue": "30",
+        "label": "C4 timer:",
+        "description": "Specifies, in seconds, after how much time the C4 bomb will blow up.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.297483",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ChatTime",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ChatTime}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "ChatTime",
+        "defaultValue": "0",
+        "label": "Chat time:",
+        "description": "Time between end of map and mapchange.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.297674",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Cheat",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Cheat}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "Cheat",
+        "defaultValue": "0",
+        "label": "Allow cheats",
+        "description": "Allow or disallow cheats.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.297901",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "defaultValue": "you@yourdomain.com",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Contact}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "^[\\w\\.\\-]\u002B@[a-zA-Z0-9\\-]\u002B(\\.[a-zA-Z0-9\\-]{1,})*(\\.[a-zA-Z]{2,3}){1,2}$",
+        "inputType": 0,
+        "id": "Contact",
+        "defaultValue": "you@yourdomain.com",
+        "label": "Contact:",
+        "description": "Contact e-mail for this server.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.298147",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "DecalFrequency",
+      "defaultValue": "60",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DecalFrequency}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "DecalFrequency",
+        "defaultValue": "60",
+        "label": "Decal frequency:",
+        "description": "Sets how frequently players can display their logo.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.298316",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "FallDamage",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${FallDamage}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "FallDamage",
+        "defaultValue": "1",
+        "label": "Fall damage",
+        "description": "Enable or disable the damage when a player falls.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.298531",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Flashlight",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Flashlight}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "Flashlight",
+        "defaultValue": "0",
+        "label": "Allow flashlight",
+        "description": "Let\u0027s you allow or disallow the use of the flashlight by pressing the F button.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.298699",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "FootSteps",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${FootSteps}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "FootSteps",
+        "defaultValue": "1",
+        "label": "Enable footsteps",
+        "description": "Enable or disable footstep sounds.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.298914",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ForceChaseCam",
+      "defaultValue": "0",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ForceChaseCam}",
+      "editor": {
+        "items": [
+          {
+            "text": "Observer can spectate anyone, any mode",
+            "value": "0"
+          },
+          {
+            "text": "Observer can only spectate his own team",
+            "value": "1"
+          },
+          {
+            "text": "Observer can\u0027t spectate anyone and he\u0027ll only see his dead body",
+            "value": "2"
+          }
+        ],
+        "id": "ForceChaseCam",
+        "defaultValue": "0",
+        "label": "Chase cam:",
+        "description": "Enable or disable team-only mode.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.299124",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "FreezeTime",
+      "defaultValue": "4",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${FreezeTime}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "FreezeTime",
+        "defaultValue": "4",
+        "label": "Freeze time:",
+        "description": "Specifies the freeze time at beginning of round, in seconds.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.2993",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "FriendlyFire",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${FriendlyFire}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "FriendlyFire",
+        "defaultValue": "0",
+        "label": "Friendly fire",
+        "description": "Enable or disable friendly fire (teammates cause damage to other teammates).",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.299433",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "HostagePenalty",
+      "defaultValue": "2",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${HostagePenalty}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "HostagePenalty",
+        "defaultValue": "2",
+        "label": "Hostage penalty:",
+        "description": "Specifies how many hostages can be killed before players are kicked from the server. 0 allows players to kill an unlimited number of hostages.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.299695",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "IpBans",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${IpBans}",
+      "createdDate": "2026-06-17T23:56:35.300084",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "LimitTeams",
+      "defaultValue": "2",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${LimitTeams}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "LimitTeams",
+        "defaultValue": "2",
+        "label": "Limit teams:",
+        "description": "Sets how many players a team can have over the opposite team.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.300299",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Log",
+      "defaultValue": "on",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Log}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "on",
+        "uncheckedValue": "off",
+        "id": "Log",
+        "defaultValue": "on",
+        "label": "Enabled",
+        "description": "Enable or disable logging.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.300442",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "LogDetail",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${LogDetail}",
+      "editor": {
+        "items": [
+          {
+            "text": "Log enemy attacks",
+            "value": "1"
+          },
+          {
+            "text": "Log teammate attacks",
+            "value": "2"
+          }
+        ],
+        "id": "LogDetail",
+        "defaultValue": "0",
+        "label": "Log detail:",
+        "description": "Sets the level of detail for logging attacks.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "parentId": "Log",
+        "parentValue": "on",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.300622",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "LogMessages",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${LogMessages}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "LogMessages",
+        "defaultValue": "1",
+        "label": "Log messages",
+        "description": "Enable or disable logging conversations",
+        "required": false,
+        "requiredMessage": "",
+        "parentId": "Log",
+        "parentValue": "on",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.300816",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "MaxRate",
+      "defaultValue": "10000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${MaxRate}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "MaxRate",
+        "defaultValue": "10000",
+        "label": "Max rate:",
+        "description": "Sets the maximum data rate allowed on a server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.301034",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "MaxSpeed",
+      "defaultValue": "320",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${MaxSpeed}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "MaxSpeed",
+        "defaultValue": "320",
+        "label": "Max speed:",
+        "description": "sets the maximum player speed for all clients.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.301185",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "MetamodPlugins",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${MetamodPlugins}",
+      "createdDate": "2026-06-17T23:56:35.301417",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "MinRate",
+      "defaultValue": "400",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${MinRate}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "MinRate",
+        "defaultValue": "400",
+        "label": "Min rate:",
+        "description": "Sets the minimum data rate allowed on a server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.301672",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Pausable",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Pausable}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "Pausable",
+        "defaultValue": "1",
+        "label": "Pausable",
+        "description": "Allow the game to be paused.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.301927",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Proxies",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Proxies}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "Proxies",
+        "defaultValue": "1",
+        "label": "Allow HLTV proxy servers",
+        "description": "Allow allow HLTV proxy servers to connect to your server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.302119",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Region",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Region}",
+      "editor": {
+        "items": [
+          {
+            "text": "East coast",
+            "value": "0"
+          },
+          {
+            "text": "West coast",
+            "value": "1"
+          },
+          {
+            "text": "South america",
+            "value": "2"
+          },
+          {
+            "text": "Europe",
+            "value": "3"
+          },
+          {
+            "text": "Asia",
+            "value": "4"
+          },
+          {
+            "text": "Australia",
+            "value": "5"
+          },
+          {
+            "text": "Middle east",
+            "value": "6"
+          },
+          {
+            "text": "Africa",
+            "value": "7"
+          },
+          {
+            "text": "World",
+            "value": "255"
+          }
+        ],
+        "id": "Region",
+        "defaultValue": "0",
+        "label": "Region:",
+        "description": "The region where this server is located.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.302364",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "RestartRound",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${RestartRound}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "RestartRound",
+        "defaultValue": "0",
+        "label": "Restart round:",
+        "description": "The game is restarted after this number of seconds.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.302531",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "RoundTime",
+      "defaultValue": "5",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${RoundTime}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "RoundTime",
+        "defaultValue": "5",
+        "label": "Round time:",
+        "description": "Duration of each round in minutes.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.302681",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Spectators",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Spectators}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "Spectators",
+        "defaultValue": "0",
+        "label": "Allow spectators",
+        "description": "Allow or disallow spectators on this server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.302846",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "StartMoney",
+      "defaultValue": "2400",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${StartMoney}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 65535,
+        "id": "StartMoney",
+        "defaultValue": "2400",
+        "label": "Start money:",
+        "description": "The amount of money each player starts with.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.303031",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "SteamIdBans",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${SteamIdBans}",
+      "createdDate": "2026-06-17T23:56:35.303251",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "TimeLimit",
+      "defaultValue": "30",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${TimeLimit}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 65535,
+        "id": "TimeLimit",
+        "defaultValue": "30",
+        "label": "Time limit:",
+        "description": "Sets the time in minutes between map changes.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.303384",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "TKPunish",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${TKPunish}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "TKPunish",
+        "defaultValue": "0",
+        "label": "Punish teamkill",
+        "description": "Kill a player next round if he Teamkilled someone.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.303555",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "VoiceEnable",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${VoiceEnable}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "1",
+        "uncheckedValue": "0",
+        "id": "VoiceEnable",
+        "defaultValue": "1",
+        "label": "Enable voice",
+        "description": "Set whether clients can use voice chat on your server.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.30375",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ConfigFile",
+      "defaultValue": "server.cfg",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bexec \u0022${ConfigFile}\u0022",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [
+          "\u002B",
+          "\u0022"
+        ],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "ConfigFile",
+        "defaultValue": "server.cfg",
+        "label": "Server Config:",
+        "description": "The name of the configuration file to execute when the game server is started.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.304234",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Insecure",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Insecure}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "-insecure",
+        "uncheckedValue": "",
+        "id": "Insecure",
+        "defaultValue": "",
+        "label": "Insecure",
+        "description": "Disables Valve Anti-Cheat technology.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.304607",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "StartupMap",
+      "defaultValue": "de_dust2",
+      "required": true,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bmap \u0022${StartupMap}\u0022",
+      "editor": {
+        "items": [
+          {
+            "text": "de_dust2",
+            "value": "de_dust2"
+          }
+        ],
+        "id": "StartupMap",
+        "defaultValue": "de_dust2",
+        "label": "Startup map:",
+        "description": "Specifies which map to start with. ",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:56:35.305189",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 131,
+      "relativePath": "cstrike\\server.cfg",
+      "description": "Main configuration file",
+      "template": "// Set the Host Name\nhostname \u0022${Hostname}\u0022 \n\n// Set the rcon password \nrcon_password \u0022${RconPassword}\u0022\nsv_password \u0022${PrivatePassword}\u0022 \n\n// Fast downloads\nsv_downloadurl \u0022${FastDownloadUrl}\u0022\nsv_allowdownload ${FastDownloadEnabled}\nsv_allowupload 1\n\n// Exec files on startup \nexec banned.cfg\nexec listip.cfg\n\n// Server Logging\nlog ${Log}\nmp_logdetail ${LogDetail}\nmp_logmessages ${LogMessages}\n\n\n// Server Variables\nmp_timelimit ${TimeLimit}\nmp_autokick ${AutoKick}\nmp_autoteambalance ${AutoTeamBalance}\nmp_c4timer ${C4Timer}\nmp_flashlight ${Flashlight}\nmp_footsteps ${FootSteps}\nmp_forcechasecam ${ForceChaseCam}\nmp_freezetime ${FreezeTime}\nmp_friendlyfire ${FriendlyFire}\nmp_hostagepenalty ${HostagePenalty}\nmp_limitteams ${LimitTeams}\nmp_roundtime ${RoundTime}\nmp_tkpunish ${TKPunish}\nsv_restartround ${RestartRound}\nsv_maxspeed ${MaxSpeed}\nsv_proxies ${Proxies}\nallow_spectators ${Spectators}\nmp_startmoney ${StartMoney}\nmp_chattime ${ChatTime}\nsv_allowupload ${AllowUpload}\nsv_voiceenable ${VoiceEnable}\nsv_alltalk ${AllTalk}\n\n\npausable ${Pausable}\ndecalfrequency ${DecalFrequency}\nmp_falldamage ${FallDamage}\n\n// cheat and fun modes\nsv_aim ${Aim}\nsv_cheats ${Cheat}\n\n// Set Rates\nsv_maxrate ${MaxRate}\nsv_minrate ${MinRate}\n\n\n// Contact \u0026 Geo\nsv_contact ${Contact}\nsv_region ${Region}\n\n",
+      "order": 1,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "General Configuration",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_6",
+          "label": "Server Logging",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "on",
+          "uncheckedValue": "off",
+          "id": "Log",
+          "defaultValue": "on",
+          "label": "Enabled",
+          "description": "Enable or disable logging.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Log enemy attacks",
+              "value": "1"
+            },
+            {
+              "text": "Log teammate attacks",
+              "value": "2"
+            }
+          ],
+          "id": "LogDetail",
+          "defaultValue": "0",
+          "label": "Log detail:",
+          "description": "Sets the level of detail for logging attacks.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "parentId": "Log",
+          "parentValue": "on",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "LogMessages",
+          "defaultValue": "1",
+          "label": "Log messages",
+          "description": "Enable or disable logging conversations",
+          "required": false,
+          "requiredMessage": "",
+          "parentId": "Log",
+          "parentValue": "on",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_10",
+          "label": "Server Variables",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 65535,
+          "id": "TimeLimit",
+          "defaultValue": "30",
+          "label": "Time limit:",
+          "description": "Sets the time in minutes between map changes.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "AutoKick",
+          "defaultValue": "1",
+          "label": "Auto kick",
+          "description": "If enabled, the server will automatically kick team killers and idle players.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "AutoTeamBalance",
+          "defaultValue": "1",
+          "label": "Auto team balance",
+          "description": "If enabled, the server will always make sure that teams are balanced and that there is no advantaged team.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 65535,
+          "id": "C4Timer",
+          "defaultValue": "30",
+          "label": "C4 timer:",
+          "description": "Specifies, in seconds, after how much time the C4 bomb will blow up.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "Flashlight",
+          "defaultValue": "0",
+          "label": "Allow flashlight",
+          "description": "Let\u0027s you allow or disallow the use of the flashlight by pressing the F button.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "FootSteps",
+          "defaultValue": "1",
+          "label": "Enable footsteps",
+          "description": "Enable or disable footstep sounds.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Observer can spectate anyone, any mode",
+              "value": "0"
+            },
+            {
+              "text": "Observer can only spectate his own team",
+              "value": "1"
+            },
+            {
+              "text": "Observer can\u0027t spectate anyone and he\u0027ll only see his dead body",
+              "value": "2"
+            }
+          ],
+          "id": "ForceChaseCam",
+          "defaultValue": "0",
+          "label": "Chase cam:",
+          "description": "Enable or disable team-only mode.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "FreezeTime",
+          "defaultValue": "4",
+          "label": "Freeze time:",
+          "description": "Specifies the freeze time at beginning of round, in seconds.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "FriendlyFire",
+          "defaultValue": "0",
+          "label": "Friendly fire",
+          "description": "Enable or disable friendly fire (teammates cause damage to other teammates).",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "HostagePenalty",
+          "defaultValue": "2",
+          "label": "Hostage penalty:",
+          "description": "Specifies how many hostages can be killed before players are kicked from the server. 0 allows players to kill an unlimited number of hostages.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "LimitTeams",
+          "defaultValue": "2",
+          "label": "Limit teams:",
+          "description": "Sets how many players a team can have over the opposite team.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "RoundTime",
+          "defaultValue": "5",
+          "label": "Round time:",
+          "description": "Duration of each round in minutes.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "TKPunish",
+          "defaultValue": "0",
+          "label": "Punish teamkill",
+          "description": "Kill a player next round if he Teamkilled someone.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "RestartRound",
+          "defaultValue": "0",
+          "label": "Restart round:",
+          "description": "The game is restarted after this number of seconds.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "MaxSpeed",
+          "defaultValue": "320",
+          "label": "Max speed:",
+          "description": "sets the maximum player speed for all clients.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "Proxies",
+          "defaultValue": "1",
+          "label": "Allow HLTV proxy servers",
+          "description": "Allow allow HLTV proxy servers to connect to your server.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "Spectators",
+          "defaultValue": "0",
+          "label": "Allow spectators",
+          "description": "Allow or disallow spectators on this server.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "StartMoney",
+          "defaultValue": "2400",
+          "label": "Start money:",
+          "description": "The amount of money each player starts with.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "ChatTime",
+          "defaultValue": "0",
+          "label": "Chat time:",
+          "description": "Time between end of map and mapchange.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "AllowUpload",
+          "defaultValue": "1",
+          "label": "Allow upload",
+          "description": "Allow or disallow tags to be uploaded",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "VoiceEnable",
+          "defaultValue": "1",
+          "label": "Enable voice",
+          "description": "Set whether clients can use voice chat on your server.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "AllTalk",
+          "defaultValue": "0",
+          "label": "Talk beween teams",
+          "description": "Allow or disallow talking between teams.",
+          "required": false,
+          "requiredMessage": "",
+          "parentId": "VoiceEnable",
+          "parentValue": "1",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "Pausable",
+          "defaultValue": "1",
+          "label": "Pausable",
+          "description": "Allow the game to be paused.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "DecalFrequency",
+          "defaultValue": "60",
+          "label": "Decal frequency:",
+          "description": "Sets how frequently players can display their logo.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "FallDamage",
+          "defaultValue": "1",
+          "label": "Fall damage",
+          "description": "Enable or disable the damage when a player falls.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_36",
+          "label": "Cheat and Fun Modes",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "Aim",
+          "defaultValue": "0",
+          "label": "Aim",
+          "description": "Activate or deactivate the aim",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "1",
+          "uncheckedValue": "0",
+          "id": "Cheat",
+          "defaultValue": "0",
+          "label": "Allow cheats",
+          "description": "Allow or disallow cheats.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_39",
+          "label": "Rates",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "MaxRate",
+          "defaultValue": "10000",
+          "label": "Max rate:",
+          "description": "Sets the maximum data rate allowed on a server.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 65535,
+          "id": "MinRate",
+          "defaultValue": "400",
+          "label": "Min rate:",
+          "description": "Sets the minimum data rate allowed on a server.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_42",
+          "label": "Contact \u0026 Geo",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "^[\\w\\.\\-]\u002B@[a-zA-Z0-9\\-]\u002B(\\.[a-zA-Z0-9\\-]{1,})*(\\.[a-zA-Z]{2,3}){1,2}$",
+          "inputType": 0,
+          "id": "Contact",
+          "defaultValue": "you@yourdomain.com",
+          "label": "Contact:",
+          "description": "Contact e-mail for this server.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "East coast",
+              "value": "0"
+            },
+            {
+              "text": "West coast",
+              "value": "1"
+            },
+            {
+              "text": "South america",
+              "value": "2"
+            },
+            {
+              "text": "Europe",
+              "value": "3"
+            },
+            {
+              "text": "Asia",
+              "value": "4"
+            },
+            {
+              "text": "Australia",
+              "value": "5"
+            },
+            {
+              "text": "Middle east",
+              "value": "6"
+            },
+            {
+              "text": "Africa",
+              "value": "7"
+            },
+            {
+              "text": "World",
+              "value": "255"
+            }
+          ],
+          "id": "Region",
+          "defaultValue": "0",
+          "label": "Region:",
+          "description": "The region where this server is located.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "relativePath": "cstrike\\banned.cfg",
+      "description": "Banned Steam IDs",
+      "template": "${SteamIdBans}",
+      "order": 2,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Steam Id Bans",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [
+            "\u002B",
+            "\u0022"
+          ],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "ConfigFile",
+          "defaultValue": "server.cfg",
+          "label": "Server Config:",
+          "description": "The name of the configuration file to execute when the game server is started.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "-insecure",
+          "uncheckedValue": "",
+          "id": "Insecure",
+          "defaultValue": "",
+          "label": "Insecure",
+          "description": "Disables Valve Anti-Cheat technology.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "relativePath": "cstrike\\listip.cfg",
+      "description": "Banned IPs",
+      "template": "${IpBans}",
+      "order": 3,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "IP Bans",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [
+            "\u002B",
+            "\u0022"
+          ],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "ConfigFile",
+          "defaultValue": "server.cfg",
+          "label": "Server Config:",
+          "description": "The name of the configuration file to execute when the game server is started.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "-insecure",
+          "uncheckedValue": "",
+          "id": "Insecure",
+          "defaultValue": "",
+          "label": "Insecure",
+          "description": "Disables Valve Anti-Cheat technology.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "relativePath": "cstrike\\addons\\amxmodx\\configs\\users.ini",
+      "description": "AMX Mod X admins",
+      "template": "; Users configuration file\n; File location: $moddir/addons/amxmodx/configs/users.ini\n\n; Line starting with ; is a comment\n\n; Access flags:\n; a - immunity (can\u0027t be kicked/baned/slayed/slaped and affected by other commmands)\n; b - reservation (can join on reserved slots)\n; c - amx_kick command\n; d - amx_ban and amx_unban commands\n; e - amx_slay and amx_slap commands\n; f - amx_map command\n; g - amx_cvar command (not all cvars will be available)\n; h - amx_cfg command\n; i - amx_chat and other chat commands\n; j - amx_vote and other vote commands\n; k - access to sv_password cvar (by amx_cvar command)\n; l - access to amx_rcon command and rcon_password cvar (by amx_cvar command)\n; m - custom level A (for additional plugins)\n; n - custom level B\n; o - custom level C\n; p - custom level D\n; q - custom level E\n; r - custom level F\n; s - custom level G\n; t - custom level H\n; u - menu access\n; z - user (no admin)\n\n; Account flags:\n; a - disconnect player on invalid password\n; b - clan tag\n; c - this is steamid/wonid\n; d - this is ip\n; e - password is not checked (only name/ip/steamid needed)\n; k - name or tag is case sensitive.  eg: if you set it so the name \u0022Ham\u0022\n;     is protected and case sensitive (flags \u0022k\u0022 only), then anybody\n;     can use the names \u0022haM\u0022, \u0022HAM\u0022, \u0022ham\u0022, etc, but not \u0022Ham\u0022\n\n; Password:\n; Add to your autoexec.cfg: setinfo _pw \u0022\u003Cpassword\u003E\u0022\n; Change _pw to the value of amx_password_field\n\n; Format of admin account:\n; \u003Cname|ip|steamid\u003E \u003Cpassword\u003E \u003Caccess flags\u003E \u003Caccount flags\u003E\n\n; Examples of admin accounts:\n; \u0022STEAM_0:0:123456\u0022 \u0022\u0022 \u0022abcdefghijklmnopqrstu\u0022 \u0022ce\u0022\n; \u0022123.45.67.89\u0022 \u0022\u0022 \u0022abcdefghijklmnopqrstu\u0022 \u0022de\u0022\n; \u0022My Name\u0022 \u0022my_password\u0022 \u0022abcdefghijklmnopqrstu\u0022 \u0022a\u0022\n\n${AMXAdmins}",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "items": [
+            {
+              "text": "de_dust2",
+              "value": "de_dust2"
+            }
+          ],
+          "id": "StartupMap",
+          "defaultValue": "de_dust2",
+          "label": "Startup map:",
+          "description": "Specifies which map to start with. ",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [
+            "\u002B",
+            "\u0022"
+          ],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "ConfigFile",
+          "defaultValue": "server.cfg",
+          "label": "Server Config:",
+          "description": "The name of the configuration file to execute when the game server is started.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "-insecure",
+          "uncheckedValue": "",
+          "id": "Insecure",
+          "defaultValue": "",
+          "label": "Insecure",
+          "description": "Disables Valve Anti-Cheat technology.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "on",
+          "uncheckedValue": "off",
+          "id": "Log",
+          "defaultValue": "on",
+          "label": "Enabled",
+          "description": "Enable or disable logging.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_5",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "relativePath": "cstrike\\addons\\metamod\\config.ini",
+      "description": "Basic config information for Metamod",
+      "template": "",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 136,
+      "relativePath": "cstrike\\addons\\metamod\\exec.cfg",
+      "description": "This is necessary for plugins that need to have settings specified prior to early API routines like ServerActivate, since autoexec.cfg is read too early and server.cfg is read to late.",
+      "template": "",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 137,
+      "relativePath": "cstrike\\addons\\metamod\\plugins.ini",
+      "description": "Plugins loaded by Metamod",
+      "template": "${MetamodPlugins}",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "valueType": "bool",
+          "checkedValue": "-insecure",
+          "uncheckedValue": "",
+          "id": "Insecure",
+          "defaultValue": "",
+          "label": "Insecure",
+          "description": "Disables Valve Anti-Cheat technology.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "on",
+          "uncheckedValue": "off",
+          "id": "Log",
+          "defaultValue": "on",
+          "label": "Enabled",
+          "description": "Enable or disable logging.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Log enemy attacks",
+              "value": "1"
+            },
+            {
+              "text": "Log teammate attacks",
+              "value": "2"
+            }
+          ],
+          "id": "LogDetail",
+          "defaultValue": "0",
+          "label": "Log detail:",
+          "description": "Sets the level of detail for logging attacks.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "parentId": "Log",
+          "parentValue": "on",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "AfterServiceCreated",
+          "AfterServiceReinstalled"
+        ],
+        "name": "Download correctly (Windows)",
+        "description": "Download correctly (Windows)",
+        "code": ": This downloads the files correctly (according to https://forums.alliedmods.net/showthread.php?p=2519238)\n\u0022%TCAdminFolder%\\Monitor\\Tools\\SteamCmd\\steamcmd.exe\u0022 \u002Blogin anonymous \u002Bforce_install_dir %ThisService_RootDirectory% \u002Bapp_update 90 validate \u002Bquit\n\u0022%TCAdminFolder%\\Monitor\\Tools\\SteamCmd\\steamcmd.exe\u0022 \u002Blogin anonymous \u002Bforce_install_dir %ThisService_RootDirectory% \u002Bapp_update 70 validate \u002Bquit\n\u0022%TCAdminFolder%\\Monitor\\Tools\\SteamCmd\\steamcmd.exe\u0022 \u002Blogin anonymous \u002Bforce_install_dir %ThisService_RootDirectory% \u002Bapp_update 10 validate \u002Bquit\n\u0022%TCAdminFolder%\\Monitor\\Tools\\SteamCmd\\steamcmd.exe\u0022 \u002Blogin anonymous \u002Bforce_install_dir %ThisService_RootDirectory% \u002Bapp_update 90 validate \u002Bquit",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "0d686b2d-6c1d-414c-a5d8-9007024793e3"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "AfterServiceCreated",
+          "AfterServiceReinstalled"
+        ],
+        "name": "Windows 10/2019 Compatibility",
+        "description": "Windows 10/2019 Compatibility",
+        "code": "mkdir \u0022%TCAdminFolder%\\Monitor\\Services\\%ThisService_ServiceId%\u0022\necho 1 \u003E \u0022%TCAdminFolder%\\Monitor\\Services\\%ThisService_ServiceId%\\DisableLauncherService\u0022",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "eecc33af-9674-43a5-916b-2a5b9bb5818a"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "BeforeServiceStarted"
+        ],
+        "name": "Delete qconsole.log before starting the service (Windows)",
+        "description": "Delete qconsole.log before starting the service (Windows)",
+        "code": "IF NOT EXIST qconsole.log GOTO END\n\ndel /q qconsole.log\n\n:END",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "20a56702-b299-4ede-a5e9-132910bbbcd5"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "updates": [],
+  "createdDate": "2026-06-17T23:56:35.316502",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": true,
+    "backupType": "Incremental",
+    "compressBackup": true,
+    "includedPaths": [
+      "cstrike/addons/amxmodx/configs/users.ini",
+      "cstrike/addons/metamod/config.ini",
+      "cstrike/addons/metamod/exec.cfg",
+      "cstrike/addons/metamod/plugins.ini",
+      "cstrike/banned.cfg",
+      "cstrike/listip.cfg",
+      "cstrike/server.cfg"
+    ],
+    "maxBackupCount": 30
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [
+    {
+      "name": "Metamod 1.20",
+      "comments": "Metamod is a plugin/DLL manager that sits between the Half-Life Engine and an HL Game mod, allowing the dynamic loading/unloading of mod-like DLL plugins to add functionality to the HL server or game mod. ",
+      "homepageUrl": "http://metamod.org/",
+      "helpUrl": "http://metamod.org/metamod.html",
+      "source": "http://downloads.tcadmin.net/games/mods/metamod-windows.aspx",
+      "saveAsFilename": "metamod.zip",
+      "extractPath": "cstrike\\addons\\metamod\\dlls\\",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "488c7e40-9b7d-4937-a626-9e5828b619be",
+      "addLines": [
+        {
+          "id": "a49eb659-1ed9-4deb-bb94-938afcbb8232",
+          "file": "cstrike\\liblist.gam",
+          "findLine": "gamedll \u0022dlls\\mp.dll\u0022",
+          "isRegex": false,
+          "addLine": "gamedll \u0022addons\\metamod\\dlls\\metamod.dll\u0022",
+          "addLineType": "ReplaceLine",
+          "errorOnFailure": true,
+          "skipIfExists": false,
+          "event": "Install"
+        },
+        {
+          "id": "13e87e8e-3a34-4dbc-ae62-8ee369068d5d",
+          "file": "cstrike\\liblist.gam",
+          "findLine": "gamedll \u0022addons\\metamod\\dlls\\metamod.dll\u0022",
+          "isRegex": false,
+          "addLine": "gamedll \u0022dlls\\mp.dll\u0022",
+          "addLineType": "ReplaceLine",
+          "errorOnFailure": false,
+          "skipIfExists": true,
+          "event": "Uninstall"
+        }
+      ],
+      "removeLines": [],
+      "requiredModNames": [],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [
+        "cstrike\\addons\\metamod\\config.ini",
+        "cstrike\\addons\\metamod\\exec.cfg",
+        "cstrike\\addons\\metamod\\plugins.ini"
+      ],
+      "modRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "modScripts": []
+    },
+    {
+      "name": "AMX Mod X 1.8.2 - base",
+      "groupName": "AMX Mod X",
+      "comments": "AMX Mod X is a versatile Half-Life metamod plugin which is targetted toward server administration.",
+      "homepageUrl": "http://www.amxmodx.org/",
+      "helpUrl": "http://wiki.amxmodx.org/Category:Documentation_%28AMX_Mod_X%29",
+      "source": "http://downloads.tcadmin.net/games/mods/amxmodx-windows.aspx",
+      "saveAsFilename": "amxmodx.zip",
+      "extractPath": "cstrike",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "95bb1114-6430-429d-847d-83575aa6efe4",
+      "addLines": [
+        {
+          "id": "4bc537b3-0ac4-4841-bbb7-0bd82b38e47f",
+          "file": "cstrike\\addons\\metamod\\plugins.ini",
+          "findLine": "",
+          "isRegex": false,
+          "addLine": "win32 addons/amxmodx/dlls/amxmodx_mm.dll",
+          "addLineType": "EndOfFile",
+          "errorOnFailure": true,
+          "skipIfExists": false,
+          "event": "Install"
+        }
+      ],
+      "removeLines": [
+        {
+          "id": "fbf26d1f-1a3d-4303-a289-68a9a68ff931",
+          "file": "cstrike\\addons\\metamod\\plugins.ini",
+          "findLine": "win32 addons/amxmodx/dlls/amxmodx_mm.dll",
+          "isRegex": false,
+          "errorOnFailure": true,
+          "event": "Uninstall"
+        }
+      ],
+      "requiredModNames": [
+        "Metamod 1.20"
+      ],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [
+        "cstrike\\addons\\amxmodx\\configs\\users.ini"
+      ],
+      "modRoles": [
+        {
+          "roleId": 3
+        },
+        {
+          "roleId": 2
+        }
+      ],
+      "modScripts": []
+    },
+    {
+      "name": "AMX Mod X 1.8.2 - cstrike",
+      "groupName": "AMX Mod X",
+      "comments": "AMX Mod Addon pack for Counter-Strike",
+      "homepageUrl": "http://www.amxmodx.org/",
+      "helpUrl": "http://wiki.amxmodx.org/Category:Documentation_%28AMX_Mod_X%29",
+      "source": "http://downloads.tcadmin.net/games/mods/amxmodx-cstrike-windows.aspx",
+      "saveAsFilename": "amxmodx-cstrike.zip",
+      "extractPath": "cstrike",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "594eba49-bdd9-40c5-9b7c-94e3f390085d",
+      "addLines": [],
+      "removeLines": [],
+      "requiredModNames": [
+        "AMX Mod X 1.8.2 - base"
+      ],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [],
+      "modRoles": [
+        {
+          "roleId": 3
+        },
+        {
+          "roleId": 2
+        }
+      ],
+      "modScripts": []
+    }
+  ],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "Restart",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": true,
+    "slotDetectionAction": "Stop",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": true,
+    "privateDetectionAction": "Stop",
+    "brandDetectionEnabled": true,
+    "brandDetectionAction": "Stop",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/cstrike",
+    "includePatterns": [
+      "cstrike/maps/**/*"
+    ],
+    "excludePatterns": [
+      "**/as_oilrig.bsp",
+      "**/cs_747.bsp",
+      "**/cs_assault.bsp",
+      "**/cs_backalley.bsp",
+      "**/cs_estate.bsp",
+      "**/cs_havana.bsp",
+      "**/cs_italy.bsp",
+      "**/cs_militia.bsp",
+      "**/cs_office.bsp",
+      "**/cs_siege.bsp",
+      "**/de_airstrip.bsp",
+      "**/de_aztec.bsp",
+      "**/de_cbble.bsp",
+      "**/de_cbble_detail.txt",
+      "**/de_chateau.bsp",
+      "**/de_dust.bsp",
+      "**/de_dust2.bsp",
+      "**/de_inferno.bsp",
+      "**/de_nuke.bsp",
+      "**/de_piranesi.bsp",
+      "**/de_prodigy.bsp",
+      "**/de_storm.bsp",
+      "**/de_survivor.bsp",
+      "**/de_torn.bsp",
+      "**/de_train.bsp",
+      "**/de_vertigo.bsp"
+    ],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
