@@ -1,0 +1,656 @@
+{
+  "__TCA:ExportVersion": "3.11.385.37490",
+  "__TCA:ExportedAt": "2026-06-27T19:43:49.8906924Z",
+  "name": "Mordhau",
+  "shortName": "Mordhau",
+  "description": "",
+  "operatingSystem": "Linux",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/629760/1ce1643c91aa49fee0b63c68f8fb56f8a08d540b.ico",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/629760/ss_ce604b8561e7d1cb26ddf74e3db97d94662e2d5b.1920x1080.jpg?t=1777933284",
+  "minSlots": 0,
+  "maxSlots": 64,
+  "defaultSlots": 16,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "source",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "Terminal",
+    "logFile": "Mordhau/Saved/Logs/Mordhau.log",
+    "inputSource": "RconProtocol",
+    "printRconResponse": false,
+    "outputFilters": "",
+    "stopCommand": "shutdown",
+    "waitAfterStopCommand": 12000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 7777,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 7778,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 7779,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "MordhauServer.sh",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "mordhau-linux",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 629800,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 629760,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": true,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-multihome=${IPAddress} -Port=${GamePort} -QueryPort=${QueryPort}",
+    "defaultCustomCommandline": "",
+    "predefinedCommandlines": []
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [],
+  "configFiles": [
+    {
+      "id": 191,
+      "relativePath": "Mordhau/Saved/Config/LinuxServer/Game.ini",
+      "description": "Main configuration file",
+      "template": "[/Script/Mordhau.MordhauGameMode]\nPlayerRespawnTime=5.000000\nBallistaRespawnTime=30.000000\nCatapultRespawnTime=30.000000\nHorseRespawnTime=30.000000\nDamageFactor=1.000000\nTeamDamageFactor=0.500000\nMapRotation=FFA_ThePit\nMapRotation=TDM_Camp\nMapRotation=SKM_Grad\nMapRotation=FFA_Contraband\nMapRotation=TDM_Tourney\nMapRotation=SKM_MountainPeak\nMapRotation=FFA_Taiga\nMapRotation=TDM_ThePit\nMapRotation=SKM_Camp\nMapRotation=FFA_Grad\nMapRotation=TDM_Contraband\nMapRotation=SKM_Tourney\nMapRotation=FFA_MountainPeak\nMapRotation=TDM_Taiga\nMapRotation=SKM_ThePit\nMapRotation=FFA_Camp\nMapRotation=TDM_Grad\nMapRotation=SKM_Contraband\nMapRotation=FFA_Tourney\nMapRotation=TDM_MountainPeak\nMapRotation=SKM_Taiga\n\n[/Script/Mordhau.MordhauGameSession]\nMaxSlots=${Slots}\nServerName=${Hostname}\nServerPassword=${PrivatePassword}\nAdminPassword=${RconPassword}\nBannedPlayers=()\r\nbAdvertiseServerViaSteam=True\r\nRconPort=${RConPort}\r\nRconPassword=${RconPassword}",
+      "order": 0,
+      "enableEditor": false,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "updates": [],
+  "createdDate": "2026-06-17T23:57:55.227464",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": true,
+    "backupType": "Incremental",
+    "compressBackup": true,
+    "includedPaths": [
+      "Mordhau/Saved/Config/**/*",
+      "Engine/Saved/Config/**/*"
+    ],
+    "maxBackupCount": 5
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [],
+  "queryMonitoringConfig": {
+    "enabled": false,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "None",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": false,
+    "slotDetectionAction": "None",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": false,
+    "privateDetectionAction": "None",
+    "brandDetectionEnabled": false,
+    "brandDetectionAction": "None",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": [
+    {
+      "id": 46,
+      "blueprintId": 76,
+      "name": "LD_LIBRARY_PATH",
+      "value": "${ThisService.RootDirectory}/Engine/Binaries/ThirdParty/Steamworks/Steamv152/x86_64-unknown-linux-gnu",
+      "valueType": "Template"
+    }
+  ]
+}

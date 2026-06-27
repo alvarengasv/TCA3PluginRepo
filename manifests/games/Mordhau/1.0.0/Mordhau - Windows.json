@@ -1,0 +1,741 @@
+{
+  "__TCA:ExportVersion": "3.11.385.37490",
+  "__TCA:ExportedAt": "2026-06-27T19:43:50.2390119Z",
+  "name": "Mordhau",
+  "shortName": "Mordhau",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/629760/1ce1643c91aa49fee0b63c68f8fb56f8a08d540b.ico",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/629760/ss_ce604b8561e7d1cb26ddf74e3db97d94662e2d5b.1920x1080.jpg?t=1777933284",
+  "minSlots": 0,
+  "maxSlots": 64,
+  "defaultSlots": 16,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "source",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "LogFile",
+    "logFile": "Mordhau\\Saved\\Logs\\Mordhau.log",
+    "inputSource": "RconProtocol",
+    "printRconResponse": false,
+    "outputFilters": "",
+    "stopCommand": "shutdown",
+    "waitAfterStopCommand": 12000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 7777,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 7778,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 7779,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 10
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "MordhauServer.exe",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "mordhau",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 629800,
+    "runAsServiceUser": false,
+    "branch": "public",
+    "storeId": 629760,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": true,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-multihome=${IPAddress} -Port=${GamePort} -QueryPort=${QueryPort}",
+    "defaultCustomCommandline": "",
+    "predefinedCommandlines": []
+  },
+  "runAsConfig": {
+    "runAs": "TCAGame",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [],
+  "configFiles": [
+    {
+      "id": 192,
+      "relativePath": "Mordhau\\Saved\\Config\\WindowsServer\\Game.ini",
+      "description": "Main configuration file",
+      "template": "[/Script/Mordhau.MordhauGameMode]\nPlayerRespawnTime=5.000000\nBallistaRespawnTime=30.000000\nCatapultRespawnTime=30.000000\nHorseRespawnTime=30.000000\nDamageFactor=1.000000\nTeamDamageFactor=0.500000\nMapRotation=FFA_ThePit\nMapRotation=TDM_Camp\nMapRotation=SKM_Grad\nMapRotation=FFA_Contraband\nMapRotation=TDM_Tourney\nMapRotation=SKM_MountainPeak\nMapRotation=FFA_Taiga\nMapRotation=TDM_ThePit\nMapRotation=SKM_Camp\nMapRotation=FFA_Grad\nMapRotation=TDM_Contraband\nMapRotation=SKM_Tourney\nMapRotation=FFA_MountainPeak\nMapRotation=TDM_Taiga\nMapRotation=SKM_ThePit\nMapRotation=FFA_Camp\nMapRotation=TDM_Grad\nMapRotation=SKM_Contraband\nMapRotation=FFA_Tourney\nMapRotation=TDM_MountainPeak\nMapRotation=SKM_Taiga\n\n[/Script/Mordhau.MordhauGameSession]\nMaxSlots=${Slots}\nServerName=${Hostname}\nServerPassword=${PrivatePassword}\nAdminPassword=${RconPassword}\nBannedPlayers=()\r\nbAdvertiseServerViaSteam=True\r\nRconPort=${RConPort}\r\nRconPassword=${RconPassword}",
+      "order": 0,
+      "enableEditor": false,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [],
+        "name": "Download tools ",
+        "description": "Download tools ",
+        "code": "@echo off\n\nif not exist %ThisService_RootDirectory%Tools\\Libraries\\ mkdir %ThisService_RootDirectory%Tools\\Libraries\\\nif not exist C:\\ServerSystem mkdir C:\\ServerSystem\n\nC:\\DayZSync\\wget.exe -nH --cut-dirs=2 -r --reject \u0022index.html*\u0022 http://www.gameservers.global/SyncSystem/Tools/ -P %ThisService_RootDirectory%Tools\\Libraries\\\n\nping -n 1 127.0.0.1 \u003E nul\n\nren %ThisService_RootDirectory%Tools\\Libraries\\7za.exe 7za_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\mcrcon.exe mcrcon_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\wget.exe wget_%ThisService_ServiceId%.exe \n\nif not exist C:\\ServerSystem\\Workshop\\steamcmd.exe xcopy /y/q/i \u0022%ThisService_RootDirectory%Tools\\Libraries\\steamcmd.exe\u0022 \u0022C:\\ServerSystem\\Workshop\\\u0022\n\nping -n 1 127.0.0.1 \u003E nul\n\n%ThisService_RootDirectory%Tools\\Libraries\\wget_%ThisService_ServiceId%.exe -r --ftp-user=SyncSystem --ftp-password=sg3jAho9lQ1 --tries=1 ftp://eusyncsystem.gtxgaming.co.uk/ModManager/ConanExiles/Tools/ModUpdater.7z\n%ThisService_RootDirectory%Tools\\Libraries\\7za_%ThisService_ServiceId%.exe x -aoa -y %ThisService_RootDirectory%eusyncsystem.gtxgaming.co.uk\\ModManager\\ConanExiles\\Tools\\ModUpdater.7z -o%ThisService_RootDirectory%Tools\\ModUpdater\n\nren %ThisService_RootDirectory%Tools\\ModUpdater\\UE4ModUpdater.exe UE4ModUpdater_%ThisService_ServiceId%.exe\n\nrd /s/q %ThisService_RootDirectory%eusyncsystem.gtxgaming.co.uk\n\nping -n 1 127.0.0.1 \u003E nul\n\n%ThisService_RootDirectory%Tools\\ModUpdater\\UE4ModUpdater_%ThisService_ServiceId%.exe -modFile ActiveModsPath=%ThisService_RootDirectory%Tools\\ModUpdater\\ActiveMods.json ServerPath=%ThisService_RootDirectory% SteamAppId=376030\n\n\nexit",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "f64058d6-399b-4813-823e-3dba5c9ead27"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [],
+        "name": "Download Server Tools",
+        "description": "Download Server Tools",
+        "code": "if not exist %ThisService_RootDirectory%Tools\\Libraries\\ mkdir %ThisService_RootDirectory%Tools\\Libraries\\\nif not exist %ThisService_RootDirectory%Tools\\DBTools\\ mkdir %ThisService_RootDirectory%Tools\\DBTools\\\nif not exist C:\\ServerSystem mkdir C:\\ServerSystem\n\nC:\\DayZSync\\wget.exe -nH --cut-dirs=2 -r --reject \u0022index.html*\u0022 http://www.gameservers.global/SyncSystem/Tools/ -P %ThisService_RootDirectory%Tools\\Libraries\\\n\nping -n 1 127.0.0.1 \u003E nul\n\nC:\\DayZSync\\wget.exe -nH --cut-dirs=2 -r --reject \u0022index.html*\u0022 http://www.gameservers.global/SyncSystem/ConanExiles/DBTools/ -P %ThisService_RootDirectory%Tools\\ 2\u003E NUL\n\nping -n 1 127.0.0.1 \u003E nul\n\nren %ThisService_RootDirectory%Tools\\Libraries\\7za.exe 7za_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\winscp.com winscp_%ThisService_ServiceId%.com \nren %ThisService_RootDirectory%Tools\\Libraries\\winscp.exe winscp_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\ARKModCopy.exe ARKModCopy_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\FxUpdater.exe FxUpdater_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\mcrcon.exe mcrcon_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\PsInfo64.exe PsInfo64_%ThisService_ServiceId%.exe\nren %ThisService_RootDirectory%Tools\\Libraries\\UnRAR.exe UnRAR_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\Libraries\\wget.exe wget_%ThisService_ServiceId%.exe \nren %ThisService_RootDirectory%Tools\\DBTools\\sqlite3.exe sqlite3_%ThisService_ServiceId%.exe\n\nif not exist C:\\ServerSystem\\Workshop\\steamcmd.exe xcopy /y/q/i \u0022%ThisService_RootDirectory%Tools\\Libraries\\steamcmd.exe\u0022 \u0022C:\\ServerSystem\\Workshop\\\u0022\n\nexit",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 1,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "3f574d25-9677-4a4a-9375-69269b6a85f7"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [],
+        "name": "Install Mod Updater",
+        "description": "Install Mod Updater",
+        "code": "set datacenter=%ThisServer_DatacenterId%\nset modname=ModUpdater\nset modtype=Tools\nset game=ConanExiles\n\nif \u0022%datacenter%\u0022==\u00221\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u00222\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u00223\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002210\u0022 (\n  set location=ausyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002211\u0022 (\n  set location=lasyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002212\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002213\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002214\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002215\u0022 (\n  set location=nysyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002216\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002217\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002218\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002219\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002220\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002221\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002222\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002223\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002224\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002225\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002226\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002227\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002228\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002229\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002230\u0022 (\n  set location=eusyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002231\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002232\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002233\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\nif \u0022%datacenter%\u0022==\u002234\u0022 (\n  set location=ussyncsystem.gtxgaming.co.uk\n)\n\n%ThisService_RootDirectory%Tools\\Libraries\\wget_%ThisService_ServiceId%.exe -r --ftp-user=SyncSystem --ftp-password=sg3jAho9lQ1 --tries=1 ftp://%location%/ModManager/%game%/%modtype%/%modname%.7z\n%ThisService_RootDirectory%Tools\\Libraries\\7za_%ThisService_ServiceId%.exe x -aoa -y %ThisService_RootDirectory%%location%\\ModManager\\%game%\\%modtype%\\%modname%.7z -o%ThisService_RootDirectory%%modtype%\\%modname%\n\nren %ThisService_RootDirectory%Tools\\ModUpdater\\UE4ModUpdater.exe UE4ModUpdater_%ThisService_ServiceId%.exe\n\nrd /s/q %ThisService_RootDirectory%%location%\n\nexit",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 2,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "e6d3deca-67cb-4f7c-9c77-c6306c26e089"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Batch",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [],
+        "name": "Generate ActiveMods File",
+        "description": "Generate ActiveMods File",
+        "code": "@echo off\n%ThisService_RootDirectory%Tools\\ModUpdater\\UE4ModUpdater_%ThisService_ServiceId%.exe -modFile ActiveModsPath=%ThisService_RootDirectory%Tools\\ModUpdater\\ActiveMods.json ServerPath=%ThisService_RootDirectory% SteamAppId=443030\nexit",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 3,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "6780abef-859e-4919-b4a5-f90e830b14c3"
+      }
+    }
+  ],
+  "customModProviderConfigs": [],
+  "gamesCustomLinks": [],
+  "updates": [],
+  "createdDate": "2026-06-17T23:58:00.384736",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": true,
+    "backupType": "Incremental",
+    "compressBackup": true,
+    "includedPaths": [
+      "Mordhau/Saved/Config/**/*",
+      "Engine/Saved/Config/**/*"
+    ],
+    "maxBackupCount": 5
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [],
+  "queryMonitoringConfig": {
+    "enabled": false,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "None",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": false,
+    "slotDetectionAction": "None",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": false,
+    "privateDetectionAction": "None",
+    "brandDetectionEnabled": false,
+    "brandDetectionAction": "None",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
