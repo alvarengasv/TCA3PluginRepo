@@ -1,0 +1,26 @@
+identifier: "Community.Games.Mordhau"
+name: "Mordhau"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Mordhau"
+longDescription: |
+  # Mordhau
+  
+  ## Key Features
+  
+  ## What's new
+  - Graceful shutdown
+  - Web console
+  - Backups
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/629760/1ce1643c91aa49fee0b63c68f8fb56f8a08d540b.ico"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/629760/ss_ce604b8561e7d1cb26ddf74e3db97d94662e2d5b.1920x1080.jpg?t=1777933284"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "Mordhau - Linux.json"
+    type: "GameConfig"
+  - path: "Mordhau - Windows.json"
+    type: "GameConfig"
