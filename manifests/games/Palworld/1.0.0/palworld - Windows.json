@@ -1,0 +1,4260 @@
+{
+  "__TCA:ExportVersion": "3.11.383.37490",
+  "__TCA:ExportedAt": "2026-06-27T01:15:38.206678Z",
+  "name": "Palworld",
+  "shortName": "palworld",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/1623730/22a20bdaa6d782f60caa45eb7b02fc2411dcd988.ico",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_b3cea7c9f04a67d784d4c6a0c157a11d6268b189.1920x1080.jpg?t=1780702171",
+  "minSlots": 4,
+  "maxSlots": 32,
+  "defaultSlots": 8,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "palworld",
+    "rconProtocol": "custom_script",
+    "privateRule": "password",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "ConsoleWrapper",
+    "logFile": "",
+    "inputSource": "RconProtocol",
+    "printRconResponse": true,
+    "outputFilters": "REST accessed endpoint",
+    "stopCommand": "Shutdown 1 Server is shutting down",
+    "waitAfterStopCommand": 10000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": true,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 8211,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "RConPort",
+        "port": 8212,
+        "expression": ""
+      },
+      {
+        "id": "RESTAPIPort",
+        "port": 8214,
+        "expression": ""
+      }
+    ],
+    "portIncrement": 5
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "PalServer.exe",
+    "relativeWorkingDirectory": "",
+    "autoSetupFolderName": "palworld",
+    "failOnMissingExecutable": false,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 2394010,
+    "runAsServiceUser": true,
+    "branch": "public",
+    "storeId": 1623730,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": false,
+    "verifyAll": false,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": true,
+    "defaultCommandline": "-ServerName=\u0022${Hostname}\u0022 -publicip=\u0022${IPAddress}\u0022 -port=${GamePort} -publicport=${GamePort} -queryport=${QueryPort} -RESTAPIEnabled=True -RESTAPIPort=${RESTAPIPort} -logformat=text -publiclobby -players=${Slots} -log -nosteam -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS",
+    "defaultCustomCommandline": "",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Default",
+        "commandLine": "-ServerName=\u0022${Hostname}\u0022 -publicip=\u0022${IPAddress}\u0022 -port=${GamePort} -publicport=${GamePort} -queryport=${QueryPort} -RESTAPIEnabled=True -RESTAPIPort=${RESTAPIPort} -logformat=text -publiclobby -players=${Slots} -log -nosteam -useperfthreads -NoAsyncLoadingThread -UseMultithreadForDS"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "AutoResetGuildTimeNoOnlinePlayers",
+      "defaultValue": "72.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${AutoResetGuildTimeNoOnlinePlayers}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "AutoResetGuildTimeNoOnlinePlayers",
+        "defaultValue": "72.000000",
+        "label": "Reset Guild if No Players in",
+        "description": "In hours how long to reset/remove a guild with no online players.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.118656",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bActiveUNKO",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bActiveUNKO}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bActiveUNKO",
+        "defaultValue": "False",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.119163",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "BanListURL",
+      "defaultValue": "https://api.palworldgame.com/api/banlist.txt",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${BanListURL}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "BanListURL",
+        "defaultValue": "https://api.palworldgame.com/api/banlist.txt",
+        "label": "Ban List URL",
+        "description": "If you have your own to use, paste it here!",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.119431",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "BaseCampMaxNum",
+      "defaultValue": "128",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${BaseCampMaxNum}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 100,
+        "id": "BaseCampMaxNum",
+        "defaultValue": "128",
+        "label": "Base Camp Max Allowed",
+        "description": "Maximum allowed base camps on the map.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.120065",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "BaseCampWorkerMaxNum",
+      "defaultValue": "20",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${BaseCampWorkerMaxNum}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 20,
+        "id": "BaseCampWorkerMaxNum",
+        "defaultValue": "20",
+        "label": "Max Pals At Base",
+        "description": "Maximum allowed pals working at a single base.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.120355",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bAutoResetGuildNoOnlinePlayers",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bAutoResetGuildNoOnlinePlayers}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bAutoResetGuildNoOnlinePlayers",
+        "defaultValue": "False",
+        "label": "Enable Timer to Remove Inactive Guilds?",
+        "description": "Check the box to enable the timer to remove guilds every so often via the time set above.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.120695",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bCanPickupOtherGuildDeathPenaltyDrop",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bCanPickupOtherGuildDeathPenaltyDrop}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bCanPickupOtherGuildDeathPenaltyDrop",
+        "defaultValue": "False",
+        "label": "Can Pickup Other\u0027s Death Penalty Drops?",
+        "description": "Should you be able to pickup another\u0027s guild death penalty drop?",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.120974",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableAimAssistKeyboard",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableAimAssistKeyboard}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bEnableAimAssistKeyboard",
+        "defaultValue": "False",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.121272",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableAimAssistPad",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableAimAssistPad}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bEnableAimAssistPad",
+        "defaultValue": "True",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.121581",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableDefenseOtherGuildPlayer",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableDefenseOtherGuildPlayer}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bEnableDefenseOtherGuildPlayer",
+        "defaultValue": "False",
+        "label": "Defense Other Guild Player",
+        "description": "Not sure what this does. Enable at own risk.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.121876",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableFastTravel",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableFastTravel}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bEnableFastTravel",
+        "defaultValue": "True",
+        "label": "Enable Fast Travel?",
+        "description": "Checked to allow fast travel, uncheck to disallow.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.122127",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableFriendlyFire",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableFriendlyFire}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bEnableFriendlyFire",
+        "defaultValue": "False",
+        "label": "Enable Friendly Fire?",
+        "description": "Want to kill your pals and your guildmates? Enable it.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.122378",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableInvaderEnemy",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableInvaderEnemy}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bEnableInvaderEnemy",
+        "defaultValue": "True",
+        "label": "Enable Raid Events?",
+        "description": "Checked means ON, Unchecked means OFF.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.122637",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnableNonLoginPenalty",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnableNonLoginPenalty}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bEnableNonLoginPenalty",
+        "defaultValue": "True",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.122987",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bEnablePlayerToPlayerDamage",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bEnablePlayerToPlayerDamage}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bEnablePlayerToPlayerDamage",
+        "defaultValue": "False",
+        "label": "Enable Player to Player Damage",
+        "description": "When PvP is enabled this is for Pal battles, enabling this allows players to directly kill each other.",
+        "required": false,
+        "requiredMessage": "",
+        "parentId": "bIsPvP",
+        "parentValue": "True",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.123302",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bExistPlayerAfterLogout",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bExistPlayerAfterLogout}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bExistPlayerAfterLogout",
+        "defaultValue": "False",
+        "label": "Player Stays after Logout?",
+        "description": "By checking this, when players logout their character remains in the world to be interacted with.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.123651",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bIsMultiplay",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bIsMultiplay}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bIsMultiplay",
+        "defaultValue": "False",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.124007",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bIsPvP",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bIsPvP}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "bIsPvP",
+        "defaultValue": "False",
+        "label": "PvP Enabled?",
+        "description": "Enables Pals from player\u0027s parties to fight, enable Player to Player to directly attack other players.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.124237",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bIsStartLocationSelectByMap",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bIsStartLocationSelectByMap}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bIsStartLocationSelectByMap",
+        "defaultValue": "True",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.12447",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "BuildObjectDamageRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${BuildObjectDamageRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "BuildObjectDamageRate",
+        "defaultValue": "1.000000",
+        "label": "Damage to Structure",
+        "description": "The multiplier of damage that structures take from all sources.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.124671",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "BuildObjectDeteriorationDamageRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "Value cannot be null!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${BuildObjectDeteriorationDamageRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "BuildObjectDeteriorationDamageRate",
+        "defaultValue": "1.000000",
+        "label": "Structure Decay Rate",
+        "description": "How fast a structure decays over time.",
+        "required": false,
+        "requiredMessage": "Value cannot be null!",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.124888",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bUseAuth",
+      "defaultValue": "True",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bUseAuth}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "bUseAuth",
+        "defaultValue": "True",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.125221",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "CollectionDropRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${CollectionDropRate}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 10,
+        "id": "CollectionDropRate",
+        "defaultValue": "1.000000",
+        "label": "Gathering Items Mult",
+        "description": "Multiplier at which you gather items from world.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.125428",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "CollectionObjectHpRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${CollectionObjectHpRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "CollectionObjectHpRate",
+        "defaultValue": "1.000000",
+        "label": "Object HP Mult",
+        "description": "HP of collection objects in world to increase amount gathered from.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.125663",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "CollectionObjectRespawnSpeedRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${CollectionObjectRespawnSpeedRate}",
+      "editor": {
+        "decimals": 6,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 3,
+        "id": "CollectionObjectRespawnSpeedRate",
+        "defaultValue": "1.000000",
+        "label": "Object Respawn Rate",
+        "description": "Multiplier to determine how fast to respawn a gathering node on the map.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.125908",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "CoopPlayerMaxNum",
+      "defaultValue": "4",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${CoopPlayerMaxNum}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "CoopPlayerMaxNum",
+        "defaultValue": "4",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.126186",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "DayTimeSpeedRate",
+      "defaultValue": "1.000000",
+      "required": true,
+      "requiredMessage": "Value cannot be zero!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DayTimeSpeedRate}",
+      "editor": {
+        "step": 0.1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.1,
+        "maxValue": 5,
+        "id": "DayTimeSpeedRate",
+        "defaultValue": "1.000000",
+        "label": "Day Time Speed",
+        "description": "High values will result in faster day speed",
+        "required": false,
+        "requiredMessage": "Value cannot be zero!",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.126339",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "DeathPenalty",
+      "defaultValue": "All",
+      "required": false,
+      "requiredMessage": "Value cannot be null!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DeathPenalty}",
+      "editor": {
+        "items": [
+          {
+            "text": "Keep Everything",
+            "value": "None"
+          },
+          {
+            "text": "Only Items",
+            "value": "Item"
+          },
+          {
+            "text": "Items and Equipment",
+            "value": "ItemAndEquipment"
+          },
+          {
+            "text": "Items, Equipment and Pals",
+            "value": "All"
+          }
+        ],
+        "id": "DeathPenalty",
+        "defaultValue": "All",
+        "label": "Death Penalty",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "Value cannot be null!",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.126664",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Difficulty",
+      "defaultValue": "None",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Difficulty}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "Difficulty",
+        "defaultValue": "None",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.126933",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "DropItemAliveMaxHours",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DropItemAliveMaxHours}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "DropItemAliveMaxHours",
+        "defaultValue": "1.000000",
+        "label": "Dropped Item Spoil Timer",
+        "description": "How long in hours should items stay before despawning?\n0.5=30 Minutes, 3 = 3 Hours",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.127173",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "DropItemMaxNum",
+      "defaultValue": "3000",
+      "required": true,
+      "requiredMessage": "Value cannot be null!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DropItemMaxNum}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 3000,
+        "id": "DropItemMaxNum",
+        "defaultValue": "3000",
+        "label": "Max Dropped Items",
+        "description": "Max amount of dropped items in world.",
+        "required": false,
+        "requiredMessage": "Value cannot be null!",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.127401",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "DropItemMaxNum_UNKO",
+      "defaultValue": "100",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${DropItemMaxNum_UNKO}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "DropItemMaxNum_UNKO",
+        "defaultValue": "100",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.127707",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "EnemyDropItemRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${EnemyDropItemRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "EnemyDropItemRate",
+        "defaultValue": "1.000000",
+        "label": "Enemy Drop Rate",
+        "description": "Items dropped from enemies mulitplier.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.127944",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ExpRate",
+      "defaultValue": "1.000000",
+      "required": true,
+      "requiredMessage": "Value cannot be zero!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ExpRate}",
+      "editor": {
+        "step": 0.5,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 20,
+        "id": "ExpRate",
+        "defaultValue": "1.000000",
+        "label": "EXP Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "Value cannot be zero!",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.128108",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "GuildPlayerMaxNum",
+      "defaultValue": "20",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${GuildPlayerMaxNum}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 100,
+        "id": "GuildPlayerMaxNum",
+        "defaultValue": "20",
+        "label": "Max Amount of Guilds",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.128394",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "NightTimeSpeedRate",
+      "defaultValue": "1.000000",
+      "required": true,
+      "requiredMessage": "Value cannot be zero!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${NightTimeSpeedRate}",
+      "editor": {
+        "step": 0.1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.1,
+        "maxValue": 5,
+        "id": "NightTimeSpeedRate",
+        "defaultValue": "1.000000",
+        "label": "Night Time Speed",
+        "description": "High values will result in faster night speed",
+        "required": false,
+        "requiredMessage": "Value cannot be zero!",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.128578",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalAutoHpRegenRateInSleep",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalAutoHpRegeneRateInSleep}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "PalAutoHpRegenRateInSleep",
+        "defaultValue": "1.000000",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.128853",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalAutoHPRegenRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalAutoHPRegenRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalAutoHPRegenRate",
+        "defaultValue": "1.000000",
+        "label": "Pal HP Regen Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.129099",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalCaptureRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalCaptureRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalCaptureRate",
+        "defaultValue": "1.000000",
+        "label": "Pal Capture Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.129312",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalDamageRateAttack",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalDamageRateAttack}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalDamageRateAttack",
+        "defaultValue": "1.000000",
+        "label": "Damage From Pal",
+        "description": "(Attack Mulitplier)",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.12954",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalDamageRateDefense",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalDamageRateDefense}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalDamageRateDefense",
+        "defaultValue": "1.000000",
+        "label": "Damage To Pal",
+        "description": "(Defense) Multiplier",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.129746",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalEggDefaultHatchingTime",
+      "defaultValue": "72.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalEggDefaultHatchingTime}",
+      "editor": {
+        "step": 1,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 72,
+        "id": "PalEggDefaultHatchingTime",
+        "defaultValue": "72.000000",
+        "label": "Incubate Massive Egg Time",
+        "description": "Time in hours to incubate Massive Egg",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.130062",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalSpawnNumRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalSpawnNumRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalSpawnNumRate",
+        "defaultValue": "1.000000",
+        "label": "Pal Spawn Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.130279",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalStaminaDecreaceRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalStaminaDecreaceRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalStaminaDecreaceRate",
+        "defaultValue": "1.000000",
+        "label": "Pal Stamina Loss Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.130499",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PalStomachDecreaceRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PalStomachDecreaceRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PalStomachDecreaceRate",
+        "defaultValue": "1.000000",
+        "label": "Pal Hunger Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.130686",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PlayerAutoHPRegenRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PlayerAutoHPRegenRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PlayerAutoHPRegenRate",
+        "defaultValue": "1.000000",
+        "label": "Player HP Regen Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.130907",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PlayerAutoHpRegenRateInSleep",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PlayerAutoHpRegenRateInSleep}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PlayerAutoHpRegenRateInSleep",
+        "defaultValue": "1.000000",
+        "label": "Player HP Regen Rate Sleep ",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.131064",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PlayerDamageRateAttack",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PlayerDamageRateAttack}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PlayerDamageRateAttack",
+        "defaultValue": "1.000000",
+        "label": "Damage From Player",
+        "description": "(Attack) Multiplier",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.13126",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PlayerDamageRateDefense",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PlayerDamageRateDefense}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PlayerDamageRateDefense",
+        "defaultValue": "1.000000",
+        "label": "Damage To Player",
+        "description": "(Defense) Multiplier",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.131505",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PlayerStaminaDecreaceRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PlayerStaminaDecreaceRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PlayerStaminaDecreaceRate",
+        "defaultValue": "1.000000",
+        "label": "Player Stamina Loss Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.132078",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PlayerStomachDecreaceRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PlayerStomachDecreaceRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "PlayerStomachDecreaceRate",
+        "defaultValue": "1.000000",
+        "label": "Player Hunger Rate",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.132496",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "PublicPort",
+      "defaultValue": "8211",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${PublicPort}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "PublicPort",
+        "defaultValue": "8211",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.132847",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "RCONEnabled",
+      "defaultValue": "False",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${RCONEnabled}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "RCONEnabled",
+        "defaultValue": "False",
+        "label": "RCON Enabled?",
+        "description": "Check box to enable RCON.",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.133178",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "RCONPort",
+      "defaultValue": "25575",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${RCONPort}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "RCONPort",
+        "defaultValue": "25575",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.133449",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "name": "Region",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Region}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "Region",
+        "defaultValue": "",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.133716",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ServerDescription",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ServerDescription}",
+      "editor": {
+        "maxLength": 256,
+        "lines": 0,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "ServerDescription",
+        "defaultValue": "",
+        "label": "Server Description",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.13404",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ServerName",
+      "defaultValue": "TSSN Palworld Server",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ServerName}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "ServerName",
+        "defaultValue": "TSSN Palworld Server",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.134349",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ServerPassword",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ServerPassword}",
+      "editor": {
+        "maxLength": 25,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "ServerPassword",
+        "defaultValue": "",
+        "label": "Server Password",
+        "description": "Leave blank for no password.",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.134598",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "ServerPlayerMaxNum",
+      "defaultValue": "32",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${ServerPlayerMaxNum}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "ServerPlayerMaxNum",
+        "defaultValue": "32",
+        "label": "",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.13494",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "WorkSpeedRate",
+      "defaultValue": "1.000000",
+      "required": false,
+      "requiredMessage": "Value cannot be null!",
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${WorkSpeedRate}",
+      "editor": {
+        "step": 0.01,
+        "valueLabel": true,
+        "valueType": "double",
+        "minValue": 0.5,
+        "maxValue": 5,
+        "id": "WorkSpeedRate",
+        "defaultValue": "1.000000",
+        "label": "Work Speed",
+        "description": "The rate multiplier that all \u0022work\u0022 is done within.",
+        "required": false,
+        "requiredMessage": "Value cannot be null!",
+        "controlType": "DynamicSlider",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-17T23:58:35.135154",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "Hostname",
+      "defaultValue": "Palworld Server",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${Hostname}",
+      "editor": {
+        "maxLength": 0,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "",
+        "inputType": 0,
+        "id": "Hostname",
+        "defaultValue": "Palworld Win Log",
+        "label": "Hostname",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicTextBox",
+        "sm": 12,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-26T14:34:51.816",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 196,
+      "relativePath": "Pal\\Binaries\\Win64\\Mods\\mods.txt",
+      "description": "Add mod parameters here as per instructions from mod developer",
+      "template": "",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 197,
+      "relativePath": "Pal\\Saved\\Config\\WindowsServer\\Engine.ini",
+      "description": "Engine.ini Optimizations (No Need to Edit)",
+      "template": "[Core.System]\nPaths=../../../Engine/Content\nPaths=%GAMEDIR%Content\nPaths=../../../Engine/Plugins/2D/Paper2D/Content\nPaths=../../../Engine/Plugins/Animation/ControlRigSpline/Content\nPaths=../../../Engine/Plugins/Animation/ControlRig/Content\nPaths=../../../Engine/Plugins/Animation/IKRig/Content\nPaths=../../../Engine/Plugins/Animation/MotionWarping/Content\nPaths=../../../Engine/Plugins/Bridge/Content\nPaths=../../../Engine/Plugins/Compositing/Composure/Content\nPaths=../../../Engine/Plugins/Compositing/OpenColorIO/Content\nPaths=../../../Engine/Plugins/Developer/AnimationSharing/Content\nPaths=../../../Engine/Plugins/Developer/Concert/ConcertSync/ConcertSyncClient/Content\nPaths=../../../Engine/Plugins/Editor/BlueprintHeaderView/Content\nPaths=../../../Engine/Plugins/Editor/GeometryMode/Content\nPaths=../../../Engine/Plugins/Editor/ModelingToolsEditorMode/Content\nPaths=../../../Engine/Plugins/Editor/ObjectMixer/LightMixer/Content\nPaths=../../../Engine/Plugins/Editor/ObjectMixer/ObjectMixer/Content\nPaths=../../../Engine/Plugins/Editor/SpeedTreeImporter/Content\nPaths=../../../Engine/Plugins/Enterprise/DatasmithContent/Content\nPaths=../../../Engine/Plugins/Enterprise/GLTFExporter/Content\nPaths=../../../Engine/Plugins/Experimental/ChaosCaching/Content\nPaths=../../../Engine/Plugins/Experimental/ChaosClothEditor/Content\nPaths=../../../Engine/Plugins/Experimental/ChaosNiagara/Content\nPaths=../../../Engine/Plugins/Experimental/ChaosSolverPlugin/Content\nPaths=../../../Engine/Plugins/Experimental/CommonUI/Content\nPaths=../../../Engine/Plugins/Experimental/Dataflow/Content\nPaths=../../../Engine/Plugins/Experimental/FullBodyIK/Content\nPaths=../../../Engine/Plugins/Experimental/GeometryCollectionPlugin/Content\nPaths=../../../Engine/Plugins/Experimental/GeometryFlow/Content\nPaths=../../../Engine/Plugins/Experimental/ImpostorBaker/Content\nPaths=../../../Engine/Plugins/Experimental/Landmass/Content\nPaths=../../../Engine/Plugins/Experimental/MeshLODToolset/Content\nPaths=../../../Engine/Plugins/Experimental/PythonScriptPlugin/Content\nPaths=../../../Engine/Plugins/Experimental/StaticMeshEditorModeling/Content\nPaths=../../../Engine/Plugins/Experimental/UVEditor/Content\nPaths=../../../Engine/Plugins/Experimental/Volumetrics/Content\nPaths=../../../Engine/Plugins/Experimental/Water/Content\nPaths=../../../Engine/Plugins/FX/Niagara/Content\nPaths=../../../Engine/Plugins/JsonBlueprintUtilities/Content\nPaths=../../../Engine/Plugins/Media/MediaCompositing/Content\nPaths=../../../Engine/Plugins/Media/MediaPlate/Content\nPaths=../../../Engine/Plugins/MovieScene/MovieRenderPipeline/Content\nPaths=../../../Engine/Plugins/MovieScene/SequencerScripting/Content\nPaths=../../../Engine/Plugins/NiagaraUIRenderer/Content\nPaths=../../../Engine/Plugins/PivotTool/Content\nPaths=../../../Engine/Plugins/PlacementTools/Content\nPaths=../../../Engine/Plugins/Runtime/AudioSynesthesia/Content\nPaths=../../../Engine/Plugins/Runtime/AudioWidgets/Content\nPaths=../../../Engine/Plugins/Runtime/GeometryProcessing/Content\nPaths=../../../Engine/Plugins/Runtime/Metasound/Content\nPaths=../../../Engine/Plugins/Runtime/ResonanceAudio/Content\nPaths=../../../Engine/Plugins/Runtime/SunPosition/Content\nPaths=../../../Engine/Plugins/Runtime/Synthesis/Content\nPaths=../../../Engine/Plugins/Runtime/WaveTable/Content\nPaths=../../../Engine/Plugins/Runtime/WebBrowserWidget/Content\nPaths=../../../Engine/Plugins/SkyCreatorPlugin/Content\nPaths=../../../Engine/Plugins/VirtualProduction/CameraCalibrationCore/Content\nPaths=../../../Engine/Plugins/VirtualProduction/LiveLinkCamera/Content\nPaths=../../../Engine/Plugins/VirtualProduction/Takes/Content\nPaths=../../../Engine/Plugins/Web/HttpBlueprint/Content\nPaths=../../../Pal/Plugins/DLSS/Content\nPaths=../../../Pal/Plugins/EffectsChecker/Content\nPaths=../../../Pal/Plugins/FSR2MovieRenderPipeline/Content\nPaths=../../../Pal/Plugins/FSR2/Content\nPaths=../../../Pal/Plugins/HoudiniEngine/Content\nPaths=../../../Pal/Plugins/PPSkyCreatorPlugin/Content\nPaths=../../../Pal/Plugins/PocketpairUser/Content\nPaths=../../../Pal/Plugins/SpreadSheetToCsv/Content\nPaths=../../../Pal/Plugins/Wwise/Content\n\n\n[/Script/OnlineSubsystemUtils.IpNetDriver]\nNetServerMaxTickRate=120\n\n[/Script/engine.engine]\nbSmoothFrameRate=true    ; Enables the game engine to smooth out frame rate fluctuations for a more consistent visual experience.\nbUseFixedFrameRate=false ; Disables the use of a fixed frame rate, allowing the game to dynamically adjust frame rate for optimal performance.\nSmoothedFrameRateRange=(LowerBound=(Type=Inclusive,Value=30.000000),UpperBound=(Type=Exclusive,Value=120.000000)) ; Sets a target frame rate range for smoothing.\nMinDesiredFrameRate=60.000000 ; Specifies a minimum acceptable frame rate, ensuring the game runs smoothly at least at this frame rate.\nNetClientTicksPerSecond=120   ; Increases the update frequency for clients, enhancing responsiveness and reducing lag.\n\n\n[/Script/socketsubsystemepic.epicnetdriver]\nMaxClientRate=125000000          ; Maximum data transfer rate per client for all connections, set to a high value to prevent data capping.\nMaxInternetClientRate=125000000  ; Specifically targets internet clients, allowing for high-volume data transfer without restrictions.\n\n[/Script/engine.player]\nConfiguredInternetSpeed=125000000  ; Sets the assumed player internet speed in bytes per second. High value reduces chances of bandwidth throttling.\n\n[/Script/Engine.RendererSettings]\nr.DefaultFeature.Bloom=False\nr.DefaultFeature.AmbientOcclusion=False\nr.DefaultFeature.MotionBlur=False\nr.DefaultFeature.LensFlare=False\nr.DefaultFeature.AntiAliasing=0\nr.ViewDistanceScale=1.0\nr.ShadowQuality=0\nr.Shadow.CSM.MaxCascades=1\nr.Shadow.MaxResolution=512\nr.Shadow.RadiusThreshold=0.1\nr.Shadow.DistanceScale=0.5\nr.ThreadedRendering=True\nr.ThreadedPhysics=True\n\n[/Script/Engine.GarbageCollectionSettings]\nTimeBetweenPurgingPendingKillObjects=360",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 198,
+      "relativePath": "Pal\\Saved\\Config\\WindowsServer\\PalWorldSettings.ini",
+      "description": "Main configuration file",
+      "template": "; Changes to this file will be reflected on the server.\n; If any server settings are missing, please contact your assigned server technician.\n[/Script/Pal.PalGameWorldSettings]\nOptionSettings=(Difficulty=${Difficulty},DayTimeSpeedRate=${DayTimeSpeedRate},NightTimeSpeedRate=${NightTimeSpeedRate},ExpRate=${ExpRate},PalCaptureRate=${PalCaptureRate},PalSpawnNumRate=${PalSpawnNumRate},PalDamageRateAttack=${PalDamageRateAttack},PalDamageRateDefense=${PalDamageRateDefense},PlayerDamageRateAttack=${PlayerDamageRateAttack},PlayerDamageRateDefense=${PlayerDamageRateDefense},PlayerStomachDecreaceRate=${PlayerStomachDecreaceRate},PlayerStaminaDecreaceRate=${PlayerStaminaDecreaceRate},PlayerAutoHPRegeneRate=${PlayerAutoHPRegenRate},PlayerAutoHpRegeneRateInSleep=${PlayerAutoHpRegenRateInSleep},PalStomachDecreaceRate=${PalStomachDecreaceRate},PalStaminaDecreaceRate=${PalStaminaDecreaceRate},PalAutoHPRegeneRate=${PalAutoHPRegenRate},PalAutoHpRegeneRateInSleep=${PalAutoHpRegenRateInSleep},BuildObjectDamageRate=${BuildObjectDamageRate},BuildObjectDeteriorationDamageRate=${BuildObjectDeteriorationDamageRate},CollectionDropRate=${CollectionDropRate},CollectionObjectHpRate=${CollectionObjectHpRate},CollectionObjectRespawnSpeedRate=${CollectionObjectRespawnSpeedRate},EnemyDropItemRate=${EnemyDropItemRate},DeathPenalty=${DeathPenalty},bEnablePlayerToPlayerDamage=${bEnablePlayerToPlayerDamage},bEnableFriendlyFire=${bEnableFriendlyFire},bEnableInvaderEnemy=${bEnableInvaderEnemy},bActiveUNKO=${bActiveUNKO},bEnableAimAssistPad=${bEnableAimAssistPad},bEnableAimAssistKeyboard=${bEnableAimAssistKeyboard},DropItemMaxNum=${DropItemMaxNum},DropItemMaxNum_UNKO=${DropItemMaxNum_UNKO},BaseCampMaxNum=${BaseCampMaxNum},BaseCampWorkerMaxNum=${BaseCampWorkerMaxNum},DropItemAliveMaxHours=${DropItemAliveMaxHours},bAutoResetGuildNoOnlinePlayers=${bAutoResetGuildNoOnlinePlayers},AutoResetGuildTimeNoOnlinePlayers=${AutoResetGuildTimeNoOnlinePlayers},GuildPlayerMaxNum=${GuildPlayerMaxNum},PalEggDefaultHatchingTime=${PalEggDefaultHatchingTime},WorkSpeedRate=${WorkSpeedRate},bIsMultiplay=${bIsMultiplay},bIsPvP=${bIsPvP},bCanPickupOtherGuildDeathPenaltyDrop=${bCanPickupOtherGuildDeathPenaltyDrop},bEnableNonLoginPenalty=${bEnableNonLoginPenalty},bEnableFastTravel=${bEnableFastTravel},bIsStartLocationSelectByMap=${bIsStartLocationSelectByMap},bExistPlayerAfterLogout=${bExistPlayerAfterLogout},bEnableDefenseOtherGuildPlayer=${bEnableDefenseOtherGuildPlayer},CoopPlayerMaxNum=${CoopPlayerMaxNum},ServerPlayerMaxNum=${Slots},ServerDescription=\u0022${ServerDescription}\u0022,AdminPassword=\u0022${RconPassword}\u0022,ServerPassword=\u0022${ServerPassword}\u0022,PublicPort=${GamePort},PublicIP=\u0022${IPAddress}\u0022,RCONEnabled=${RCONEnabled},RCONPort=${RConPort},Region=\u0022${Region}\u0022,bUseAuth=${bUseAuth},BanListURL=\u0022${BanListURL}\u0022)\n",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "id": "Header_1",
+          "label": "Server Settings",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "RCONEnabled",
+          "defaultValue": "False",
+          "label": "RCON Enabled?",
+          "description": "Check box to enable RCON.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 256,
+          "lines": 0,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "ServerDescription",
+          "defaultValue": "",
+          "label": "Server Description",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 25,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "ServerPassword",
+          "defaultValue": "",
+          "label": "Server Password",
+          "description": "Leave blank for no password.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "BanListURL",
+          "defaultValue": "https://api.palworldgame.com/api/banlist.txt",
+          "label": "Ban List URL",
+          "description": "If you have your own to use, paste it here!",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_8",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_9",
+          "label": "Server Modifiers",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.1,
+          "maxValue": 5,
+          "id": "DayTimeSpeedRate",
+          "defaultValue": "1.000000",
+          "label": "Day Time Speed",
+          "description": "High values will result in faster day speed",
+          "required": false,
+          "requiredMessage": "Value cannot be zero!",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.1,
+          "maxValue": 5,
+          "id": "NightTimeSpeedRate",
+          "defaultValue": "1.000000",
+          "label": "Night Time Speed",
+          "description": "High values will result in faster night speed",
+          "required": false,
+          "requiredMessage": "Value cannot be zero!",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.5,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 20,
+          "id": "ExpRate",
+          "defaultValue": "1.000000",
+          "label": "EXP Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "Value cannot be zero!",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "items": [
+            {
+              "text": "Keep Everything",
+              "value": "None"
+            },
+            {
+              "text": "Only Items",
+              "value": "Item"
+            },
+            {
+              "text": "Items and Equipment",
+              "value": "ItemAndEquipment"
+            },
+            {
+              "text": "Items, Equipment and Pals",
+              "value": "All"
+            }
+          ],
+          "id": "DeathPenalty",
+          "defaultValue": "All",
+          "label": "Death Penalty",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value cannot be null!",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bEnableFastTravel",
+          "defaultValue": "True",
+          "label": "Enable Fast Travel?",
+          "description": "Checked to allow fast travel, uncheck to disallow.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "DropItemAliveMaxHours",
+          "defaultValue": "1.000000",
+          "label": "Dropped Item Spoil Timer",
+          "description": "How long in hours should items stay before despawning?\n0.5=30 Minutes, 3 = 3 Hours",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 3000,
+          "id": "DropItemMaxNum",
+          "defaultValue": "3000",
+          "label": "Max Dropped Items",
+          "description": "Max amount of dropped items in world.",
+          "required": false,
+          "requiredMessage": "Value cannot be null!",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "BuildObjectDamageRate",
+          "defaultValue": "1.000000",
+          "label": "Damage to Structure",
+          "description": "The multiplier of damage that structures take from all sources.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "BuildObjectDeteriorationDamageRate",
+          "defaultValue": "1.000000",
+          "label": "Structure Decay Rate",
+          "description": "How fast a structure decays over time.",
+          "required": false,
+          "requiredMessage": "Value cannot be null!",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_19",
+          "label": "Camp \u0026 Collection Modifiers",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "WorkSpeedRate",
+          "defaultValue": "1.000000",
+          "label": "Work Speed",
+          "description": "The rate multiplier that all \u0022work\u0022 is done within.",
+          "required": false,
+          "requiredMessage": "Value cannot be null!",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 100,
+          "id": "BaseCampMaxNum",
+          "defaultValue": "128",
+          "label": "Base Camp Max Allowed",
+          "description": "Maximum allowed base camps on the map.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 20,
+          "id": "BaseCampWorkerMaxNum",
+          "defaultValue": "20",
+          "label": "Max Pals At Base",
+          "description": "Maximum allowed pals working at a single base.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "EnemyDropItemRate",
+          "defaultValue": "1.000000",
+          "label": "Enemy Drop Rate",
+          "description": "Items dropped from enemies mulitplier.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 10,
+          "id": "CollectionDropRate",
+          "defaultValue": "1.000000",
+          "label": "Gathering Items Mult",
+          "description": "Multiplier at which you gather items from world.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "CollectionObjectHpRate",
+          "defaultValue": "1.000000",
+          "label": "Object HP Mult",
+          "description": "HP of collection objects in world to increase amount gathered from.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 6,
+          "step": 1,
+          "spinner": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 3,
+          "id": "CollectionObjectRespawnSpeedRate",
+          "defaultValue": "1.000000",
+          "label": "Object Respawn Rate",
+          "description": "Multiplier to determine how fast to respawn a gathering node on the map.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_27",
+          "label": "Player VS Player",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bEnableInvaderEnemy",
+          "defaultValue": "True",
+          "label": "Enable Raid Events?",
+          "description": "Checked means ON, Unchecked means OFF.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bIsPvP",
+          "defaultValue": "False",
+          "label": "PvP Enabled?",
+          "description": "Enables Pals from player\u0027s parties to fight, enable Player to Player to directly attack other players.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bEnablePlayerToPlayerDamage",
+          "defaultValue": "False",
+          "label": "Enable Player to Player Damage",
+          "description": "When PvP is enabled this is for Pal battles, enabling this allows players to directly kill each other.",
+          "required": false,
+          "requiredMessage": "",
+          "parentId": "bIsPvP",
+          "parentValue": "True",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bExistPlayerAfterLogout",
+          "defaultValue": "False",
+          "label": "Player Stays after Logout?",
+          "description": "By checking this, when players logout their character remains in the world to be interacted with.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bCanPickupOtherGuildDeathPenaltyDrop",
+          "defaultValue": "False",
+          "label": "Can Pickup Other\u0027s Death Penalty Drops?",
+          "description": "Should you be able to pickup another\u0027s guild death penalty drop?",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bEnableDefenseOtherGuildPlayer",
+          "defaultValue": "False",
+          "label": "Defense Other Guild Player",
+          "description": "Not sure what this does. Enable at own risk.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bEnableFriendlyFire",
+          "defaultValue": "False",
+          "label": "Enable Friendly Fire?",
+          "description": "Want to kill your pals and your guildmates? Enable it.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_35",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_36",
+          "label": "Player Modifiers",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PlayerAutoHPRegenRate",
+          "defaultValue": "1.000000",
+          "label": "Player HP Regen Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PlayerAutoHpRegenRateInSleep",
+          "defaultValue": "1.000000",
+          "label": "Player HP Regen Rate Sleep ",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PlayerStomachDecreaceRate",
+          "defaultValue": "1.000000",
+          "label": "Player Hunger Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PlayerStaminaDecreaceRate",
+          "defaultValue": "1.000000",
+          "label": "Player Stamina Loss Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PlayerDamageRateAttack",
+          "defaultValue": "1.000000",
+          "label": "Damage From Player",
+          "description": "(Attack) Multiplier",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PlayerDamageRateDefense",
+          "defaultValue": "1.000000",
+          "label": "Damage To Player",
+          "description": "(Defense) Multiplier",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_43",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_44",
+          "label": "Pal Modifiers",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalCaptureRate",
+          "defaultValue": "1.000000",
+          "label": "Pal Capture Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalSpawnNumRate",
+          "defaultValue": "1.000000",
+          "label": "Pal Spawn Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalAutoHPRegenRate",
+          "defaultValue": "1.000000",
+          "label": "Pal HP Regen Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalStomachDecreaceRate",
+          "defaultValue": "1.000000",
+          "label": "Pal Hunger Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalStaminaDecreaceRate",
+          "defaultValue": "1.000000",
+          "label": "Pal Stamina Loss Rate",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalDamageRateAttack",
+          "defaultValue": "1.000000",
+          "label": "Damage From Pal",
+          "description": "(Attack Mulitplier)",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "PalDamageRateDefense",
+          "defaultValue": "1.000000",
+          "label": "Damage To Pal",
+          "description": "(Defense) Multiplier",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 72,
+          "id": "PalEggDefaultHatchingTime",
+          "defaultValue": "72.000000",
+          "label": "Incubate Massive Egg Time",
+          "description": "Time in hours to incubate Massive Egg",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_54",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "LineBreak_55",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicLineBreak",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "id": "Header_56",
+          "label": "Misc Options",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicHeader",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 1,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 100,
+          "id": "GuildPlayerMaxNum",
+          "defaultValue": "20",
+          "label": "Max Amount of Guilds",
+          "description": "",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "step": 0.01,
+          "valueLabel": true,
+          "valueType": "double",
+          "minValue": 0.5,
+          "maxValue": 5,
+          "id": "AutoResetGuildTimeNoOnlinePlayers",
+          "defaultValue": "72.000000",
+          "label": "Reset Guild if No Players in",
+          "description": "In hours how long to reset/remove a guild with no online players.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicSlider",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "bAutoResetGuildNoOnlinePlayers",
+          "defaultValue": "False",
+          "label": "Enable Timer to Remove Inactive Guilds?",
+          "description": "Check the box to enable the timer to remove guilds every so often via the time set above.",
+          "required": false,
+          "requiredMessage": "",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Difficulty",
+          "defaultValue": "None",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PalAutoHpRegenRateInSleep",
+          "defaultValue": "1.000000",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bActiveUNKO",
+          "defaultValue": "False",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bEnableAimAssistPad",
+          "defaultValue": "True",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bEnableAimAssistKeyboard",
+          "defaultValue": "False",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "DropItemMaxNum_UNKO",
+          "defaultValue": "100",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bIsMultiplay",
+          "defaultValue": "False",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bEnableNonLoginPenalty",
+          "defaultValue": "True",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bIsStartLocationSelectByMap",
+          "defaultValue": "True",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "CoopPlayerMaxNum",
+          "defaultValue": "4",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Region",
+          "defaultValue": "",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "bUseAuth",
+          "defaultValue": "True",
+          "label": "",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomRconProtocol"
+        ],
+        "name": "RCON Script",
+        "description": "RCON Script",
+        "code": "//refAssemblies: System.Net.Http.dll\nusing System;\nusing System.IO;\nusing System.Net.Http;\nusing System.Net.Http.Headers;\nusing System.Text;\nusing System.Threading.Tasks;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// CustomRconProtocol provider for Palworld - drives the game\u0027s built-in REST API (the same transport\n// the \u0060palworld\u0060 query provider uses), because Palworld\u0027s native RCON is non-standard and disabled by\n// default. The monitor injects Address/Port/Password/Command; the injected Port is the (disabled)\n// native RCON port, so the REST port is parsed from the command line and the admin password from\n// PalWorldSettings.ini, exactly like PalworldGameQuery. All awaits are inline (async local functions\n// that capture script-scoped locals fail at runtime under the Roslyn scripting host).\n\nstring result;\ntry\n{\n    string command = (Globals.Variables.Parse\u003Cstring\u003E(\u0022Command\u0022) ?? string.Empty).Trim();\n    if (string.IsNullOrWhiteSpace(command)) { Globals.ReturnValue = string.Empty; return; }\n\n    string address = Globals.Variables.Parse\u003Cstring\u003E(\u0022Address\u0022);\n    if (string.IsNullOrEmpty(address)) address = Globals.ThisService.IPAddress;\n\n    // REST API port from the stored command line (-RESTAPIPort=\u003Cn\u003E).\n    string cmdLine = Globals.ThisService.Commandline ?? string.Empty;\n    int restPort = 0;\n    const string portKey = \u0022-RESTAPIPort=\u0022;\n    int pi = cmdLine.IndexOf(portKey, StringComparison.OrdinalIgnoreCase);\n    if (pi \u003E= 0)\n    {\n        int s = pi \u002B portKey.Length, e = s;\n        while (e \u003C cmdLine.Length \u0026\u0026 char.IsDigit(cmdLine[e])) e\u002B\u002B;\n        int.TryParse(cmdLine.Substring(s, e - s), out restPort);\n    }\n    if (restPort \u003C= 0)\n    {\n        Globals.ReturnValue = \u0022[rcon] -RESTAPIPort=\u003Cport\u003E not found on the command line (Palworld REST API not enabled).\u0022;\n        return;\n    }\n\n    // Admin password from PalWorldSettings.ini (Windows or Linux config dir).\n    string adminPassword = null;\n    string root = Globals.ThisService.RootDirectory ?? string.Empty;\n    foreach (var osFolder in new[] { \u0022WindowsServer\u0022, \u0022LinuxServer\u0022 })\n    {\n        string iniPath = Path.Combine(root, \u0022Pal\u0022, \u0022Saved\u0022, \u0022Config\u0022, osFolder, \u0022PalWorldSettings.ini\u0022);\n        if (!File.Exists(iniPath)) continue;\n        string ini = File.ReadAllText(iniPath);\n        const string pwKey = \u0022AdminPassword=\\\u0022\u0022;\n        int ai = ini.IndexOf(pwKey, StringComparison.Ordinal);\n        if (ai \u003E= 0)\n        {\n            int s = ai \u002B pwKey.Length, e = ini.IndexOf(\u0027\u0022\u0027, s);\n            if (e \u003E s) { adminPassword = ini.Substring(s, e - s); break; }\n        }\n    }\n    if (string.IsNullOrEmpty(adminPassword))\n    {\n        Globals.ReturnValue = \u0022[rcon] AdminPassword is not set in PalWorldSettings.ini.\u0022;\n        return;\n    }\n\n    var http = new HttpClient { Timeout = TimeSpan.FromSeconds(10) };\n    http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(\n        \u0022Basic\u0022, Convert.ToBase64String(Encoding.UTF8.GetBytes(\u0022admin:\u0022 \u002B adminPassword)));\n    string baseUrl = \u0022http://\u0022 \u002B address \u002B \u0022:\u0022 \u002B restPort \u002B \u0022/v1/api\u0022;\n\n    int spaceIdx = command.IndexOf(\u0027 \u0027);\n    string verb = (spaceIdx \u003C 0 ? command : command.Substring(0, spaceIdx)).ToLowerInvariant();\n    string rest = spaceIdx \u003C 0 ? string.Empty : command.Substring(spaceIdx \u002B 1).Trim();\n\n    if (verb == \u0022shutdown\u0022 || verb == \u0022stop\u0022 || verb == \u0022exit\u0022 || verb == \u0022quit\u0022)\n    {\n        // Graceful: save the world first, then schedule a shutdown. Accepts \u0022Shutdown \u003Csec\u003E \u003Cmsg\u003E\u0022.\n        int waittime = 1;\n        string message = \u0022Server is shutting down\u0022;\n        if (rest.Length \u003E 0)\n        {\n            int rsp = rest.IndexOf(\u0027 \u0027);\n            string first = rsp \u003C 0 ? rest : rest.Substring(0, rsp);\n            if (int.TryParse(first, out int w)) { waittime = w \u003C 1 ? 1 : w; if (rsp \u003E= 0) message = rest.Substring(rsp \u002B 1).Trim(); }\n            else { message = rest; }\n        }\n        string escMsg = message.Replace(\u0022\\\\\u0022, \u0022\\\\\\\\\u0022).Replace(\u0022\\\u0022\u0022, \u0022\\\\\\\u0022\u0022).Replace(\u0022\\r\u0022, \u0022 \u0022).Replace(\u0022\\n\u0022, \u0022 \u0022);\n\n        using var saveContent = new StringContent(string.Empty, Encoding.UTF8, \u0022application/json\u0022);\n        using var saveResp = await http.PostAsync(baseUrl \u002B \u0022/save\u0022, saveContent);\n        string saveBody = (await saveResp.Content.ReadAsStringAsync() ?? string.Empty).Trim();\n\n        using var shutContent = new StringContent(\u0022{\\\u0022waittime\\\u0022:\u0022 \u002B waittime \u002B \u0022,\\\u0022message\\\u0022:\\\u0022\u0022 \u002B escMsg \u002B \u0022\\\u0022}\u0022, Encoding.UTF8, \u0022application/json\u0022);\n        using var shutResp = await http.PostAsync(baseUrl \u002B \u0022/shutdown\u0022, shutContent);\n        string shutBody = (await shutResp.Content.ReadAsStringAsync() ?? string.Empty).Trim();\n\n        result = \u0022save -\u003E HTTP \u0022 \u002B (int)saveResp.StatusCode \u002B (saveBody.Length == 0 ? \u0022\u0022 : \u0022 \u0022 \u002B saveBody) \u002B\n                 \u0022 | shutdown(\u0022 \u002B waittime \u002B \u0022s) -\u003E HTTP \u0022 \u002B (int)shutResp.StatusCode \u002B (shutBody.Length == 0 ? \u0022\u0022 : \u0022 \u0022 \u002B shutBody);\n    }\n    else if (verb == \u0022forcestop\u0022 || verb == \u0022kill\u0022 || verb == \u0022doexit\u0022 || verb == \u0022save\u0022)\n    {\n        string p = verb == \u0022save\u0022 ? \u0022/save\u0022 : \u0022/stop\u0022;\n        using var content = new StringContent(string.Empty, Encoding.UTF8, \u0022application/json\u0022);\n        using var resp = await http.PostAsync(baseUrl \u002B p, content);\n        string body = (await resp.Content.ReadAsStringAsync() ?? string.Empty).Trim();\n        result = \u0022HTTP \u0022 \u002B (int)resp.StatusCode \u002B (body.Length == 0 ? \u0022\u0022 : \u0022 \u0022 \u002B body);\n    }\n    else if (verb == \u0022broadcast\u0022 || verb == \u0022announce\u0022 || verb == \u0022say\u0022)\n    {\n        string escMsg = rest.Replace(\u0022\\\\\u0022, \u0022\\\\\\\\\u0022).Replace(\u0022\\\u0022\u0022, \u0022\\\\\\\u0022\u0022).Replace(\u0022\\r\u0022, \u0022 \u0022).Replace(\u0022\\n\u0022, \u0022 \u0022);\n        using var content = new StringContent(\u0022{\\\u0022message\\\u0022:\\\u0022\u0022 \u002B escMsg \u002B \u0022\\\u0022}\u0022, Encoding.UTF8, \u0022application/json\u0022);\n        using var resp = await http.PostAsync(baseUrl \u002B \u0022/announce\u0022, content);\n        string body = (await resp.Content.ReadAsStringAsync() ?? string.Empty).Trim();\n        result = \u0022HTTP \u0022 \u002B (int)resp.StatusCode \u002B (body.Length == 0 ? \u0022\u0022 : \u0022 \u0022 \u002B body);\n    }\n    else if (verb == \u0022info\u0022 || verb == \u0022players\u0022 || verb == \u0022showplayers\u0022 || verb == \u0022list\u0022 || verb == \u0022metrics\u0022 || verb == \u0022settings\u0022)\n    {\n        string p = (verb == \u0022players\u0022 || verb == \u0022showplayers\u0022 || verb == \u0022list\u0022) ? \u0022/players\u0022 : \u0022/\u0022 \u002B verb;\n        using var resp = await http.GetAsync(baseUrl \u002B p);\n        result = (await resp.Content.ReadAsStringAsync() ?? string.Empty).Trim();\n    }\n    else\n    {\n        result = \u0022[rcon] Unsupported command \u0027\u0022 \u002B verb \u002B \u0022\u0027. Supported: Shutdown \u003Csec\u003E \u003Cmsg\u003E, ForceStop, Save, \u0022 \u002B\n                 \u0022Broadcast \u003Cmsg\u003E, Info, ShowPlayers, Metrics, Settings.\u0022;\n    }\n}\ncatch (Exception ex)\n{\n    result = \u0022[rcon] error: \u0022 \u002B ex.GetType().Name \u002B \u0022: \u0022 \u002B ex.Message;\n}\n\nGlobals.ReturnValue = result;\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "dd9e1fc5-5eb2-4805-8432-9a77af256576"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterCustomModInstalled"
+        ],
+        "name": "Curse Install",
+        "description": "Curse Install",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Text;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Palworld Curse mod placement.\n//\n// IMPORTANT EVENT CHANGE: the V2 script ran on BeforeCustomModInstalled and did the zip\n// extraction itself (ZipFile/ExtractPath variables). In V3 the dedicated Curse handler\n// downloads AND extracts the mod into InstallPath (the provider \u0022mods\u0022 folder) BEFORE the\n// install event fires, and it tracks every created/moved file under RootDirectory for\n// automatic uninstall. So this logic must run on AfterCustomModInstalled (when the files\n// actually exist) and only needs to RELOCATE the extracted mod into Palworld\u0027s UE4SS layout:\n//   *.lua mods  -\u003E Pal/Binaries/\u003Cos\u003E/Mods/\u003CModName\u003E   (and registered in mods.txt)\n//   *.pak files -\u003E Pal/Content/Paks/\u003CFolderName\u003E\n// V3\u0027s file tracking covers the moved files, so we no longer maintain a list of files for\n// deletion \u2014 CurseModUninstall.dat now only records the mods.txt entries the uninstall script\n// must remove. File ownership is fixed automatically by the scripting engine after this runs.\n//\n// OS folder follows the GAME OS (ThisGame.OperatingSystem), not the host \u2014 a Windows game can\n// run on Linux (Wine) and vice versa (WSL).\n\nlong modId = Globals.Variables.Parse\u003Clong\u003E(\u0022ModId\u0022);\nstring installPath = Globals.Variables.Parse\u003Cstring\u003E(\u0022InstallPath\u0022);\nif (string.IsNullOrEmpty(installPath) || !Directory.Exists(installPath))\n{\n    ScriptConsole.WriteLine($\u0022[err] InstallPath \u0027{installPath}\u0027 does not exist; nothing to place.\u0022);\n    return;\n}\n\nstring osFolder = ThisGame.OperatingSystem == EOperatingSystem.Windows ? \u0022Win64\u0022 : \u0022Linux\u0022;\nstring modsPath = Path.Combine(ThisService.RootDirectory, \u0022Pal\u0022, \u0022Binaries\u0022, osFolder, \u0022Mods\u0022);\nstring paksPath = Path.Combine(ThisService.RootDirectory, \u0022Pal\u0022, \u0022Content\u0022, \u0022Paks\u0022);\nstring modsTxt = Path.Combine(modsPath, \u0022mods.txt\u0022);\n\nDirectory.CreateDirectory(modsPath);\nDirectory.CreateDirectory(paksPath);\n\n// mods.txt entries (mod folder names) created by this install \u2014 persisted for uninstall.\nvar luaModNames = new List\u003Cstring\u003E();\n\n// Move every lua-mod folder found under InstallPath into Pal/Binaries/\u003Cos\u003E/Mods.\nwhile (true)\n{\n    DirectoryInfo parentFolder = FindScriptRoot(installPath);\n    if (parentFolder == null)\n        break;\n\n    AppendLineIfNotExists(modsTxt, $\u0022{parentFolder.Name}: 1\u0022);\n    luaModNames.Add(parentFolder.Name);\n\n    var modDestination = new DirectoryInfo(Path.Combine(modsPath, parentFolder.Name));\n    if (modDestination.Exists)\n        modDestination.Delete(true);\n    parentFolder.MoveTo(modDestination.FullName);\n}\n\n// Move every pak-containing folder found under InstallPath into Pal/Content/Paks.\nwhile (true)\n{\n    DirectoryInfo parentFolder = FindPakRoot(installPath);\n    if (parentFolder == null)\n        break;\n\n    var modDestination = new DirectoryInfo(Path.Combine(paksPath, parentFolder.Name));\n    if (modDestination.Exists)\n        modDestination.Delete(true);\n    parentFolder.MoveTo(modDestination.FullName);\n}\n\nWriteUninstallData(modId, luaModNames.Count \u003E 0 ? string.Join(\u0022;\u0022, luaModNames) : null);\n\nScriptConsole.WriteLine($\u0022Placed Curse mod {modId}: {luaModNames.Count} lua mod(s) registered in mods.txt.\u0022);\n\n// Returns the parent of the directory that contains the first *.lua file (the mod folder),\n// or null if no lua files remain under the path.\nDirectoryInfo FindScriptRoot(string path)\n{\n    var dirInfo = new DirectoryInfo(path);\n    var file = dirInfo.GetFiles(\u0022*.lua\u0022, SearchOption.AllDirectories).FirstOrDefault();\n    return file?.Directory?.Parent;\n}\n\n// Returns the directory that contains the first *.pak file, or null if none remain.\nDirectoryInfo FindPakRoot(string path)\n{\n    var dirInfo = new DirectoryInfo(path);\n    var file = dirInfo.GetFiles(\u0022*.pak\u0022, SearchOption.AllDirectories).FirstOrDefault();\n    return file?.Directory;\n}\n\nvoid AppendLineIfNotExists(string filePath, string lineToAdd)\n{\n    if (!File.Exists(filePath))\n    {\n        File.WriteAllText(filePath, lineToAdd \u002B Environment.NewLine);\n        return;\n    }\n\n    var lines = File.ReadAllLines(filePath);\n    if (!lines.Contains(lineToAdd))\n        File.AppendAllText(filePath, lineToAdd \u002B Environment.NewLine);\n}\n\n// Mirrors the V2 CurseModUninstall.dat format (\u0022id=data\u0022 lines). data == null removes the id.\nvoid WriteUninstallData(long id, string data)\n{\n    string filePath = Path.Combine(ThisService.RootDirectory, \u0022CurseModUninstall.dat\u0022);\n    var newLines = new List\u003Cstring\u003E();\n\n    if (File.Exists(filePath))\n    {\n        foreach (var line in File.ReadAllLines(filePath))\n        {\n            if (line.StartsWith(id \u002B \u0022=\u0022))\n            {\n                if (data != null)\n                    newLines.Add(id \u002B \u0022=\u0022 \u002B data);\n            }\n            else\n            {\n                newLines.Add(line);\n            }\n        }\n    }\n\n    if (data != null \u0026\u0026 !newLines.Any(l =\u003E l.StartsWith(id \u002B \u0022=\u0022)))\n        newLines.Add(id \u002B \u0022=\u0022 \u002B data);\n\n    File.WriteAllLines(filePath, newLines, Encoding.UTF8);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "0d9bfc79-8862-462c-9f2d-fcece8c893e8"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeCustomModUninstalled"
+        ],
+        "name": "Curse Uninstall",
+        "description": "Curse Uninstall",
+        "code": "//refAssemblies: TCAdmin.Web.Shared.dll\nusing System;\nusing System.Collections.Generic;\nusing System.IO;\nusing System.Linq;\nusing System.Text;\nusing TCAdmin.Web.Shared.Models.Enums;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Palworld Curse mod removal \u2014 pairs with the AfterCustomModInstalled placement script.\n//\n// In V3 the dedicated Curse handler already deletes every file it tracked for this mod\n// (GameServiceCurseMod.InstalledFiles), including the lua/pak folders the install script\n// relocated into the UE4SS layout. So the only bookkeeping left to undo here is the mods.txt\n// registration, which V3 knows nothing about. We read the lua-mod names this mod added from\n// CurseModUninstall.dat, strip their \u0022\u003CName\u003E: 1\u0022 lines from mods.txt, defensively remove the\n// mod folder if it somehow survived, then clear the .dat entry.\n//\n// OS folder follows the GAME OS (ThisGame.OperatingSystem), matching the install script.\n\nlong modId = Globals.Variables.Parse\u003Clong\u003E(\u0022ModId\u0022);\n\nstring osFolder = ThisGame.OperatingSystem == EOperatingSystem.Windows ? \u0022Win64\u0022 : \u0022Linux\u0022;\nstring modsPath = Path.Combine(ThisService.RootDirectory, \u0022Pal\u0022, \u0022Binaries\u0022, osFolder, \u0022Mods\u0022);\nstring modsTxt = Path.Combine(modsPath, \u0022mods.txt\u0022);\n\nstring uninstallData = ReadUninstallData(modId);\nif (!string.IsNullOrEmpty(uninstallData))\n{\n    foreach (var modName in uninstallData.Split(\u0027;\u0027, StringSplitOptions.RemoveEmptyEntries))\n    {\n        RemoveLine(modsTxt, $\u0022{modName}: 1\u0022);\n\n        var folder = new DirectoryInfo(Path.Combine(modsPath, modName));\n        if (folder.Exists)\n            folder.Delete(true);\n    }\n}\n\nWriteUninstallData(modId, null);\n\nScriptConsole.WriteLine($\u0022Removed Curse mod {modId} from mods.txt.\u0022);\n\nvoid RemoveLine(string filePath, string lineToRemove)\n{\n    if (!File.Exists(filePath))\n        return;\n\n    var lines = File.ReadAllLines(filePath)\n        .Where(line =\u003E line.Trim() != lineToRemove)\n        .ToList();\n    File.WriteAllLines(filePath, lines);\n}\n\nstring ReadUninstallData(long id)\n{\n    string filePath = Path.Combine(ThisService.RootDirectory, \u0022CurseModUninstall.dat\u0022);\n    if (!File.Exists(filePath))\n        return null;\n\n    foreach (var line in File.ReadAllLines(filePath))\n    {\n        if (line.StartsWith(id \u002B \u0022=\u0022))\n            return line.Substring((id \u002B \u0022=\u0022).Length);\n    }\n\n    return null;\n}\n\n// Mirrors the V2 CurseModUninstall.dat format (\u0022id=data\u0022 lines). data == null removes the id.\nvoid WriteUninstallData(long id, string data)\n{\n    string filePath = Path.Combine(ThisService.RootDirectory, \u0022CurseModUninstall.dat\u0022);\n    if (!File.Exists(filePath) \u0026\u0026 data == null)\n        return;\n\n    var newLines = new List\u003Cstring\u003E();\n    if (File.Exists(filePath))\n    {\n        foreach (var line in File.ReadAllLines(filePath))\n        {\n            if (line.StartsWith(id \u002B \u0022=\u0022))\n            {\n                if (data != null)\n                    newLines.Add(id \u002B \u0022=\u0022 \u002B data);\n            }\n            else\n            {\n                newLines.Add(line);\n            }\n        }\n    }\n\n    if (data != null \u0026\u0026 !newLines.Any(l =\u003E l.StartsWith(id \u002B \u0022=\u0022)))\n        newLines.Add(id \u002B \u0022=\u0022 \u002B data);\n\n    File.WriteAllLines(filePath, newLines, Encoding.UTF8);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "03e012d9-d048-401a-b9f0-71a48cff3023"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "AfterServiceStopped"
+        ],
+        "name": "Archive Console Log On Stop",
+        "description": "On stop, move .tca/console.log into Pal/Saved/Logs as console-\u003Cdate\u003E.log (ANSI stripped) so it appears in the Logs tab.",
+        "code": "using System;\nusing System.IO;\nusing System.Text.RegularExpressions;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\n// Palworld writes no log file of its own (console-only). With ConsoleWrapper the monitor persists\n// the live console to \u003Croot\u003E/.tca/console.log, but the Logs tab excludes .tca. On stop, move that\n// capture into Pal/Saved/Logs as a dated, ANSI-stripped file so it shows in the Logs tab.\n// Windows (Master-hosted) only. The Linux node uses a Batch sibling (script 560) because the C#\n// engine\u0027s CSharpGameGlobals isn\u0027t available on the remote hosting node.\nvar root = Globals.ThisService.RootDirectory;\nvar src = Path.Combine(root, \u0022.tca\u0022, \u0022console.log\u0022);\nif (File.Exists(src))\n{\n    var logsDir = Path.Combine(root, \u0022Pal\u0022, \u0022Saved\u0022, \u0022Logs\u0022);\n    Directory.CreateDirectory(logsDir);\n    var stamp = DateTime.Now.ToString(\u0022yyyy-MM-dd_HH-mm-ss\u0022);\n    var dst = Path.Combine(logsDir, \u0022console-\u0022 \u002B stamp \u002B \u0022.log\u0022);\n    var text = File.ReadAllText(src);\n    var esc = ((char)27).ToString();\n    text = Regex.Replace(text, esc \u002B \u0022\\\\[[0-9;?]*[ -/]*[@-~]\u0022, \u0022\u0022);\n    File.WriteAllText(dst, text);\n    File.Delete(src);\n    try { Globals.OperatingSystem.SetFileOwnerAutoDetect(dst); } catch { }\n}",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "icon": "\u003Crect fill=\u0022none\u0022 height=\u002224\u0022 width=\u002224\u0022/\u003E\u003Cpath d=\u0022M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10C22,6.48,17.52,2,12,2z M16,16H8V8h8V16z\u0022/\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "98866c04-abb4-4a5c-96d4-8b6b12179ca3"
+      }
+    }
+  ],
+  "customModProviderConfigs": [
+    {
+      "providerId": 4,
+      "gameId": 79,
+      "enabled": true,
+      "customName": "Curse Mods",
+      "configuration": {
+        "ModsPath": "Pal\\Binaries\\Win64\\Mods",
+        "Private.CurseGameId": 85196
+      }
+    }
+  ],
+  "gamesCustomLinks": [],
+  "updates": [
+    {
+      "name": "Steam client DLL\u0027S",
+      "source": "https://dl.hyperlayer.net/steamclient.zip",
+      "extractPath": "Pal\\Binaries\\Win64\\",
+      "reinstallable": false,
+      "defaultInstall": false,
+      "viewOrder": 0,
+      "identifier": "7c25a7ab-d199-4f96-a452-1bf98831504a",
+      "updateRoles": [],
+      "updateScripts": []
+    }
+  ],
+  "createdDate": "2026-06-17T23:58:35.148144",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": true,
+    "backupType": "Incremental",
+    "compressBackup": true,
+    "includedPaths": [
+      "Pal/Saved/SaveGames/**/*",
+      "Pal/Saved/Config/**/*"
+    ],
+    "maxBackupCount": 5
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    }
+  ],
+  "mods": [
+    {
+      "name": "RE-UE4SS",
+      "comments": "\u003Cp style=\u0022color: red;\u0022\u003EWarning: Reinstalling this mod may wipe the mods folder!\u003C/p\u003E",
+      "homepageUrl": "https://github.com/UE4SS-RE/RE-UE4SS",
+      "helpUrl": "https://github.com/UE4SS-RE/RE-UE4SS/issues",
+      "source": "https://downloads.tcadmin.net/games/RE-UE4SS.aspx",
+      "saveAsFilename": "UE4SS.zip",
+      "extractPath": "Pal\\Binaries\\Win64",
+      "installType": "Silent",
+      "version": "0",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "a9e71972-76e0-40b7-aed0-1a14bac40160",
+      "addLines": [],
+      "removeLines": [],
+      "requiredModNames": [],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [],
+      "modRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "modScripts": []
+    }
+  ],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:00:30",
+    "failureThreshold": 3,
+    "failureAction": "None",
+    "maxFailureAction": "None",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": false,
+    "slotDetectionAction": "None",
+    "additionalAllowedSlots": 0,
+    "privateDetectionEnabled": true,
+    "privateDetectionAction": "Stop",
+    "brandDetectionEnabled": true,
+    "brandDetectionAction": "Stop",
+    "brandedText": "",
+    "brandedTextAtEnd": false,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": false,
+    "relativeRoot": "",
+    "urlExpression": "${FastDownloadBaseUrl}/",
+    "includePatterns": [],
+    "excludePatterns": [],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "None",
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
