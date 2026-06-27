@@ -1,0 +1,24 @@
+identifier: "Community.Games.Palworld"
+name: "Palworld"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "Palworld"
+longDescription: |
+  # Palworld
+  
+  ## Key Features
+  - Graceful shutdown
+  - Backup/restore
+  - Web console with input
+icon: "https://shared.fastly.steamstatic.com/community_assets/images/apps/1623730/22a20bdaa6d782f60caa45eb7b02fc2411dcd988.ico"
+images:
+  - "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1623730/ss_b3cea7c9f04a67d784d4c6a0c157a11d6268b189.1920x1080.jpg?t=1780702171"
+tags:
+  - "Game"
+  - "Linux"
+  - "Windows"
+files:
+  - path: "palworld - Linux.json"
+    type: "GameConfig"
+  - path: "palworld - Windows.json"
+    type: "GameConfig"
