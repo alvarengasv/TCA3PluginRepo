@@ -1,0 +1,2460 @@
+{
+  "__TCA:ExportVersion": "3.12.11.1717",
+  "__TCA:ExportedAt": "2026-07-07T21:16:20.8236751Z",
+  "name": "Counter-Strike 2",
+  "shortName": "CS2",
+  "description": "",
+  "operatingSystem": "Windows",
+  "iconImage": "https://shared.fastly.steamstatic.com/community_assets/images/apps/730/324b323045b09bace182f928f4104dfcd93cb7f3.ico",
+  "backgroundImage": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/730/ss_13bb35638c0267759276f511ee97064773b37a51.1920x1080.jpg?t=1780435263",
+  "minSlots": 2,
+  "maxSlots": 64,
+  "defaultSlots": 12,
+  "startedUntilResponding": false,
+  "startingTimeout": "00:00:00",
+  "categoryId": 1,
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "queryRconProtocolConfig": {
+    "queryProtocol": "a2s",
+    "rconProtocol": "source",
+    "privateRule": "passworded",
+    "privateRuleValue": "1",
+    "hiddenRules": [],
+    "eosClientId": "",
+    "eosClientSecret": "",
+    "eosDeploymentId": "",
+    "eosGrantType": ""
+  },
+  "consoleConfig": {
+    "enabled": true,
+    "outputSource": "MemoryWrapper",
+    "logFile": "csgo\\console.log",
+    "inputSource": "ConsoleCommands",
+    "printRconResponse": true,
+    "outputFilters": "UNEXPECTED LONG FRAME DETECTE",
+    "stopCommand": "quit",
+    "waitAfterStopCommand": 1000,
+    "screenCaptureTitleBar": false,
+    "screenCaptureQuality": 25,
+    "screenCaptureFPS": 10,
+    "screenCaptureAllowMouse": false,
+    "screenCaptureAllowKeys": false,
+    "screenCaptureMouseHardware": true
+  },
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": true,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "GamePort",
+        "port": 27015,
+        "expression": ""
+      },
+      {
+        "id": "QueryPort",
+        "port": 27015,
+        "expression": "GamePort"
+      },
+      {
+        "id": "RConPort",
+        "port": 27015,
+        "expression": "GamePort"
+      },
+      {
+        "id": "CustomPort1",
+        "port": 27017,
+        "expression": "GamePort \u002B 2"
+      }
+    ],
+    "portIncrement": 5
+  },
+  "fileAndDirectoryConfig": {
+    "relativeExecutable": "game\\bin\\win64\\cs2.exe",
+    "relativeWorkingDirectory": "game\\",
+    "autoSetupFolderName": "cs2",
+    "failOnMissingExecutable": true,
+    "externalDownloadEnable": false,
+    "externalDownloadUrl": ""
+  },
+  "steamConfig": {
+    "steamUpdate": true,
+    "appId": 730,
+    "runAsServiceUser": true,
+    "branch": "public",
+    "storeId": 730,
+    "extraParameters": "",
+    "steamUsername": "anonymous",
+    "steamPassword": "",
+    "steamDownloadRetries": 5,
+    "updateAfterCreateOrReinstall": true,
+    "verifyAll": true,
+    "steamTool": "DepotDownloader"
+  },
+  "gameCommandlineConfig": {
+    "privateCommandline": "",
+    "privateCustomCommandline": ""
+  },
+  "commandlineConfig": {
+    "enableSelection": false,
+    "defaultCommandline": "-dedicated -usercon -console -dev \u002Bgame_type 0 \u002Bgame_mode 1 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map}",
+    "defaultCustomCommandline": "-dedicated -usercon -console -dev \u002Bgame_type ${game_type} \u002Bgame_mode ${game_mode} \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap} ${secure}",
+    "predefinedCommandlines": [
+      {
+        "id": 1,
+        "name": "Casual",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 0 \u002Bgame_mode 0 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 2,
+        "name": "Competitive",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 0 \u002Bgame_mode 1 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 3,
+        "name": "Wingman",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 0 \u002Bgame_mode 2 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 4,
+        "name": "Weapons Expert",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 0 \u002Bgame_mode 3 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 5,
+        "name": "Arms Race",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 1 \u002Bgame_mode 0 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 6,
+        "name": "Demolition",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 1 \u002Bgame_mode 1 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 7,
+        "name": "Deathmatch",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 1 \u002Bgame_mode 2 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 8,
+        "name": "Custom",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 3 \u002Bgame_mode 0 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 9,
+        "name": "Guardian",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 4 \u002Bgame_mode 0 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 10,
+        "name": "Co-op Strike",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 4 \u002Bgame_mode 1 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 11,
+        "name": "War Games",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 5 \u002Bgame_mode 0 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      },
+      {
+        "id": 12,
+        "name": "Danger Zone",
+        "commandLine": "-dedicated -usercon -console -dev \u002Bgame_type 6 \u002Bgame_mode 0 \u002Bsv_logfile 1 -serverlogging -ip ${IPAddress} -port ${GamePort} \u002Btv_port ${CustomPort1} -maxplayers ${Slots} ${map} ${WorkshopCollection} ${WorkshopMap}"
+      }
+    ]
+  },
+  "runAsConfig": {
+    "runAs": "OperatingSystemUserPerService",
+    "specificUsername": "",
+    "specificPassword": "",
+    "interactWithDesktop": true,
+    "elevated": false
+  },
+  "gameVariables": [
+    {
+      "name": "game_mode",
+      "defaultValue": "1",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${game_mode}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 6,
+        "id": "game_mode",
+        "defaultValue": "1",
+        "label": "Game Mode",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T02:12:21.061299",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "game_type",
+      "defaultValue": "0",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${game_type}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 3,
+        "id": "game_type",
+        "defaultValue": "0",
+        "label": "Game Type",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T02:12:21.062711",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "defaultValue": "de_dust2",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bmap ${map}",
+      "editor": {
+        "items": [],
+        "id": "map",
+        "defaultValue": "de_dust2",
+        "label": "Map",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T02:12:21.063176",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "secure",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${secure}",
+      "editor": {
+        "items": [
+          {
+            "text": "Secure",
+            "value": ""
+          },
+          {
+            "text": "Insecure",
+            "value": "-insecure"
+          }
+        ],
+        "id": "secure",
+        "defaultValue": "",
+        "label": "VAC:",
+        "description": "",
+        "required": false,
+        "valueType": "string",
+        "requiredMessage": "",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T02:12:21.064813",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "WorkshopCollection",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bhost_workshop_collection ${WorkshopCollection}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 70368744177664,
+        "id": "WorkshopCollection",
+        "defaultValue": "",
+        "label": "Workshop Collection",
+        "description": "Collection ID from Steam Workshop",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T02:12:21.065094",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "WorkshopMap",
+      "defaultValue": "",
+      "required": false,
+      "requiredMessage": "",
+      "scriptParameter": false,
+      "commandlineParameter": true,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "\u002Bhost_workshop_map ${WorkshopMap}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 9999999999999,
+        "id": "WorkshopMap",
+        "defaultValue": "",
+        "label": "Workshop Map",
+        "description": "",
+        "required": false,
+        "requiredMessage": "",
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T02:12:21.065285",
+      "metadata": {},
+      "variableRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ]
+    },
+    {
+      "name": "bot_quota",
+      "defaultValue": 0,
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${bot_quota}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": false,
+        "valueType": "double",
+        "minValue": 10,
+        "id": "bot_quota",
+        "defaultValue": "0",
+        "label": "Number of bots",
+        "description": "",
+        "required": false,
+        "controlType": "DynamicNumericTextBox",
+        "sm": 12,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-06-25T15:34:59.388",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "configFiles": [
+    {
+      "id": 302,
+      "relativePath": "game\\csgo\\cfg\\gamemode_armsrace_server.cfg",
+      "description": "Configuration file for the Arms Race gamemode",
+      "template": "bot_autodifficulty_threshold_high\t\t\t\t\t0.0\t// Value between -20.0 and 20.0 (Amount above avg human contribution score, above which a bot should lower its difficulty)\nbot_autodifficulty_threshold_low\t\t\t\t\t-2.0\t// Value between -20.0 and 20.0 (Amount below avg human contribution score, below which a bot should raise its difficulty)\nbot_chatter\t\t\t\t\t\t\t\t\t\t\toff\nbot_defer_to_human_goals\t\t\t\t\t\t\t0\nbot_defer_to_human_items\t\t\t\t\t\t\t1\nbot_difficulty\t\t\t\t\t\t\t\t\t\t1\nbot_quota\t\t\t\t\t\t\t\t\t\t\t2\nbot_quota_mode\t\t\t\t\t\t\t\t\t\tfill\ncash_player_bomb_defused\t\t\t\t\t\t\t0\ncash_player_bomb_planted\t\t\t\t\t\t\t0\ncash_player_damage_hostage\t\t\t\t\t\t\t0\ncash_player_interact_with_hostage\t\t\t\t\t0\ncash_player_killed_enemy_default\t\t\t\t\t0\ncash_player_killed_enemy_factor\t\t\t\t\t\t0\ncash_player_killed_hostage\t\t\t\t\t\t\t0\ncash_player_killed_teammate\t\t\t\t\t\t\t0\ncash_player_rescued_hostage\t\t\t\t\t\t\t0\ncash_team_elimination_bomb_map\t\t\t\t\t\t0\ncash_team_elimination_hostage_map_t\t\t\t\t\t0\ncash_team_elimination_hostage_map_ct\t\t\t\t0\ncash_team_hostage_alive\t\t\t\t\t\t\t\t0\ncash_team_hostage_interaction\t\t\t\t\t\t0\ncash_team_loser_bonus\t\t\t\t\t\t\t\t0\ncash_team_bonus_shorthanded\t\t\t\t\t\t\t0\ncash_team_loser_bonus_consecutive_rounds\t\t\t0\ncash_team_planted_bomb_but_defused\t\t\t\t\t0\ncash_team_rescued_hostage\t\t\t\t\t\t\t0\ncash_team_terrorist_win_bomb\t\t\t\t\t\t0\ncash_team_win_by_defusing_bomb\t\t\t\t\t\t0\ncash_team_win_by_hostage_rescue\t\t\t\t\t\t0\ncash_team_win_by_time_running_out_bomb\t\t\t\t0\ncash_team_win_by_time_running_out_hostage\t\t\t0\nff_damage_reduction_bullets\t\t\t\t\t\t\t0\nff_damage_reduction_grenade\t\t\t\t\t\t\t0\nff_damage_reduction_grenade_self\t\t\t\t\t0\nff_damage_reduction_other\t\t\t\t\t\t\t0\nmp_afterroundmoney\t\t\t\t\t\t\t\t\t0\nmp_buytime\t\t\t\t\t\t\t\t\t\t\t0\nmp_buy_anywhere\t\t\t\t\t\t\t\t\t\t0\nmp_buy_during_immunity\t\t\t\t\t\t\t\t0\nmp_death_drop_defuser\t\t\t\t\t\t\t\t0\t\nmp_death_drop_grenade\t\t\t\t\t\t\t\t0\t\t\t// 0=none, 1=best, 2=current or best\nmp_death_drop_gun\t\t\t\t\t\t\t\t\t0\t\t\t// 0=none, 1=best, 2=current or best\nmp_defuser_allocation\t\t\t\t\t\t\t\t0\t\t\t// 0=none, 1=random, 2=everyone\nmp_force_pick_time\t\t\t\t\t\t\t\t\t15\nmp_forcecamera\t\t\t\t\t\t\t\t\t\t0\t\t\t// Set to 1 for team only spectating\nmp_free_armor\t\t\t\t\t\t\t\t\t\t2\t\t\t\nmp_freezetime\t\t\t\t\t\t\t\t\t\t6\nmp_friendlyfire\t\t\t\t\t\t\t\t\t\t1\nmp_win_panel_display_time\t\t\t\t\t\t\t1\nmp_respawn_immunitytime\t\t\t\t\t\t\t\t4\nmp_halftime\t\t\t\t\t\t\t\t\t\t\t0\nmp_match_can_clinch\t\t\t\t\t\t\t\t\t0\t\t\t// 0=No mercy rule, 1=team can clinch match win early if they win \u003E 1/2 total rounds\nmp_maxmoney\t\t\t\t\t\t\t\t\t\t\t0\nmp_maxrounds\t\t\t\t\t\t\t\t\t\t10\nmp_molotovusedelay\t\t\t\t\t\t\t\t\t0\nmp_playercashawards\t\t\t\t\t\t\t\t\t0\nmp_roundtime\t\t\t\t\t\t\t\t\t\t30\nmp_roundtime_hostage\t\t\t\t\t\t\t\t0\nmp_roundtime_defuse\t\t\t\t\t\t\t\t\t0\nmp_solid_teammates\t\t\t\t\t\t\t\t\t0\nmp_startmoney\t\t\t\t\t\t\t\t\t\t0\nmp_teamcashawards\t\t\t\t\t\t\t\t\t0\nmp_timelimit\t\t\t\t\t\t\t\t\t\t30\nmp_warmuptime\t\t\t\t\t\t\t\t\t\t30\nmp_weapons_allow_zeus\t\t\t\t\t\t\t\t0\nmp_weapons_allow_typecount\t\t\t\t\t\t\t-1\nspec_freeze_panel_extended_time\t\t\t\t\t\t1\nspec_freeze_time\t\t\t\t\t\t\t\t\t2\nsv_allow_votes\t\t\t\t\t\t\t\t\t\t1\t\t// Voting allowed in this mode\nsv_talk_enemy_living\t\t\t\t\t\t\t\t1\nsv_talk_enemy_dead\t\t\t\t\t\t\t\t\t1\nsv_deadtalk\t\t\t\t\t\t\t\t\t\t\t1\nsv_ignoregrenaderadio\t\t\t\t\t\t\t\t1\ntv_delay\t\t\t\t\t\t\t\t\t\t\t30\nmp_warmup_pausetimer\t\t\t\t\t\t\t\t0\nmp_halftime_pausetimer\t\t\t\t\t\t\t\t0\nmp_randomspawn\t\t\t\t\t\t\t\t\t\t0\nmp_randomspawn_los\t\t\t\t\t\t\t\t\t0\nsv_infinite_ammo\t\t\t\t\t\t\t\t\t0\nammo_grenade_limit_flashbang\t\t\t\t\t\t1\nammo_grenade_limit_total\t\t\t\t\t\t\t3\n\n//\nmp_weapons_allow_map_placed\t\t\t\t\t\t\t0\nmp_weapons_glow_on_ground\t\t\t\t\t\t\t0\nmp_display_kill_assists\t\t\t\t\t\t\t\t0\nmp_respawn_on_death_t\t\t\t\t\t\t\t\t1\nmp_respawn_on_death_ct\t\t\t\t\t\t\t\t1\nmp_ct_default_melee\t\t\t\t\t\t\t\t\tweapon_knife\nmp_ct_default_secondary\t\t\t\t\t\t\t\t\u0022\u0022\nmp_ct_default_primary\t\t\t\t\t\t\t\t\u0022\u0022\nmp_t_default_melee\t\t\t\t\t\t\t\t\tweapon_knife\nmp_t_default_secondary\t\t\t\t\t\t\t\t\u0022\u0022\nmp_t_default_primary\t\t\t\t\t\t\t\t\u0022\u0022\n\nsv_occlude_players\t\t\t\t\t\t\t\t1\nocclusion_test_async\t\t\t\t\t\t\t\t0\n\nr_decals_overide_fadestarttime_params 30\nsv_health_approach_enabled\t\t\t\t\t\t\t1\nhealthshot_healthboost_time\t\t\t\t\t\t\t1\nhealthshot_health\t\t\t\t\t\t\t\t\t50\nsv_health_approach_speed\t\t\t\t\t\t\t20\nsv_max_deathmatch_respawns_per_tick                 1\n\nsv_gameinstructor_enable\t\t\t\t\t\t\t0\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 303,
+      "relativePath": "game\\csgo\\cfg\\gamemode_casual_server.cfg",
+      "description": "Configuration file for the Casual gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 304,
+      "relativePath": "game\\csgo\\cfg\\gamemode_competitive2v2_server.cfg",
+      "description": "Configuration file for the Wingman mode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 305,
+      "relativePath": "game\\csgo\\cfg\\gamemode_competitive_server.cfg",
+      "description": "Configuration file for the Competitive and Weapons Expert gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 306,
+      "relativePath": "game\\csgo\\cfg\\gamemode_cooperative_server.cfg",
+      "description": "Configuration file for the Guardian gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 307,
+      "relativePath": "game\\csgo\\cfg\\gamemode_coopmission_server.cfg",
+      "description": "Configuration file for the Co-op Strike gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 308,
+      "relativePath": "game\\csgo\\cfg\\gamemode_custom_server.cfg",
+      "description": "Main configuration file",
+      "template": "bot_autodifficulty_threshold_high\t\t\t\t\t0.0\t// Value between -20.0 and 20.0 (Amount above avg human contribution score, above which a bot should lower its difficulty)\nbot_autodifficulty_threshold_low\t\t\t\t\t-2.0\t// Value between -20.0 and 20.0 (Amount below avg human contribution score, below which a bot should raise its difficulty)\nbot_chatter\t\t\t\t\t\t\t\t\t\t\toff\nbot_defer_to_human_goals\t\t\t\t\t\t\t0\nbot_defer_to_human_items\t\t\t\t\t\t\t1\nbot_difficulty\t\t\t\t\t\t\t\t\t\t2\nbot_quota\t\t\t\t\t\t\t\t\t\t\t10\nbot_quota_mode\t\t\t\t\t\t\t\t\t\tfill\ncash_player_bomb_defused\t\t\t\t\t\t\t0\ncash_player_bomb_planted\t\t\t\t\t\t\t0\ncash_player_damage_hostage\t\t\t\t\t\t\t0\ncash_player_interact_with_hostage\t\t\t\t\t0\ncash_player_killed_enemy_default\t\t\t\t\t0\ncash_player_killed_enemy_factor\t\t\t\t\t\t0\ncash_player_killed_hostage\t\t\t\t\t\t\t0\ncash_player_killed_teammate\t\t\t\t\t\t\t0\ncash_player_rescued_hostage\t\t\t\t\t\t\t0\ncash_team_elimination_bomb_map\t\t\t\t\t\t0\ncash_team_elimination_hostage_map_t\t\t\t\t\t0\ncash_team_elimination_hostage_map_ct\t\t\t\t0\ncash_team_hostage_alive\t\t\t\t\t\t\t\t0\ncash_team_hostage_interaction\t\t\t\t\t\t0\ncash_team_loser_bonus\t\t\t\t\t\t\t\t0\ncash_team_bonus_shorthanded\t\t\t\t\t\t\t0\ncash_team_loser_bonus_consecutive_rounds\t\t\t0\ncash_team_planted_bomb_but_defused\t\t\t\t\t0\ncash_team_rescued_hostage\t\t\t\t\t\t\t0\ncash_team_terrorist_win_bomb\t\t\t\t\t\t0\ncash_team_win_by_defusing_bomb\t\t\t\t\t\t0\ncash_team_win_by_hostage_rescue\t\t\t\t\t\t0\ncash_team_win_by_time_running_out_bomb\t\t\t\t0\ncash_team_win_by_time_running_out_hostage\t\t\t0\nff_damage_reduction_bullets\t\t\t\t\t\t\t0.1\nff_damage_reduction_grenade\t\t\t\t\t\t\t0.4\nff_damage_reduction_grenade_self\t\t\t\t\t0\nff_damage_reduction_other\t\t\t\t\t\t\t0.4\nmp_afterroundmoney\t\t\t\t\t\t\t\t\t0\nmp_buytime\t\t\t\t\t\t\t\t\t\t\t0\nmp_buy_anywhere\t\t\t\t\t\t\t\t\t\t0\nmp_buy_during_immunity\t\t\t\t\t\t\t\t0\nmp_death_drop_defuser\t\t\t\t\t\t\t\t0\t\nmp_death_drop_grenade\t\t\t\t\t\t\t\t0\t\t\t// 0=none, 1=best, 2=current or best\nmp_death_drop_gun\t\t\t\t\t\t\t\t\t0\t\t\t// 0=none, 1=best, 2=current or best\nmp_defuser_allocation\t\t\t\t\t\t\t\t0\t\t\t// 0=none, 1=random, 2=everyone\nmp_force_pick_time\t\t\t\t\t\t\t\t\t15\nmp_forcecamera\t\t\t\t\t\t\t\t\t\t0\t\t\t// Set to 1 for team only spectating\nmp_free_armor\t\t\t\t\t\t\t\t\t\t2\t\t\t\nmp_freezetime\t\t\t\t\t\t\t\t\t\t0\nmp_friendlyfire\t\t\t\t\t\t\t\t\t\t1\nmp_ggprogressive_round_restart_delay\t\t\t \t15\nmp_ggtr_bomb_defuse_bonus\t\t\t\t\t\t\t0\nmp_ggtr_bomb_detonation_bonus\t\t\t\t\t\t0\nmp_ggtr_bomb_pts_for_flash\t\t\t\t\t\t\t0\nmp_ggtr_bomb_pts_for_he\t\t\t\t\t\t\t\t0\nmp_ggtr_bomb_pts_for_molotov\t\t\t\t\t\t0\nmp_ggtr_bomb_pts_for_upgrade\t\t\t\t\t\t0\nmp_ggtr_bomb_respawn_delay\t\t\t\t\t\t\t0\nmp_ggtr_end_round_kill_bonus\t\t\t\t\t\t0\nmp_ggtr_halftime_delay\t\t\t\t\t\t\t\t0.0\nmp_ggtr_last_weapon_kill_ends_half\t\t\t\t\t0\nmp_respawn_immunitytime\t\t\t\t\t\t\t\t6\nmp_halftime\t\t\t\t\t\t\t\t\t\t\t0\nmp_match_can_clinch\t\t\t\t\t\t\t\t\t0\t\t\t// 0=No mercy rule, 1=team can clinch match win early if they win \u003E 1/2 total rounds\nmp_maxmoney\t\t\t\t\t\t\t\t\t\t\t0\nmp_maxrounds\t\t\t\t\t\t\t\t\t\t0\nmp_molotovusedelay\t\t\t\t\t\t\t\t\t0\nmp_playercashawards\t\t\t\t\t\t\t\t\t0\nmp_roundtime\t\t\t\t\t\t\t\t\t\t10\nmp_roundtime_hostage\t\t\t\t\t\t\t\t0\nmp_roundtime_defuse\t\t\t\t\t\t\t\t\t0\nmp_solid_teammates\t\t\t\t\t\t\t\t\t0\nmp_startmoney\t\t\t\t\t\t\t\t\t\t0\nmp_teamcashawards\t\t\t\t\t\t\t\t\t0\nmp_timelimit\t\t\t\t\t\t\t\t\t\t10\nmp_warmuptime\t\t\t\t\t\t\t\t\t\t20\nmp_weapons_allow_zeus\t\t\t\t\t\t\t\t1\nspec_freeze_panel_extended_time\t\t\t\t\t\t1\nspec_freeze_time\t\t\t\t\t\t\t\t\t2\nsv_allow_votes\t\t\t\t\t\t\t\t\t\t1\t\t// Voting allowed in this mode\nsv_talk_enemy_living\t\t\t\t\t\t\t\t1\nsv_talk_enemy_dead\t\t\t\t\t\t\t\t\t1\t\t\nsv_arms_race_vote_to_restart_disallowed_after\t\t26\nsv_deadtalk\t\t\t\t\t\t\t\t\t\t\t1\nsv_ignoregrenaderadio\t\t\t\t\t\t\t\t1\ntv_delay\t\t\t\t\t\t\t\t\t\t\t30\nmp_warmup_pausetimer\t\t\t\t\t\t\t\t0\nmp_halftime_pausetimer\t\t\t\t\t\t\t\t0\nmp_randomspawn\t\t\t\t\t\t\t\t\t\t1\nmp_randomspawn_los\t\t\t\t\t\t\t\t\t1\nsv_infinite_ammo\t\t\t\t\t\t\t\t\t2\nammo_grenade_limit_flashbang\t\t\t\t\t\t1\nammo_grenade_limit_total\t\t\t\t\t\t\t3\n//\nmp_weapons_allow_map_placed\t\t\t\t\t\t\t1\nmp_display_kill_assists\t\t\t\t\t\t\t\t1\n\n\nsv_occlude_players\t\t\t\t\t\t\t\t1\nocclusion_test_async\t\t\t\t\t\t\t\t0\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 309,
+      "relativePath": "game\\csgo\\cfg\\gamemode_deathmatch_server.cfg",
+      "description": "Configuration file for the Deathmatch gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 310,
+      "relativePath": "game\\csgo\\cfg\\gamemode_demolition_server.cfg",
+      "description": "Configuration file for the Demolition gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 311,
+      "relativePath": "game\\csgo\\cfg\\gamemode_survival_server.cfg",
+      "description": "Configuration file for the Danger Zone gamemode",
+      "template": "//Use this config to overwrite any default settings",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 312,
+      "relativePath": "game\\csgo\\cfg\\nade_prac.cfg",
+      "description": "Nade practice configuration",
+      "template": "sv_cheats 1\nbot_kick\nmp_limitteams 0\nmp_autoteambalance 0\nmp_maxmoney 60000\nmp_startmoney 60000\nmp_buytime 9999\nmp_buy_anywhere 1\nmp_freezetime 0\nmp_roundtime 60\nmp_roundtime_defuse 60\nmp_respawn_on_death_ct 1\nmp_respawn_on_death_t 1\nsv_infinite_ammo 1\nsv_showimpacts 1\nsv_showimpacts_time 10\nammo_grenade_limit_total 5\nmp_warmup_end\nmp_restartgame 1\nsv_grenade_trajectory_prac_pipreview true",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    },
+    {
+      "id": 313,
+      "relativePath": "game\\csgo\\cfg\\server.cfg",
+      "description": "Server config file",
+      "template": "// Public information\n\nhostname \u0022${Hostname}\u0022                     //Hostname for the server, will show up in server browsers.\nlog on                                     //This is set to turn on logging!\nsv_lan \u00220\u0022                                 //This should always be set, so you know it\u0027s not on\nsv_region \u0022255\u0022                            //The region of the world to report this server in.\nsv_tags \u0022\u0022                                 //Server tags. Used to provide extra information to clients when they\u0027re browsing for servers\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Passwords\n\nrcon_password \u0022${RconPassword}\u0022            //Remote console password.\nsv_password \u0022${PrivatePassword}\u0022           //Only set this if you intend to have a private server!\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// The Bot Convars\n\nbot_difficulty 1                           //Defines the skill of bots joining the game.  Values are: 0=easy, 1=normal, 2=hard, 3=expert.\nbot_chatter \u0022off\u0022                          //Control how bots talk. Allowed values: \u0027off\u0027, \u0027radio\u0027, \u0027minimal\u0027, or \u0027normal\nbot_join_after_player 1                    //If nonzero, bots wait until a player joins before entering the game.\nbot_quota ${bot_quota}                               //Determines the total number of bots in the game.\nbot_quota_mode \u0022fill\u0022                      //Determines the type of quota. Allowed values: \u0027normal\u0027, \u0027fill\u0027, and \u0027match\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Server Convars\n\nsv_pausable \u00220\u0022                             //Is the server pausable.\nsv_allow_lobby_connect_only \u00220\u0022             //If set, players may only join this server from matchmaking lobby, may not connect directly.\nsv_allow_votes \u00221\u0022                          //Allow voting?\nsv_allow_wait_command \u00221\u0022                   //Allow or disallow the wait command on clients connected to this server.\nsv_alltalk \u00221\u0022                              //Players can hear all other players\u0027 voice communication, no team restrictions\nsv_alternateticks \u00220\u0022                       //If set, server only simulates entities on even numbered ticks.\nsv_cheats \u00220\u0022                               //Allow cheats on server\nsv_deadtalk \u00220\u0022                             //Dead players can speak (voice, text) to the living\nsv_forcepreload \u00220\u0022                         //Force server side preloading\nsv_friction \u00224\u0022                             //World friction.\u0022\nsv_full_alltalk \u00221\u0022                         //Any player (including Spectator team) can speak to any other player\nsv_infinite_ammo \u00220\u0022                        //Player\u0027s active weapon will never run out of ammo\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Server Logging \n\nsv_log_onefile \u00220\u0022                          //Log server information to only one file.\nsv_logbans \u00220\u0022                              //Log server bans in the server logs.\nsv_logecho \u00221\u0022                              //Echo log information to the console.\nsv_logfile \u00221\u0022                              //Log server information in the log file.\nsv_logflush \u00220\u0022                             //Flush the log file to disk on each write (slow).\nsv_logsdir \u00220\u0022                              //Folder in the game directory where server logs will be stored.\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Server Rates \n\nsv_maxcmdrate \u0022102\u0022                         //(If sv_mincmdrate is \u003E 0), this sets the maximum value for cl_cmdrate.\nsv_maxrate \u00220\u0022                              //Max bandwidth rate allowed on server, 0 == unlimited\nsv_mincmdrate \u002210\u0022                          //This sets the minimum value for cl_cmdrate. 0 == unlimited.\nsv_minrate \u00225000\u0022                           //Min bandwidth rate allowed on server, 0 == unlimited\n\n/////////////////////////////////////////////////////////////////////////////////\n// Server Downloads \n\nsv_downloadurl \u0022${FastDownloadUrl}\u0022                        //Location from which clients can download missing files\nsv_allowdownload \u0022${FastDownloadEnabled}\u0022\nsv_allowupload 1\n\n/////////////////////////////////////////////////////////////////////////////////\n// Pure Options \n\n//sv_pure_kick_clients \u00221\u0022                  //If set to 1, the server will kick clients with mismatching files.\n//sv_pure_trace \u00220\u0022                         //If set to 1, the server will print a message whenever a client is verifying a CRC for a file.\n\n/////////////////////////////////////////////////////////////////////////////////\n// Round Convars\n\nmp_match_end_restart \u00220\u0022                    //Restart the map at the end of round limit         \nmp_afterroundmoney \u00220\u0022                      //Amount of money awared to every player after each round\nmp_playercashawards \u00221\u0022                     //Players can earn money by performing in-game actions\nmp_teamcashawards \u00221\u0022                       //Teams can earn money by performing in-game actions\nmp_maxrounds \u002230\u0022                           //Maximum amount of rounds per map\nmp_timelimit \u00220\u0022                            //How many minutes for the whole map\nmp_roundtime \u00222\u0022                            //How many minutes each round takes.\nmp_freezetime\u00225\u0022                            //how many seconds to keep players frozen when the round starts\nmp_buytime \u002245\u0022                             //How many seconds after round start players can buy items for.\nmp_forcecamera \u00221\u0022                          //Set to 1 for team only spectating.\nmp_defuser_allocation \u00222\u0022                   //How to allocate defusers to CTs at start or round: 0=none, 1=random, 2=everyone\nmp_death_drop_defuser \u00221\u0022                   //Drop defuser on player death\nmp_death_drop_grenade \u00222\u0022                   //Which grenade to drop on player death: 0=none, 1=best, 2=current or best\nmp_death_drop_gun \u00221\u0022                       //Which gun to drop on player death: 0=none, 1=best, 2=current or best\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Friendly Fire\n\nmp_friendlyfire \u00221\u0022                         //Enable Friendly Fire 1 =Enable 0 =Disable\n//ff_damage_reduction_grenade \u00220\u0022           //How much to reduce damage done to teammates by a thrown grenade.\n//ff_damage_reduction_bullets \u00220\u0022           //How much to reduce damage done to teammates when shot.\n//ff_damage_reduction_other \u00220\u0022             //How much to reduce damage done to teammates by things other than bullets and grenades.\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Game Convars\n\nmp_autokick \u00221\u0022                             //Kick idle/team-killing players\nmp_autoteambalance \u00221\u0022                      //Auto balaces teams\nmp_buytime \u002245\u0022                             //How many seconds after round start players can buy items for.\nmp_c4timer \u002245\u0022                             //how long from when the C4 is armed until it blows\nmp_do_warmup_period \u00221\u0022                     //Whether or not to do a warmup period at the start of a match.\nmp_force_pick_time \u002215\u0022                     //The amount of time a player has on the team screen to make a selection before being auto-teamed\nmp_halftime_duration \u002215\u0022                   //Number of seconds that halftime lasts\nmp_join_grace_time \u002215                      //Number of seconds after round start to allow a player to join a game\nmp_limitteams \u00222\u0022                           //Max # of players 1 team can have over another (0 disables check)\nmp_match_end_restart \u00221\u0022                    //At the end of the match, perform a restart instead of loading a new map\nmp_maxrounds \u002230\u0022                           //Max amount of rounds per map\nmp_playercashawards \u00221\u0022                     //Players can earn money by performing in-game actions\nmp_playerid \u00220\u0022                             //Controls what information player see in the status bar: 0 all names; 1 team names; 2 no names\nmp_playerid_delay \u00220\u0022                       //Number of seconds to delay showing information in the status bar\nmp_playerid_hold \u00220\u0022                        //Number of seconds to keep showing old information in the status bar\nmp_restartgame \u00220\u0022                          //If non-zero, game will restart in the specified number of seconds\nmp_round_restart_delay \u00227\u0022                  //Number of seconds to delay before restarting a round after a win\nmp_roundtime \u00223\u0022                            //How many minutes each round takes.\nmp_tkpunish \u00220\u0022                             //Will a TK\u0027er be punished in the next round?  {0=no,  1=yes}\nmp_warmuptime \u002225\u0022                          //If true, there will be a warmup period/round at the start of each match to allow to connect.\nmp_win_panel_display_time \u00225\u0022               //The amount of time to show the win panel between matches / halfs\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Cash Convars\n\nmp_startmoney \u0022400\u0022                         //Amount of money each player gets when they reset.\nmp_maxmoney \u002212000\u0022                         //Maximum amount of money allowed in a player\u0027s account.\t\t\t\t\t\ncash_team_terrorist_win_bomb \u00222200\u0022         //How much the team will win for the bomb.\ncash_team_elimination_hostage_map \u00222200\u0022    //How much a player earns when they eliminate all hostages.\ncash_team_elimination_bomb_map \u00222200\u0022       //How much the team will win when the bomb is eliminated.\ncash_team_win_by_time_running_out \u00222200\u0022    //How much the team will win when the time runs out.\ncash_team_win_by_defusing_bomb \u00222200\u0022       //How much the team will win when bomb has been defused.\ncash_team_win_by_hostage_rescue \u00222200\u0022      //How much the team will win when all hostages have been rescued.\ncash_team_loser_bonus \u00222000\u0022                //How much the team will win when when the team looses.\ncash_team_loser_bonus_consecutive_rounds \u0022500\u0022 //How much the team will win when the team looses consecutive rounds.\ncash_team_rescued_hostage \u0022100\u0022             //How much the team will win when team has recued a hostage.\ncash_team_hostage_alive\t\u00220\u0022                 //How much the team will win when a hostage is still alive\ncash_team_planted_bomb_but_defused \u0022200\u0022    //How much the team will win when when a team has planted a bomb and been defused\ncash_team_hostage_interaction \u002250\u0022          //How much the team will win when hostages are saved\ncash_player_killed_teammate \u0022-3300\u0022         //How much the player will loose when a teamate has been team killed\ncash_player_killed_enemy_default \u0022200\u0022      //How much the player will win when killing an enemy\ncash_player_killed_enemy_factor\t\u00220.5\u0022       //How much the player will win when killing an enemy\ncash_player_bomb_planted \u0022200\u0022              //How much the player will win when the bomb has been planted.\ncash_player_bomb_defused \u0022200\u0022              //How much the player will win when the bomb has been defused\ncash_player_rescued_hostage \u0022200\u0022           //How much the player will win when rescuing hostages       \ncash_player_interact_with_hostage \u00220\u0022       //How much the player will win when interacting with hostages\ncash_player_damage_hostage \u0022-30\u0022            //How much the player will loose when demaging a hostage   \ncash_player_killed_hostage \u0022-1000\u0022          //How much the player will loose when a hostage has been killed\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// Voting Options \n\nsv_vote_allow_spectators \u00220\u0022                //Allow spectators to vote?\nsv_vote_command_delay \u00222\u0022                   //How long after a vote passes until the action happens\nsv_vote_creation_time \u0022120\u0022                 //How often someone can individually call a vote.\nsv_vote_failure_timer \u0022300\u0022                 //A vote that fails cannot be re-submitted for this long\nsv_vote_quorum_ratio \u00220\u0022                    //The minimum ratio of players needed to vote on an issue to resolve it.\nsv_vote_timer_duration \u002215\u0022                 //How long to allow voting on an issue\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// TV Options \n\n//tv_nochat \u00220\u0022                             //Don\u0027t receive chat messages from other SourceTV spectators\n//tv_port \u0022check\u0022                           //Host SourceTV port\n\n\n/////////////////////////////////////////////////////////////////////////////////\n// The following commands manage kicks and bans\n\nwriteid\nwriteip\nexec banned_user.cfg\nexec banned_ip.cfg",
+      "order": -1,
+      "enableEditor": false,
+      "editor": [
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "Hostname",
+          "label": "Hostname",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "RconPassword",
+          "label": "RCON Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 0,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "",
+          "inputType": 0,
+          "id": "PrivatePassword",
+          "label": "Private Password",
+          "description": "",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": false,
+          "valueType": "double",
+          "minValue": 10,
+          "id": "bot_quota",
+          "defaultValue": "0",
+          "label": "Number of bots",
+          "description": "",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 12,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "gamesScripts": [
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterCustomModInstalled"
+        ],
+        "name": "Extract mapfile",
+        "description": "Extract mapfile",
+        "code": "import clr\nfrom System.IO import File, Path\nclr.AddReference(\u0022TCAdmin.SDK\u0022)\nfrom TCAdmin.SDK.Misc import CompressionTools\nThisTaskStep.WriteLog(str(FileTitle))\n# Delete file if it already exists\nif File.Exists(FileNameSavePath\u002B\u0027.zip\u0027):\n  File.Delete(FileNameSavePath\u002B\u0027.zip\u0027)\n\n\nraise Exception()  \nif File.Exists(FileNameSavePath):\n  try:\n    # File is compressed as a zip when downloaded, but isn\u0027t a zip file. Rename to .zip, extract and delete file.\n    File.Move(FileNameSavePath, FileNameSavePath\u002B\u0027.zip\u0027)\n    mapsFolder = Path.Combine(ThisService.RootDirectory, \u0027game\u0027, \u0027csgo\u0027, \u0027maps\u0027)\n    c=CompressionTools()\n    c.ThrowException = True\n    c.Decompress(FileNameSavePath\u002B\u0027.zip\u0027, mapsFolder)\n    File.Delete(FileNameSavePath\u002B\u0027.zip\u0027)\n  except IOError, e:\n      raise Exception(\u0022Failed to extract %s, error was:\\n%s\u0022 % (\u0027game/csgo/maps/\u0027 \u002B FileNameNoPath, e))",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "a3d14c25-f123-48aa-bbfd-86940c89f080"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterCustomModUninstalled"
+        ],
+        "name": "Uninstall workshop mods",
+        "description": "Uninstall workshop mods",
+        "code": "from System.IO import File, Path\n\nmapFile = Path.Combine(ThisService.RootDirectory, \u0027game\u0027, \u0027csgo\u0027, \u0027maps\u0027, FileNameNoPath) \ntry:\n    File.Delete(mapFile)\nexcept IOError, e:\n    raise Exception(\u0022Failed to delete %s, error was:\\n%s\u0022 % (\u0027game/csgo/maps/\u0027 \u002B FileNameNoPath, e))",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "fab4dffc-0af6-4a64-aa78-41898a6dc68a"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeModUninstall"
+        ],
+        "name": "Remove CounterStrikeSharp files",
+        "description": "On CounterStrikeSharp uninstall: remove addons/counterstrikesharp \u002B counterstrikesharp.vdf",
+        "code": "import os, shutil\naddons_directory = os.path.join(ThisService.RootDirectory, \u0027game\u0027, \u0027csgo\u0027, \u0027addons\u0027)\ncssharp_directory = os.path.join(addons_directory, \u0027counterstrikesharp\u0027)\ncounterstrikesharp_vdf = os.path.join(addons_directory, \u0027metamod\u0027, \u0027counterstrikesharp.vdf\u0027)\nif os.path.isdir(cssharp_directory):\n  shutil.rmtree(cssharp_directory)\n\nif os.path.isfile(counterstrikesharp_vdf):\n  os.remove(counterstrikesharp_vdf)\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "85fe560b-1d38-4762-83b4-519e03d5a83a"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Powershell",
+        "operatingSystem": [
+          "Windows"
+        ],
+        "scriptEvents": [
+          "BeforeServiceStarted"
+        ],
+        "name": "Stage steamclient64.dll (Windows)",
+        "description": "Find \u002B stage steamclient64.dll for the Steam Game Server API before start",
+        "code": "$ErrorActionPreference = \u0027SilentlyContinue\u0027\n# CS2 (Windows) pre-start: CS2\u0027s depot ships only steam_api64.dll, so the dedicated server\n# can\u0027t initialize the Steam Game Server API (\u0022Could not determine Steam client install\n# directory\u0022) and crashes after map load. Drop the matching steamclient64.dll \u002B its\n# tier0_s64/vstdlib_s64 dependencies next to the exe and the SDK loads it locally (no Steam\n# install / no registry needed). DLL set: https://downloads.tcadmin.com/games/cs2-steam.zip\n$root  = $Globals.ThisService.RootDirectory\n$win64 = Join-Path $root \u0027game\\bin\\win64\u0027\n\nif (-not (Test-Path (Join-Path $win64 \u0027steamclient64.dll\u0027))) {\n  $zip = Join-Path $root \u0027cs2-steam.zip\u0027\n  Invoke-WebRequest -Uri \u0027https://downloads.tcadmin.com/games/cs2-steam.zip\u0027 -OutFile $zip -UseBasicParsing\n  Add-Type -AssemblyName System.IO.Compression.FileSystem\n  $z = [System.IO.Compression.ZipFile]::OpenRead($zip)\n  foreach ($e in $z.Entries) { [System.IO.Compression.ZipFileExtensions]::ExtractToFile($e, (Join-Path $win64 $e.Name), $true) }\n  $z.Dispose()\n  Remove-Item $zip -Force\n}\nexit 0\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": true,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "c298d6be-0b1b-4f99-ab68-e56d2ebf829e"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "IronPython3",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeModUninstall"
+        ],
+        "name": "Remove Metamod files",
+        "description": "On Metamod uninstall: remove addons/metamod \u002B all .vdf loaders",
+        "code": "import os, shutil, glob\naddons_directory = os.path.join(ThisService.RootDirectory, \u0027game\u0027, \u0027csgo\u0027, \u0027addons\u0027)\nmetamod_directory = os.path.join(addons_directory, \u0027metamod\u0027)\n\nvdf_files = glob.glob(os.path.join(addons_directory, \u0027*.vdf\u0027))\nfor vdf_file in vdf_files:\n  os.remove(vdf_file)\n\nif os.path.isdir(metamod_directory):\n  shutil.rmtree(metamod_directory)\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "b22894e8-7c85-41ef-a1a3-e4a69d1f5ca7"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Powershell",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeModInstall"
+        ],
+        "name": "Install Metamod (latest)",
+        "description": "On install: resolve \u002B download the latest Metamod:Source for this OS and extract it",
+        "code": "$ErrorActionPreference = \u0027Stop\u0027\n$isWin = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::Windows)\n$baseUrl = \u0027https://mms.alliedmods.net/mmsdrop/2.0/\u0027\n$pointer = if ($isWin) { \u0027mmsource-latest-windows\u0027 } else { \u0027mmsource-latest-linux\u0027 }\n$filename = ([string](Invoke-RestMethod -Uri ($baseUrl \u002B $pointer) -TimeoutSec 60)).Trim()\nif ([string]::IsNullOrWhiteSpace($filename)) { throw \u0027Metamod latest-version pointer returned empty.\u0027 }\n$dl = $baseUrl \u002B $filename\n$root = $Globals.ThisService.RootDirectory\n$extractDir = [System.IO.Path]::Combine($root, \u0027game\u0027, \u0027csgo\u0027)\n[System.IO.Directory]::CreateDirectory($extractDir) | Out-Null\n$tmp = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), $filename)\n$Globals.ScriptConsole.WriteLine(\u0022Metamod: downloading $filename\u0022)\nInvoke-WebRequest -Uri $dl -OutFile $tmp -TimeoutSec 300\n$ct = [TCAdmin.SDK.Misc.Compression.CompressionTools]::new($Globals.OperatingSystem)\n$ct.SetFileOwnerAutomatically = $true\n$ct.Decompress($tmp, $extractDir, $Globals.ThisCancellationToken)\ntry { [System.IO.File]::Delete($tmp) } catch { }\n$Globals.ScriptConsole.WriteLine(\u0022Metamod: installed $filename\u0022)",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "660a4d8f-ecaa-45d1-bab4-a5303b11eedb"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "Powershell",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeModInstall"
+        ],
+        "name": "Install CounterStrikeSharp (latest)",
+        "description": "On install: resolve \u002B download the latest CounterStrikeSharp (with runtime) for this OS and extract it",
+        "code": "$ErrorActionPreference = \u0027Stop\u0027\n$isWin = [System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform([System.Runtime.InteropServices.OSPlatform]::Windows)\n$os = if ($isWin) { \u0027windows\u0027 } else { \u0027linux\u0027 }\n$rel = Invoke-RestMethod -Uri \u0027https://api.github.com/repos/roflmuffin/CounterStrikeSharp/releases/latest\u0027 -Headers @{ \u0027User-Agent\u0027 = \u0027TCAdmin\u0027; \u0027Accept\u0027 = \u0027application/vnd.github\u002Bjson\u0027 } -TimeoutSec 60\n$asset = $rel.assets | Where-Object { $_.name -like \u0022counterstrikesharp-with-runtime-$os-*.zip\u0022 } | Select-Object -First 1\nif ($null -eq $asset) { throw \u0022No CounterStrikeSharp with-runtime asset for $os in the latest release.\u0022 }\n$root = $Globals.ThisService.RootDirectory\n$extractDir = [System.IO.Path]::Combine($root, \u0027game\u0027, \u0027csgo\u0027)\n[System.IO.Directory]::CreateDirectory($extractDir) | Out-Null\n$tmp = [System.IO.Path]::Combine([System.IO.Path]::GetTempPath(), $asset.name)\n$Globals.ScriptConsole.WriteLine(\u0022CounterStrikeSharp: downloading $($asset.name)\u0022)\nInvoke-WebRequest -Uri $asset.browser_download_url -OutFile $tmp -TimeoutSec 300\n$ct = [TCAdmin.SDK.Misc.Compression.CompressionTools]::new($Globals.OperatingSystem)\n$ct.SetFileOwnerAutomatically = $true\n$ct.Decompress($tmp, $extractDir, $Globals.ThisCancellationToken)\ntry { [System.IO.File]::Delete($tmp) } catch { }\n$Globals.ScriptConsole.WriteLine(\u0022CounterStrikeSharp: installed $($asset.name)\u0022)",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "3eb3e4e0-14f7-444d-b905-d95d6ee9052f"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "BeforeSteamUpdate"
+        ],
+        "name": "Backup config files (before Steam update)",
+        "description": "Backup the game config files before the Steam download so the After-Steam-Update restore can re-apply them",
+        "code": "using System.IO;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\nvar root = Globals.ThisService.RootDirectory;\nvar backupRoot = Path.Combine(root, \u0022__tca_cfg_backup\u0022);\nif (Directory.Exists(backupRoot)) Directory.Delete(backupRoot, true);\nDirectory.CreateDirectory(backupRoot);\n\nvar configFiles = Globals.ThisGame.ConfigFiles;\nGlobals.ScriptConsole.WriteLine(\u0022Config backup: \u0022 \u002B (configFiles == null ? 0 : configFiles.Count) \u002B \u0022 config file(s) defined for this game.\u0022);\nint n = 0;\nif (configFiles != null)\n{\n    foreach (var cf in configFiles)\n    {\n        if (string.IsNullOrWhiteSpace(cf.RelativePath)) continue;\n        var rel = cf.RelativePath.Replace(\u0027\\\\\u0027, Path.DirectorySeparatorChar).Replace(\u0027/\u0027, Path.DirectorySeparatorChar).TrimStart(Path.DirectorySeparatorChar);\n        var src = Path.Combine(root, rel);\n        if (!File.Exists(src)) { Globals.ScriptConsole.WriteLine(\u0022  skip (not on disk): \u0022 \u002B rel); continue; }\n        var dst = Path.Combine(backupRoot, rel);\n        Directory.CreateDirectory(Path.GetDirectoryName(dst));\n        File.Copy(src, dst, true);\n        n\u002B\u002B;\n        Globals.ScriptConsole.WriteLine(\u0022  backed up: \u0022 \u002B rel);\n    }\n}\nGlobals.ScriptConsole.WriteLine(\u0022Config backup complete: \u0022 \u002B n \u002B \u0022 file(s).\u0022);",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "63a49c39-d1d0-4228-b405-0c23d7c3cefe"
+      }
+    },
+    {
+      "script": {
+        "allGames": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterSteamUpdate"
+        ],
+        "name": "Restore config files (after Steam update)",
+        "description": "Restore the game config files the Steam download overwrote (paths read from the game ConfigFiles)",
+        "code": "using System.IO;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpGameGlobals(); // DO NOT MODIFY THIS LINE\n\nvar root = Globals.ThisService.RootDirectory;\nvar backupRoot = Path.Combine(root, \u0022__tca_cfg_backup\u0022);\nif (!Directory.Exists(backupRoot))\n{\n    Globals.ScriptConsole.WriteLine(\u0022Config restore: no backup found, nothing to restore.\u0022);\n}\nelse\n{\n    var configFiles = Globals.ThisGame.ConfigFiles;\n    int n = 0;\n    if (configFiles != null)\n    {\n        foreach (var cf in configFiles)\n        {\n            if (string.IsNullOrWhiteSpace(cf.RelativePath)) continue;\n            var rel = cf.RelativePath.Replace(\u0027\\\\\u0027, Path.DirectorySeparatorChar).Replace(\u0027/\u0027, Path.DirectorySeparatorChar).TrimStart(Path.DirectorySeparatorChar);\n            var bak = Path.Combine(backupRoot, rel);\n            if (!File.Exists(bak)) continue;\n            var dst = Path.Combine(root, rel);\n            Directory.CreateDirectory(Path.GetDirectoryName(dst));\n            File.Copy(bak, dst, true);\n            try { Globals.OperatingSystem.SetFileOwnerAutoDetect(dst); } catch { }\n            n\u002B\u002B;\n            Globals.ScriptConsole.WriteLine(\u0022  restored: \u0022 \u002B rel);\n        }\n    }\n    try { Directory.Delete(backupRoot, true); } catch { }\n    Globals.ScriptConsole.WriteLine(\u0022Config restore complete: \u0022 \u002B n \u002B \u0022 file(s) restored.\u0022);\n}",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "7c16c90d-e8cc-4434-8e6a-f3496ef96c37"
+      }
+    }
+  ],
+  "customModProviderConfigs": [
+    {
+      "providerId": 1,
+      "gameId": 112,
+      "enabled": false,
+      "configuration": {}
+    },
+    {
+      "providerId": 2,
+      "gameId": 112,
+      "enabled": true,
+      "configuration": {
+        "Private.UseSteamAPI": true
+      }
+    },
+    {
+      "providerId": 3,
+      "gameId": 112,
+      "enabled": false,
+      "configuration": {}
+    },
+    {
+      "providerId": 4,
+      "gameId": 112,
+      "enabled": false,
+      "configuration": {}
+    },
+    {
+      "providerId": 5,
+      "gameId": 112,
+      "enabled": false,
+      "configuration": {}
+    },
+    {
+      "providerId": 6,
+      "gameId": 112,
+      "enabled": false,
+      "configuration": {}
+    }
+  ],
+  "gamesCustomLinks": [],
+  "updates": [],
+  "createdDate": "2026-06-25T02:12:21.163084",
+  "metadata": {},
+  "backupConfig": {
+    "enabled": true,
+    "backupType": "Incremental",
+    "compressBackup": true,
+    "includedPaths": [
+      "game/csgo/cfg/**/*"
+    ],
+    "maxBackupCount": 30
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FastDL",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SetVariable",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FastDL",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "PlayerStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "SteamUpdate",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FastDL",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SetVariable",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Updates",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Steam",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RunAs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "RconAndQuery",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Paths",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "FastDL",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 3,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    }
+  ],
+  "mods": [
+    {
+      "name": "Counter-Strike Sharp",
+      "source": "none",
+      "extractPath": "game/csgo",
+      "installType": "Silent",
+      "version": "385",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "d2b54b4c-0710-4de8-8355-1bf5adc82765",
+      "addLines": [],
+      "removeLines": [],
+      "requiredModNames": [
+        "Metamod: Source"
+      ],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [],
+      "modRoles": [
+        {
+          "roleId": 2
+        },
+        {
+          "roleId": 3
+        }
+      ],
+      "modScripts": [
+        {
+          "scriptIdentifier": "85fe560b-1d38-4762-83b4-519e03d5a83a"
+        },
+        {
+          "scriptIdentifier": "3eb3e4e0-14f7-444d-b905-d95d6ee9052f"
+        }
+      ]
+    },
+    {
+      "name": "Metamod: Source",
+      "source": "none",
+      "extractPath": "game/csgo",
+      "installType": "Silent",
+      "version": "39",
+      "updateVisible": false,
+      "uninstallable": true,
+      "defaultInstall": false,
+      "disableRestart": false,
+      "trackInstalledFiles": true,
+      "viewOrder": 0,
+      "identifier": "4acac7e6-d583-4d31-9973-526da9b19723",
+      "addLines": [
+        {
+          "id": "393068ef-42a7-4fd8-9cf5-af300735777a",
+          "file": "game/csgo/gameinfo.gi",
+          "findLine": "\t\t\tGame\tcsgo",
+          "isRegex": false,
+          "addLine": "\t\t\tGame    csgo/addons/metamod",
+          "addLineType": "BeforeFindLine",
+          "errorOnFailure": true,
+          "skipIfExists": true,
+          "event": "Install"
+        }
+      ],
+      "removeLines": [
+        {
+          "id": "35415cd5-58e9-4e34-a022-93d5785e6e4a",
+          "file": "game/csgo/gameinfo.gi",
+          "findLine": "\t\t\tGame    csgo/addons/metamod",
+          "isRegex": false,
+          "errorOnFailure": false,
+          "event": "Uninstall"
+        }
+      ],
+      "requiredModNames": [],
+      "requiredUpdateNames": [],
+      "incompatibleModNames": [],
+      "configFileRelativePaths": [],
+      "modRoles": [
+        {
+          "roleId": 3
+        },
+        {
+          "roleId": 2
+        }
+      ],
+      "modScripts": [
+        {
+          "scriptIdentifier": "b22894e8-7c85-41ef-a1a3-e4a69d1f5ca7"
+        },
+        {
+          "scriptIdentifier": "660a4d8f-ecaa-45d1-bab4-a5303b11eedb"
+        }
+      ]
+    }
+  ],
+  "queryMonitoringConfig": {
+    "enabled": true,
+    "checkInterval": "00:05:00",
+    "startupGracePeriod": "00:10:00",
+    "retryDelay": "00:02:30",
+    "failureThreshold": 3,
+    "failureAction": "Restart",
+    "maxFailureAction": "Stop",
+    "logActivityOnFailure": true,
+    "slotDetectionEnabled": true,
+    "slotDetectionAction": "Stop",
+    "additionalAllowedSlots": 1,
+    "privateDetectionEnabled": true,
+    "privateDetectionAction": "Stop",
+    "brandDetectionEnabled": true,
+    "brandDetectionAction": "Stop",
+    "brandedText": "",
+    "brandedTextAtEnd": true,
+    "brandedTextAddSpace": false,
+    "brandRegex": "",
+    "brandRegexCaseInsensitive": false,
+    "rules": []
+  },
+  "fastDLConfig": {
+    "enabled": true,
+    "relativeRoot": "game/csgo/",
+    "urlExpression": "${FastDownloadBaseUrl}",
+    "includePatterns": [
+      "maps/**/*",
+      "models/**/*",
+      "materials/**/*",
+      "sound/**/*"
+    ],
+    "excludePatterns": [
+      "**/gameinfo.gi",
+      "**/gameinfo_branchspecific.gi",
+      "**/pak01_000.vpk",
+      "**/pak01_001.vpk",
+      "**/pak01_002.vpk",
+      "**/pak01_003.vpk",
+      "**/pak01_004.vpk",
+      "**/pak01_005.vpk",
+      "**/pak01_006.vpk",
+      "**/pak01_007.vpk",
+      "**/pak01_008.vpk",
+      "**/pak01_009.vpk",
+      "**/pak01_010.vpk",
+      "**/pak01_011.vpk",
+      "**/pak01_012.vpk",
+      "**/pak01_013.vpk",
+      "**/pak01_014.vpk",
+      "**/pak01_015.vpk",
+      "**/pak01_016.vpk",
+      "**/pak01_017.vpk",
+      "**/pak01_018.vpk",
+      "**/pak01_019.vpk",
+      "**/pak01_020.vpk",
+      "**/pak01_021.vpk",
+      "**/pak01_022.vpk",
+      "**/pak01_023.vpk",
+      "**/pak01_024.vpk",
+      "**/pak01_025.vpk",
+      "**/pak01_026.vpk",
+      "**/pak01_027.vpk",
+      "**/pak01_028.vpk",
+      "**/pak01_029.vpk",
+      "**/pak01_030.vpk",
+      "**/pak01_031.vpk",
+      "**/pak01_032.vpk",
+      "**/pak01_033.vpk",
+      "**/pak01_034.vpk",
+      "**/pak01_035.vpk",
+      "**/pak01_036.vpk",
+      "**/pak01_037.vpk",
+      "**/pak01_038.vpk",
+      "**/pak01_039.vpk",
+      "**/pak01_040.vpk",
+      "**/pak01_041.vpk",
+      "**/pak01_042.vpk",
+      "**/pak01_043.vpk",
+      "**/pak01_044.vpk",
+      "**/pak01_045.vpk",
+      "**/pak01_046.vpk",
+      "**/pak01_047.vpk",
+      "**/pak01_048.vpk",
+      "**/pak01_049.vpk",
+      "**/pak01_050.vpk",
+      "**/pak01_051.vpk",
+      "**/pak01_052.vpk",
+      "**/pak01_053.vpk",
+      "**/pak01_054.vpk",
+      "**/pak01_055.vpk",
+      "**/pak01_056.vpk",
+      "**/pak01_057.vpk",
+      "**/pak01_058.vpk",
+      "**/pak01_059.vpk",
+      "**/pak01_060.vpk",
+      "**/pak01_061.vpk",
+      "**/pak01_062.vpk",
+      "**/pak01_063.vpk",
+      "**/pak01_064.vpk",
+      "**/pak01_065.vpk",
+      "**/pak01_066.vpk",
+      "**/pak01_067.vpk",
+      "**/pak01_068.vpk",
+      "**/pak01_069.vpk",
+      "**/pak01_070.vpk",
+      "**/pak01_071.vpk",
+      "**/pak01_072.vpk",
+      "**/pak01_073.vpk",
+      "**/pak01_074.vpk",
+      "**/pak01_075.vpk",
+      "**/pak01_076.vpk",
+      "**/pak01_077.vpk",
+      "**/pak01_078.vpk",
+      "**/pak01_079.vpk",
+      "**/pak01_080.vpk",
+      "**/pak01_081.vpk",
+      "**/pak01_082.vpk",
+      "**/pak01_083.vpk",
+      "**/pak01_084.vpk",
+      "**/pak01_085.vpk",
+      "**/pak01_086.vpk",
+      "**/pak01_087.vpk",
+      "**/pak01_088.vpk",
+      "**/pak01_089.vpk",
+      "**/pak01_090.vpk",
+      "**/pak01_091.vpk",
+      "**/pak01_092.vpk",
+      "**/pak01_093.vpk",
+      "**/pak01_094.vpk",
+      "**/pak01_095.vpk",
+      "**/pak01_096.vpk",
+      "**/pak01_097.vpk",
+      "**/pak01_098.vpk",
+      "**/pak01_099.vpk",
+      "**/pak01_100.vpk",
+      "**/pak01_101.vpk",
+      "**/pak01_102.vpk",
+      "**/pak01_103.vpk",
+      "**/pak01_104.vpk",
+      "**/pak01_105.vpk",
+      "**/pak01_106.vpk",
+      "**/pak01_107.vpk",
+      "**/pak01_108.vpk",
+      "**/pak01_109.vpk",
+      "**/pak01_110.vpk",
+      "**/pak01_111.vpk",
+      "**/pak01_112.vpk",
+      "**/pak01_113.vpk",
+      "**/pak01_114.vpk",
+      "**/pak01_115.vpk",
+      "**/pak01_116.vpk",
+      "**/pak01_117.vpk",
+      "**/pak01_118.vpk",
+      "**/pak01_119.vpk",
+      "**/pak01_120.vpk",
+      "**/pak01_121.vpk",
+      "**/pak01_122.vpk",
+      "**/pak01_123.vpk",
+      "**/pak01_124.vpk",
+      "**/pak01_125.vpk",
+      "**/pak01_126.vpk",
+      "**/pak01_127.vpk",
+      "**/pak01_128.vpk",
+      "**/pak01_129.vpk",
+      "**/pak01_130.vpk",
+      "**/pak01_131.vpk",
+      "**/pak01_132.vpk",
+      "**/pak01_133.vpk",
+      "**/pak01_134.vpk",
+      "**/pak01_135.vpk",
+      "**/pak01_136.vpk",
+      "**/pak01_137.vpk",
+      "**/pak01_138.vpk",
+      "**/pak01_139.vpk",
+      "**/pak01_140.vpk",
+      "**/pak01_141.vpk",
+      "**/pak01_142.vpk",
+      "**/pak01_143.vpk",
+      "**/pak01_144.vpk",
+      "**/pak01_145.vpk",
+      "**/pak01_146.vpk",
+      "**/pak01_147.vpk",
+      "**/pak01_148.vpk",
+      "**/pak01_149.vpk",
+      "**/pak01_150.vpk",
+      "**/pak01_151.vpk",
+      "**/pak01_152.vpk",
+      "**/pak01_153.vpk",
+      "**/pak01_154.vpk",
+      "**/pak01_155.vpk",
+      "**/pak01_156.vpk",
+      "**/pak01_157.vpk",
+      "**/pak01_158.vpk",
+      "**/pak01_159.vpk",
+      "**/pak01_160.vpk",
+      "**/pak01_161.vpk",
+      "**/pak01_162.vpk",
+      "**/pak01_163.vpk",
+      "**/pak01_164.vpk",
+      "**/pak01_165.vpk",
+      "**/pak01_166.vpk",
+      "**/pak01_167.vpk",
+      "**/pak01_168.vpk",
+      "**/pak01_169.vpk",
+      "**/pak01_170.vpk",
+      "**/pak01_171.vpk",
+      "**/pak01_172.vpk",
+      "**/pak01_173.vpk",
+      "**/pak01_174.vpk",
+      "**/pak01_175.vpk",
+      "**/pak01_176.vpk",
+      "**/pak01_177.vpk",
+      "**/pak01_178.vpk",
+      "**/pak01_179.vpk",
+      "**/pak01_180.vpk",
+      "**/pak01_181.vpk",
+      "**/pak01_182.vpk",
+      "**/pak01_183.vpk",
+      "**/pak01_184.vpk",
+      "**/pak01_185.vpk",
+      "**/pak01_186.vpk",
+      "**/pak01_187.vpk",
+      "**/pak01_188.vpk",
+      "**/pak01_189.vpk",
+      "**/pak01_190.vpk",
+      "**/pak01_191.vpk",
+      "**/pak01_192.vpk",
+      "**/pak01_193.vpk",
+      "**/pak01_194.vpk",
+      "**/pak01_195.vpk",
+      "**/pak01_196.vpk",
+      "**/pak01_197.vpk",
+      "**/pak01_198.vpk",
+      "**/pak01_199.vpk",
+      "**/pak01_200.vpk",
+      "**/pak01_201.vpk",
+      "**/pak01_202.vpk",
+      "**/pak01_203.vpk",
+      "**/pak01_204.vpk",
+      "**/pak01_205.vpk",
+      "**/pak01_206.vpk",
+      "**/pak01_207.vpk",
+      "**/pak01_208.vpk",
+      "**/pak01_209.vpk",
+      "**/pak01_210.vpk",
+      "**/pak01_211.vpk",
+      "**/pak01_212.vpk",
+      "**/pak01_213.vpk",
+      "**/pak01_214.vpk",
+      "**/pak01_215.vpk",
+      "**/pak01_216.vpk",
+      "**/pak01_217.vpk",
+      "**/pak01_218.vpk",
+      "**/pak01_219.vpk",
+      "**/pak01_220.vpk",
+      "**/pak01_221.vpk",
+      "**/pak01_222.vpk",
+      "**/pak01_223.vpk",
+      "**/pak01_224.vpk",
+      "**/pak01_225.vpk",
+      "**/pak01_226.vpk",
+      "**/pak01_227.vpk",
+      "**/pak01_228.vpk",
+      "**/pak01_229.vpk",
+      "**/pak01_230.vpk",
+      "**/pak01_231.vpk",
+      "**/pak01_232.vpk",
+      "**/pak01_233.vpk",
+      "**/pak01_234.vpk",
+      "**/pak01_235.vpk",
+      "**/pak01_236.vpk",
+      "**/pak01_237.vpk",
+      "**/pak01_238.vpk",
+      "**/pak01_239.vpk",
+      "**/pak01_240.vpk",
+      "**/pak01_241.vpk",
+      "**/pak01_242.vpk",
+      "**/pak01_243.vpk",
+      "**/pak01_244.vpk",
+      "**/pak01_245.vpk",
+      "**/pak01_246.vpk",
+      "**/pak01_247.vpk",
+      "**/pak01_248.vpk",
+      "**/pak01_249.vpk",
+      "**/pak01_250.vpk",
+      "**/pak01_251.vpk",
+      "**/pak01_252.vpk",
+      "**/pak01_253.vpk",
+      "**/pak01_254.vpk",
+      "**/pak01_255.vpk",
+      "**/pak01_256.vpk",
+      "**/pak01_257.vpk",
+      "**/pak01_258.vpk",
+      "**/pak01_259.vpk",
+      "**/pak01_260.vpk",
+      "**/pak01_261.vpk",
+      "**/pak01_262.vpk",
+      "**/pak01_263.vpk",
+      "**/pak01_264.vpk",
+      "**/pak01_265.vpk",
+      "**/pak01_266.vpk",
+      "**/pak01_dir.vpk",
+      "**/shaders_pc_000.vpk",
+      "**/shaders_pc_dir.vpk",
+      "**/shaders_vulkan_000.vpk",
+      "**/shaders_vulkan_001.vpk",
+      "**/shaders_vulkan_dir.vpk",
+      "**/steam.inf",
+      "bin/win64/client.dll",
+      "bin/win64/host.dll",
+      "bin/win64/matchmaking.dll",
+      "bin/win64/server.dll",
+      "cfg/gamemode_armsrace.cfg",
+      "cfg/gamemode_armsrace_server.cfg",
+      "cfg/gamemode_casual.cfg",
+      "cfg/gamemode_casual_server.cfg",
+      "cfg/gamemode_competitive.cfg",
+      "cfg/gamemode_competitive2v2.cfg",
+      "cfg/gamemode_competitive2v2_offline.cfg",
+      "cfg/gamemode_competitive2v2_server.cfg",
+      "cfg/gamemode_competitive_offline.cfg",
+      "cfg/gamemode_competitive_server.cfg",
+      "cfg/gamemode_competitive_short.cfg",
+      "cfg/gamemode_competitive_tmm.cfg",
+      "cfg/gamemode_cooperative.cfg",
+      "cfg/gamemode_cooperative_server.cfg",
+      "cfg/gamemode_coopmission.cfg",
+      "cfg/gamemode_coopmission_server.cfg",
+      "cfg/gamemode_custom.cfg",
+      "cfg/gamemode_custom_server.cfg",
+      "cfg/gamemode_deathmatch.cfg",
+      "cfg/gamemode_deathmatch_server.cfg",
+      "cfg/gamemode_deathmatch_short.cfg",
+      "cfg/gamemode_deathmatch_tmm.cfg",
+      "cfg/gamemode_demolition.cfg",
+      "cfg/gamemode_demolition_server.cfg",
+      "cfg/gamemode_dm_freeforall.cfg",
+      "cfg/gamemode_new_user_training.cfg",
+      "cfg/gamemode_retakecasual.cfg",
+      "cfg/gamemode_survival_server.cfg",
+      "cfg/gamemode_teamdeathmatch.cfg",
+      "cfg/gamemode_tournament.cfg",
+      "cfg/gamemode_workshop.cfg",
+      "cfg/machine_convars_default.vcfg",
+      "cfg/perftest.cfg",
+      "cfg/server.cfg",
+      "cfg/server_default.cfg",
+      "cfg/user_keys_default.vcfg",
+      "cfg/user_keys_dev_default.vcfg",
+      "logs/2023_10_01_125003.log",
+      "maps/cs_italy.vpk",
+      "maps/cs_italy_vanity.vpk",
+      "maps/cs_office.vpk",
+      "maps/cs_office_vanity.vpk",
+      "maps/de_ancient.vpk",
+      "maps/de_ancient_vanity.vpk",
+      "maps/de_anubis.vpk",
+      "maps/de_anubis_vanity.vpk",
+      "maps/de_dust2.vpk",
+      "maps/de_dust2_vanity.vpk",
+      "maps/de_inferno.vpk",
+      "maps/de_inferno_vanity.vpk",
+      "maps/de_mirage.vpk",
+      "maps/de_mirage_vanity.vpk",
+      "maps/de_nuke.vpk",
+      "maps/de_nuke_prefab.vpk",
+      "maps/de_nuke_vanity.vpk",
+      "maps/de_overpass.vpk",
+      "maps/de_overpass_vanity.vpk",
+      "maps/de_vertigo.vpk",
+      "maps/de_vertigo_vanity.vpk",
+      "maps/graphics_settings.vpk",
+      "maps/lobby_mapveto.vpk",
+      "maps/workshop_preview.vpk",
+      "maps/editor/toolscene_lighting_de_dust_day.vpk",
+      "maps/editor/zoo/smartprop_zoo.vpk",
+      "maps/prefabs/cs_italy/cs_italy_skybox.vpk",
+      "maps/prefabs/cs_italy/cs_italy_skybox_s2.vpk",
+      "maps/prefabs/cs_italy_s2/cs_italy_s2_skybox.vpk",
+      "maps/prefabs/cs_office/cs_office_3d_skybox.vpk",
+      "maps/prefabs/de_ancient/de_ancient_3dskybox.vpk",
+      "maps/prefabs/de_anubis/de_anubis_skybox.vpk",
+      "maps/prefabs/de_dust2/de_dust2_skybox.vpk",
+      "maps/prefabs/de_inferno/3d_skybox.vpk",
+      "maps/prefabs/de_inferno/3d_skybox_s2.vpk",
+      "maps/prefabs/de_inferno/de_inferno_skybox.vpk",
+      "maps/prefabs/de_inferno/inferno_backdrop.vpk",
+      "maps/prefabs/de_inferno/inferno_skybox.vpk",
+      "maps/prefabs/de_inferno/s2_3d_skybox.vpk",
+      "maps/prefabs/de_mirage/3dskybox_mirage.vpk",
+      "maps/prefabs/de_mirage/3dskybox_mirage_legacy.vpk",
+      "maps/prefabs/de_nuke/de_nuke_skybox02.vpk",
+      "maps/prefabs/de_vertigo/skybox2.vpk",
+      "maps/prefabs/misc/counterterrorist_team_intro.vpk",
+      "maps/prefabs/misc/counterterrorist_team_intro_variant2.vpk",
+      "maps/prefabs/misc/counterterrorist_wingman_intro.vpk",
+      "maps/prefabs/misc/end_of_match.vpk",
+      "maps/prefabs/misc/team_select.vpk",
+      "maps/prefabs/misc/terrorist_team_intro.vpk",
+      "maps/prefabs/misc/terrorist_team_intro_variant2.vpk",
+      "maps/prefabs/misc/terrorist_wingman_intro.vpk",
+      "maps/prefabs/overpass/overpass_3d_skybox.vpk",
+      "maps/templates/env_particle_glow_template.vpk",
+      "maps/templates/env_sun_entity_template.vpk",
+      "maps/ui/acknowledge_item.vpk",
+      "maps/ui/buy_menu.vpk",
+      "maps/ui/csgo_ui_particle_scene_panel_empty.vpk",
+      "maps/ui/icon_generation_basic.vpk",
+      "maps/ui/icon_generation_empty.vpk",
+      "maps/ui/icon_generation_nuke.vpk",
+      "maps/ui/inspect_agents.vpk",
+      "maps/ui/inspect_case.vpk",
+      "maps/ui/inspect_displayitem.vpk",
+      "maps/ui/inspect_gloves.vpk",
+      "maps/ui/inspect_item.vpk",
+      "maps/ui/inspect_melee.vpk",
+      "maps/ui/inspect_musickit.vpk",
+      "maps/ui/inspect_spray.vpk",
+      "maps/ui/inspect_weapons.vpk",
+      "maps/ui/nametag.vpk",
+      "panorama/fonts/fonts.conf",
+      "panorama/fonts/notomono-regular.ttf",
+      "panorama/fonts/notosans-bold.ttf",
+      "panorama/fonts/notosans-bolditalic.ttf",
+      "panorama/fonts/notosans-italic.ttf",
+      "panorama/fonts/notosans-regular.ttf",
+      "panorama/fonts/notosansjp-bold.ttf",
+      "panorama/fonts/notosansjp-light.ttf",
+      "panorama/fonts/notosansjp-regular.ttf",
+      "panorama/fonts/notosanskr-bold.ttf",
+      "panorama/fonts/notosanskr-light.ttf",
+      "panorama/fonts/notosanskr-regular.ttf",
+      "panorama/fonts/notosanssc-bold.ttf",
+      "panorama/fonts/notosanssc-light.ttf",
+      "panorama/fonts/notosanssc-regular.ttf",
+      "panorama/fonts/notosanssymbols-regular.ttf",
+      "panorama/fonts/notosanstc-bold.ttf",
+      "panorama/fonts/notosanstc-light.ttf",
+      "panorama/fonts/notosanstc-regular.ttf",
+      "panorama/fonts/notosansthai-bold.ttf",
+      "panorama/fonts/notosansthai-light.ttf",
+      "panorama/fonts/notosansthai-regular.ttf",
+      "panorama/fonts/notoserif-bold.ttf",
+      "panorama/fonts/notoserif-boliitalic.ttf",
+      "panorama/fonts/notoserif-italic.ttf",
+      "panorama/fonts/notoserif-regular.ttf",
+      "panorama/fonts/stratum2.uifont",
+      "panorama/videos/acknowledge.webm",
+      "panorama/videos/acknowledge540p.webm",
+      "panorama/videos/acknowledge720p.webm",
+      "panorama/videos/ancient.webm",
+      "panorama/videos/ancient540.webm",
+      "panorama/videos/ancient720.webm",
+      "panorama/videos/anubis.webm",
+      "panorama/videos/anubis540.webm",
+      "panorama/videos/anubis720.webm",
+      "panorama/videos/apollo.webm",
+      "panorama/videos/apollo540.webm",
+      "panorama/videos/apollo720.webm",
+      "panorama/videos/background_movie_op10.webm",
+      "panorama/videos/background_movie_op10_720.webm",
+      "panorama/videos/blacksite.webm",
+      "panorama/videos/blacksite540p.webm",
+      "panorama/videos/blacksite720p.webm",
+      "panorama/videos/blue.webm",
+      "panorama/videos/bonus.webm",
+      "panorama/videos/broken_fang_launch.webm",
+      "panorama/videos/broken_fang_launch540.webm",
+      "panorama/videos/broken_fang_launch720.webm",
+      "panorama/videos/card_1.webm",
+      "panorama/videos/card_2.webm",
+      "panorama/videos/card_3.webm",
+      "panorama/videos/card_4.webm",
+      "panorama/videos/cbble.webm",
+      "panorama/videos/cbble540p.webm",
+      "panorama/videos/cbble720p.webm",
+      "panorama/videos/chlorine.webm",
+      "panorama/videos/chlorine540.webm",
+      "panorama/videos/chlorine720.webm",
+      "panorama/videos/county.webm",
+      "panorama/videos/county540.webm",
+      "panorama/videos/county720.webm",
+      "panorama/videos/digital_glitch.webm",
+      "panorama/videos/dz_blacksite_preview.webm",
+      "panorama/videos/dz_county_preview.webm",
+      "panorama/videos/dz_frostbite_preview.webm",
+      "panorama/videos/dz_junglety_preview.webm",
+      "panorama/videos/dz_sirocco_preview.webm",
+      "panorama/videos/engage.webm",
+      "panorama/videos/engage540.webm",
+      "panorama/videos/engage720.webm",
+      "panorama/videos/frostbite.webm",
+      "panorama/videos/gobutton.webm",
+      "panorama/videos/guard.webm",
+      "panorama/videos/guard540.webm",
+      "panorama/videos/guard720.webm",
+      "panorama/videos/intro-perfectworld.webm",
+      "panorama/videos/intro-perfectworld720p.webm",
+      "panorama/videos/intro.webm",
+      "panorama/videos/intro720p.webm",
+      "panorama/videos/linemap.webm",
+      "panorama/videos/mutiny.webm",
+      "panorama/videos/mutiny540.webm",
+      "panorama/videos/mutiny720.webm",
+      "panorama/videos/mvp.webm",
+      "panorama/videos/nuke.webm",
+      "panorama/videos/nuke540p.webm",
+      "panorama/videos/nuke720p.webm",
+      "panorama/videos/op11_underwater.webm",
+      "panorama/videos/op11_underwater540.webm",
+      "panorama/videos/op11_underwater720.webm",
+      "panorama/videos/op9_main.webm",
+      "panorama/videos/op9_main540p.webm",
+      "panorama/videos/op9_main720p.webm",
+      "panorama/videos/op9_mainmenu.webm",
+      "panorama/videos/op9_mainmenu540p.webm",
+      "panorama/videos/op9_mainmenu720p.webm",
+      "panorama/videos/operation_loading.webm",
+      "panorama/videos/op_riptide_launch_1.webm",
+      "panorama/videos/op_riptide_launch_1540.webm",
+      "panorama/videos/op_riptide_launch_1720.webm",
+      "panorama/videos/op_riptide_launch_1_pw.webm",
+      "panorama/videos/op_riptide_launch_1_pw540.webm",
+      "panorama/videos/op_riptide_launch_1_pw720.webm",
+      "panorama/videos/op_riptide_launch_2.webm",
+      "panorama/videos/op_riptide_launch_2540.webm",
+      "panorama/videos/op_riptide_launch_2720.webm",
+      "panorama/videos/op_riptide_launch_2_pw.webm",
+      "panorama/videos/op_riptide_launch_2_pw540.webm",
+      "panorama/videos/op_riptide_launch_2_pw720.webm",
+      "panorama/videos/pink_ct.webm",
+      "panorama/videos/pink_t.webm",
+      "panorama/videos/premier_gain.webm",
+      "panorama/videos/premier_loop.webm",
+      "panorama/videos/premier_lost.webm",
+      "panorama/videos/purple.webm",
+      "panorama/videos/rankbar.webm",
+      "panorama/videos/red.webm",
+      "panorama/videos/riptide_logo_loop.webm",
+      "panorama/videos/search.webm",
+      "panorama/videos/search540p.webm",
+      "panorama/videos/search720p.webm",
+      "panorama/videos/sirocco.webm",
+      "panorama/videos/sirocco540.webm",
+      "panorama/videos/sirocco720.webm",
+      "panorama/videos/sirocco_night.webm",
+      "panorama/videos/sirocco_night540p.webm",
+      "panorama/videos/sirocco_night720p.webm",
+      "panorama/videos/speed_lines.webm",
+      "panorama/videos/splat.webm",
+      "panorama/videos/survival_promo.webm",
+      "panorama/videos/survival_winner.webm",
+      "panorama/videos/swamp.webm",
+      "panorama/videos/swamp540.webm",
+      "panorama/videos/swamp720.webm",
+      "panorama/videos/tiers_bg.webm",
+      "panorama/videos/tournament_bg.webm",
+      "panorama/videos/tournament_bg540p.webm",
+      "panorama/videos/tournament_bg720p.webm",
+      "panorama/videos/trailer_0.webm",
+      "panorama/videos/trailer_1.webm",
+      "panorama/videos/vertigo.webm",
+      "panorama/videos/vertigo540.webm",
+      "panorama/videos/vertigo720.webm",
+      "panorama/videos/vs_bg.webm",
+      "panorama/videos/zoo_alpha.webm",
+      "panorama/videos/zoo_no_alpha.webm",
+      "panorama/videos/test/cards/card_1.webm",
+      "panorama/videos/test/cards/card_10.webm",
+      "panorama/videos/test/cards/card_2.webm",
+      "panorama/videos/test/cards/card_3.webm",
+      "panorama/videos/test/cards/card_4.webm",
+      "panorama/videos/test/cards/card_5.webm",
+      "panorama/videos/test/cards/card_6.webm",
+      "panorama/videos/test/cards/card_7.webm",
+      "panorama/videos/test/cards/card_8.webm",
+      "panorama/videos/test/cards/card_9.webm",
+      "resource/csgo_brazilian.txt",
+      "resource/csgo_bulgarian.txt",
+      "resource/csgo_czech.txt",
+      "resource/csgo_danish.txt",
+      "resource/csgo_dutch.txt",
+      "resource/csgo_english.txt",
+      "resource/csgo_finnish.txt",
+      "resource/csgo_french.txt",
+      "resource/csgo_german.txt",
+      "resource/csgo_greek.txt",
+      "resource/csgo_hungarian.txt",
+      "resource/csgo_italian.txt",
+      "resource/csgo_japanese.txt",
+      "resource/csgo_koreana.txt",
+      "resource/csgo_latam.txt",
+      "resource/csgo_norwegian.txt",
+      "resource/csgo_polish.txt",
+      "resource/csgo_portuguese.txt",
+      "resource/csgo_romanian.txt",
+      "resource/csgo_russian.txt",
+      "resource/csgo_schinese.txt",
+      "resource/csgo_schinese_pw.txt",
+      "resource/csgo_spanish.txt",
+      "resource/csgo_swedish.txt",
+      "resource/csgo_tchinese.txt",
+      "resource/csgo_thai.txt",
+      "resource/csgo_turkish.txt",
+      "resource/csgo_ukrainian.txt",
+      "resource/csgo_vietnamese.txt",
+      "resource/game-icon.bmp",
+      "resource/toolhelp_cs2_item_editor_english.txt"
+    ],
+    "syncOnServiceCreate": false,
+    "autoSyncOnFileChange": false,
+    "compression": "BZip2",
+    "diskQuotaMB": 3072,
+    "requiresHttps": false,
+    "stripPaths": [
+      "addons/"
+    ]
+  },
+  "environmentVariables": []
+}
