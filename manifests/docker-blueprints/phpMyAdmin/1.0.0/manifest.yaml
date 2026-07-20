@@ -1,0 +1,18 @@
+identifier: "Community.DockerBlueprints.PhpMyAdmin"
+name: "phpMyAdmin"
+version: "1.0.0"
+author: "TCAdmin"
+shortDescription: "phpMyAdmin"
+longDescription: |
+  # phpMyAdmin
+  
+  ## Description
+  phpMyAdmin with configurable options
+icon: "https://upload.wikimedia.org/wikipedia/commons/9/95/PhpMyAdmin_logo.png"
+images:
+  - "https://upload.wikimedia.org/wikipedia/commons/1/13/PhpMyAdmin-main-en.png"
+tags:
+  - "Docker"
+files:
+  - path: "phpMyAdmin.json"
+    type: "DockerConfig"

@@ -1,0 +1,489 @@
+{
+  "__TCA:ExportVersion": "3.13.62.0",
+  "__TCA:ExportedAt": "2026-07-20T22:16:45.3989891Z",
+  "blueprintId": 117,
+  "name": "phpMyAdmin",
+  "shortName": "phpMyAdmin",
+  "description": "phpMyAdmin with configurable options",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/9/95/PhpMyAdmin_logo.png",
+  "backgroundImage": "https://upload.wikimedia.org/wikipedia/commons/1/13/PhpMyAdmin-main-en.png",
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml",
+    "*.conf",
+    "*.php",
+    "*.inc",
+    "*.html"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "maxEditableSize": 1048576,
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "HTTP",
+        "port": 2080,
+        "expression": "",
+        "description": "HTTP Port",
+        "uriTemplate": "http://{HostnameOrIP}:{HTTP}"
+      },
+      {
+        "id": "HTTPS",
+        "port": 2443,
+        "expression": "",
+        "description": "HTTPS Port",
+        "uriTemplate": "https://{HostnameOrIP}:{HTTPS}"
+      }
+    ],
+    "portIncrement": 10
+  },
+  "configFiles": [
+    {
+      "id": 322,
+      "relativePath": "config.json",
+      "description": "phpMyAdmin settings",
+      "template": "{\n  \u0022connectionMode\u0022: \u0022${connectionMode}\u0022,\n  \u0022host\u0022: \u0022${host}\u0022,\n  \u0022port\u0022: \u0022${port}\u0022,\n  \u0022uploadLimit\u0022: \u0022${uploadLimit}\u0022,\n  \u0022memoryLimit\u0022: \u0022${memoryLimit}\u0022,\n  \u0022maxExecutionTime\u0022: \u0022${maxExecutionTime}\u0022,\n  \u0022allowNoPassword\u0022: \u0022${allowNoPassword}\u0022\n}\n",
+      "order": 0,
+      "enableEditor": true,
+      "editor": [
+        {
+          "items": [
+            {
+              "text": "Localhost (this server\u0027s MySQL)",
+              "value": "localhost"
+            },
+            {
+              "text": "Any host (choose at login)",
+              "value": "arbitrary"
+            }
+          ],
+          "id": "connectionMode",
+          "defaultValue": "localhost",
+          "label": "Database connection",
+          "description": "How phpMyAdmin reaches database servers.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicComboBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 255,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "^[A-Za-z0-9._-]\u002B$",
+          "inputType": 0,
+          "id": "host",
+          "defaultValue": "",
+          "label": "Database host (optional)",
+          "description": "Localhost mode only: a specific DB host/IP. Blank = this server\u0027s MySQL.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": true,
+          "valueType": "double",
+          "minValue": 1,
+          "maxValue": 65535,
+          "id": "port",
+          "defaultValue": 3306,
+          "label": "Database port",
+          "description": "MySQL / MariaDB port.",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 16,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "^\\d\u002B[KMGkmg]?$",
+          "inputType": 0,
+          "id": "uploadLimit",
+          "defaultValue": "256M",
+          "label": "Max import size",
+          "description": "Maximum upload/import size, e.g. 256M or 1G.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "maxLength": 16,
+          "lines": 1,
+          "denyCharacters": [],
+          "regExValidation": "^(-1|\\d\u002B[KMGkmg]?)$",
+          "inputType": 0,
+          "id": "memoryLimit",
+          "defaultValue": "512M",
+          "label": "PHP memory limit",
+          "description": "PHP memory_limit, e.g. 512M.",
+          "required": false,
+          "valueType": "string",
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "decimals": 0,
+          "step": 1,
+          "spinner": true,
+          "valueType": "double",
+          "minValue": 0,
+          "maxValue": 86400,
+          "id": "maxExecutionTime",
+          "defaultValue": 600,
+          "label": "Max execution time (s)",
+          "description": "Timeout for long imports, in seconds.",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicNumericTextBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        },
+        {
+          "valueType": "bool",
+          "checkedValue": "True",
+          "uncheckedValue": "False",
+          "id": "allowNoPassword",
+          "defaultValue": "False",
+          "label": "Allow blank-password logins",
+          "description": "Permit connecting with a MySQL account that has no password.",
+          "required": false,
+          "requiredMessage": "Value is required",
+          "controlType": "DynamicCheckBox",
+          "sm": 6,
+          "xs": 12,
+          "requiresAnyVisible": []
+        }
+      ]
+    }
+  ],
+  "commandlineConfig": {
+    "enableSelection": false,
+    "predefinedCommandlines": []
+  },
+  "fileSystemPermissions": [],
+  "environmentVariables": [],
+  "images": [
+    {
+      "name": "Apache",
+      "image": "phpmyadmin",
+      "tag": "apache",
+      "isDefault": true
+    }
+  ],
+  "volumeBinds": [],
+  "limits": {
+    "cpuLimit": 10,
+    "cpuSets": "",
+    "oomKillEnabled": false
+  },
+  "dockerIpPortAllocationConfig": {
+    "dockerBlueprintId": 117,
+    "dockerCustomPorts": [
+      {
+        "protocol": "tcp",
+        "containerPort": 80,
+        "id": "HTTP",
+        "port": 2080,
+        "expression": "",
+        "description": "HTTP Port",
+        "uriTemplate": "http://{HostnameOrIP}:{HTTP}"
+      },
+      {
+        "protocol": "tcp",
+        "containerPort": 443,
+        "id": "HTTPS",
+        "port": 2443,
+        "expression": "",
+        "description": "HTTPS Port",
+        "uriTemplate": "https://{HostnameOrIP}:{HTTPS}"
+      }
+    ]
+  },
+  "dockerVariables": [
+    {
+      "dockerBlueprintId": 117,
+      "name": "connectionMode",
+      "defaultValue": "localhost",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${connectionMode}",
+      "editor": {
+        "items": [
+          {
+            "text": "Localhost (this server\u0027s MySQL)",
+            "value": "localhost"
+          },
+          {
+            "text": "Any host (choose at login)",
+            "value": "arbitrary"
+          }
+        ],
+        "id": "connectionMode",
+        "defaultValue": "localhost",
+        "label": "Database connection",
+        "description": "How phpMyAdmin reaches database servers.",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicComboBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:22.693441",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "dockerBlueprintId": 117,
+      "name": "host",
+      "defaultValue": "",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${host}",
+      "editor": {
+        "maxLength": 255,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "^[A-Za-z0-9._-]\u002B$",
+        "inputType": 0,
+        "id": "host",
+        "defaultValue": "",
+        "label": "Database host (optional)",
+        "description": "Localhost mode only: a specific DB host/IP. Blank = this server\u0027s MySQL.",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:23.167961",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "dockerBlueprintId": 117,
+      "name": "port",
+      "defaultValue": 3306,
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${port}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 1,
+        "maxValue": 65535,
+        "id": "port",
+        "defaultValue": 3306,
+        "label": "Database port",
+        "description": "MySQL / MariaDB port.",
+        "required": false,
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:23.601395",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "dockerBlueprintId": 117,
+      "name": "uploadLimit",
+      "defaultValue": "256M",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${uploadLimit}",
+      "editor": {
+        "maxLength": 16,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "^\\d\u002B[KMGkmg]?$",
+        "inputType": 0,
+        "id": "uploadLimit",
+        "defaultValue": "256M",
+        "label": "Max import size",
+        "description": "Maximum upload/import size, e.g. 256M or 1G.",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:23.996638",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "dockerBlueprintId": 117,
+      "name": "memoryLimit",
+      "defaultValue": "512M",
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${memoryLimit}",
+      "editor": {
+        "maxLength": 16,
+        "lines": 1,
+        "denyCharacters": [],
+        "regExValidation": "^(-1|\\d\u002B[KMGkmg]?)$",
+        "inputType": 0,
+        "id": "memoryLimit",
+        "defaultValue": "512M",
+        "label": "PHP memory limit",
+        "description": "PHP memory_limit, e.g. 512M.",
+        "required": false,
+        "valueType": "string",
+        "controlType": "DynamicTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:24.360102",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "dockerBlueprintId": 117,
+      "name": "maxExecutionTime",
+      "defaultValue": 600,
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${maxExecutionTime}",
+      "editor": {
+        "decimals": 0,
+        "step": 1,
+        "spinner": true,
+        "valueType": "double",
+        "minValue": 0,
+        "maxValue": 86400,
+        "id": "maxExecutionTime",
+        "defaultValue": 600,
+        "label": "Max execution time (s)",
+        "description": "Timeout for long imports, in seconds.",
+        "required": false,
+        "controlType": "DynamicNumericTextBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:24.802697",
+      "metadata": {},
+      "variableRoles": []
+    },
+    {
+      "dockerBlueprintId": 117,
+      "name": "allowNoPassword",
+      "defaultValue": false,
+      "required": false,
+      "scriptParameter": false,
+      "commandlineParameter": false,
+      "saveScriptParameter": false,
+      "syncCommandlineParameter": false,
+      "template": "${allowNoPassword}",
+      "editor": {
+        "valueType": "bool",
+        "checkedValue": "True",
+        "uncheckedValue": "False",
+        "id": "allowNoPassword",
+        "defaultValue": "False",
+        "label": "Allow blank-password logins",
+        "description": "Permit connecting with a MySQL account that has no password.",
+        "required": false,
+        "controlType": "DynamicCheckBox",
+        "sm": 6,
+        "xs": 12,
+        "requiresAnyVisible": []
+      },
+      "createdDate": "2026-07-20T02:28:25.169007",
+      "metadata": {},
+      "variableRoles": []
+    }
+  ],
+  "dockerBlueprintsScripts": [
+    {
+      "script": {
+        "allDockerBlueprints": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "ConfigureContainer"
+        ],
+        "name": "Configure phpMyAdmin (env \u002B HTTPS)",
+        "description": "Applies the owner\u0027s config.json settings (Service.Variables) as phpMyAdmin env vars \u002B a self-signed HTTPS cert on container build. Restores dac_override/fowner/fsetid so the image\u0027s /etc/phpmyadmin bootstrap works.",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.Docker.SDK.dll, TCAdmin.Web.Shared.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, Docker.DotNet.dll, System.Security.Cryptography.dll, System.Net.Primitives.dll\nusing System;\nusing System.IO;\nusing System.Linq;\nusing System.Text;\nusing System.Collections.Generic;\nusing System.Security.Cryptography;\nusing System.Security.Cryptography.X509Certificates;\nusing Docker.DotNet.Models;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpDockerGlobals(); // DO NOT MODIFY THIS LINE\nvar service = Globals.ThisService;\nvar startParams = Globals.ThisContainerStartParameters;\nvar root = service.RootDirectory;\n\n// ---- local helpers (declared first; safe to call below) -------------------\nstring GetVar(string key, string fallback)\n{\n    try\n    {\n        if (service.Variables != null \u0026\u0026 service.Variables.ContainsKey(key))\n        {\n            var v = service.Variables[key];\n            if (v != null)\n            {\n                var s = v.ToString();\n                if (!string.IsNullOrWhiteSpace(s)) return s;\n            }\n        }\n    }\n    catch { }\n    return fallback;\n}\n\nstring NormalizeInt(string val, string fallback)\n{\n    if (string.IsNullOrWhiteSpace(val)) return fallback;\n    if (int.TryParse(val, out var i)) return i.ToString();\n    if (double.TryParse(val, System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out var d))\n        return ((int)d).ToString();\n    return fallback;\n}\n\nbool IsTrue(string val)\n{\n    val = (val ?? \u0022\u0022).Trim().ToLowerInvariant();\n    return val == \u0022true\u0022 || val == \u00221\u0022 || val == \u0022yes\u0022;\n}\n\nvoid SetEnv(IList\u003Cstring\u003E env, string key, string val)\n{\n    for (int i = env.Count - 1; i \u003E= 0; i--)\n        if (env[i].StartsWith(key \u002B \u0022=\u0022, StringComparison.Ordinal)) env.RemoveAt(i);\n    env.Add(key \u002B \u0022=\u0022 \u002B val);\n}\n\n// ---------------------------------------------------------------------------\n// 1. Read the per-service settings the owner chose in the Create-Service\n//    wizard\u0027s \u0022config.json\u0022 config-file editor. Those editor values are\n//    persisted on Service.Variables keyed by the editor control Id\n//    (connectionMode / host / port / ...), and the config.json template is\n//    also rendered to disk. Reading Service.Variables here means a later\n//    edit of config.json in the file manager (reverse-synced to\n//    Service.Variables) is picked up on the next Restart. Defaults keep a\n//    container bootable if any value is missing.\n// ---------------------------------------------------------------------------\nstring connectionMode   = GetVar(\u0022connectionMode\u0022, \u0022localhost\u0022).Trim().ToLowerInvariant();\nstring dbHost           = GetVar(\u0022host\u0022, \u0022\u0022).Trim();\nstring dbPort           = NormalizeInt(GetVar(\u0022port\u0022, \u00223306\u0022), \u00223306\u0022);\nstring uploadLimit      = GetVar(\u0022uploadLimit\u0022, \u0022256M\u0022).Trim();\nstring memoryLimit      = GetVar(\u0022memoryLimit\u0022, \u0022512M\u0022).Trim();\nstring maxExecutionTime = NormalizeInt(GetVar(\u0022maxExecutionTime\u0022, \u0022600\u0022), \u0022600\u0022);\nbool   allowNoPassword  = IsTrue(GetVar(\u0022allowNoPassword\u0022, \u0022False\u0022));\n\nstartParams.Env ??= new List\u003Cstring\u003E();\nstartParams.HostConfig ??= new HostConfig();\nstartParams.HostConfig.ExtraHosts ??= new List\u003Cstring\u003E();\n\n// ---------------------------------------------------------------------------\n// 2. The official phpmyadmin:apache entrypoint runs as root and bootstraps\n//    /etc/phpmyadmin (writes config.secret.inc.php, touches config.user.inc.php)\n//    inside a directory owned by www-data. TCAdmin\u0027s default container hardening\n//    drops dac_override/fowner/fsetid, which stops root from writing files it\n//    doesn\u0027t own -\u003E the entrypoint fails with \u0022Permission denied\u0022. Restore just\n//    those three caps so the image can bootstrap; net_raw / sys_ptrace / mknod /\n//    etc. stay dropped.\n// ---------------------------------------------------------------------------\nif (startParams.HostConfig.CapDrop != null)\n{\n    var restore = new HashSet\u003Cstring\u003E(StringComparer.OrdinalIgnoreCase) { \u0022dac_override\u0022, \u0022fowner\u0022, \u0022fsetid\u0022 };\n    startParams.HostConfig.CapDrop = startParams.HostConfig.CapDrop.Where(c =\u003E !restore.Contains(c)).ToList();\n}\n\n// ---------------------------------------------------------------------------\n// 3. Translate the settings into phpMyAdmin environment variables. The\n//    official image reads these on startup to generate config.inc.php.\n// ---------------------------------------------------------------------------\nif (!string.IsNullOrEmpty(uploadLimit))      SetEnv(startParams.Env, \u0022UPLOAD_LIMIT\u0022, uploadLimit);\nif (!string.IsNullOrEmpty(memoryLimit))      SetEnv(startParams.Env, \u0022MEMORY_LIMIT\u0022, memoryLimit);\nif (!string.IsNullOrEmpty(maxExecutionTime)) SetEnv(startParams.Env, \u0022MAX_EXECUTION_TIME\u0022, maxExecutionTime);\n\nif (connectionMode == \u0022arbitrary\u0022)\n{\n    // Login page shows a \u0022Server\u0022 field so the user can connect to any host.\n    SetEnv(startParams.Env, \u0022PMA_ARBITRARY\u0022, \u00221\u0022);\n}\nelse\n{\n    // \u0022Localhost\u0022 = the Docker host\u0027s MySQL. Reach it via the bridge gateway\n    // (works even when the bridge has no outbound NAT). An explicit host wins.\n    var hostTarget = string.IsNullOrEmpty(dbHost) ? \u0022host.docker.internal\u0022 : dbHost;\n    SetEnv(startParams.Env, \u0022PMA_HOST\u0022, hostTarget);\n    if (!string.IsNullOrEmpty(dbPort)) SetEnv(startParams.Env, \u0022PMA_PORT\u0022, dbPort);\n    if (hostTarget == \u0022host.docker.internal\u0022 \u0026\u0026\n        !startParams.HostConfig.ExtraHosts.Contains(\u0022host.docker.internal:host-gateway\u0022))\n    {\n        startParams.HostConfig.ExtraHosts.Add(\u0022host.docker.internal:host-gateway\u0022);\n    }\n}\n\n// \u0022Allow blank-password logins\u0022 has no env var. The image supports delivering an\n// extra config via PMA_USER_CONFIG_BASE64 (base64 -\u003E /etc/phpmyadmin/config.user.inc.php),\n// written by the image itself \u2014 cleaner than bind-mounting a read-only file, which\n// would collide with the entrypoint\u0027s \u0060touch config.user.inc.php\u0060.\nif (allowNoPassword)\n{\n    var php =\n        \u0022\u003C?php\\n\u0022 \u002B\n        \u0022if (isset($cfg[\u0027Servers\u0027]) \u0026\u0026 is_array($cfg[\u0027Servers\u0027])) {\\n\u0022 \u002B\n        \u0022    foreach ($cfg[\u0027Servers\u0027] as $k =\u003E $v) {\\n\u0022 \u002B\n        \u0022        $cfg[\u0027Servers\u0027][$k][\u0027AllowNoPassword\u0027] = true;\\n\u0022 \u002B\n        \u0022    }\\n\u0022 \u002B\n        \u0022}\\n\u0022;\n    SetEnv(startParams.Env, \u0022PMA_USER_CONFIG_BASE64\u0022, Convert.ToBase64String(Encoding.UTF8.GetBytes(php)));\n}\n\n// ---------------------------------------------------------------------------\n// 4. Self-signed certificate \u002B Apache TLS wiring, bind-mounted into the\n//    container (same idea as the nginx blueprint, adapted to php:apache\u0027s\n//    /etc/apache2 layout). Pure .NET crypto \u2014 no openssl, no container net.\n// ---------------------------------------------------------------------------\nvar tlsDir = Path.Combine(root, \u0022tls\u0022);\nDirectory.CreateDirectory(tlsDir);\n\nvar crtPath = Path.Combine(tlsDir, \u0022server.crt\u0022);\nvar keyPath = Path.Combine(tlsDir, \u0022server.key\u0022);\n\nvar host = service.IPAddress;\nif (string.IsNullOrWhiteSpace(host)) { host = \u0022localhost\u0022; }\n\nFunc\u003Cstring, byte[], string\u003E toPem = (label, der) =\u003E\n{\n    var b64 = Convert.ToBase64String(der);\n    var sb = new StringBuilder();\n    sb.Append(\u0022-----BEGIN \u0022).Append(label).Append(\u0022-----\\n\u0022);\n    for (int i = 0; i \u003C b64.Length; i \u002B= 64)\n        sb.Append(b64.Substring(i, Math.Min(64, b64.Length - i))).Append(\u0027\\n\u0027);\n    sb.Append(\u0022-----END \u0022).Append(label).Append(\u0022-----\\n\u0022);\n    return sb.ToString();\n};\n\nif (!File.Exists(crtPath) || !File.Exists(keyPath))\n{\n    using (var rsa = RSA.Create(2048))\n    {\n        var req = new CertificateRequest(\u0022CN=\u0022 \u002B host, rsa, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);\n        req.CertificateExtensions.Add(new X509BasicConstraintsExtension(false, false, 0, false));\n        req.CertificateExtensions.Add(new X509KeyUsageExtension(\n            X509KeyUsageFlags.DigitalSignature | X509KeyUsageFlags.KeyEncipherment, false));\n        req.CertificateExtensions.Add(new X509EnhancedKeyUsageExtension(\n            new OidCollection { new Oid(\u00221.3.6.1.5.5.7.3.1\u0022) }, false)); // serverAuth\n\n        var san = new SubjectAlternativeNameBuilder();\n        san.AddDnsName(host);\n        System.Net.IPAddress ip;\n        if (System.Net.IPAddress.TryParse(host, out ip)) { san.AddIpAddress(ip); }\n        req.CertificateExtensions.Add(san.Build());\n\n        using (var cert = req.CreateSelfSigned(\n            DateTimeOffset.UtcNow.AddDays(-1), DateTimeOffset.UtcNow.AddYears(10)))\n        {\n            File.WriteAllText(crtPath, toPem(\u0022CERTIFICATE\u0022, cert.Export(X509ContentType.Cert)));\n            File.WriteAllText(keyPath, toPem(\u0022PRIVATE KEY\u0022, rsa.ExportPkcs8PrivateKey()));\n        }\n    }\n    if (!System.OperatingSystem.IsWindows())\n    {\n        try { File.SetUnixFileMode(keyPath, UnixFileMode.UserRead | UnixFileMode.UserWrite); } catch { }\n    }\n}\n\n// Enable mod_ssl \u002B mod_socache_shmcb by dropping their load files into\n// /etc/apache2/mods-enabled (Debian loads mods-enabled/*.load before sites).\nvar sslLoadPath = Path.Combine(tlsDir, \u0022ssl.load\u0022);\nvar socacheLoadPath = Path.Combine(tlsDir, \u0022socache_shmcb.load\u0022);\nvar sslConfPath = Path.Combine(tlsDir, \u0022ssl.conf\u0022);\nvar vhostPath = Path.Combine(tlsDir, \u0022default-ssl.conf\u0022);\n\nFile.WriteAllText(sslLoadPath, \u0022LoadModule ssl_module /usr/lib/apache2/modules/mod_ssl.so\\n\u0022);\nFile.WriteAllText(socacheLoadPath, \u0022LoadModule socache_shmcb_module /usr/lib/apache2/modules/mod_socache_shmcb.so\\n\u0022);\n\nFile.WriteAllText(sslConfPath,\n    \u0022SSLRandomSeed startup builtin\\n\u0022 \u002B\n    \u0022SSLRandomSeed startup file:/dev/urandom 512\\n\u0022 \u002B\n    \u0022SSLRandomSeed connect builtin\\n\u0022 \u002B\n    \u0022SSLRandomSeed connect file:/dev/urandom 512\\n\u0022 \u002B\n    \u0022AddType application/x-x509-ca-cert .crt\\n\u0022 \u002B\n    \u0022AddType application/x-pkcs7-crl .crl\\n\u0022 \u002B\n    \u0022SSLPassPhraseDialog builtin\\n\u0022 \u002B\n    \u0022SSLSessionCache shmcb:/var/run/apache2/ssl_scache(512000)\\n\u0022 \u002B\n    \u0022SSLSessionCacheTimeout 300\\n\u0022 \u002B\n    \u0022SSLProtocol all -SSLv3 -TLSv1 -TLSv1.1\\n\u0022 \u002B\n    \u0022SSLCipherSuite HIGH:!aNULL:!MD5\\n\u0022 \u002B\n    \u0022SSLHonorCipherOrder on\\n\u0022);\n\n// NOTE: no \u0022Listen 443\u0022 here. The base image already listens on 443 once\n// mod_ssl is loaded (its ports.conf has \u0060\u003CIfModule ssl_module\u003E Listen 443\u0060),\n// so adding our own would trip apache\u0027s \u0022Cannot define multiple Listeners on\n// the same IP:port\u0022. We only need to declare the vhost.\nFile.WriteAllText(vhostPath,\n    \u0022\u003CVirtualHost *:443\u003E\\n\u0022 \u002B\n    \u0022    DocumentRoot /var/www/html\\n\u0022 \u002B\n    \u0022    SSLEngine on\\n\u0022 \u002B\n    \u0022    SSLCertificateFile    /etc/ssl/phpmyadmin/server.crt\\n\u0022 \u002B\n    \u0022    SSLCertificateKeyFile /etc/ssl/phpmyadmin/server.key\\n\u0022 \u002B\n    \u0022    \u003CDirectory /var/www/html\u003E\\n\u0022 \u002B\n    \u0022        Options -Indexes \u002BFollowSymLinks\\n\u0022 \u002B\n    \u0022        AllowOverride None\\n\u0022 \u002B\n    \u0022        Require all granted\\n\u0022 \u002B\n    \u0022    \u003C/Directory\u003E\\n\u0022 \u002B\n    \u0022\u003C/VirtualHost\u003E\\n\u0022);\n\nstartParams.HostConfig.Mounts ??= new List\u003CMount\u003E();\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = crtPath, Target = \u0022/etc/ssl/phpmyadmin/server.crt\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = keyPath, Target = \u0022/etc/ssl/phpmyadmin/server.key\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = sslLoadPath, Target = \u0022/etc/apache2/mods-enabled/ssl.load\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = socacheLoadPath, Target = \u0022/etc/apache2/mods-enabled/socache_shmcb.load\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = sslConfPath, Target = \u0022/etc/apache2/mods-enabled/ssl.conf\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = vhostPath, Target = \u0022/etc/apache2/sites-enabled/default-ssl.conf\u0022, ReadOnly = true });\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "776ce794-37ef-47bb-9e2c-385e98f2efe1"
+      }
+    }
+  ],
+  "dockerBlueprintsCustomLinks": [],
+  "execConsoleType": "Command",
+  "execCommand": "/bin/sh",
+  "backupConfig": {
+    "enabled": false,
+    "backupType": "Full",
+    "compressBackup": true,
+    "includedPaths": []
+  },
+  "rolePermissions": [],
+  "mods": []
+}
