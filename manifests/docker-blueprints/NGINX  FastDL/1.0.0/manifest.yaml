@@ -1,0 +1,22 @@
+identifier: "Community.DockerBlueprints.NGINXFastDL"
+name: "NGINX — FastDL"
+version: "1.0.0"
+minimumApplicationVersion: "3.13"
+author: "TCAdmin"
+shortDescription: "NGINX — FastDL"
+longDescription: |
+  # NGINX — FastDL
+  
+  ## Description
+  NGINX with script to configure it as the monitor's fast download web server.
+  
+  ## Instructions
+  Create the Docker service. Then execute "Enable Fast Downloads". This will configure the current server to use the NGINX web server for fast downloads.
+icon: "https://upload.wikimedia.org/wikipedia/commons/1/14/Globe_%28icon%29.svg"
+images:
+  - "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Internet1.jpg/1280px-Internet1.jpg"
+tags:
+  - "Docker"
+files:
+  - path: "NGINX  FastDL.json"
+    type: "DockerConfig"
