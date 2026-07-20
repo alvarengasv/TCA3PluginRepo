@@ -1,0 +1,797 @@
+{
+  "__TCA:ExportVersion": "3.13.62.0",
+  "__TCA:ExportedAt": "2026-07-20T22:12:43.4831442Z",
+  "blueprintId": 47,
+  "name": "NGINX \u2014 FastDL",
+  "shortName": "NGINX \u2014 FastDL",
+  "description": "NGINX with script to configure it as the monitor\u0027s fast download web server.",
+  "iconImage": "https://upload.wikimedia.org/wikipedia/commons/1/14/Globe_%28icon%29.svg",
+  "backgroundImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Internet1.jpg/1280px-Internet1.jpg",
+  "editableExtensions": [
+    ".txt",
+    ".cfg",
+    ".json",
+    ".xml",
+    "*.conf",
+    "*.html",
+    "*.js"
+  ],
+  "logExtensions": [
+    ".log"
+  ],
+  "maxEditableSize": 1048576,
+  "ipPortAllocationConfig": {
+    "usePrimaryIpOnly": false,
+    "useDefaultPortsOnly": false,
+    "supportsIpv6": false,
+    "uniquePort": "ServerIp",
+    "customPorts": [
+      {
+        "id": "HTTP",
+        "port": 2080,
+        "expression": "",
+        "description": "HTTP Port",
+        "uriTemplate": "http://{HostnameOrIP}:{HTTP}"
+      },
+      {
+        "id": "HTTPS",
+        "port": 2443,
+        "expression": "",
+        "description": "HTTPS Port",
+        "uriTemplate": "https://{HostnameOrIP}:{HTTPS}"
+      }
+    ],
+    "portIncrement": 10
+  },
+  "configFiles": [
+    {
+      "id": 84,
+      "relativePath": "www/index.html",
+      "description": "Default document",
+      "template": "\u003C!doctype html\u003E\n\u003Chtml lang=\u0027en\u0027\u003E\n\u003Chead\u003E\n\u003Cmeta charset=\u0027utf-8\u0027\u003E\n\u003Cmeta name=\u0027viewport\u0027 content=\u0027width=device-width, initial-scale=1\u0027\u003E\n\u003Ctitle\u003ETCAdmin \u0026middot; nginx\u003C/title\u003E\n\u003Cstyle\u003E\n  :root { color-scheme: light dark; }\n  * { box-sizing: border-box; }\n  body {\n    margin: 0; min-height: 100vh;\n    display: flex; align-items: center; justify-content: center;\n    padding: 2rem;\n    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;\n    background: linear-gradient(135deg, #0f172a, #1e293b);\n    color: #e2e8f0;\n  }\n  .card {\n    width: 100%; max-width: 40rem;\n    background: rgba(30, 41, 59, 0.7);\n    border: 1px solid rgba(148, 163, 184, 0.2);\n    border-radius: 16px; padding: 2.5rem;\n    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);\n  }\n  h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }\n  .ok { color: #4ade80; }\n  .sub { margin: 0 0 1.5rem; color: #94a3b8; font-size: 0.95rem; }\n  .info {\n    background: rgba(15, 23, 42, 0.6);\n    border: 1px solid rgba(148, 163, 184, 0.15);\n    border-left: 3px solid #38bdf8;\n    border-radius: 10px; padding: 1rem 1.25rem; margin-top: 1.25rem;\n  }\n  .info h2 { margin: 0 0 0.5rem; font-size: 1rem; color: #7dd3fc; }\n  .info p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; color: #cbd5e1; }\n  code {\n    background: rgba(148, 163, 184, 0.15);\n    padding: 0.1rem 0.4rem; border-radius: 5px; font-size: 0.85em;\n  }\n  .muted { color: #64748b; font-size: 0.8rem; margin-top: 1.5rem; }\n\u003C/style\u003E\n\u003C/head\u003E\n\u003Cbody\u003E\n  \u003Cdiv class=\u0027card\u0027\u003E\n    \u003Ch1\u003E\u003Cspan class=\u0027ok\u0027\u003E\u0026#10004;\u003C/span\u003E nginx is running\u003C/h1\u003E\n    \u003Cp class=\u0027sub\u0027\u003EServed over HTTP and HTTPS (self-signed certificate).\u003C/p\u003E\n\n    \u003Cdiv class=\u0027info\u0027\u003E\n      \u003Ch2\u003E\u0026#128230; Fast Downloads (FastDL)\u003C/h2\u003E\n      \u003Cp\u003EThis server can act as a Fast Download host, serving game files from the \u003Ccode\u003E/FastDL/\u003C/code\u003E path over HTTPS.\u003C/p\u003E\n      \u003Cp\u003ETo turn it on, open this service in the TCAdmin control panel and run the \u003Cstrong\u003EEnable Fast Downloads\u003C/strong\u003E script. It points this server\u0027s Fast Download storage here and enables FastDL.\u003C/p\u003E\n      \u003Cp\u003EFast Downloads must also be enabled and configured for each individual game before its services will mirror and serve their files here.\u003C/p\u003E\n    \u003C/div\u003E\n\n    \u003Cp class=\u0027muted\u0027\u003EPowered by TCAdmin \u0026middot; nginx\u003C/p\u003E\n  \u003C/div\u003E\n\u003C/body\u003E\n\u003C/html\u003E\n",
+      "order": 0,
+      "enableEditor": false,
+      "editor": []
+    }
+  ],
+  "commandlineConfig": {
+    "enableSelection": false,
+    "predefinedCommandlines": []
+  },
+  "fileSystemPermissions": [
+    {
+      "roleId": 2,
+      "rootPermission": {
+        "permissionMode": "None",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    },
+    {
+      "roleId": 3,
+      "rootPermission": {
+        "permissionMode": "Basic",
+        "defaultPermissions": "Write, Read, Delete",
+        "skipListingSecurityCheck": false,
+        "additionalPermissions": []
+      }
+    }
+  ],
+  "environmentVariables": [],
+  "images": [
+    {
+      "name": "Stable",
+      "image": "nginx",
+      "tag": "stable-alpine3.21-perl",
+      "isDefault": true
+    }
+  ],
+  "volumeBinds": [
+    {
+      "id": 2,
+      "blueprintId": 47,
+      "hostPath": "www",
+      "containerPath": "/usr/share/nginx/html",
+      "readOnly": false
+    }
+  ],
+  "limits": {
+    "cpuLimit": 10,
+    "cpuSets": "",
+    "oomKillEnabled": false
+  },
+  "dockerIpPortAllocationConfig": {
+    "dockerBlueprintId": 47,
+    "dockerCustomPorts": [
+      {
+        "protocol": "tcp",
+        "containerPort": 80,
+        "id": "HTTP",
+        "port": 2080,
+        "expression": "",
+        "description": "HTTP Port",
+        "uriTemplate": "http://{HostnameOrIP}:{HTTP}"
+      },
+      {
+        "protocol": "tcp",
+        "containerPort": 443,
+        "id": "HTTPS",
+        "port": 2443,
+        "expression": "",
+        "description": "HTTPS Port",
+        "uriTemplate": "https://{HostnameOrIP}:{HTTPS}"
+      }
+    ]
+  },
+  "dockerVariables": [],
+  "dockerBlueprintsScripts": [
+    {
+      "script": {
+        "allDockerBlueprints": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceAction"
+        ],
+        "name": "Change Service Name",
+        "description": "Prompts for a new name and renames this service.",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.Docker.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Scripting.SDK.dll, TCAdmin.Monitor.dll\nusing System;\nusing System.Threading.Tasks;\nusing TCAdmin.SDK.Database.Entities;\nusing TCAdmin.SDK.DynamicInput.Controls;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpDockerGlobals(); // DO NOT MODIFY THIS LINE\nvar console = Globals.ScriptConsole;\nvar service = Globals.ThisService;\n\nvar oldName = service.Name ?? \u0022\u0022;\n\n// Prompt the user for the new name (dialog is prefilled with the current name).\n// Dynamic values are passed to WriteLine as {0} args \u2014 the console runs string.Format,\n// so a name containing \u0027{\u0027 would otherwise throw.\nvar input = await Globals.ThisScript.Input(new DynamicTextBox\n{\n    Id = \u0022name\u0022,\n    Label = \u0022New service name\u0022,\n    Description = \u0022Enter the new name for this service.\u0022,\n    DefaultValue = oldName,\n    Required = true\n});\n\nif (input.Canceled)\n{\n    console.WriteLine(\u0022\u21A9\uFE0F  Cancelled \u2014 the service name was not changed.\u0022);\n    return;\n}\n\nvar newName = (input.Values[\u0022name\u0022]?.ToString() ?? \u0022\u0022).Trim();\nif (newName.Length == 0)\n{\n    console.WriteLine(\u0022\u274C  The name cannot be empty. No change was made.\u0022);\n    return;\n}\n\nif (string.Equals(newName, oldName, StringComparison.Ordinal))\n{\n    console.WriteLine(\u0022\u2139\uFE0F  The name is unchanged. Nothing to do.\u0022);\n    return;\n}\n\n// Load the service tracked in the manager\u0027s own scope and mutate THAT instance\n// (updating the cached Globals.ThisService would be a detached write and is rejected).\nvar manager = Globals.DockerServiceManager;\nvar tracked = await manager.GetAsync(service.ServiceId);\nif (tracked == null)\n{\n    console.WriteLine(\u0022\u274C  Could not load service id {0}.\u0022, service.ServiceId);\n    return;\n}\n\ntracked.Name = newName;\nawait manager.UpdateAsync(tracked, saveChanges: true);\n\nconsole.WriteLine(\u0022\u2705  Service name updated.\u0022);\nconsole.WriteLine(\u0022   From : {0}\u0022, oldName);\nconsole.WriteLine(\u0022   To   : {0}\u0022, newName);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "\u003Cg stroke-width=\u00220\u0022\u003E\u003C/g\u003E\u003Cg stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022\u003E\u003C/g\u003E\u003Cg\u003E\u003Cpath d=\u0022M20.005 5.995h-1v2h1v8h-1v2h1c1.103 0 2-.897 2-2v-8c0-1.102-.898-2-2-2zm-14 4H15v4H6.005z\u0022\u003E\u003C/path\u003E\u003Cpath d=\u0022M17.005 17.995V4H20V2h-8v2h3.005v1.995h-11c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h11V20H12v2h8v-2h-2.995v-2.005zm-13-2v-8h11v8h-11z\u0022\u003E\u003C/path\u003E\u003C/g\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "a816d0a0-74ae-45d6-989d-7b369120995e"
+      }
+    },
+    {
+      "script": {
+        "allDockerBlueprints": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "CustomServiceIcon"
+        ],
+        "name": "Enable Fast Downloads",
+        "description": "Points this server\u0027s Fast Download storage at {service}/www/FastDL (created if missing) and serves it over HTTPS.",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.Docker.SDK.dll, TCAdmin.Web.Shared.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll\nusing System;\nusing System.IO;\nusing System.Threading.Tasks;\nusing TCAdmin.SDK.Database.Entities;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpDockerGlobals(); // DO NOT MODIFY THIS LINE\nvar console = Globals.ScriptConsole;\nvar service = Globals.ThisService;\n\n// NOTE: IScriptConsole.WriteLine(string, params) runs string.Format on the string, so\n// any literal { } would throw. Dynamic values are passed as {0} args (never concatenated\n// into the format string) so paths/templates containing ${...} print safely.\nconsole.WriteLine(\u0022\uD83D\uDE80  Enabling Fast Downloads for this server...\u0022);\nconsole.WriteLine();\n\n// nginx serves {RootDirectory}/www at its web root. Fast Download files live in a\n// dedicated /FastDL sub-folder (kept separate from the landing page), and the public\n// URL carries the same /FastDL segment so it maps 1:1 onto the files on disk.\nvar fastDlPath = Path.Combine(service.RootDirectory, \u0022www\u0022, \u0022FastDL\u0022);\n\n// Public HTTPS endpoint = HostnameOrIP \u002B the allocated \u0027HTTPS\u0027 host port \u002B /FastDL.\nvar httpsPort = service.Ports[\u0022HTTPS\u0022]; // safe indexer -\u003E 0 when the key is missing\nif (httpsPort \u003C= 0)\n{\n    console.WriteLine(\u0022\u274C  This service has no allocated \u0027HTTPS\u0027 port.\u0022);\n    console.WriteLine(\u0022     Add an \u0027HTTPS\u0027 custom port to the blueprint, then recreate the service.\u0022);\n    return;\n}\n\nvar host = service.HostnameOrIP; // hostname if the IP has one, otherwise the IP\nif (string.IsNullOrWhiteSpace(host))\n{\n    console.WriteLine(\u0022\u274C  Could not determine the service address.\u0022);\n    return;\n}\n\nvar baseUrl = \u0022https://\u0022 \u002B host \u002B \u0022:\u0022 \u002B httpsPort \u002B \u0022/FastDL/\u0022;\n\n// Create the storage folder if it doesn\u0027t exist (as the monitor process, the same way\n// the FastDL sync engine creates its own sub-directories).\ntry\n{\n    Directory.CreateDirectory(fastDlPath);\n}\ncatch (Exception ex)\n{\n    console.WriteLine(\u0022\u26A0\uFE0F  Could not create the FastDL folder ({0}): {1}\u0022, fastDlPath, ex.Message);\n    console.WriteLine(\u0022     Continuing \u2014 the sync engine will create it on first run.\u0022);\n}\n\n// Load the Server tracked in the manager\u0027s own scope and mutate THAT instance.\n// (Updating the cached Globals.ThisServer would be a detached write and is rejected.)\nvar serverManager = Globals.ServerManager;\nvar server = await serverManager.GetAsync(service.ServerId);\nif (server == null)\n{\n    console.WriteLine(\u0022\u274C  Could not load server id {0}.\u0022, service.ServerId);\n    return;\n}\n\nserver.FastDLEnabled = true;\nserver.FastDLPath = fastDlPath;\nserver.FastDLBaseUrl = baseUrl;\nawait serverManager.UpdateAsync(server, saveChanges: true);\n\nconsole.WriteLine(\u0022\u2705  Fast Downloads enabled!\u0022);\nconsole.WriteLine();\nconsole.WriteLine(\u0022\uD83D\uDDA5\uFE0F   Server      : {0}\u0022, server.Name);\nconsole.WriteLine(\u0022\uD83D\uDCC1  Storage     : {0}\u0022, fastDlPath);\nconsole.WriteLine(\u0022\uD83D\uDD17  Base URL    : {0}\u0022, baseUrl);\nconsole.WriteLine(\u0022\uD83D\uDDC2\uFE0F   Per-service : {0}\u0022, server.FastDLFolderTemplate);\nconsole.WriteLine();\nconsole.WriteLine(\u0022\u26A0\uFE0F   Fast Downloads are now enabled on this SERVER \u2014 but they must ALSO be\u0022);\nconsole.WriteLine(\u0022     enabled and configured for each individual game before its services\u0022);\nconsole.WriteLine(\u0022     will mirror and serve their files here.\u0022);\nconsole.WriteLine(\u0022\uD83C\uDF89  All done!\u0022);\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "icon": "\u003Cg stroke-width=\u00220\u0022\u003E\u003C/g\u003E\u003Cg stroke-linecap=\u0022round\u0022 stroke-linejoin=\u0022round\u0022\u003E\u003C/g\u003E\u003Cg\u003E\u003Cg data-name=\u0022Layer 2\u0022\u003E\u003Cg data-name=\u0022invisible box\u0022\u003E\u003Crect width=\u002224\u0022 height=\u002224\u0022 fill=\u0022none\u0022\u003E\u003C/rect\u003E\u003C/g\u003E\u003Cg data-name=\u0022icons Q2\u0022\u003E\u003Cpath d=\u0022M20.5,19.5H14.3A2.55,2.55,0,0,0,13,18.2V16H16.75c3.5,0,5.2-2.25,5.25-4.35A4.55,4.55,0,0,0,19.5,7.5a4.2,4.2,0,0,0-1.55-2.85A4.55,4.55,0,0,0,15,3.6H14.55A5.65,5.65,0,0,0,9.95,1a5.45,5.45,0,0,0-5.5,5.45,5.4,5.4,0,0,0-2.35,3.65A4.85,4.85,0,0,0,3.5,14.55C4.45,15.5,6.4,16,7.45,16H11v2.2A2.55,2.55,0,0,0,9.7,19.5H3.6a1,1,0,0,0,0,2H9.7A2.45,2.45,0,0,0,12,23a2.4,2.4,0,0,0,2.3-1.5H20.5a1,1,0,0,0,0-2ZM4.9,13.15a2.9,2.9,0,0,1-0.85-2.75,3.25,3.25,0,0,1,1.5-2.25,2.1,2.1,0,0,0,0.9-1.7,3.5,3.5,0,0,1,0.95-2.35A3.45,3.45,0,0,1,9.95,3a3.6,3.6,0,0,1,2.9,1.75,2.1,2.1,0,0,0,1.7,0.9H15a2.6,2.6,0,0,1,1.7,0.6,2.25,2.25,0,0,1,0.8,1.5,2.1,2.1,0,0,0,1.1,1.6A2.4,2.4,0,0,1,20,11.6c-0.05,1.1-0.9,2.4-3.25,2.4H7.45C6.75,14,5.35,13.6,4.9,13.15ZM12,21a0.5,0.5,0,1,1,0.5-0.5A0.45,0.45,0,0,1,12,21Z\u0022\u003E\u003C/path\u003E\u003C/g\u003E\u003C/g\u003E\u003C/g\u003E",
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "13605910-a3a7-445a-9d46-6ca3320df508"
+      }
+    },
+    {
+      "script": {
+        "allDockerBlueprints": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "AfterServiceDeleted"
+        ],
+        "name": "Disable Fast Downloads on delete",
+        "description": "On service delete, clears this server\u0027s Fast Download storage/URL if it still pointed at this service.",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.Docker.SDK.dll, TCAdmin.Web.Shared.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll\nusing System;\nusing System.IO;\nusing System.Threading.Tasks;\nusing TCAdmin.SDK.Database.Entities;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpDockerGlobals(); // DO NOT MODIFY THIS LINE\nvar console = Globals.ScriptConsole;\nvar service = Globals.ThisService;\n\n// The folder this service\u0027s nginx container served Fast Downloads from. Must match the\n// path the enable icon writes ({RootDirectory}/www/FastDL) so the guard below can detect it.\nvar fastDlPath = Path.Combine(service.RootDirectory, \u0022www\u0022, \u0022FastDL\u0022);\n\nvar serverManager = Globals.ServerManager;\nvar server = await serverManager.GetAsync(service.ServerId);\nif (server == null)\n{\n    // WriteLine uses {0} args (not concatenation) because the console runs string.Format.\n    console.WriteLine(\u0022\u26A0\uFE0F  Could not load server id {0}; nothing to clean up.\u0022, service.ServerId);\n    return;\n}\n\n// Only clear the server-level Fast Download settings if THIS service is the one currently\n// backing them (enabled \u002B storage path points at this service\u0027s /FastDL). Separator/\n// trailing-slash tolerant and case-insensitive, so a second nginx service deleting doesn\u0027t\n// wipe the config a different one owns.\nvar currentPath = (server.FastDLPath ?? \u0022\u0022).Replace(\u0027\\\\\u0027, \u0027/\u0027).TrimEnd(\u0027/\u0027);\nvar thisPath = (fastDlPath ?? \u0022\u0022).Replace(\u0027\\\\\u0027, \u0027/\u0027).TrimEnd(\u0027/\u0027);\n\nif (server.FastDLEnabled \u0026\u0026 string.Equals(currentPath, thisPath, StringComparison.OrdinalIgnoreCase))\n{\n    server.FastDLEnabled = false;\n    server.FastDLPath = \u0022\u0022;\n    server.FastDLBaseUrl = \u0022\u0022;\n    await serverManager.UpdateAsync(server, saveChanges: true);\n\n    console.WriteLine(\u0022\uD83E\uDDF9  Fast Downloads disabled on server \u0027{0}\u0027.\u0022, server.Name);\n    console.WriteLine(\u0022     Storage path and base URL cleared.\u0022);\n}\nelse\n{\n    console.WriteLine(\u0022\u2139\uFE0F  Server Fast Downloads are not pointing at this service \u2014 left unchanged.\u0022);\n}\n",
+        "runImpersonated": false,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "b79d333e-8eba-4734-a241-ed414d2863d7"
+      }
+    },
+    {
+      "script": {
+        "allDockerBlueprints": false,
+        "global": false,
+        "scriptEngine": "CSharp",
+        "operatingSystem": [
+          "Windows",
+          "Linux"
+        ],
+        "scriptEvents": [
+          "ConfigureContainer"
+        ],
+        "name": "Configure nginx HTTPS (self-signed cert \u002B HTTP/HTTPS config)",
+        "description": "Generates a self-signed cert \u002B HTTP/HTTPS nginx config and a Fast Downloads landing page. Runs on every container start.",
+        "code": "//refAssemblies: TCAdmin.SDK.dll, TCAdmin.Docker.SDK.dll, TCAdmin.Scripting.dll, TCAdmin.Monitor.dll, Docker.DotNet.dll, System.Security.Cryptography.dll, System.Net.Primitives.dll\nusing System;\nusing System.IO;\nusing System.Text;\nusing System.Collections.Generic;\nusing System.Security.Cryptography;\nusing System.Security.Cryptography.X509Certificates;\nusing Docker.DotNet.Models;\n\nvar Globals = new TCAdmin.Scripting.Engines.Addons.CSharpDockerGlobals(); // DO NOT MODIFY THIS LINE\nvar service = Globals.ThisService;\nvar startParams = Globals.ThisContainerStartParameters;\n\n// ---------------------------------------------------------------------------\n// Paths are built from the service root dir, exactly like TCAdmin\u0027s own volume\n// binds (Path.Combine(service.RootDirectory, ...)), so this works whether the\n// Docker host is Linux or Windows.\n// ---------------------------------------------------------------------------\nvar sslDir = Path.Combine(service.RootDirectory, \u0022nginx\u0022, \u0022ssl\u0022);\nvar confDir = Path.Combine(service.RootDirectory, \u0022nginx\u0022, \u0022conf.d\u0022);\nvar wwwDir = Path.Combine(service.RootDirectory, \u0022www\u0022);\nDirectory.CreateDirectory(sslDir);\nDirectory.CreateDirectory(confDir);\nDirectory.CreateDirectory(wwwDir);\n\nvar crtPath = Path.Combine(sslDir, \u0022server.crt\u0022);\nvar keyPath = Path.Combine(sslDir, \u0022server.key\u0022);\nvar confPath = Path.Combine(confDir, \u0022default.conf\u0022);\n\n// Address clients will connect to (used for the cert subject / SAN).\nvar host = service.IPAddress;\nif (string.IsNullOrWhiteSpace(host)) { host = \u0022localhost\u0022; }\n\n// DER bytes -\u003E PEM text (fixed LF line endings, cross-platform).\nFunc\u003Cstring, byte[], string\u003E toPem = (label, der) =\u003E\n{\n    var b64 = Convert.ToBase64String(der);\n    var sb = new StringBuilder();\n    sb.Append(\u0022-----BEGIN \u0022).Append(label).Append(\u0022-----\\n\u0022);\n    for (int i = 0; i \u003C b64.Length; i \u002B= 64)\n    {\n        sb.Append(b64.Substring(i, Math.Min(64, b64.Length - i))).Append(\u0027\\n\u0027);\n    }\n    sb.Append(\u0022-----END \u0022).Append(label).Append(\u0022-----\\n\u0022);\n    return sb.ToString();\n};\n\n// ---------------------------------------------------------------------------\n// Generate a self-signed certificate once (idempotent). Pure .NET crypto, so\n// no openssl and no container internet access are required.\n// ---------------------------------------------------------------------------\nif (!File.Exists(crtPath) || !File.Exists(keyPath))\n{\n    using (var rsa = RSA.Create(2048))\n    {\n        var req = new CertificateRequest(\u0022CN=\u0022 \u002B host, rsa, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);\n        req.CertificateExtensions.Add(new X509BasicConstraintsExtension(false, false, 0, false));\n        req.CertificateExtensions.Add(new X509KeyUsageExtension(\n            X509KeyUsageFlags.DigitalSignature | X509KeyUsageFlags.KeyEncipherment, false));\n        req.CertificateExtensions.Add(new X509EnhancedKeyUsageExtension(\n            new OidCollection { new Oid(\u00221.3.6.1.5.5.7.3.1\u0022) }, false)); // serverAuth\n\n        var san = new SubjectAlternativeNameBuilder();\n        san.AddDnsName(host);\n        System.Net.IPAddress ip;\n        if (System.Net.IPAddress.TryParse(host, out ip)) { san.AddIpAddress(ip); }\n        req.CertificateExtensions.Add(san.Build());\n\n        using (var cert = req.CreateSelfSigned(\n            DateTimeOffset.UtcNow.AddDays(-1), DateTimeOffset.UtcNow.AddYears(10)))\n        {\n            File.WriteAllText(crtPath, toPem(\u0022CERTIFICATE\u0022, cert.Export(X509ContentType.Cert)));\n            File.WriteAllText(keyPath, toPem(\u0022PRIVATE KEY\u0022, rsa.ExportPkcs8PrivateKey()));\n        }\n    }\n\n    // Private key should not be world-readable (no-op / unsupported on Windows).\n    if (!System.OperatingSystem.IsWindows())\n    {\n        try { File.SetUnixFileMode(keyPath, UnixFileMode.UserRead | UnixFileMode.UserWrite); } catch { }\n    }\n}\n\n// ---------------------------------------------------------------------------\n// nginx config: keep HTTP (:80) and add HTTPS (:443) using the self-signed cert.\n// Written on every start (static / idempotent). Mounted read-only over the\n// image\u0027s default.conf.\n// ---------------------------------------------------------------------------\nvar conf =\n    \u0022server {\\n\u0022 \u002B\n    \u0022    listen       80;\\n\u0022 \u002B\n    \u0022    server_name  _;\\n\u0022 \u002B\n    \u0022    location / {\\n\u0022 \u002B\n    \u0022        root   /usr/share/nginx/html;\\n\u0022 \u002B\n    \u0022        index  index.html index.htm;\\n\u0022 \u002B\n    \u0022    }\\n\u0022 \u002B\n    \u0022    error_page   500 502 503 504  /50x.html;\\n\u0022 \u002B\n    \u0022    location = /50x.html { root /usr/share/nginx/html; }\\n\u0022 \u002B\n    \u0022}\\n\u0022 \u002B\n    \u0022\\n\u0022 \u002B\n    \u0022server {\\n\u0022 \u002B\n    \u0022    listen       443 ssl;\\n\u0022 \u002B\n    \u0022    http2        on;\\n\u0022 \u002B\n    \u0022    server_name  _;\\n\u0022 \u002B\n    \u0022\\n\u0022 \u002B\n    \u0022    ssl_certificate      /etc/nginx/ssl/server.crt;\\n\u0022 \u002B\n    \u0022    ssl_certificate_key  /etc/nginx/ssl/server.key;\\n\u0022 \u002B\n    \u0022    ssl_protocols        TLSv1.2 TLSv1.3;\\n\u0022 \u002B\n    \u0022    ssl_ciphers          HIGH:!aNULL:!MD5;\\n\u0022 \u002B\n    \u0022    ssl_session_cache    shared:SSL:10m;\\n\u0022 \u002B\n    \u0022    ssl_session_timeout  10m;\\n\u0022 \u002B\n    \u0022\\n\u0022 \u002B\n    \u0022    location / {\\n\u0022 \u002B\n    \u0022        root   /usr/share/nginx/html;\\n\u0022 \u002B\n    \u0022        index  index.html index.htm;\\n\u0022 \u002B\n    \u0022    }\\n\u0022 \u002B\n    \u0022    error_page   500 502 503 504  /50x.html;\\n\u0022 \u002B\n    \u0022    location = /50x.html { root /usr/share/nginx/html; }\\n\u0022 \u002B\n    \u0022}\\n\u0022;\nFile.WriteAllText(confPath, conf);\n\n// Note: www/index.html is NOT seeded here \u2014 it is a blueprint config-file template\n// (managed via the panel / Blueprint ConfigFiles API), which is the single source of\n// truth and is applied to the service on setup. Seeding it here would be dead code.\n\n// ---------------------------------------------------------------------------\n// Bind-mount the config \u002B cert into the container. The files exist by now\n// because this ConfigureContainer script runs before the container is created.\n// ---------------------------------------------------------------------------\nstartParams.HostConfig ??= new HostConfig();\nstartParams.HostConfig.Mounts ??= new List\u003CMount\u003E();\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = confPath, Target = \u0022/etc/nginx/conf.d/default.conf\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = crtPath, Target = \u0022/etc/nginx/ssl/server.crt\u0022, ReadOnly = true });\nstartParams.HostConfig.Mounts.Add(new Mount { Type = \u0022bind\u0022, Source = keyPath, Target = \u0022/etc/nginx/ssl/server.key\u0022, ReadOnly = true });\n",
+        "runImpersonated": true,
+        "stopService": false,
+        "ignoreErrors": false,
+        "order": 0,
+        "scriptInputVariables": [],
+        "scriptRoles": [],
+        "editor": [],
+        "identifier": "dff2a512-09fe-456f-8bd6-87ba7a3617db"
+      }
+    }
+  ],
+  "dockerBlueprintsCustomLinks": [],
+  "execConsoleType": "Command",
+  "execCommand": "/bin/sh",
+  "backupConfig": {
+    "enabled": false,
+    "backupType": "Full",
+    "compressBackup": true,
+    "includedPaths": []
+  },
+  "rolePermissions": [
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "VolumeBinds",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 2,
+      "module": "BpEditFeature",
+      "permission": "Images",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ExecConsole",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 3,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": true
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "GeneralSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "FileSystem",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Cmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "IpAndPorts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Monitoring",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Variables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Scripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "CustomLinks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "FeaturePermissions",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "EnvironmentVariables",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Limits",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "FastDL",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "Images",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpEditFeature",
+      "permission": "VolumeBinds",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "ServiceSettings",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Control",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "KillService",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "ConfigFiles",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "PredefCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "CustomCmdlines",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "FileManager",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "FTP",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "ScheduledTasks",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Console",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Logs",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "ServiceActivity",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "CpuStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "MemoryStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "NetworkStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "LiveStats",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Reinstall",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Create",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Delete",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Backups",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Mods",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "FastDL",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "LogConsole",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "CustomScripts",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-Compress",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-CreateFile",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFile",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-DeleteFolder",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-DiscordWebhook",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-Extract",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-FtpUpload",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-SendCommand",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-ServiceControl",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-SetVariable",
+      "moduleData": "",
+      "granted": false
+    },
+    {
+      "roleId": 4,
+      "module": "BpFeature",
+      "permission": "Block-WebRequest",
+      "moduleData": "",
+      "granted": false
+    }
+  ],
+  "mods": []
+}
