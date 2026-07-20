@@ -1,0 +1,746 @@
+{
+  "__TCA:ExportVersion": "3.14.2.0",
+  "__TCA:ExportedAt": "2026-07-20T22:11:50.5762907Z",
+  "themeId": 0,
+  "name": "PULSE \u2014 Neon Grid",
+  "titlePrefix": "Pulse | ",
+  "titlePostfix": "",
+  "isDefault": false,
+  "isEnabled": true,
+  "lightPalette": {
+    "consoleBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "consoleForeground": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleCursor": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleSelection": {
+      "r": 173,
+      "g": 214,
+      "b": 255,
+      "a": 255
+    },
+    "consoleBlack": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleRed": {
+      "r": 205,
+      "g": 49,
+      "b": 49,
+      "a": 255
+    },
+    "consoleGreen": {
+      "r": 20,
+      "g": 206,
+      "b": 20,
+      "a": 255
+    },
+    "consoleYellow": {
+      "r": 181,
+      "g": 186,
+      "b": 0,
+      "a": 255
+    },
+    "consoleBlue": {
+      "r": 4,
+      "g": 81,
+      "b": 165,
+      "a": 255
+    },
+    "consoleMagenta": {
+      "r": 188,
+      "g": 5,
+      "b": 188,
+      "a": 255
+    },
+    "consoleCyan": {
+      "r": 5,
+      "g": 152,
+      "b": 188,
+      "a": 255
+    },
+    "consoleWhite": {
+      "r": 85,
+      "g": 85,
+      "b": 85,
+      "a": 255
+    },
+    "black": {
+      "r": 39,
+      "g": 44,
+      "b": 52,
+      "a": 255
+    },
+    "white": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "primary": {
+      "r": 194,
+      "g": 0,
+      "b": 143,
+      "a": 255
+    },
+    "primaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "secondary": {
+      "r": 0,
+      "g": 151,
+      "b": 179,
+      "a": 255
+    },
+    "secondaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tertiary": {
+      "r": 123,
+      "g": 47,
+      "b": 222,
+      "a": 255
+    },
+    "tertiaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "info": {
+      "r": 0,
+      "g": 151,
+      "b": 179,
+      "a": 255
+    },
+    "infoContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "success": {
+      "r": 0,
+      "g": 168,
+      "b": 107,
+      "a": 255
+    },
+    "successContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "warning": {
+      "r": 217,
+      "g": 158,
+      "b": 0,
+      "a": 255
+    },
+    "warningContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "error": {
+      "r": 225,
+      "g": 29,
+      "b": 72,
+      "a": 255
+    },
+    "errorContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "dark": {
+      "r": 66,
+      "g": 66,
+      "b": 66,
+      "a": 255
+    },
+    "darkContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "textPrimary": {
+      "r": 40,
+      "g": 20,
+      "b": 60,
+      "a": 255
+    },
+    "textSecondary": {
+      "r": 110,
+      "g": 90,
+      "b": 130,
+      "a": 255
+    },
+    "textDisabled": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 96
+    },
+    "actionDefault": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 137
+    },
+    "actionDisabled": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 66
+    },
+    "actionDisabledBackground": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 30
+    },
+    "background": {
+      "r": 245,
+      "g": 238,
+      "b": 252,
+      "a": 255
+    },
+    "backgroundGray": {
+      "r": 236,
+      "g": 226,
+      "b": 246,
+      "a": 255
+    },
+    "surface": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 50,
+      "g": 30,
+      "b": 70,
+      "a": 255
+    },
+    "drawerIcon": {
+      "r": 194,
+      "g": 0,
+      "b": 143,
+      "a": 255
+    },
+    "appbarBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "appbarText": {
+      "r": 40,
+      "g": 20,
+      "b": 60,
+      "a": 255
+    },
+    "linesDefault": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 22
+    },
+    "linesInputs": {
+      "r": 189,
+      "g": 189,
+      "b": 189,
+      "a": 255
+    },
+    "tableLines": {
+      "r": 224,
+      "g": 224,
+      "b": 224,
+      "a": 255
+    },
+    "tableStriped": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 5
+    },
+    "tableHover": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 10
+    },
+    "divider": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 22
+    },
+    "dividerLight": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 204
+    },
+    "skeleton": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 28
+    },
+    "primaryDarken": "rgb(154,0,113)",
+    "primaryLighten": "rgb(214,40,164)",
+    "secondaryDarken": "rgb(0,121,143)",
+    "secondaryLighten": "rgb(34,180,201)",
+    "tertiaryDarken": "rgb(98,32,178)",
+    "tertiaryLighten": "rgb(150,90,230)",
+    "infoDarken": "rgb(12,128,223)",
+    "infoLighten": "rgb(71,167,245)",
+    "successDarken": "rgb(0,163,68)",
+    "successLighten": "rgb(0,235,98)",
+    "warningDarken": "rgb(214,129,0)",
+    "warningLighten": "rgb(255,167,36)",
+    "errorDarken": "rgb(242,28,13)",
+    "errorLighten": "rgb(246,96,85)",
+    "darkDarken": "rgb(46,46,46)",
+    "darkLighten": "rgb(87,87,87)",
+    "borderOpacity": 1,
+    "hoverOpacity": 0.06,
+    "rippleOpacity": 0.1,
+    "rippleOpacitySecondary": 0.2,
+    "grayDefault": "#9E9E9E",
+    "grayLight": "#BDBDBD",
+    "grayLighter": "#E0E0E0",
+    "grayDark": "#757575",
+    "grayDarker": "#616161",
+    "overlayDark": "rgba(33,33,33,0.4980392156862745)",
+    "overlayLight": "rgba(255,255,255,0.4980392156862745)"
+  },
+  "darkPalette": {
+    "black": {
+      "r": 10,
+      "g": 1,
+      "b": 24,
+      "a": 255
+    },
+    "primary": {
+      "r": 255,
+      "g": 43,
+      "b": 214,
+      "a": 255
+    },
+    "info": {
+      "r": 0,
+      "g": 229,
+      "b": 255,
+      "a": 255
+    },
+    "success": {
+      "r": 0,
+      "g": 255,
+      "b": 163,
+      "a": 255
+    },
+    "warning": {
+      "r": 255,
+      "g": 210,
+      "b": 0,
+      "a": 255
+    },
+    "error": {
+      "r": 255,
+      "g": 61,
+      "b": 110,
+      "a": 255
+    },
+    "dark": {
+      "r": 7,
+      "g": 1,
+      "b": 16,
+      "a": 255
+    },
+    "textPrimary": {
+      "r": 240,
+      "g": 230,
+      "b": 255,
+      "a": 240
+    },
+    "textSecondary": {
+      "r": 169,
+      "g": 143,
+      "b": 208,
+      "a": 255
+    },
+    "textDisabled": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 51
+    },
+    "actionDefault": {
+      "r": 173,
+      "g": 173,
+      "b": 177,
+      "a": 255
+    },
+    "actionDisabled": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 66
+    },
+    "actionDisabledBackground": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 30
+    },
+    "background": {
+      "r": 10,
+      "g": 1,
+      "b": 24,
+      "a": 255
+    },
+    "backgroundGray": {
+      "r": 15,
+      "g": 3,
+      "b": 34,
+      "a": 255
+    },
+    "surface": {
+      "r": 24,
+      "g": 10,
+      "b": 48,
+      "a": 255
+    },
+    "drawerBackground": {
+      "r": 13,
+      "g": 2,
+      "b": 32,
+      "a": 255
+    },
+    "drawerText": {
+      "r": 200,
+      "g": 180,
+      "b": 230,
+      "a": 185
+    },
+    "drawerIcon": {
+      "r": 180,
+      "g": 150,
+      "b": 220,
+      "a": 210
+    },
+    "appbarBackground": {
+      "r": 13,
+      "g": 2,
+      "b": 32,
+      "a": 255
+    },
+    "appbarText": {
+      "r": 240,
+      "g": 230,
+      "b": 255,
+      "a": 235
+    },
+    "linesDefault": {
+      "r": 255,
+      "g": 43,
+      "b": 214,
+      "a": 26
+    },
+    "linesInputs": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 76
+    },
+    "tableLines": {
+      "r": 200,
+      "g": 120,
+      "b": 255,
+      "a": 20
+    },
+    "tableStriped": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 51
+    },
+    "divider": {
+      "r": 200,
+      "g": 120,
+      "b": 255,
+      "a": 24
+    },
+    "dividerLight": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 15
+    },
+    "consoleBackground": {
+      "r": 30,
+      "g": 30,
+      "b": 30,
+      "a": 255
+    },
+    "consoleForeground": {
+      "r": 212,
+      "g": 212,
+      "b": 212,
+      "a": 255
+    },
+    "consoleCursor": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "consoleSelection": {
+      "r": 38,
+      "g": 79,
+      "b": 120,
+      "a": 255
+    },
+    "consoleBlack": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "consoleRed": {
+      "r": 205,
+      "g": 49,
+      "b": 49,
+      "a": 255
+    },
+    "consoleGreen": {
+      "r": 13,
+      "g": 188,
+      "b": 121,
+      "a": 255
+    },
+    "consoleYellow": {
+      "r": 229,
+      "g": 229,
+      "b": 16,
+      "a": 255
+    },
+    "consoleBlue": {
+      "r": 36,
+      "g": 114,
+      "b": 200,
+      "a": 255
+    },
+    "consoleMagenta": {
+      "r": 188,
+      "g": 63,
+      "b": 188,
+      "a": 255
+    },
+    "consoleCyan": {
+      "r": 17,
+      "g": 168,
+      "b": 205,
+      "a": 255
+    },
+    "consoleWhite": {
+      "r": 229,
+      "g": 229,
+      "b": 229,
+      "a": 255
+    },
+    "white": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "primaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "secondary": {
+      "r": 0,
+      "g": 229,
+      "b": 255,
+      "a": 255
+    },
+    "secondaryContrastText": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 255
+    },
+    "tertiary": {
+      "r": 177,
+      "g": 77,
+      "b": 255,
+      "a": 255
+    },
+    "tertiaryContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "infoContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "successContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "warningContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "errorContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "darkContrastText": {
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "tableHover": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 10
+    },
+    "skeleton": {
+      "r": 0,
+      "g": 0,
+      "b": 0,
+      "a": 28
+    },
+    "primaryDarken": "rgb(214,0,176)",
+    "primaryLighten": "rgb(255,107,227)",
+    "secondaryDarken": "rgb(0,184,212)",
+    "secondaryLighten": "rgb(92,240,255)",
+    "tertiaryDarken": "rgb(140,40,220)",
+    "tertiaryLighten": "rgb(200,130,255)",
+    "infoDarken": "rgb(10,133,255)",
+    "infoLighten": "rgb(92,173,255)",
+    "successDarken": "rgb(9,154,108)",
+    "successLighten": "rgb(13,222,156)",
+    "warningDarken": "rgb(193,142,31)",
+    "warningLighten": "rgb(225,176,71)",
+    "errorDarken": "rgb(193,31,31)",
+    "errorLighten": "rgb(225,71,71)",
+    "darkDarken": "rgb(23,23,28)",
+    "darkLighten": "rgb(56,56,67)",
+    "borderOpacity": 1,
+    "hoverOpacity": 0.06,
+    "rippleOpacity": 0.1,
+    "rippleOpacitySecondary": 0.2,
+    "grayDefault": "#9E9E9E",
+    "grayLight": "#BDBDBD",
+    "grayLighter": "#E0E0E0",
+    "grayDark": "#757575",
+    "grayDarker": "#616161",
+    "overlayDark": "rgba(33,33,33,0.4980392156862745)",
+    "overlayLight": "rgba(255,255,255,0.4980392156862745)"
+  },
+  "layoutProperties": {
+    "defaultBorderRadius": "8px",
+    "drawerMiniWidthLeft": "56px",
+    "drawerMiniWidthRight": "56px",
+    "drawerWidthLeft": "264px",
+    "drawerWidthRight": "240px",
+    "appbarHeight": "64px"
+  },
+  "mainContentSettings": {
+    "extraClass": "mt-4 mb-12 pa-2",
+    "extraClassWithBanners": "mt-n2 mb-12 pa-2",
+    "maxWidth": "ExtraLarge"
+  },
+  "navMenuSettings": {
+    "showLogo": false,
+    "enableLogoFilter": true,
+    "elevation": 1,
+    "clipMode": "Never",
+    "variant": "Mini"
+  },
+  "topBarSettings": {
+    "showBreadcrumbs": true,
+    "dense": false,
+    "elevation": 1
+  },
+  "bottomBarSettings": {
+    "enabled": true,
+    "elevation": 1,
+    "showPoweredBy": true,
+    "showVersion": true,
+    "iconUrl": "/img/logos/tcadmin.png"
+  },
+  "advancedSettings": {
+    "css": "",
+    "js": ""
+  },
+  "loginSettings": {
+    "backgroundOverlayOpacity": 0.6,
+    "showFooter": true
+  },
+  "loadingScreen": {
+    "useDefaultTitles": true,
+    "titles": [
+      "PULSE",
+      "NEON GRID"
+    ],
+    "textColor": "#f0e6ff",
+    "backgroundColor": "#0a0118",
+    "backgroundOverlayOpacity": 0.5,
+    "glassCardBackground": "rgba(24,10,48,0.92)",
+    "progressBarColor": "#ff2bd6",
+    "customCss": "#tcadmin-loading .loading-bg-image{background:radial-gradient(60% 70% at 12% 4%,rgba(255,43,214,.3),transparent 60%),radial-gradient(60% 70% at 90% 96%,rgba(0,229,255,.26),transparent 60%),repeating-linear-gradient(0deg,rgba(0,229,255,.07) 0 1px,transparent 1px 46px),repeating-linear-gradient(90deg,rgba(0,229,255,.07) 0 1px,transparent 1px 46px)!important;background-color:#0a0118!important;}#tcadmin-loading .loading-glass-card{border:1px solid rgba(255,43,214,.5);border-radius:10px;box-shadow:0 0 40px -6px rgba(255,43,214,.55),0 0 70px -10px rgba(0,229,255,.35);}#tcadmin-loading .loading-brand-title{letter-spacing:.3em;text-shadow:0 0 16px rgba(255,43,214,.7);}\n/* --- loading-window neon pulse (mirrors PULSE\u0027s login/drawer breathing glow); keep the fade-in, add the breathing box-shadow --- */\n@keyframes pl-loading-pulse{0%,100%{box-shadow:0 0 32px -8px rgba(255,43,214,.42),0 0 58px -12px rgba(0,229,255,.26)}50%{box-shadow:0 0 54px -4px rgba(255,43,214,.82),0 0 92px -8px rgba(0,229,255,.54)}}\n#tcadmin-loading .loading-glass-card{animation:loadingCardFadeIn .5s ease-out,pl-loading-pulse 2.6s ease-in-out infinite;}\n@media (prefers-reduced-motion:reduce){#tcadmin-loading .loading-glass-card{animation:loadingCardFadeIn .5s ease-out;}}"
+  },
+  "createdDate": "0001-01-01T00:00:00"
+}
